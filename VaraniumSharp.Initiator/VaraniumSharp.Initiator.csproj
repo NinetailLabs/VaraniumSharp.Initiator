@@ -40,8 +40,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configuration\ConsoleLoggingConfiguration.cs" />
     <Compile Include="DependencyInjection\ContainerSetup.cs" />
     <Compile Include="DependencyInjection\ServiceReuseExtensions.cs" />
+    <Compile Include="Configuration\BaseLogConfiguration.cs" />
     <Compile Include="ServiceSetup\LoggingExtension.cs" />
     <Content Include="SemVer.MSBuild.props" />
     <Compile Include="Configuration\LogConfiguration.cs" />

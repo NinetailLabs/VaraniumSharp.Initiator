@@ -6,21 +6,33 @@ namespace VaraniumSharp.Initiator.ServiceSetup
     //TODO - Add summaries
     public static class LoggingExtension
     {
-        public static void SetupLogging(this LoggerConfiguration serilogConfig, LogConfiguration configuration)
-        {
-            if (configuration.LogToConsole)
-            {
-                serilogConfig.WriteTo.ColoredConsole();
-            }
-            if (configuration.LogToFile)
-            {
-                serilogConfig.WriteTo.File(configuration.LogFilePath);
-            }
-            if (configuration.LogToSplunk)
-            {
-                serilogConfig.WriteTo.EventCollector(configuration.SplunkHost, configuration.SplunkToken);
-            }
-            Log.Logger = serilogConfig.CreateLogger();
-        }
+        //public static LoggerConfiguration LogToConsole(this LoggerConfiguration self, LogConfiguration configuration)
+        //{
+        //    if (configuration.LogToConsole)
+        //    {
+        //        self.WriteTo.ColoredConsole();
+        //    }
+        //    return self;
+        //}
+
+        //public static LoggerConfiguration LogToFile(this LoggerConfiguration self, LogConfiguration configuration)
+        //{
+        //    if (configuration.LogToFile)
+        //    {
+        //        self.WriteTo.File(configuration.LogFilePath);
+        //    }
+        //    return self;
+        //}
+
+        //public static LoggerConfiguration LogToSplunk(this LoggerConfiguration self, LogConfiguration configuration)
+        //{
+        //    if (configuration.LogToSplunk)
+        //    {
+        //        self.WriteTo.EventCollector(configuration.SplunkHost, configuration.SplunkToken);
+        //    }
+        //    return self;
+        //}
+
+
     }
 }

@@ -8,11 +8,7 @@ namespace VaraniumSharp.Initiator.Configuration
     /// </summary>
     public class LogConfiguration
     {
-        /// <summary>
-        /// Should the log be written to the console
-        /// </summary>
-        public bool LogToConsole => ConfigurationKeys.LogToConsole.GetConfigurationValue<bool>();
-
+        
         /// <summary>
         /// Should the log be written to a file
         /// </summary>
