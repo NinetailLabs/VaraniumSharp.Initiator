@@ -20,6 +20,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -41,17 +42,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configuration\ConsoleLoggingConfiguration.cs" />
+    <Compile Include="Configuration\FileLoggingConfiguration.cs" />
+    <Compile Include="Configuration\SplunkLoggingConfiguration.cs" />
     <Compile Include="DependencyInjection\ContainerSetup.cs" />
     <Compile Include="DependencyInjection\ServiceReuseExtensions.cs" />
     <Compile Include="Configuration\BaseLogConfiguration.cs" />
-    <Compile Include="ServiceSetup\LoggingExtension.cs" />
     <Content Include="SemVer.MSBuild.props" />
-    <Compile Include="Configuration\LogConfiguration.cs" />
     <Compile Include="Enumerations\ConfigurationKeys.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="paket.references" />
+    <None Include="VaraniumSharp.Initiator.nuspec" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Choose>

@@ -5,33 +5,38 @@ using VaraniumSharp.Initiator.Enumerations;
 namespace VaraniumSharp.Initiator.Configuration
 {
     /// <summary>
-    /// Configuration for ColoredConsole sink
+    /// Configuration for File sink
     /// </summary>
-    public sealed class ConsoleLoggingConfiguration : BaseLogConfiguration
+    public class FileLoggingConfiguration : BaseLogConfiguration
     {
         #region Properties
 
         /// <summary>
-        /// Should the log be written to the console
+        /// Path of the file where the log should be written
         /// </summary>
-        public bool LogToConsole => ConfigurationKeys.LogToConsole.GetConfigurationValue<bool>();
+        public string LogFilePath => ConfigurationKeys.LogFilePath.GetConfigurationValue<string>();
+
+        /// <summary>
+        /// Should the log be written to a file
+        /// </summary>
+        public bool LogToFile => ConfigurationKeys.LogToFile.GetConfigurationValue<bool>();
 
         #endregion Properties
 
         #region Private Methods
 
         /// <summary>
-        /// Apply the Console log configuration
+        /// Apply the file log configuration
         /// </summary>
         /// <param name="serilogConfiguration"></param>
         protected override void LogSetup(LoggerConfiguration serilogConfiguration)
         {
-            if (!LogToConsole)
+            if (!LogToFile)
             {
                 IsActive = false;
                 return;
             }
-            serilogConfiguration.WriteTo.ColoredConsole();
+            serilogConfiguration.WriteTo.File(LogFilePath);
             IsActive = true;
         }
 
