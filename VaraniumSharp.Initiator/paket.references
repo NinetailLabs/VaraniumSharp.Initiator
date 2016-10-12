@@ -1,2 +1,8 @@
+DryIoc.dll
 SemVer.Git.MSBuild
+Serilog
+Serilog.Sinks.ColoredConsole
+Serilog.Sinks.File
+Serilog.Sinks.Seq
+Serilog.Sinks.Splunk
 VaraniumSharp

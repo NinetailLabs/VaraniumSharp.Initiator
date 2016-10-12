@@ -2,7 +2,14 @@ source https://api.nuget.org/v3/index.json
 
 framework: >= net462
 
+nuget DryIoc.dll >= 2.7.1
 nuget FluentAssertions ~>  4.14
+nuget Moq >= 4.5.9
 nuget NUnit ~> 3.4
 nuget SemVer.Git.MSBuild >= 1.1.0 content:once
+nuget Serilog >= 2.2.1
+nuget Serilog.Sinks.ColoredConsole >= 2.0.0
+nuget Serilog.Sinks.File >= 3.0.1
+nuget Serilog.Sinks.Seq >= 3.0.0
+nuget Serilog.Sinks.Splunk >= 2.0.1
 nuget VaraniumSharp >= 1.2.0

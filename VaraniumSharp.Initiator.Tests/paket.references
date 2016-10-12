@@ -1,2 +1,7 @@
+DryIoc.dll
 FluentAssertions
+Moq
 NUnit
+Serilog
+Serilog.Sinks.ColoredConsole
+VaraniumSharp
