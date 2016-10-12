@@ -3,8 +3,10 @@
     /// <summary>
     /// Contains keys for reading configuration values from App.config
     /// </summary>
-    public class ConfigurationKeys
+    public static class ConfigurationKeys
     {
+        #region Variables
+
         /// <summary>
         /// Host address of the service
         /// </summary>
@@ -31,6 +33,16 @@
         public const string LogFilePath = "log.file.path";
 
         /// <summary>
+        /// Indicate if logging should be done to Seq
+        /// </summary>
+        public const string LogToSeq = "log.seq";
+
+        /// <summary>
+        /// Url of the Seq host
+        /// </summary>
+        public const string SeqHost = "seq.host";
+
+        /// <summary>
         /// Indicate if logging should be done to Splunk
         /// </summary>
         public const string LogToSplunk = "log.splunk";
@@ -44,5 +56,7 @@
         /// Event Collector token for Splunk
         /// </summary>
         public const string SplunkToken = "log.splunk.token";
+
+        #endregion Variables
     }
 }

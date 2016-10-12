@@ -22,6 +22,7 @@
     <dependency id="Serilog" verssion="2.2.1"/>
     <dependency id="Serilog.Sinks.ColoredConsole" version="2.0.0"/>
     <dependency id="Serilog.Sinks.File" version="3.0.1"/>
+    <dependency ide="Serilog.Sinks.Seq" version="3.0.0"/>
     <dependency id="Serilog.Sinks.Splunk" version="2.0.1"/>
   </dependencies>
   

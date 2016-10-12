@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Configuration\ConsoleLoggingConfiguration.cs" />
     <Compile Include="Configuration\FileLoggingConfiguration.cs" />
+    <Compile Include="Configuration\SeqLoggingConfiguration.cs" />
     <Compile Include="Configuration\SplunkLoggingConfiguration.cs" />
     <Compile Include="DependencyInjection\ContainerSetup.cs" />
     <Compile Include="DependencyInjection\ServiceReuseExtensions.cs" />
@@ -107,6 +108,17 @@
   <Choose>
     <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.6.2' Or $(TargetFrameworkVersion) == 'v4.6.3')">
       <ItemGroup>
+        <Reference Include="Serilog.Formatting.Compact">
+          <HintPath>..\packages\Serilog.Formatting.Compact\lib\net45\Serilog.Formatting.Compact.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.6.2' Or $(TargetFrameworkVersion) == 'v4.6.3')">
+      <ItemGroup>
         <Reference Include="Serilog.Sinks.ColoredConsole">
           <HintPath>..\packages\Serilog.Sinks.ColoredConsole\lib\net45\Serilog.Sinks.ColoredConsole.dll</HintPath>
           <Private>True</Private>
@@ -120,6 +132,39 @@
       <ItemGroup>
         <Reference Include="Serilog.Sinks.File">
           <HintPath>..\packages\Serilog.Sinks.File\lib\net45\Serilog.Sinks.File.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.6.2' Or $(TargetFrameworkVersion) == 'v4.6.3')">
+      <ItemGroup>
+        <Reference Include="Serilog.Sinks.PeriodicBatching">
+          <HintPath>..\packages\Serilog.Sinks.PeriodicBatching\lib\net45\Serilog.Sinks.PeriodicBatching.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.6.2' Or $(TargetFrameworkVersion) == 'v4.6.3')">
+      <ItemGroup>
+        <Reference Include="Serilog.Sinks.RollingFile">
+          <HintPath>..\packages\Serilog.Sinks.RollingFile\lib\net45\Serilog.Sinks.RollingFile.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.6.2' Or $(TargetFrameworkVersion) == 'v4.6.3')">
+      <ItemGroup>
+        <Reference Include="Serilog.Sinks.Seq">
+          <HintPath>..\packages\Serilog.Sinks.Seq\lib\net45\Serilog.Sinks.Seq.dll</HintPath>
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>
@@ -160,5 +205,4 @@
     </When>
   </Choose>
   <Import Project="..\packages\SemVer.Git.MSBuild\build\$(__paket__SemVer_Git_MSBuild_targets).targets" Condition="Exists('..\packages\SemVer.Git.MSBuild\build\$(__paket__SemVer_Git_MSBuild_targets).targets')" Label="Paket" />
-  <Import Project="..\packages\SemVer.Git.MSBuild\build\$(__paket__SemVer_MSBuild_targets).targets" Condition="Exists('..\packages\SemVer.Git.MSBuild\build\$(__paket__SemVer_MSBuild_targets).targets')" Label="Paket" />
 </Project>

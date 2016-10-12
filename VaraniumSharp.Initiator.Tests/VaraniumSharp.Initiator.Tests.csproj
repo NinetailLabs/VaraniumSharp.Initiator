@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="Configuration\ConsoleLoggingConfigurationTest.cs" />
     <Compile Include="Configuration\FileLoggingConfigurationTest.cs" />
+    <Compile Include="Configuration\SeqLoggingConfigurationTest.cs" />
     <Compile Include="Configuration\SplunkLoggingConfigurationTest.cs" />
     <Compile Include="DependencyInjection\ContainerSetupTest.cs" />
     <Compile Include="DependencyInjection\ServiceReuseExtensions.cs" />
@@ -60,7 +61,6 @@
       <Name>VaraniumSharp.Initiator</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -10,5 +10,6 @@ nuget SemVer.Git.MSBuild >= 1.1.0 content:once
 nuget Serilog >= 2.2.1
 nuget Serilog.Sinks.ColoredConsole >= 2.0.0
 nuget Serilog.Sinks.File >= 3.0.1
+nuget Serilog.Sinks.Seq >= 3.0.0
 nuget Serilog.Sinks.Splunk >= 2.0.1
 nuget VaraniumSharp >= 1.2.0
