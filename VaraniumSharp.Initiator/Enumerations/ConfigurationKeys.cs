@@ -8,16 +8,6 @@
         #region Variables
 
         /// <summary>
-        /// Host address of the service
-        /// </summary>
-        public const string ServiceHost = "service.host";
-
-        /// <summary>
-        /// The port on which the service is hosted
-        /// </summary>
-        public const string ServicePort = "service.port";
-
-        /// <summary>
         /// Indicate if logging should be done to the console
         /// </summary>
         public const string LogToConsole = "log.console";
