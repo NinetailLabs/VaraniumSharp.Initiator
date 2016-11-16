@@ -20,7 +20,7 @@ namespace VaraniumSharp.Initiator.DependencyInjection
             _container = new Container();
         }
 
-        #endregion Constructor
+        #endregion
 
         #region Public Methods
 
@@ -35,6 +35,8 @@ namespace VaraniumSharp.Initiator.DependencyInjection
         }
 
         #endregion
+
+        #region Private Methods
 
         #region Protected Methods
 
@@ -54,10 +56,12 @@ namespace VaraniumSharp.Initiator.DependencyInjection
 
         #endregion Protected Methods
 
+        #endregion
+
         #region Variables
 
         private readonly IContainer _container;
 
-        #endregion Variables
+        #endregion
     }
 }

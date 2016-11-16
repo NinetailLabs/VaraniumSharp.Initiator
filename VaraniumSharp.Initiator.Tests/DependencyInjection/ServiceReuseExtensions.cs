@@ -8,13 +8,14 @@ namespace VaraniumSharp.Initiator.Tests.DependencyInjection
 {
     public class ServiceReuseExtensions
     {
+        #region Public Methods
+
         [Test]
         public void ConvertDefaultVaraniumReuseToDryIocReuse()
         {
             // arrange
             const ServiceReuse varaniumReuse = ServiceReuse.Default;
             var dryIocReuse = Reuse.Transient;
-
 
             // act
             var result = varaniumReuse.ConvertFromVaraniumReuse();
@@ -30,7 +31,6 @@ namespace VaraniumSharp.Initiator.Tests.DependencyInjection
             const ServiceReuse varaniumReuse = ServiceReuse.Singleton;
             var dryIocReuse = Reuse.Singleton;
 
-
             // act
             var result = varaniumReuse.ConvertFromVaraniumReuse();
 
@@ -38,5 +38,6 @@ namespace VaraniumSharp.Initiator.Tests.DependencyInjection
             result.Should().Be(dryIocReuse);
         }
 
+        #endregion
     }
 }

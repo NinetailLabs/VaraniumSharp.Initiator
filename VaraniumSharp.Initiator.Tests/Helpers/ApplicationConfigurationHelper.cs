@@ -5,6 +5,8 @@ namespace VaraniumSharp.Initiator.Tests.Helpers
 {
     public static class ApplicationConfigurationHelper
     {
+        #region Public Methods
+
         /// <summary>
         /// Adjust, save and apply a key in App.Config AppSetting section
         /// </summary>
@@ -21,5 +23,7 @@ namespace VaraniumSharp.Initiator.Tests.Helpers
             config.Save();
             ConfigurationManager.RefreshSection("appSettings");
         }
+
+        #endregion
     }
 }

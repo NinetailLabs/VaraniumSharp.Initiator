@@ -8,6 +8,8 @@ namespace VaraniumSharp.Initiator.Tests.DependencyInjection
 {
     public class ContainerSetupTest
     {
+        #region Public Methods
+
         [Test]
         public void SetupContainter()
         {
@@ -52,6 +54,7 @@ namespace VaraniumSharp.Initiator.Tests.DependencyInjection
             resolvedClass.Should().NotBe(secondResolve);
         }
 
+        #endregion
 
         [AutomaticContainerRegistration(typeof(AutoRegistrationDummy))]
         private class AutoRegistrationDummy

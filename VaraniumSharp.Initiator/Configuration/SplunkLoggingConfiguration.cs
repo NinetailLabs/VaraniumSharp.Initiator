@@ -26,7 +26,7 @@ namespace VaraniumSharp.Initiator.Configuration
         /// </summary>
         public string SplunkToken => ConfigurationKeys.SplunkToken.GetConfigurationValue<string>();
 
-        #endregion Properties
+        #endregion
 
         #region Private Methods
 
@@ -45,6 +45,6 @@ namespace VaraniumSharp.Initiator.Configuration
             IsActive = true;
         }
 
-        #endregion Private Methods
+        #endregion
     }
 }

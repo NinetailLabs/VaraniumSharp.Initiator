@@ -20,7 +20,7 @@ namespace VaraniumSharp.Initiator.Configuration
         /// </summary>
         public bool WasApplied { get; private set; }
 
-        #endregion Properties
+        #endregion
 
         #region Public Methods
 
@@ -44,7 +44,7 @@ namespace VaraniumSharp.Initiator.Configuration
             }
         }
 
-        #endregion Public Methods
+        #endregion
 
         #region Private Methods
 
@@ -55,12 +55,12 @@ namespace VaraniumSharp.Initiator.Configuration
         /// <param name="serilogConfiguration"></param>
         protected abstract void LogSetup(LoggerConfiguration serilogConfiguration);
 
-        #endregion Private Methods
+        #endregion
 
         #region Variables
 
         private readonly object _applyLock = new object();
 
-        #endregion Variables
+        #endregion
     }
 }

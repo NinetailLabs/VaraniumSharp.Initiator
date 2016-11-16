@@ -9,6 +9,8 @@ namespace VaraniumSharp.Initiator.Tests.Configuration
 {
     public class FileLoggingConfigurationTest
     {
+        #region Public Methods
+
         [TestCase(true, true, true)]
         [TestCase(false, false, true)]
         public void ApplyLoggingConfiguration(bool isUsed, bool isActive, bool wasApplied)
@@ -28,6 +30,12 @@ namespace VaraniumSharp.Initiator.Tests.Configuration
             sut.WasApplied.Should().Be(wasApplied);
         }
 
+        #endregion
+
+        #region Variables
+
         private const string FilePath = "log.txt";
+
+        #endregion
     }
 }
