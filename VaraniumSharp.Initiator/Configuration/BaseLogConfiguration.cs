@@ -1,11 +1,14 @@
 ﻿using Serilog;
 using System;
+using VaraniumSharp.Attributes;
+using VaraniumSharp.Enumerations;
 
 namespace VaraniumSharp.Initiator.Configuration
 {
     /// <summary>
     /// Base class for logging configuration
     /// </summary>
+    [AutomaticConcretionContainerRegistration(ServiceReuse.Singleton)]
     public abstract class BaseLogConfiguration
     {
         #region Properties
