@@ -3,6 +3,7 @@
 #addin Cake.FileHelpers
 #tool "nuget:?package=NUnit.ConsoleRunner"
 #tool "nuget:?package=JetBrains.dotCover.CommandLineTools"
+#tool "nuget:?package=GitReleaseNotes"
 
 var tools = "./tools";
 var sln = "./VaraniumSharp.Initiator.sln";
@@ -12,6 +13,7 @@ var unitTestPaths = "./VaraniumSharp.Initiator.Tests/bin/Release/VaraniumSharp.I
 var nuspecFile = "./VaraniumSharp.Initiator/VaraniumSharp.Initiator.nuspec";
 var testResultFile = "./TestResult.xml";
 var testErrorFile = "./errors.xml";
+var releaseNotes = "./ReleaseNotes.md";
 
 var target = Argument ("target", "Build");
 var buildType = Argument<string>("buildType", "develop");
@@ -22,6 +24,7 @@ var ciVersion = "0.0.0-CI00000";
 var runningOnTeamCity = false;
 var runningOnAppVeyor = false;
 var testSucceeded = true;
+var releaseNotesText = "";
 
 //Paket folders
 var paketBootstrapper = "./.paket/paket.bootstrapper.exe";
@@ -81,7 +84,10 @@ Task("UnitTest")
 		var testAssemblies = GetFiles(unitTestPaths);
 		DotCoverAnalyse(tool => {
 				tool.NUnit3(testAssemblies, new NUnit3Settings {
-    				ErrorOutputFile = testErrorFile
+    				ErrorOutputFile = testErrorFile,
+					OutputFile = testResultFile,
+					WorkingDirectory = ".",
+					Work = MakeAbsolute(Directory("."))
     			});
 			},
 			new FilePath(coverPath),
@@ -93,6 +99,8 @@ Task("UnitTest")
     			.WithFilter("-:VaraniumSharp.Initiator.Tests")
 		);
 
+		PushTestResults(testResultFile);
+
 		if(FileExists(testErrorFile) && FileReadLines(testErrorFile).Count() > 0)
 		{
 			Information("Unit tests failed");
@@ -102,9 +110,23 @@ Task("UnitTest")
 		EndBlock("Unit Testing");
 	});
 	
+Task ("GenerateReleaseNotes")
+	.WithCriteria (buildType == "master")
+	.Does(() => {
+		var releasePath = MakeAbsolute(File(releaseNotes));
+		GitReleaseNotes(releasePath, new GitReleaseNotesSettings{
+			    WorkingDirectory = ".",
+				Version = version,
+				AllLabels = true
+		});
+
+		releaseNotesText = FileReadText(releasePath);
+	});
+
 Task ("Nuget")
 	.WithCriteria(buildType == "master")
 	.IsDependentOn ("SonarQubeShutdown")
+	.IsDependentOn ("GenerateReleaseNotes")
 	.Does (() => {
 		if(!testSucceeded)
 		{
@@ -114,6 +136,7 @@ Task ("Nuget")
 
 		CreateDirectory ("./nupkg/");
 		ReplaceRegexInFiles(nuspecFile, "0.0.0", version);
+		ReplaceRegexInFiles(nuspecFile, "ReleaseNotesHere", releaseNotesText);
 		
 		NuGetPack (nuspecFile, new NuGetPackSettings { 
 			Verbosity = NuGetVerbosity.Detailed,

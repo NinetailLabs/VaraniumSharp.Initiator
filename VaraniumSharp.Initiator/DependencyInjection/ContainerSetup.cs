@@ -1,4 +1,5 @@
 ﻿using DryIoc;
+using System.Collections.Generic;
 using System.Reflection;
 using VaraniumSharp.Attributes;
 using VaraniumSharp.DependencyInjection;
@@ -20,7 +21,7 @@ namespace VaraniumSharp.Initiator.DependencyInjection
             _container = new Container();
         }
 
-        #endregion Constructor
+        #endregion
 
         #region Public Methods
 
@@ -34,13 +35,27 @@ namespace VaraniumSharp.Initiator.DependencyInjection
             return _container.Resolve<TService>();
         }
 
+        /// <summary>
+        /// Resolve Services from the container via a shared interface of parent class
+        /// </summary>
+        /// <typeparam name="TService">Interface or parent class that children are registered under</typeparam>
+        /// <returns>Collection of children classes that inherit from the parent or implement the interface</returns>
+        public IEnumerable<TService> ResolveMany<TService>()
+        {
+            return _container.ResolveMany<TService>();
+        }
+
+        #endregion
+
+        #region Variables
+
+        private readonly IContainer _container;
+
         #endregion
 
         #region Protected Methods
 
-        /// <summary>
-        /// Automatically register classes with Container
-        /// </summary>
+        /// <inheritdoc />
         protected override void RegisterClasses()
         {
             foreach (var @class in ClassesToRegister)
@@ -52,12 +67,18 @@ namespace VaraniumSharp.Initiator.DependencyInjection
             }
         }
 
+        /// <inheritdoc />
+        protected override void RegisterConcretionClasses()
+        {
+            foreach (var @class in ConcretionClassesToRegister)
+            {
+                var registrationAttribute =
+                    (AutomaticConcretionContainerRegistrationAttribute)
+                    @class.Key.GetCustomAttribute(typeof(AutomaticConcretionContainerRegistrationAttribute));
+                @class.Value.ForEach(x => _container.Register(@class.Key, x, registrationAttribute.Reuse.ConvertFromVaraniumReuse()));
+            }
+        }
+
         #endregion Protected Methods
-
-        #region Variables
-
-        private readonly IContainer _container;
-
-        #endregion Variables
     }
 }

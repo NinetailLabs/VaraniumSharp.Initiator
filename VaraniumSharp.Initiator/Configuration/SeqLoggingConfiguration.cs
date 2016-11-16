@@ -7,7 +7,7 @@ namespace VaraniumSharp.Initiator.Configuration
     /// <summary>
     /// Configuration for Seq sink
     /// </summary>
-    public class SeqLoggingConfiguration : BaseLogConfiguration
+    public sealed class SeqLoggingConfiguration : BaseLogConfiguration
     {
         #region Properties
 
@@ -21,7 +21,7 @@ namespace VaraniumSharp.Initiator.Configuration
         /// </summary>
         public string SeqHost => ConfigurationKeys.SeqHost.GetConfigurationValue<string>();
 
-        #endregion Properties
+        #endregion
 
         #region Private Methods
 
@@ -40,6 +40,6 @@ namespace VaraniumSharp.Initiator.Configuration
             IsActive = true;
         }
 
-        #endregion Private Methods
+        #endregion
     }
 }

@@ -1,11 +1,14 @@
 ﻿using Serilog;
 using System;
+using VaraniumSharp.Attributes;
+using VaraniumSharp.Enumerations;
 
 namespace VaraniumSharp.Initiator.Configuration
 {
     /// <summary>
     /// Base class for logging configuration
     /// </summary>
+    [AutomaticConcretionContainerRegistration(ServiceReuse.Singleton)]
     public abstract class BaseLogConfiguration
     {
         #region Properties
@@ -20,7 +23,7 @@ namespace VaraniumSharp.Initiator.Configuration
         /// </summary>
         public bool WasApplied { get; private set; }
 
-        #endregion Properties
+        #endregion
 
         #region Public Methods
 
@@ -44,7 +47,7 @@ namespace VaraniumSharp.Initiator.Configuration
             }
         }
 
-        #endregion Public Methods
+        #endregion
 
         #region Private Methods
 
@@ -55,12 +58,12 @@ namespace VaraniumSharp.Initiator.Configuration
         /// <param name="serilogConfiguration"></param>
         protected abstract void LogSetup(LoggerConfiguration serilogConfiguration);
 
-        #endregion Private Methods
+        #endregion
 
         #region Variables
 
         private readonly object _applyLock = new object();
 
-        #endregion Variables
+        #endregion
     }
 }

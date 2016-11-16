@@ -47,6 +47,6 @@
         /// </summary>
         public const string SplunkToken = "log.splunk.token";
 
-        #endregion Variables
+        #endregion
     }
 }

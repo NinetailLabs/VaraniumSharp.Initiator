@@ -29,7 +29,7 @@ namespace VaraniumSharp.Initiator.Tests.Configuration
             sut.IsActive.Should().Be(isActive);
             sut.WasApplied.Should().Be(wasApplied);
         }
-        
+
         [Test]
         public void ConfigurationCannotBeAppliedTwice()
         {
@@ -44,6 +44,6 @@ namespace VaraniumSharp.Initiator.Tests.Configuration
             action.ShouldThrow<InvalidOperationException>();
         }
 
-        #endregion Public Methods
+        #endregion
     }
 }

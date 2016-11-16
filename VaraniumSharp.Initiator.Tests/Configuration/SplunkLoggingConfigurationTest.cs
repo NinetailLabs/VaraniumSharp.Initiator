@@ -31,13 +31,13 @@ namespace VaraniumSharp.Initiator.Tests.Configuration
             sut.WasApplied.Should().Be(wasApplied);
         }
 
-        #endregion Public Methods
+        #endregion
 
         #region Variables
 
         private const string SplunkHost = "https://mysplunk:8088/services/collector";
         private const string SplunkToken = "ReplaceWithToken";
 
-        #endregion Variables
+        #endregion
     }
 }

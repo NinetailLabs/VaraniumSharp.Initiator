@@ -31,6 +31,6 @@ namespace VaraniumSharp.Initiator.DependencyInjection
             return result;
         }
 
-        #endregion Public Methods
+        #endregion
     }
 }

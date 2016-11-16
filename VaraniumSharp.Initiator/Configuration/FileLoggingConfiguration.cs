@@ -7,7 +7,7 @@ namespace VaraniumSharp.Initiator.Configuration
     /// <summary>
     /// Configuration for File sink
     /// </summary>
-    public class FileLoggingConfiguration : BaseLogConfiguration
+    public sealed class FileLoggingConfiguration : BaseLogConfiguration
     {
         #region Properties
 
@@ -21,7 +21,7 @@ namespace VaraniumSharp.Initiator.Configuration
         /// </summary>
         public bool LogToFile => ConfigurationKeys.LogToFile.GetConfigurationValue<bool>();
 
-        #endregion Properties
+        #endregion
 
         #region Private Methods
 
@@ -40,6 +40,6 @@ namespace VaraniumSharp.Initiator.Configuration
             IsActive = true;
         }
 
-        #endregion Private Methods
+        #endregion
     }
 }

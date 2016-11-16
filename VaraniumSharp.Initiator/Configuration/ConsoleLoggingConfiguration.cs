@@ -16,7 +16,7 @@ namespace VaraniumSharp.Initiator.Configuration
         /// </summary>
         public bool LogToConsole => ConfigurationKeys.LogToConsole.GetConfigurationValue<bool>();
 
-        #endregion Properties
+        #endregion
 
         #region Private Methods
 
@@ -35,6 +35,6 @@ namespace VaraniumSharp.Initiator.Configuration
             IsActive = true;
         }
 
-        #endregion Private Methods
+        #endregion
     }
 }
