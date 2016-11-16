@@ -7,7 +7,7 @@ namespace VaraniumSharp.Initiator.Configuration
     /// <summary>
     /// Configuration for File sink
     /// </summary>
-    public class FileLoggingConfiguration : BaseLogConfiguration
+    public sealed class FileLoggingConfiguration : BaseLogConfiguration
     {
         #region Properties
 

@@ -7,7 +7,7 @@ namespace VaraniumSharp.Initiator.Configuration
     /// <summary>
     /// Configuration for Seq sink
     /// </summary>
-    public class SeqLoggingConfiguration : BaseLogConfiguration
+    public sealed class SeqLoggingConfiguration : BaseLogConfiguration
     {
         #region Properties
 

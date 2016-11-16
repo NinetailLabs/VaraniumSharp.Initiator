@@ -7,7 +7,7 @@ namespace VaraniumSharp.Initiator.Configuration
     /// <summary>
     /// Configuration for Splunk sink
     /// </summary>
-    public class SplunkLoggingConfiguration : BaseLogConfiguration
+    public sealed class SplunkLoggingConfiguration : BaseLogConfiguration
     {
         #region Properties
 
