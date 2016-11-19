@@ -2,7 +2,7 @@ FRAMEWORK: >= NET462
 NUGET
   remote: http://api.nuget.org/v3/index.json
     Castle.Core (3.3.3)
-    DryIoc.dll (2.8.5)
+    DryIoc.dll (2.9.1)
     FluentAssertions (4.17)
     Moq (4.5.28)
       Castle.Core (>= 3.3.3)
@@ -30,4 +30,4 @@ NUGET
       Splunk.Logging.Common (>= 1.6)
     Splunk.Logging.Common (1.6.1)
       Newtonsoft.Json (>= 6.0.8)
-    VaraniumSharp (1.6.2)
+    VaraniumSharp (1.7)
