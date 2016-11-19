@@ -30,7 +30,7 @@ namespace VaraniumSharp.Initiator.DependencyInjection
         /// </summary>
         /// <typeparam name="TService">Service to resolve</typeparam>
         /// <returns>Resolved service</returns>
-        public TService Resolve<TService>()
+        public override TService Resolve<TService>()
         {
             return _container.Resolve<TService>();
         }
@@ -40,7 +40,7 @@ namespace VaraniumSharp.Initiator.DependencyInjection
         /// </summary>
         /// <typeparam name="TService">Interface or parent class that children are registered under</typeparam>
         /// <returns>Collection of children classes that inherit from the parent or implement the interface</returns>
-        public IEnumerable<TService> ResolveMany<TService>()
+        public override IEnumerable<TService> ResolveMany<TService>()
         {
             return _container.ResolveMany<TService>();
         }
