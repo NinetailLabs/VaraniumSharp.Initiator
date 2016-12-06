@@ -41,7 +41,7 @@ namespace VaraniumSharp.Initiator.Configuration
                 IsActive = false;
                 return;
             }
-            serilogConfiguration.WriteTo.EventCollector(SplunkHost, SplunkHost);
+            serilogConfiguration.WriteTo.EventCollector(SplunkHost, SplunkToken);
             IsActive = true;
         }
 
