@@ -58,6 +58,23 @@ namespace VaraniumSharp.Initiator.Tests.DependencyInjection
         }
 
         [Test]
+        public void MultiTypeRegistrationSingletonsWorkCorrectly()
+        {
+            // arrange
+            var sut = new ContainerSetup();
+
+            // act
+            sut.RetrieveConcretionClassesRequiringRegistration(true);
+
+            // assert
+            var resolvedClasses = sut.ResolveMany<ITestInterfaceDummy>().ToList();
+            var interfaceResolvedClass = resolvedClasses.FirstOrDefault(t => t.GetType() == typeof(ImplementationClassDummy));
+            var directlyResolvedClass = sut.Resolve<ImplementationClassDummy>();
+
+            interfaceResolvedClass.Should().Be(directlyResolvedClass);
+        }
+
+        [Test]
         public void SetupContainter()
         {
             // arrange
@@ -105,27 +122,27 @@ namespace VaraniumSharp.Initiator.Tests.DependencyInjection
 
         [AutomaticContainerRegistration(typeof(AutoRegistrationDummy))]
         private class AutoRegistrationDummy
-        {}
+        { }
 
         [AutomaticContainerRegistration(typeof(SingletonDummy), ServiceReuse.Singleton)]
         private class SingletonDummy
-        {}
+        { }
 
         [AutomaticConcretionContainerRegistration]
         private abstract class BaseClassDummy
-        {}
+        { }
 
         private class InheritorClassDummy : BaseClassDummy
-        {}
+        { }
 
         [AutomaticConcretionContainerRegistration(ServiceReuse.Singleton)]
         private interface ITestInterfaceDummy
-        {}
+        { }
 
         private class ImplementationClassDummy : ITestInterfaceDummy
-        {}
+        { }
 
         private class ImplmentationClassTooDummy : ITestInterfaceDummy
-        {}
+        { }
     }
 }
