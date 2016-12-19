@@ -75,7 +75,10 @@ namespace VaraniumSharp.Initiator.DependencyInjection
                 var registrationAttribute =
                     (AutomaticConcretionContainerRegistrationAttribute)
                     @class.Key.GetCustomAttribute(typeof(AutomaticConcretionContainerRegistrationAttribute));
-                @class.Value.ForEach(x => _container.Register(@class.Key, x, registrationAttribute.Reuse.ConvertFromVaraniumReuse()));
+                @class.Value.ForEach(x =>
+                {
+                    _container.RegisterMany(new[] { @class.Key, x }, x, registrationAttribute.Reuse.ConvertFromVaraniumReuse());
+                });
             }
         }
 
