@@ -1,33 +1,93 @@
 FRAMEWORK: >= NET462
 NUGET
-  remote: http://api.nuget.org/v3/index.json
-    Castle.Core (3.3.3)
-    DryIoc.dll (2.9.1)
-    FluentAssertions (4.17)
-    Moq (4.5.28)
+  remote: https://api.nuget.org/v3/index.json
+    Castle.Core (4.0)
+    DryIoc.dll (2.9.7)
+    FluentAssertions (4.18)
+    Microsoft.Win32.Primitives (4.3) - framework: >= net463
+    Moq (4.5.30)
       Castle.Core (>= 3.3.3)
+    NETStandard.Library (1.6.1) - framework: >= net463
+      Microsoft.Win32.Primitives (>= 4.3)
+      System.AppContext (>= 4.3)
+      System.Collections.Concurrent (>= 4.3)
+      System.Console (>= 4.3)
+      System.Diagnostics.Tracing (>= 4.3)
+      System.Globalization.Calendars (>= 4.3)
+      System.IO.Compression (>= 4.3)
+      System.IO.Compression.ZipFile (>= 4.3)
+      System.IO.FileSystem (>= 4.3)
+      System.IO.FileSystem.Primitives (>= 4.3)
+      System.Net.Http (>= 4.3)
+      System.Net.Sockets (>= 4.3)
+      System.Runtime.Handles (>= 4.3)
+      System.Runtime.InteropServices (>= 4.3)
+      System.Runtime.InteropServices.RuntimeInformation (>= 4.3)
+      System.Runtime.Numerics (>= 4.3)
+      System.Security.Cryptography.Algorithms (>= 4.3)
+      System.Security.Cryptography.Encoding (>= 4.3)
+      System.Security.Cryptography.Primitives (>= 4.3)
+      System.Security.Cryptography.X509Certificates (>= 4.3)
+      System.Threading.Timer (>= 4.3)
     Newtonsoft.Json (9.0.1)
-    NUnit (3.5)
+    NUnit (3.6)
+      NETStandard.Library (>= 1.6) - framework: >= net463
+      System.Runtime.Loader (>= 4.0) - framework: >= net463
     SemVer.Git.MSBuild (1.1) - content: once
     Serilog (2.3)
     Serilog.Formatting.Compact (1.0)
       Serilog (>= 2.0)
     Serilog.Sinks.ColoredConsole (2.0)
       Serilog (>= 2.0)
-    Serilog.Sinks.File (3.1.1)
+    Serilog.Sinks.File (3.2)
       Serilog (>= 2.3)
     Serilog.Sinks.PeriodicBatching (2.1)
       Serilog (>= 2.0)
-    Serilog.Sinks.RollingFile (3.2)
-      Serilog.Sinks.File (>= 3.1)
-    Serilog.Sinks.Seq (3.1.1)
-      Serilog (>= 2.2)
+    Serilog.Sinks.RollingFile (3.3)
+      Serilog.Sinks.File (>= 3.2)
+    Serilog.Sinks.Seq (3.2)
+      Serilog (>= 2.3)
       Serilog.Formatting.Compact (>= 1.0)
+      Serilog.Sinks.File (>= 3.2)
       Serilog.Sinks.PeriodicBatching (>= 2.1)
-      Serilog.Sinks.RollingFile (>= 3.0)
-    Serilog.Sinks.Splunk (2.1.1)
+      Serilog.Sinks.RollingFile (>= 3.3)
+    Serilog.Sinks.Splunk (2.1.2)
       Serilog (>= 2.2)
       Splunk.Logging.Common (>= 1.6)
     Splunk.Logging.Common (1.6.1)
       Newtonsoft.Json (>= 6.0.8)
-    VaraniumSharp (1.7)
+    System.AppContext (4.3) - framework: >= net463
+    System.Collections.Concurrent (4.3) - framework: >= net463
+    System.Console (4.3) - framework: >= net463
+    System.Diagnostics.DiagnosticSource (4.3) - framework: >= net463
+    System.Diagnostics.Tracing (4.3) - framework: >= net463
+    System.Globalization.Calendars (4.3) - framework: >= net463
+    System.IO (4.3) - framework: >= net463
+    System.IO.Compression (4.3) - framework: >= net463
+    System.IO.Compression.ZipFile (4.3) - framework: >= net463
+    System.IO.FileSystem (4.3) - framework: >= net463
+      System.IO.FileSystem.Primitives (>= 4.3)
+    System.IO.FileSystem.Primitives (4.3)
+    System.Net.Http (4.3) - framework: >= net463
+      System.Diagnostics.DiagnosticSource (>= 4.3)
+      System.Security.Cryptography.X509Certificates (>= 4.3)
+    System.Net.Sockets (4.3) - framework: >= net463
+    System.Runtime (4.3)
+    System.Runtime.Handles (4.3) - framework: >= net463
+    System.Runtime.InteropServices (4.3) - framework: >= net463
+      System.Runtime (>= 4.3)
+    System.Runtime.InteropServices.RuntimeInformation (4.3) - framework: >= net463
+    System.Runtime.Loader (4.3) - framework: >= net463
+    System.Runtime.Numerics (4.3) - framework: >= net463
+    System.Security.Cryptography.Algorithms (4.3)
+      System.IO (>= 4.3) - framework: >= net463
+      System.Runtime (>= 4.3) - framework: >= net463
+      System.Security.Cryptography.Encoding (>= 4.3) - framework: >= net463
+      System.Security.Cryptography.Primitives (>= 4.3) - framework: >= net463
+    System.Security.Cryptography.Encoding (4.3)
+    System.Security.Cryptography.Primitives (4.3)
+    System.Security.Cryptography.X509Certificates (4.3)
+      System.Security.Cryptography.Algorithms (>= 4.3)
+      System.Security.Cryptography.Encoding (>= 4.3)
+    System.Threading.Timer (4.3) - framework: >= net463
+    VaraniumSharp (1.9)
