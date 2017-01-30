@@ -63,7 +63,17 @@ namespace VaraniumSharp.Initiator.DependencyInjection
                 var registrationAttribute =
                     (AutomaticContainerRegistrationAttribute)
                     @class.GetCustomAttribute(typeof(AutomaticContainerRegistrationAttribute));
-                _container.Register(registrationAttribute.ServiceType, @class, registrationAttribute.Reuse.ConvertFromVaraniumReuse());
+
+                if (registrationAttribute.MultipleConstructors)
+                {
+                    _container.Register(registrationAttribute.ServiceType, @class,
+                        registrationAttribute.Reuse.ConvertFromVaraniumReuse(),
+                        FactoryMethod.ConstructorWithResolvableArguments);
+                }
+                else
+                {
+                    _container.Register(registrationAttribute.ServiceType, @class, registrationAttribute.Reuse.ConvertFromVaraniumReuse());
+                }
             }
         }
 
@@ -77,7 +87,14 @@ namespace VaraniumSharp.Initiator.DependencyInjection
                     @class.Key.GetCustomAttribute(typeof(AutomaticConcretionContainerRegistrationAttribute));
                 @class.Value.ForEach(x =>
                 {
-                    _container.RegisterMany(new[] { @class.Key, x }, x, registrationAttribute.Reuse.ConvertFromVaraniumReuse());
+                    if (registrationAttribute.MultipleConstructors)
+                    {
+                        _container.RegisterMany(new[] { @class.Key, x }, x, registrationAttribute.Reuse.ConvertFromVaraniumReuse(), FactoryMethod.ConstructorWithResolvableArguments);
+                    }
+                    else
+                    {
+                        _container.RegisterMany(new[] { @class.Key, x }, x, registrationAttribute.Reuse.ConvertFromVaraniumReuse());
+                    }
                 });
             }
         }
