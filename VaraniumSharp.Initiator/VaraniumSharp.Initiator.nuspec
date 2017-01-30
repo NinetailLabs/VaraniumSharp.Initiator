@@ -29,7 +29,7 @@
    </metadata>
   
    <files>
-      <file src="/bin/Release/VaraniumSharp.Initiator.dll" target="lib/net462" />
-      <file src="/bin/Release/VaraniumSharp.Initiator.xml" target="lib/net462" />      
+      <file src="./bin/Release/VaraniumSharp.Initiator.dll" target="lib\net462" />
+      <file src="./bin/Release/VaraniumSharp.Initiator.xml" target="lib\net462" />      
    </files>
 </package>

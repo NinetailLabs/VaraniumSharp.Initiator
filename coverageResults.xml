@@ -1,0 +1,819 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CoverageSession xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Summary numSequencePoints="74" visitedSequencePoints="74" numBranchPoints="41" visitedBranchPoints="41" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="3" minCyclomaticComplexity="1" visitedClasses="8" numClasses="8" visitedMethods="25" numMethods="25" />
+  <Modules>
+    <Module skippedDueTo="Filter" hash="7F-4E-EA-3B-6F-54-D3-91-5E-FE-62-68-9E-42-98-12-3C-7D-D8-12">
+      <ModulePath>C:\WINDOWS\Microsoft.Net\assembly\GAC_64\mscorlib\v4.0_4.0.0.0__b77a5c561934e089\mscorlib.dll</ModulePath>
+      <ModuleTime>2016-07-16T11:43:57.1242712Z</ModuleTime>
+      <ModuleName>mscorlib</ModuleName>
+      <Classes />
+    </Module>
+    <Module skippedDueTo="Filter" hash="36-DA-C9-14-56-26-60-F9-D2-E5-48-FA-0D-E8-06-9E-0B-A7-60-96">
+      <ModulePath>C:\Projects\Experiments\VSI\tools\NUnit.ConsoleRunner\tools\nunit3-console.exe</ModulePath>
+      <ModuleTime>2017-01-14T15:50:34Z</ModuleTime>
+      <ModuleName>nunit3-console</ModuleName>
+      <Classes />
+    </Module>
+    <Module skippedDueTo="Filter" hash="2F-06-CB-9E-45-EB-3F-7A-7A-0E-09-BA-75-25-0C-EF-AA-90-8E-2B">
+      <ModulePath>C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System\v4.0_4.0.0.0__b77a5c561934e089\System.dll</ModulePath>
+      <ModuleTime>2016-07-16T11:43:55.5461496Z</ModuleTime>
+      <ModuleName>System</ModuleName>
+      <Classes />
+    </Module>
+    <Module skippedDueTo="Filter" hash="75-F9-05-10-1C-B9-7B-C1-01-D6-98-7E-4B-DF-1D-61-E9-C1-AE-FF">
+      <ModulePath>C:\Projects\Experiments\VSI\tools\NUnit.ConsoleRunner\tools\nunit.engine.api.dll</ModulePath>
+      <ModuleTime>2017-01-14T15:50:34Z</ModuleTime>
+      <ModuleName>nunit.engine.api</ModuleName>
+      <Classes />
+    </Module>
+    <Module skippedDueTo="Filter" hash="EA-8F-74-A7-D0-EB-83-48-84-E6-88-AB-86-78-E2-32-3B-75-51-03">
+      <ModulePath>C:\Projects\Experiments\VSI\tools\NUnit.ConsoleRunner\tools\nunit.engine.dll</ModulePath>
+      <ModuleTime>2017-01-14T15:50:34Z</ModuleTime>
+      <ModuleName>nunit.engine</ModuleName>
+      <Classes />
+    </Module>
+    <Module skippedDueTo="Filter" hash="EA-8F-74-A7-D0-EB-83-48-84-E6-88-AB-86-78-E2-32-3B-75-51-03">
+      <ModulePath>C:\Projects\Experiments\VSI\tools\NUnit.ConsoleRunner\tools\nunit.engine.dll</ModulePath>
+      <ModuleTime>2017-01-14T15:50:34Z</ModuleTime>
+      <ModuleName>nunit.engine</ModuleName>
+      <Classes />
+    </Module>
+    <Module skippedDueTo="Filter" hash="88-45-F0-9C-3C-9F-72-79-CB-6A-82-FA-D7-DB-C3-4A-59-80-3C-6B">
+      <ModulePath>C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Xml\v4.0_4.0.0.0__b77a5c561934e089\System.Xml.dll</ModulePath>
+      <ModuleTime>2016-07-16T11:43:55.4992744Z</ModuleTime>
+      <ModuleName>System.Xml</ModuleName>
+      <Classes />
+    </Module>
+    <Module skippedDueTo="Filter" hash="55-AD-EE-D1-1C-53-49-75-E3-88-58-79-CF-B4-C2-5D-9B-C6-56-C1">
+      <ModulePath>C:\WINDOWS\Microsoft.Net\assembly\GAC_64\System.Web\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Web.dll</ModulePath>
+      <ModuleTime>2016-07-16T11:43:59.421142Z</ModuleTime>
+      <ModuleName>System.Web</ModuleName>
+      <Classes />
+    </Module>
+    <Module skippedDueTo="Filter" hash="A6-44-D7-5C-2C-AA-24-6D-2E-64-A4-48-13-C2-22-F5-E4-2D-CE-96">
+      <ModulePath>C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Runtime.Remoting\v4.0_4.0.0.0__b77a5c561934e089\System.Runtime.Remoting.dll</ModulePath>
+      <ModuleTime>2016-07-16T11:43:55.4680251Z</ModuleTime>
+      <ModuleName>System.Runtime.Remoting</ModuleName>
+      <Classes />
+    </Module>
+    <Module skippedDueTo="Filter" hash="34-A3-5D-67-8E-E7-DB-60-FE-97-F3-BD-D4-E7-40-6B-00-DA-51-C8">
+      <ModulePath>C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Configuration\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Configuration.dll</ModulePath>
+      <ModuleTime>2016-07-16T11:43:53.9992781Z</ModuleTime>
+      <ModuleName>System.Configuration</ModuleName>
+      <Classes />
+    </Module>
+    <Module skippedDueTo="Filter" hash="8A-2E-8F-D6-9D-39-02-4A-2F-30-FC-06-42-F7-0F-A8-32-69-07-72">
+      <ModulePath>C:\Projects\Experiments\VSI\tools\NUnit.ConsoleRunner\tools\Mono.Cecil.dll</ModulePath>
+      <ModuleTime>2017-01-14T15:50:34Z</ModuleTime>
+      <ModuleName>Mono.Cecil</ModuleName>
+      <Classes />
+    </Module>
+    <Module skippedDueTo="Filter" hash="7F-4E-EA-3B-6F-54-D3-91-5E-FE-62-68-9E-42-98-12-3C-7D-D8-12">
+      <ModulePath>C:\WINDOWS\Microsoft.Net\assembly\GAC_64\mscorlib\v4.0_4.0.0.0__b77a5c561934e089\mscorlib.dll</ModulePath>
+      <ModuleTime>2016-07-16T11:43:57.1242712Z</ModuleTime>
+      <ModuleName>mscorlib</ModuleName>
+      <Classes />
+    </Module>
+    <Module skippedDueTo="Filter" hash="3A-86-9C-58-4F-41-41-99-62-6C-3F-CD-EC-47-58-C3-ED-0D-B6-24">
+      <ModulePath>C:\Projects\Experiments\VSI\tools\NUnit.ConsoleRunner\tools\nunit-agent.exe</ModulePath>
+      <ModuleTime>2017-01-14T15:50:34Z</ModuleTime>
+      <ModuleName>nunit-agent</ModuleName>
+      <Classes />
+    </Module>
+    <Module skippedDueTo="Filter" hash="EA-8F-74-A7-D0-EB-83-48-84-E6-88-AB-86-78-E2-32-3B-75-51-03">
+      <ModulePath>C:\Projects\Experiments\VSI\tools\NUnit.ConsoleRunner\tools\nunit.engine.dll</ModulePath>
+      <ModuleTime>2017-01-14T15:50:34Z</ModuleTime>
+      <ModuleName>nunit.engine</ModuleName>
+      <Classes />
+    </Module>
+    <Module skippedDueTo="Filter" hash="75-F9-05-10-1C-B9-7B-C1-01-D6-98-7E-4B-DF-1D-61-E9-C1-AE-FF">
+      <ModulePath>C:\Projects\Experiments\VSI\tools\NUnit.ConsoleRunner\tools\nunit.engine.api.dll</ModulePath>
+      <ModuleTime>2017-01-14T15:50:34Z</ModuleTime>
+      <ModuleName>nunit.engine.api</ModuleName>
+      <Classes />
+    </Module>
+    <Module skippedDueTo="Filter" hash="2F-06-CB-9E-45-EB-3F-7A-7A-0E-09-BA-75-25-0C-EF-AA-90-8E-2B">
+      <ModulePath>C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System\v4.0_4.0.0.0__b77a5c561934e089\System.dll</ModulePath>
+      <ModuleTime>2016-07-16T11:43:55.5461496Z</ModuleTime>
+      <ModuleName>System</ModuleName>
+      <Classes />
+    </Module>
+    <Module skippedDueTo="Filter" hash="A6-44-D7-5C-2C-AA-24-6D-2E-64-A4-48-13-C2-22-F5-E4-2D-CE-96">
+      <ModulePath>C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Runtime.Remoting\v4.0_4.0.0.0__b77a5c561934e089\System.Runtime.Remoting.dll</ModulePath>
+      <ModuleTime>2016-07-16T11:43:55.4680251Z</ModuleTime>
+      <ModuleName>System.Runtime.Remoting</ModuleName>
+      <Classes />
+    </Module>
+    <Module skippedDueTo="Filter" hash="88-45-F0-9C-3C-9F-72-79-CB-6A-82-FA-D7-DB-C3-4A-59-80-3C-6B">
+      <ModulePath>C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Xml\v4.0_4.0.0.0__b77a5c561934e089\System.Xml.dll</ModulePath>
+      <ModuleTime>2016-07-16T11:43:55.4992744Z</ModuleTime>
+      <ModuleName>System.Xml</ModuleName>
+      <Classes />
+    </Module>
+    <Module skippedDueTo="Filter" hash="55-AD-EE-D1-1C-53-49-75-E3-88-58-79-CF-B4-C2-5D-9B-C6-56-C1">
+      <ModulePath>C:\WINDOWS\Microsoft.Net\assembly\GAC_64\System.Web\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Web.dll</ModulePath>
+      <ModuleTime>2016-07-16T11:43:59.421142Z</ModuleTime>
+      <ModuleName>System.Web</ModuleName>
+      <Classes />
+    </Module>
+    <Module skippedDueTo="Filter" hash="34-A3-5D-67-8E-E7-DB-60-FE-97-F3-BD-D4-E7-40-6B-00-DA-51-C8">
+      <ModulePath>C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Configuration\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Configuration.dll</ModulePath>
+      <ModuleTime>2016-07-16T11:43:53.9992781Z</ModuleTime>
+      <ModuleName>System.Configuration</ModuleName>
+      <Classes />
+    </Module>
+    <Module skippedDueTo="Filter" hash="8A-2E-8F-D6-9D-39-02-4A-2F-30-FC-06-42-F7-0F-A8-32-69-07-72">
+      <ModulePath>C:\Projects\Experiments\VSI\tools\NUnit.ConsoleRunner\tools\Mono.Cecil.dll</ModulePath>
+      <ModuleTime>2017-01-14T15:50:34Z</ModuleTime>
+      <ModuleName>Mono.Cecil</ModuleName>
+      <Classes />
+    </Module>
+    <Module skippedDueTo="Filter" hash="45-EA-4E-AC-19-19-00-3D-32-48-A5-9E-F4-BA-10-51-33-E1-F3-41">
+      <ModulePath>C:\Projects\Experiments\VSI\VaraniumSharp.Initiator.Tests\bin\Release\nunit.framework.dll</ModulePath>
+      <ModuleTime>2017-01-09T18:17:16Z</ModuleTime>
+      <ModuleName>nunit.framework</ModuleName>
+      <Classes />
+    </Module>
+    <Module skippedDueTo="Filter" hash="2F-06-CB-9E-45-EB-3F-7A-7A-0E-09-BA-75-25-0C-EF-AA-90-8E-2B">
+      <ModulePath>C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System\v4.0_4.0.0.0__b77a5c561934e089\System.dll</ModulePath>
+      <ModuleTime>2016-07-16T11:43:55.5461496Z</ModuleTime>
+      <ModuleName>System</ModuleName>
+      <Classes />
+    </Module>
+    <Module skippedDueTo="Filter" hash="E5-DE-BE-E6-36-3A-18-9D-19-75-10-62-04-4B-5A-43-5C-48-C4-34">
+      <ModulePath>C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Core\v4.0_4.0.0.0__b77a5c561934e089\System.Core.dll</ModulePath>
+      <ModuleTime>2016-07-16T11:43:57.1711464Z</ModuleTime>
+      <ModuleName>System.Core</ModuleName>
+      <Classes />
+    </Module>
+    <Module skippedDueTo="Filter" hash="55-AD-EE-D1-1C-53-49-75-E3-88-58-79-CF-B4-C2-5D-9B-C6-56-C1">
+      <ModulePath>C:\WINDOWS\Microsoft.Net\assembly\GAC_64\System.Web\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Web.dll</ModulePath>
+      <ModuleTime>2016-07-16T11:43:59.421142Z</ModuleTime>
+      <ModuleName>System.Web</ModuleName>
+      <Classes />
+    </Module>
+    <Module skippedDueTo="Filter" hash="64-6D-60-94-89-14-F7-C0-BD-34-F3-49-D1-ED-73-C6-F4-19-06-A5">
+      <ModulePath>C:\Projects\Experiments\VSI\VaraniumSharp.Initiator.Tests\bin\Release\VaraniumSharp.Initiator.Tests.dll</ModulePath>
+      <ModuleTime>2017-01-30T15:44:03.9305087Z</ModuleTime>
+      <ModuleName>VaraniumSharp.Initiator.Tests</ModuleName>
+      <Classes />
+    </Module>
+    <Module skippedDueTo="Filter" hash="56-4A-64-53-D9-75-58-F5-D7-31-5F-D9-12-C6-D0-D9-61-C4-47-9D">
+      <ModulePath>C:\Projects\Experiments\VSI\VaraniumSharp.Initiator.Tests\bin\Release\VaraniumSharp.dll</ModulePath>
+      <ModuleTime>2017-01-26T16:33:36Z</ModuleTime>
+      <ModuleName>VaraniumSharp</ModuleName>
+      <Classes />
+    </Module>
+    <Module skippedDueTo="Filter" hash="88-45-F0-9C-3C-9F-72-79-CB-6A-82-FA-D7-DB-C3-4A-59-80-3C-6B">
+      <ModulePath>C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Xml\v4.0_4.0.0.0__b77a5c561934e089\System.Xml.dll</ModulePath>
+      <ModuleTime>2016-07-16T11:43:55.4992744Z</ModuleTime>
+      <ModuleName>System.Xml</ModuleName>
+      <Classes />
+    </Module>
+    <Module skippedDueTo="Filter" hash="E1-E3-12-E7-0A-C5-44-50-7A-9C-49-1F-E2-A4-3A-61-78-7D-40-63">
+      <ModulePath>C:\Projects\Experiments\VSI\VaraniumSharp.Initiator.Tests\bin\Release\Moq.dll</ModulePath>
+      <ModuleTime>2017-01-09T02:04:24Z</ModuleTime>
+      <ModuleName>Moq</ModuleName>
+      <Classes />
+    </Module>
+    <Module skippedDueTo="Filter" hash="04-80-27-9F-37-0E-E9-69-49-2E-C7-6F-64-F0-FD-2B-92-09-C9-31">
+      <ModulePath>C:\Projects\Experiments\VSI\VaraniumSharp.Initiator.Tests\bin\Release\Serilog.dll</ModulePath>
+      <ModuleTime>2016-10-04T23:38:08Z</ModuleTime>
+      <ModuleName>Serilog</ModuleName>
+      <Classes />
+    </Module>
+    <Module hash="1A-86-90-01-51-C3-90-86-67-17-9F-49-8A-A3-EB-AE-1D-02-89-D1">
+      <Summary numSequencePoints="74" visitedSequencePoints="74" numBranchPoints="41" visitedBranchPoints="41" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="3" minCyclomaticComplexity="1" visitedClasses="8" numClasses="8" visitedMethods="25" numMethods="25" />
+      <ModulePath>C:\Projects\Experiments\VSI\VaraniumSharp.Initiator.Tests\bin\Release\VaraniumSharp.Initiator.dll</ModulePath>
+      <ModuleTime>2017-01-30T15:44:03.7403602Z</ModuleTime>
+      <ModuleName>VaraniumSharp.Initiator</ModuleName>
+      <Files>
+        <File uid="1" fullPath="C:\Projects\Experiments\VSI\VaraniumSharp.Initiator\DependencyInjection\ContainerSetup.cs" />
+        <File uid="3" fullPath="C:\Projects\Experiments\VSI\VaraniumSharp.Initiator\DependencyInjection\ServiceReuseExtensions.cs" />
+        <File uid="4" fullPath="C:\Projects\Experiments\VSI\VaraniumSharp.Initiator\Configuration\ConsoleLoggingConfiguration.cs" />
+        <File uid="5" fullPath="C:\Projects\Experiments\VSI\VaraniumSharp.Initiator\Configuration\FileLoggingConfiguration.cs" />
+        <File uid="6" fullPath="C:\Projects\Experiments\VSI\VaraniumSharp.Initiator\Configuration\SeqLoggingConfiguration.cs" />
+        <File uid="7" fullPath="C:\Projects\Experiments\VSI\VaraniumSharp.Initiator\Configuration\SplunkLoggingConfiguration.cs" />
+        <File uid="8" fullPath="C:\Projects\Experiments\VSI\VaraniumSharp.Initiator\Configuration\BaseLogConfiguration.cs" />
+      </Files>
+      <Classes>
+        <Class>
+          <Summary numSequencePoints="0" visitedSequencePoints="0" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" visitedClasses="0" numClasses="0" visitedMethods="0" numMethods="0" />
+          <FullName>&lt;Module&gt;</FullName>
+          <Methods />
+        </Class>
+        <Class>
+          <Summary numSequencePoints="0" visitedSequencePoints="0" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" visitedClasses="0" numClasses="0" visitedMethods="0" numMethods="0" />
+          <FullName>VaraniumSharp.Initiator.Enumerations.ConfigurationKeys</FullName>
+          <Methods />
+        </Class>
+        <Class>
+          <Summary numSequencePoints="20" visitedSequencePoints="20" numBranchPoints="7" visitedBranchPoints="7" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="3" minCyclomaticComplexity="1" visitedClasses="1" numClasses="1" visitedMethods="5" numMethods="5" />
+          <FullName>VaraniumSharp.Initiator.DependencyInjection.ContainerSetup</FullName>
+          <Methods>
+            <Method visited="true" cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="100" branchCoverage="100" isConstructor="true" isStatic="false" isGetter="false" isSetter="false">
+              <Summary numSequencePoints="3" visitedSequencePoints="3" numBranchPoints="1" visitedBranchPoints="1" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663297</MetadataToken>
+              <Name>System.Void VaraniumSharp.Initiator.DependencyInjection.ContainerSetup::.ctor()</Name>
+              <FileRef uid="1" />
+              <SequencePoints>
+                <SequencePoint vc="9" uspid="1" ordinal="0" offset="0" sl="19" sc="9" el="19" ec="32" bec="0" bev="0" fileid="1" />
+                <SequencePoint vc="9" uspid="2" ordinal="1" offset="6" sl="21" sc="13" el="21" ec="42" bec="0" bev="0" fileid="1" />
+                <SequencePoint vc="9" uspid="3" ordinal="2" offset="17" sl="22" sc="9" el="22" ec="10" bec="0" bev="0" fileid="1" />
+              </SequencePoints>
+              <BranchPoints />
+              <MethodPoint xsi:type="SequencePoint" vc="9" uspid="1" ordinal="0" offset="0" sl="19" sc="9" el="19" ec="32" bec="0" bev="0" fileid="1" />
+            </Method>
+            <Method visited="true" cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="100" branchCoverage="100" isConstructor="false" isStatic="false" isGetter="false" isSetter="false">
+              <Summary numSequencePoints="1" visitedSequencePoints="1" numBranchPoints="1" visitedBranchPoints="1" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663298</MetadataToken>
+              <Name>TService VaraniumSharp.Initiator.DependencyInjection.ContainerSetup::Resolve()</Name>
+              <FileRef uid="1" />
+              <SequencePoints>
+                <SequencePoint vc="6" uspid="4" ordinal="0" offset="0" sl="35" sc="13" el="35" ec="51" bec="0" bev="0" fileid="1" />
+              </SequencePoints>
+              <BranchPoints />
+              <MethodPoint xsi:type="SequencePoint" vc="6" uspid="4" ordinal="0" offset="0" sl="35" sc="13" el="35" ec="51" bec="0" bev="0" fileid="1" />
+            </Method>
+            <Method visited="true" cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="100" branchCoverage="100" isConstructor="false" isStatic="false" isGetter="false" isSetter="false">
+              <Summary numSequencePoints="1" visitedSequencePoints="1" numBranchPoints="1" visitedBranchPoints="1" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663299</MetadataToken>
+              <Name>System.Collections.Generic.IEnumerable`1&lt;TService&gt; VaraniumSharp.Initiator.DependencyInjection.ContainerSetup::ResolveMany()</Name>
+              <FileRef uid="1" />
+              <SequencePoints>
+                <SequencePoint vc="5" uspid="5" ordinal="0" offset="0" sl="45" sc="13" el="45" ec="55" bec="0" bev="0" fileid="1" />
+              </SequencePoints>
+              <BranchPoints />
+              <MethodPoint xsi:type="SequencePoint" vc="5" uspid="5" ordinal="0" offset="0" sl="45" sc="13" el="45" ec="55" bec="0" bev="0" fileid="1" />
+            </Method>
+            <Method visited="true" cyclomaticComplexity="3" nPathComplexity="2" sequenceCoverage="100" branchCoverage="100" isConstructor="false" isStatic="false" isGetter="false" isSetter="false">
+              <Summary numSequencePoints="9" visitedSequencePoints="9" numBranchPoints="3" visitedBranchPoints="3" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="3" minCyclomaticComplexity="3" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663300</MetadataToken>
+              <Name>System.Void VaraniumSharp.Initiator.DependencyInjection.ContainerSetup::RegisterClasses()</Name>
+              <FileRef uid="1" />
+              <SequencePoints>
+                <SequencePoint vc="4" uspid="6" ordinal="0" offset="0" sl="61" sc="36" el="61" ec="53" bec="0" bev="0" fileid="1" />
+                <SequencePoint vc="12" uspid="7" ordinal="1" offset="14" sl="61" sc="22" el="61" ec="32" bec="0" bev="0" fileid="1" />
+                <SequencePoint vc="12" uspid="8" ordinal="2" offset="22" sl="63" sc="17" el="65" ec="96" bec="0" bev="0" fileid="1" />
+                <SequencePoint vc="12" uspid="9" ordinal="3" offset="44" sl="67" sc="17" el="67" ec="64" bec="2" bev="2" fileid="1" />
+                <SequencePoint vc="4" uspid="10" ordinal="4" offset="52" sl="69" sc="21" el="71" ec="75" bec="0" bev="0" fileid="1" />
+                <SequencePoint vc="4" uspid="11" ordinal="5" offset="94" sl="72" sc="17" el="72" ec="18" bec="0" bev="0" fileid="1" />
+                <SequencePoint vc="8" uspid="12" ordinal="6" offset="96" sl="75" sc="21" el="75" ec="140" bec="0" bev="0" fileid="1" />
+                <SequencePoint vc="16" uspid="13" ordinal="7" offset="129" sl="61" sc="33" el="61" ec="35" bec="0" bev="0" fileid="1" />
+                <SequencePoint vc="4" uspid="14" ordinal="8" offset="154" sl="78" sc="9" el="78" ec="10" bec="0" bev="0" fileid="1" />
+              </SequencePoints>
+              <BranchPoints>
+                <BranchPoint vc="4" uspid="15" ordinal="0" offset="50" sl="67" path="0" offsetend="52" fileid="1" />
+                <BranchPoint vc="8" uspid="16" ordinal="1" offset="50" sl="67" path="1" offsetend="96" fileid="1" />
+              </BranchPoints>
+              <MethodPoint xsi:type="SequencePoint" vc="4" uspid="6" ordinal="0" offset="0" sl="61" sc="36" el="61" ec="53" bec="0" bev="0" fileid="1" />
+            </Method>
+            <Method visited="true" cyclomaticComplexity="2" nPathComplexity="0" sequenceCoverage="100" branchCoverage="100" isConstructor="false" isStatic="false" isGetter="false" isSetter="false">
+              <Summary numSequencePoints="6" visitedSequencePoints="6" numBranchPoints="1" visitedBranchPoints="1" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="2" minCyclomaticComplexity="2" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663301</MetadataToken>
+              <Name>System.Void VaraniumSharp.Initiator.DependencyInjection.ContainerSetup::RegisterConcretionClasses()</Name>
+              <FileRef uid="1" />
+              <SequencePoints>
+                <SequencePoint vc="5" uspid="19" ordinal="0" offset="0" sl="83" sc="36" el="83" ec="63" bec="0" bev="0" fileid="1" />
+                <SequencePoint vc="20" uspid="20" ordinal="1" offset="27" sl="83" sc="22" el="83" ec="32" bec="0" bev="0" fileid="1" />
+                <SequencePoint vc="20" uspid="21" ordinal="2" offset="53" sl="85" sc="17" el="87" ec="110" bec="0" bev="0" fileid="1" />
+                <SequencePoint vc="20" uspid="22" ordinal="3" offset="95" sl="88" sc="17" el="98" ec="20" bec="0" bev="0" fileid="1" />
+                <SequencePoint vc="25" uspid="23" ordinal="4" offset="128" sl="83" sc="33" el="83" ec="35" bec="0" bev="0" fileid="1" />
+                <SequencePoint vc="5" uspid="24" ordinal="5" offset="153" sl="100" sc="9" el="100" ec="10" bec="0" bev="0" fileid="1" />
+              </SequencePoints>
+              <BranchPoints />
+              <MethodPoint xsi:type="SequencePoint" vc="5" uspid="19" ordinal="0" offset="0" sl="83" sc="36" el="83" ec="63" bec="0" bev="0" fileid="1" />
+            </Method>
+          </Methods>
+        </Class>
+        <Class>
+          <Summary numSequencePoints="5" visitedSequencePoints="5" numBranchPoints="3" visitedBranchPoints="3" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="2" minCyclomaticComplexity="1" visitedClasses="1" numClasses="1" visitedMethods="1" numMethods="1" />
+          <FullName>VaraniumSharp.Initiator.DependencyInjection.ContainerSetup/&lt;&gt;c__DisplayClass5_0</FullName>
+          <Methods>
+            <Method visited="true" cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="0" branchCoverage="0" isConstructor="true" isStatic="false" isGetter="false" isSetter="false">
+              <Summary numSequencePoints="0" visitedSequencePoints="0" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="0" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="0" numMethods="0" />
+              <MetadataToken>100663326</MetadataToken>
+              <Name>System.Void VaraniumSharp.Initiator.DependencyInjection.ContainerSetup/&lt;&gt;c__DisplayClass5_0::.ctor()</Name>
+              <SequencePoints />
+              <BranchPoints />
+              <MethodPoint vc="20" uspid="27" ordinal="0" offset="0" />
+            </Method>
+            <Method visited="true" cyclomaticComplexity="2" nPathComplexity="2" sequenceCoverage="100" branchCoverage="100" isConstructor="false" isStatic="false" isGetter="false" isSetter="false">
+              <Summary numSequencePoints="5" visitedSequencePoints="5" numBranchPoints="3" visitedBranchPoints="3" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="2" minCyclomaticComplexity="2" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663327</MetadataToken>
+              <Name>System.Void VaraniumSharp.Initiator.DependencyInjection.ContainerSetup/&lt;&gt;c__DisplayClass5_0::&lt;RegisterConcretionClasses&gt;b__0(System.Type)</Name>
+              <FileRef uid="1" />
+              <SequencePoints>
+                <SequencePoint vc="40" uspid="28" ordinal="0" offset="0" sl="90" sc="21" el="90" ec="68" bec="2" bev="2" fileid="1" />
+                <SequencePoint vc="5" uspid="29" ordinal="1" offset="13" sl="92" sc="25" el="92" ec="183" bec="0" bev="0" fileid="1" />
+                <SequencePoint vc="5" uspid="30" ordinal="2" offset="93" sl="93" sc="21" el="93" ec="22" bec="0" bev="0" fileid="1" />
+                <SequencePoint vc="35" uspid="31" ordinal="3" offset="94" sl="96" sc="25" el="96" ec="133" bec="0" bev="0" fileid="1" />
+                <SequencePoint vc="35" uspid="32" ordinal="4" offset="165" sl="98" sc="17" el="98" ec="18" bec="0" bev="0" fileid="1" />
+              </SequencePoints>
+              <BranchPoints>
+                <BranchPoint vc="5" uspid="33" ordinal="0" offset="11" sl="90" path="0" offsetend="13" fileid="1" />
+                <BranchPoint vc="35" uspid="34" ordinal="1" offset="11" sl="90" path="1" offsetend="94" fileid="1" />
+              </BranchPoints>
+              <MethodPoint xsi:type="SequencePoint" vc="40" uspid="28" ordinal="0" offset="0" sl="90" sc="21" el="90" ec="68" bec="2" bev="2" fileid="1" />
+            </Method>
+          </Methods>
+        </Class>
+        <Class>
+          <Summary numSequencePoints="0" visitedSequencePoints="0" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="0" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="0" numMethods="0" />
+          <FullName>VaraniumSharp.Initiator.DependencyInjection.ContainerSetup/&lt;&gt;c__DisplayClass5_1</FullName>
+          <Methods>
+            <Method visited="true" cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="0" branchCoverage="0" isConstructor="true" isStatic="false" isGetter="false" isSetter="false">
+              <Summary numSequencePoints="0" visitedSequencePoints="0" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="0" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="0" numMethods="0" />
+              <MetadataToken>100663328</MetadataToken>
+              <Name>System.Void VaraniumSharp.Initiator.DependencyInjection.ContainerSetup/&lt;&gt;c__DisplayClass5_1::.ctor()</Name>
+              <SequencePoints />
+              <BranchPoints />
+              <MethodPoint vc="20" uspid="35" ordinal="0" offset="0" />
+            </Method>
+          </Methods>
+        </Class>
+        <Class>
+          <Summary numSequencePoints="5" visitedSequencePoints="5" numBranchPoints="3" visitedBranchPoints="3" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="2" minCyclomaticComplexity="2" visitedClasses="1" numClasses="1" visitedMethods="1" numMethods="1" />
+          <FullName>VaraniumSharp.Initiator.DependencyInjection.ServiceReuseExtensions</FullName>
+          <Methods>
+            <Method visited="true" cyclomaticComplexity="2" nPathComplexity="2" sequenceCoverage="100" branchCoverage="100" isConstructor="false" isStatic="true" isGetter="false" isSetter="false">
+              <Summary numSequencePoints="5" visitedSequencePoints="5" numBranchPoints="3" visitedBranchPoints="3" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="2" minCyclomaticComplexity="2" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663302</MetadataToken>
+              <Name>DryIoc.IReuse VaraniumSharp.Initiator.DependencyInjection.ServiceReuseExtensions::ConvertFromVaraniumReuse(VaraniumSharp.Enumerations.ServiceReuse)</Name>
+              <FileRef uid="3" />
+              <SequencePoints>
+                <SequencePoint vc="54" uspid="36" ordinal="0" offset="0" sl="21" sc="13" el="21" ec="26" bec="2" bev="2" fileid="3" />
+                <SequencePoint vc="35" uspid="37" ordinal="1" offset="4" sl="24" sc="21" el="24" ec="46" bec="0" bev="0" fileid="3" />
+                <SequencePoint vc="35" uspid="38" ordinal="2" offset="10" sl="25" sc="21" el="25" ec="27" bec="0" bev="0" fileid="3" />
+                <SequencePoint vc="19" uspid="39" ordinal="3" offset="12" sl="28" sc="21" el="28" ec="46" bec="0" bev="0" fileid="3" />
+                <SequencePoint vc="54" uspid="40" ordinal="4" offset="18" sl="31" sc="13" el="31" ec="27" bec="0" bev="0" fileid="3" />
+              </SequencePoints>
+              <BranchPoints>
+                <BranchPoint vc="35" uspid="41" ordinal="0" offset="2" sl="21" path="0" offsetend="4" fileid="3" />
+                <BranchPoint vc="19" uspid="42" ordinal="1" offset="2" sl="21" path="1" offsetend="12" fileid="3" />
+              </BranchPoints>
+              <MethodPoint xsi:type="SequencePoint" vc="54" uspid="36" ordinal="0" offset="0" sl="21" sc="13" el="21" ec="26" bec="2" bev="2" fileid="3" />
+            </Method>
+          </Methods>
+        </Class>
+        <Class>
+          <Summary numSequencePoints="7" visitedSequencePoints="7" numBranchPoints="4" visitedBranchPoints="4" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="2" minCyclomaticComplexity="1" visitedClasses="1" numClasses="1" visitedMethods="2" numMethods="2" />
+          <FullName>VaraniumSharp.Initiator.Configuration.ConsoleLoggingConfiguration</FullName>
+          <Methods>
+            <Method visited="true" cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="100" branchCoverage="100" isConstructor="false" isStatic="false" isGetter="true" isSetter="false">
+              <Summary numSequencePoints="1" visitedSequencePoints="1" numBranchPoints="1" visitedBranchPoints="1" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663303</MetadataToken>
+              <Name>System.Boolean VaraniumSharp.Initiator.Configuration.ConsoleLoggingConfiguration::get_LogToConsole()</Name>
+              <FileRef uid="4" />
+              <SequencePoints>
+                <SequencePoint vc="5" uspid="43" ordinal="0" offset="0" sl="17" sc="37" el="17" ec="97" bec="0" bev="0" fileid="4" />
+              </SequencePoints>
+              <BranchPoints />
+              <MethodPoint xsi:type="SequencePoint" vc="5" uspid="43" ordinal="0" offset="0" sl="17" sc="37" el="17" ec="97" bec="0" bev="0" fileid="4" />
+            </Method>
+            <Method visited="true" cyclomaticComplexity="2" nPathComplexity="2" sequenceCoverage="100" branchCoverage="100" isConstructor="false" isStatic="false" isGetter="false" isSetter="false">
+              <Summary numSequencePoints="6" visitedSequencePoints="6" numBranchPoints="3" visitedBranchPoints="3" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="2" minCyclomaticComplexity="2" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663304</MetadataToken>
+              <Name>System.Void VaraniumSharp.Initiator.Configuration.ConsoleLoggingConfiguration::LogSetup(Serilog.LoggerConfiguration)</Name>
+              <FileRef uid="4" />
+              <SequencePoints>
+                <SequencePoint vc="3" uspid="44" ordinal="0" offset="0" sl="29" sc="13" el="29" ec="31" bec="2" bev="2" fileid="4" />
+                <SequencePoint vc="2" uspid="45" ordinal="1" offset="8" sl="31" sc="17" el="31" ec="34" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="2" uspid="46" ordinal="2" offset="15" sl="32" sc="17" el="32" ec="24" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="1" uspid="47" ordinal="3" offset="16" sl="34" sc="13" el="34" ec="59" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="1" uspid="48" ordinal="4" offset="36" sl="35" sc="13" el="35" ec="29" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="1" uspid="49" ordinal="5" offset="43" sl="36" sc="9" el="36" ec="10" bec="0" bev="0" fileid="4" />
+              </SequencePoints>
+              <BranchPoints>
+                <BranchPoint vc="2" uspid="50" ordinal="0" offset="6" sl="29" path="0" offsetend="8" fileid="4" />
+                <BranchPoint vc="1" uspid="51" ordinal="1" offset="6" sl="29" path="1" offsetend="16" fileid="4" />
+              </BranchPoints>
+              <MethodPoint xsi:type="SequencePoint" vc="3" uspid="44" ordinal="0" offset="0" sl="29" sc="13" el="29" ec="31" bec="2" bev="2" fileid="4" />
+            </Method>
+            <Method visited="true" cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="0" branchCoverage="0" isConstructor="true" isStatic="false" isGetter="false" isSetter="false">
+              <Summary numSequencePoints="0" visitedSequencePoints="0" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="0" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="0" numMethods="0" />
+              <MetadataToken>100663305</MetadataToken>
+              <Name>System.Void VaraniumSharp.Initiator.Configuration.ConsoleLoggingConfiguration::.ctor()</Name>
+              <SequencePoints />
+              <BranchPoints />
+              <MethodPoint vc="3" uspid="52" ordinal="0" offset="0" />
+            </Method>
+          </Methods>
+        </Class>
+        <Class>
+          <Summary numSequencePoints="8" visitedSequencePoints="8" numBranchPoints="5" visitedBranchPoints="5" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="2" minCyclomaticComplexity="1" visitedClasses="1" numClasses="1" visitedMethods="3" numMethods="3" />
+          <FullName>VaraniumSharp.Initiator.Configuration.FileLoggingConfiguration</FullName>
+          <Methods>
+            <Method visited="true" cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="100" branchCoverage="100" isConstructor="false" isStatic="false" isGetter="true" isSetter="false">
+              <Summary numSequencePoints="1" visitedSequencePoints="1" numBranchPoints="1" visitedBranchPoints="1" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663306</MetadataToken>
+              <Name>System.String VaraniumSharp.Initiator.Configuration.FileLoggingConfiguration::get_LogFilePath()</Name>
+              <FileRef uid="5" />
+              <SequencePoints>
+                <SequencePoint vc="3" uspid="53" ordinal="0" offset="0" sl="17" sc="38" el="17" ec="99" bec="0" bev="0" fileid="5" />
+              </SequencePoints>
+              <BranchPoints />
+              <MethodPoint xsi:type="SequencePoint" vc="3" uspid="53" ordinal="0" offset="0" sl="17" sc="38" el="17" ec="99" bec="0" bev="0" fileid="5" />
+            </Method>
+            <Method visited="true" cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="100" branchCoverage="100" isConstructor="false" isStatic="false" isGetter="true" isSetter="false">
+              <Summary numSequencePoints="1" visitedSequencePoints="1" numBranchPoints="1" visitedBranchPoints="1" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663307</MetadataToken>
+              <Name>System.Boolean VaraniumSharp.Initiator.Configuration.FileLoggingConfiguration::get_LogToFile()</Name>
+              <FileRef uid="5" />
+              <SequencePoints>
+                <SequencePoint vc="4" uspid="54" ordinal="0" offset="0" sl="22" sc="34" el="22" ec="91" bec="0" bev="0" fileid="5" />
+              </SequencePoints>
+              <BranchPoints />
+              <MethodPoint xsi:type="SequencePoint" vc="4" uspid="54" ordinal="0" offset="0" sl="22" sc="34" el="22" ec="91" bec="0" bev="0" fileid="5" />
+            </Method>
+            <Method visited="true" cyclomaticComplexity="2" nPathComplexity="2" sequenceCoverage="100" branchCoverage="100" isConstructor="false" isStatic="false" isGetter="false" isSetter="false">
+              <Summary numSequencePoints="6" visitedSequencePoints="6" numBranchPoints="3" visitedBranchPoints="3" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="2" minCyclomaticComplexity="2" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663308</MetadataToken>
+              <Name>System.Void VaraniumSharp.Initiator.Configuration.FileLoggingConfiguration::LogSetup(Serilog.LoggerConfiguration)</Name>
+              <FileRef uid="5" />
+              <SequencePoints>
+                <SequencePoint vc="2" uspid="55" ordinal="0" offset="0" sl="34" sc="13" el="34" ec="28" bec="2" bev="2" fileid="5" />
+                <SequencePoint vc="1" uspid="56" ordinal="1" offset="8" sl="36" sc="17" el="36" ec="34" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="1" uspid="57" ordinal="2" offset="15" sl="37" sc="17" el="37" ec="24" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="1" uspid="58" ordinal="3" offset="16" sl="39" sc="13" el="39" ec="60" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="1" uspid="59" ordinal="4" offset="64" sl="40" sc="13" el="40" ec="29" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="1" uspid="60" ordinal="5" offset="71" sl="41" sc="9" el="41" ec="10" bec="0" bev="0" fileid="5" />
+              </SequencePoints>
+              <BranchPoints>
+                <BranchPoint vc="1" uspid="61" ordinal="0" offset="6" sl="34" path="0" offsetend="8" fileid="5" />
+                <BranchPoint vc="1" uspid="62" ordinal="1" offset="6" sl="34" path="1" offsetend="16" fileid="5" />
+              </BranchPoints>
+              <MethodPoint xsi:type="SequencePoint" vc="2" uspid="55" ordinal="0" offset="0" sl="34" sc="13" el="34" ec="28" bec="2" bev="2" fileid="5" />
+            </Method>
+            <Method visited="true" cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="0" branchCoverage="0" isConstructor="true" isStatic="false" isGetter="false" isSetter="false">
+              <Summary numSequencePoints="0" visitedSequencePoints="0" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="0" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="0" numMethods="0" />
+              <MetadataToken>100663309</MetadataToken>
+              <Name>System.Void VaraniumSharp.Initiator.Configuration.FileLoggingConfiguration::.ctor()</Name>
+              <SequencePoints />
+              <BranchPoints />
+              <MethodPoint vc="2" uspid="63" ordinal="0" offset="0" />
+            </Method>
+          </Methods>
+        </Class>
+        <Class>
+          <Summary numSequencePoints="8" visitedSequencePoints="8" numBranchPoints="5" visitedBranchPoints="5" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="2" minCyclomaticComplexity="1" visitedClasses="1" numClasses="1" visitedMethods="3" numMethods="3" />
+          <FullName>VaraniumSharp.Initiator.Configuration.SeqLoggingConfiguration</FullName>
+          <Methods>
+            <Method visited="true" cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="100" branchCoverage="100" isConstructor="false" isStatic="false" isGetter="true" isSetter="false">
+              <Summary numSequencePoints="1" visitedSequencePoints="1" numBranchPoints="1" visitedBranchPoints="1" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663310</MetadataToken>
+              <Name>System.Boolean VaraniumSharp.Initiator.Configuration.SeqLoggingConfiguration::get_LogToSeq()</Name>
+              <FileRef uid="6" />
+              <SequencePoints>
+                <SequencePoint vc="4" uspid="64" ordinal="0" offset="0" sl="17" sc="33" el="17" ec="89" bec="0" bev="0" fileid="6" />
+              </SequencePoints>
+              <BranchPoints />
+              <MethodPoint xsi:type="SequencePoint" vc="4" uspid="64" ordinal="0" offset="0" sl="17" sc="33" el="17" ec="89" bec="0" bev="0" fileid="6" />
+            </Method>
+            <Method visited="true" cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="100" branchCoverage="100" isConstructor="false" isStatic="false" isGetter="true" isSetter="false">
+              <Summary numSequencePoints="1" visitedSequencePoints="1" numBranchPoints="1" visitedBranchPoints="1" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663311</MetadataToken>
+              <Name>System.String VaraniumSharp.Initiator.Configuration.SeqLoggingConfiguration::get_SeqHost()</Name>
+              <FileRef uid="6" />
+              <SequencePoints>
+                <SequencePoint vc="3" uspid="65" ordinal="0" offset="0" sl="22" sc="34" el="22" ec="91" bec="0" bev="0" fileid="6" />
+              </SequencePoints>
+              <BranchPoints />
+              <MethodPoint xsi:type="SequencePoint" vc="3" uspid="65" ordinal="0" offset="0" sl="22" sc="34" el="22" ec="91" bec="0" bev="0" fileid="6" />
+            </Method>
+            <Method visited="true" cyclomaticComplexity="2" nPathComplexity="2" sequenceCoverage="100" branchCoverage="100" isConstructor="false" isStatic="false" isGetter="false" isSetter="false">
+              <Summary numSequencePoints="6" visitedSequencePoints="6" numBranchPoints="3" visitedBranchPoints="3" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="2" minCyclomaticComplexity="2" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663312</MetadataToken>
+              <Name>System.Void VaraniumSharp.Initiator.Configuration.SeqLoggingConfiguration::LogSetup(Serilog.LoggerConfiguration)</Name>
+              <FileRef uid="6" />
+              <SequencePoints>
+                <SequencePoint vc="2" uspid="66" ordinal="0" offset="0" sl="34" sc="13" el="34" ec="27" bec="2" bev="2" fileid="6" />
+                <SequencePoint vc="1" uspid="67" ordinal="1" offset="8" sl="36" sc="17" el="36" ec="34" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="1" uspid="68" ordinal="2" offset="15" sl="37" sc="17" el="37" ec="24" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="1" uspid="69" ordinal="3" offset="16" sl="39" sc="13" el="39" ec="55" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="1" uspid="70" ordinal="4" offset="88" sl="40" sc="13" el="40" ec="29" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="1" uspid="71" ordinal="5" offset="95" sl="41" sc="9" el="41" ec="10" bec="0" bev="0" fileid="6" />
+              </SequencePoints>
+              <BranchPoints>
+                <BranchPoint vc="1" uspid="72" ordinal="0" offset="6" sl="34" path="0" offsetend="8" fileid="6" />
+                <BranchPoint vc="1" uspid="73" ordinal="1" offset="6" sl="34" path="1" offsetend="16" fileid="6" />
+              </BranchPoints>
+              <MethodPoint xsi:type="SequencePoint" vc="2" uspid="66" ordinal="0" offset="0" sl="34" sc="13" el="34" ec="27" bec="2" bev="2" fileid="6" />
+            </Method>
+            <Method visited="true" cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="0" branchCoverage="0" isConstructor="true" isStatic="false" isGetter="false" isSetter="false">
+              <Summary numSequencePoints="0" visitedSequencePoints="0" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="0" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="0" numMethods="0" />
+              <MetadataToken>100663313</MetadataToken>
+              <Name>System.Void VaraniumSharp.Initiator.Configuration.SeqLoggingConfiguration::.ctor()</Name>
+              <SequencePoints />
+              <BranchPoints />
+              <MethodPoint vc="2" uspid="74" ordinal="0" offset="0" />
+            </Method>
+          </Methods>
+        </Class>
+        <Class>
+          <Summary numSequencePoints="9" visitedSequencePoints="9" numBranchPoints="6" visitedBranchPoints="6" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="2" minCyclomaticComplexity="1" visitedClasses="1" numClasses="1" visitedMethods="4" numMethods="4" />
+          <FullName>VaraniumSharp.Initiator.Configuration.SplunkLoggingConfiguration</FullName>
+          <Methods>
+            <Method visited="true" cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="100" branchCoverage="100" isConstructor="false" isStatic="false" isGetter="true" isSetter="false">
+              <Summary numSequencePoints="1" visitedSequencePoints="1" numBranchPoints="1" visitedBranchPoints="1" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663314</MetadataToken>
+              <Name>System.Boolean VaraniumSharp.Initiator.Configuration.SplunkLoggingConfiguration::get_LogToSplunk()</Name>
+              <FileRef uid="7" />
+              <SequencePoints>
+                <SequencePoint vc="4" uspid="75" ordinal="0" offset="0" sl="17" sc="36" el="17" ec="95" bec="0" bev="0" fileid="7" />
+              </SequencePoints>
+              <BranchPoints />
+              <MethodPoint xsi:type="SequencePoint" vc="4" uspid="75" ordinal="0" offset="0" sl="17" sc="36" el="17" ec="95" bec="0" bev="0" fileid="7" />
+            </Method>
+            <Method visited="true" cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="100" branchCoverage="100" isConstructor="false" isStatic="false" isGetter="true" isSetter="false">
+              <Summary numSequencePoints="1" visitedSequencePoints="1" numBranchPoints="1" visitedBranchPoints="1" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663315</MetadataToken>
+              <Name>System.String VaraniumSharp.Initiator.Configuration.SplunkLoggingConfiguration::get_SplunkHost()</Name>
+              <FileRef uid="7" />
+              <SequencePoints>
+                <SequencePoint vc="3" uspid="76" ordinal="0" offset="0" sl="22" sc="37" el="22" ec="97" bec="0" bev="0" fileid="7" />
+              </SequencePoints>
+              <BranchPoints />
+              <MethodPoint xsi:type="SequencePoint" vc="3" uspid="76" ordinal="0" offset="0" sl="22" sc="37" el="22" ec="97" bec="0" bev="0" fileid="7" />
+            </Method>
+            <Method visited="true" cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="100" branchCoverage="100" isConstructor="false" isStatic="false" isGetter="true" isSetter="false">
+              <Summary numSequencePoints="1" visitedSequencePoints="1" numBranchPoints="1" visitedBranchPoints="1" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663316</MetadataToken>
+              <Name>System.String VaraniumSharp.Initiator.Configuration.SplunkLoggingConfiguration::get_SplunkToken()</Name>
+              <FileRef uid="7" />
+              <SequencePoints>
+                <SequencePoint vc="3" uspid="77" ordinal="0" offset="0" sl="27" sc="38" el="27" ec="99" bec="0" bev="0" fileid="7" />
+              </SequencePoints>
+              <BranchPoints />
+              <MethodPoint xsi:type="SequencePoint" vc="3" uspid="77" ordinal="0" offset="0" sl="27" sc="38" el="27" ec="99" bec="0" bev="0" fileid="7" />
+            </Method>
+            <Method visited="true" cyclomaticComplexity="2" nPathComplexity="2" sequenceCoverage="100" branchCoverage="100" isConstructor="false" isStatic="false" isGetter="false" isSetter="false">
+              <Summary numSequencePoints="6" visitedSequencePoints="6" numBranchPoints="3" visitedBranchPoints="3" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="2" minCyclomaticComplexity="2" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663317</MetadataToken>
+              <Name>System.Void VaraniumSharp.Initiator.Configuration.SplunkLoggingConfiguration::LogSetup(Serilog.LoggerConfiguration)</Name>
+              <FileRef uid="7" />
+              <SequencePoints>
+                <SequencePoint vc="2" uspid="78" ordinal="0" offset="0" sl="39" sc="13" el="39" ec="30" bec="2" bev="2" fileid="7" />
+                <SequencePoint vc="1" uspid="79" ordinal="1" offset="8" sl="41" sc="17" el="41" ec="34" bec="0" bev="0" fileid="7" />
+                <SequencePoint vc="1" uspid="80" ordinal="2" offset="15" sl="42" sc="17" el="42" ec="24" bec="0" bev="0" fileid="7" />
+                <SequencePoint vc="1" uspid="81" ordinal="3" offset="16" sl="44" sc="13" el="44" ec="82" bec="0" bev="0" fileid="7" />
+                <SequencePoint vc="1" uspid="82" ordinal="4" offset="77" sl="45" sc="13" el="45" ec="29" bec="0" bev="0" fileid="7" />
+                <SequencePoint vc="1" uspid="83" ordinal="5" offset="84" sl="46" sc="9" el="46" ec="10" bec="0" bev="0" fileid="7" />
+              </SequencePoints>
+              <BranchPoints>
+                <BranchPoint vc="1" uspid="84" ordinal="0" offset="6" sl="39" path="0" offsetend="8" fileid="7" />
+                <BranchPoint vc="1" uspid="85" ordinal="1" offset="6" sl="39" path="1" offsetend="16" fileid="7" />
+              </BranchPoints>
+              <MethodPoint xsi:type="SequencePoint" vc="2" uspid="78" ordinal="0" offset="0" sl="39" sc="13" el="39" ec="30" bec="2" bev="2" fileid="7" />
+            </Method>
+            <Method visited="true" cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="0" branchCoverage="0" isConstructor="true" isStatic="false" isGetter="false" isSetter="false">
+              <Summary numSequencePoints="0" visitedSequencePoints="0" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="0" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="0" numMethods="0" />
+              <MetadataToken>100663318</MetadataToken>
+              <Name>System.Void VaraniumSharp.Initiator.Configuration.SplunkLoggingConfiguration::.ctor()</Name>
+              <SequencePoints />
+              <BranchPoints />
+              <MethodPoint vc="2" uspid="86" ordinal="0" offset="0" />
+            </Method>
+          </Methods>
+        </Class>
+        <Class>
+          <Summary numSequencePoints="12" visitedSequencePoints="12" numBranchPoints="8" visitedBranchPoints="8" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="3" minCyclomaticComplexity="1" visitedClasses="1" numClasses="1" visitedMethods="6" numMethods="6" />
+          <FullName>VaraniumSharp.Initiator.Configuration.BaseLogConfiguration</FullName>
+          <Methods>
+            <Method visited="true" cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="100" branchCoverage="100" isConstructor="false" isStatic="false" isGetter="true" isSetter="false">
+              <Summary numSequencePoints="1" visitedSequencePoints="1" numBranchPoints="1" visitedBranchPoints="1" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663319</MetadataToken>
+              <Name>System.Boolean VaraniumSharp.Initiator.Configuration.BaseLogConfiguration::get_IsActive()</Name>
+              <FileRef uid="8" />
+              <SequencePoints>
+                <SequencePoint vc="8" uspid="87" ordinal="0" offset="0" sl="19" sc="32" el="19" ec="36" bec="0" bev="0" fileid="8" />
+              </SequencePoints>
+              <BranchPoints />
+              <MethodPoint xsi:type="SequencePoint" vc="8" uspid="87" ordinal="0" offset="0" sl="19" sc="32" el="19" ec="36" bec="0" bev="0" fileid="8" />
+            </Method>
+            <Method visited="true" cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="100" branchCoverage="100" isConstructor="false" isStatic="false" isGetter="false" isSetter="true">
+              <Summary numSequencePoints="1" visitedSequencePoints="1" numBranchPoints="1" visitedBranchPoints="1" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663320</MetadataToken>
+              <Name>System.Void VaraniumSharp.Initiator.Configuration.BaseLogConfiguration::set_IsActive(System.Boolean)</Name>
+              <FileRef uid="8" />
+              <SequencePoints>
+                <SequencePoint vc="9" uspid="88" ordinal="0" offset="0" sl="19" sc="37" el="19" ec="51" bec="0" bev="0" fileid="8" />
+              </SequencePoints>
+              <BranchPoints />
+              <MethodPoint xsi:type="SequencePoint" vc="9" uspid="88" ordinal="0" offset="0" sl="19" sc="37" el="19" ec="51" bec="0" bev="0" fileid="8" />
+            </Method>
+            <Method visited="true" cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="100" branchCoverage="100" isConstructor="false" isStatic="false" isGetter="true" isSetter="false">
+              <Summary numSequencePoints="1" visitedSequencePoints="1" numBranchPoints="1" visitedBranchPoints="1" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663321</MetadataToken>
+              <Name>System.Boolean VaraniumSharp.Initiator.Configuration.BaseLogConfiguration::get_WasApplied()</Name>
+              <FileRef uid="8" />
+              <SequencePoints>
+                <SequencePoint vc="18" uspid="89" ordinal="0" offset="0" sl="24" sc="34" el="24" ec="38" bec="0" bev="0" fileid="8" />
+              </SequencePoints>
+              <BranchPoints />
+              <MethodPoint xsi:type="SequencePoint" vc="18" uspid="89" ordinal="0" offset="0" sl="24" sc="34" el="24" ec="38" bec="0" bev="0" fileid="8" />
+            </Method>
+            <Method visited="true" cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="100" branchCoverage="100" isConstructor="false" isStatic="false" isGetter="false" isSetter="true">
+              <Summary numSequencePoints="1" visitedSequencePoints="1" numBranchPoints="1" visitedBranchPoints="1" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663322</MetadataToken>
+              <Name>System.Void VaraniumSharp.Initiator.Configuration.BaseLogConfiguration::set_WasApplied(System.Boolean)</Name>
+              <FileRef uid="8" />
+              <SequencePoints>
+                <SequencePoint vc="9" uspid="90" ordinal="0" offset="0" sl="24" sc="39" el="24" ec="51" bec="0" bev="0" fileid="8" />
+              </SequencePoints>
+              <BranchPoints />
+              <MethodPoint xsi:type="SequencePoint" vc="9" uspid="90" ordinal="0" offset="0" sl="24" sc="39" el="24" ec="51" bec="0" bev="0" fileid="8" />
+            </Method>
+            <Method visited="true" cyclomaticComplexity="3" nPathComplexity="2" sequenceCoverage="100" branchCoverage="100" isConstructor="false" isStatic="false" isGetter="false" isSetter="false">
+              <Summary numSequencePoints="7" visitedSequencePoints="7" numBranchPoints="3" visitedBranchPoints="3" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="3" minCyclomaticComplexity="3" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663323</MetadataToken>
+              <Name>System.Void VaraniumSharp.Initiator.Configuration.BaseLogConfiguration::Apply(Serilog.LoggerConfiguration)</Name>
+              <FileRef uid="8" />
+              <SequencePoints>
+                <SequencePoint vc="10" uspid="91" ordinal="0" offset="0" sl="37" sc="13" el="37" ec="30" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="10" uspid="92" ordinal="1" offset="17" sl="39" sc="17" el="39" ec="32" bec="2" bev="2" fileid="8" />
+                <SequencePoint vc="1" uspid="93" ordinal="2" offset="25" sl="41" sc="21" el="41" ec="124" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="9" uspid="94" ordinal="3" offset="36" sl="44" sc="17" el="44" ec="48" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="9" uspid="95" ordinal="4" offset="43" sl="46" sc="17" el="46" ec="35" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="9" uspid="96" ordinal="5" offset="50" sl="47" sc="13" el="47" ec="14" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="9" uspid="97" ordinal="6" offset="62" sl="48" sc="9" el="48" ec="10" bec="0" bev="0" fileid="8" />
+              </SequencePoints>
+              <BranchPoints>
+                <BranchPoint vc="1" uspid="98" ordinal="0" offset="23" sl="39" path="0" offsetend="25" fileid="8" />
+                <BranchPoint vc="9" uspid="99" ordinal="1" offset="23" sl="39" path="1" offsetend="36" fileid="8" />
+              </BranchPoints>
+              <MethodPoint xsi:type="SequencePoint" vc="10" uspid="91" ordinal="0" offset="0" sl="37" sc="13" el="37" ec="30" bec="0" bev="0" fileid="8" />
+            </Method>
+            <Method visited="true" cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="100" branchCoverage="100" isConstructor="true" isStatic="false" isGetter="false" isSetter="false">
+              <Summary numSequencePoints="1" visitedSequencePoints="1" numBranchPoints="1" visitedBranchPoints="1" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663325</MetadataToken>
+              <Name>System.Void VaraniumSharp.Initiator.Configuration.BaseLogConfiguration::.ctor()</Name>
+              <FileRef uid="8" />
+              <SequencePoints>
+                <SequencePoint vc="9" uspid="100" ordinal="0" offset="0" sl="65" sc="9" el="65" ec="59" bec="0" bev="0" fileid="8" />
+              </SequencePoints>
+              <BranchPoints />
+              <MethodPoint xsi:type="SequencePoint" vc="9" uspid="100" ordinal="0" offset="0" sl="65" sc="9" el="65" ec="59" bec="0" bev="0" fileid="8" />
+            </Method>
+          </Methods>
+        </Class>
+      </Classes>
+    </Module>
+    <Module skippedDueTo="Filter" hash="4E-97-3F-16-8E-2E-92-24-64-8C-99-DD-41-07-FD-62-62-36-AE-84">
+      <ModulePath>C:\Projects\Experiments\VSI\VaraniumSharp.Initiator.Tests\bin\Release\FluentAssertions.dll</ModulePath>
+      <ModuleTime>2016-12-04T18:17:22Z</ModuleTime>
+      <ModuleName>FluentAssertions</ModuleName>
+      <Classes />
+    </Module>
+    <Module skippedDueTo="Filter" hash="D0-78-F9-97-18-07-FB-B0-FA-48-A6-FF-40-46-30-CA-1A-AA-D2-55">
+      <ModulePath>C:\Projects\Experiments\VSI\VaraniumSharp.Initiator.Tests\bin\Release\FluentAssertions.Core.dll</ModulePath>
+      <ModuleTime>2016-12-04T18:17:22Z</ModuleTime>
+      <ModuleName>FluentAssertions.Core</ModuleName>
+      <Classes />
+    </Module>
+    <Module skippedDueTo="Filter" hash="34-A3-5D-67-8E-E7-DB-60-FE-97-F3-BD-D4-E7-40-6B-00-DA-51-C8">
+      <ModulePath>C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Configuration\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Configuration.dll</ModulePath>
+      <ModuleTime>2016-07-16T11:43:53.9992781Z</ModuleTime>
+      <ModuleName>System.Configuration</ModuleName>
+      <Classes />
+    </Module>
+    <Module skippedDueTo="Filter" hash="A3-09-9D-C9-2F-8D-F7-55-B0-7D-76-E4-D8-07-6F-8D-70-0A-35-14">
+      <ModulePath>C:\Projects\Experiments\VSI\VaraniumSharp.Initiator.Tests\bin\Release\Castle.Core.dll</ModulePath>
+      <ModuleTime>2017-01-24T15:26:06Z</ModuleTime>
+      <ModuleName>Castle.Core</ModuleName>
+      <Classes />
+    </Module>
+    <Module skippedDueTo="Filter" hash="">
+      <ModulePath>RefEmit_InMemoryManifestModule</ModulePath>
+      <ModuleTime>0001-01-01T00:00:00</ModuleTime>
+      <ModuleName>DynamicProxyGenAssembly2</ModuleName>
+      <Classes />
+    </Module>
+    <Module skippedDueTo="Filter" hash="1A-2F-B7-D3-E9-FD-C2-0B-1F-68-32-AC-CB-02-27-B5-EF-F8-97-24">
+      <ModulePath>C:\Projects\Experiments\VSI\VaraniumSharp.Initiator.Tests\bin\Release\Serilog.Sinks.ColoredConsole.dll</ModulePath>
+      <ModuleTime>2016-06-28T07:17:12Z</ModuleTime>
+      <ModuleName>Serilog.Sinks.ColoredConsole</ModuleName>
+      <Classes />
+    </Module>
+    <Module skippedDueTo="Filter" hash="CA-8D-E3-71-A6-AB-52-89-9D-62-50-2D-12-B1-D4-51-07-40-A6-94">
+      <ModulePath>C:\Projects\Experiments\VSI\VaraniumSharp.Initiator.Tests\bin\Release\Serilog.Sinks.File.dll</ModulePath>
+      <ModuleTime>2017-01-03T00:29:38Z</ModuleTime>
+      <ModuleName>Serilog.Sinks.File</ModuleName>
+      <Classes />
+    </Module>
+    <Module skippedDueTo="Filter" hash="FE-68-49-2D-48-41-13-B7-63-1E-8A-36-9E-D9-E6-33-B2-EF-1F-22">
+      <ModulePath>C:\Projects\Experiments\VSI\VaraniumSharp.Initiator.Tests\bin\Release\Serilog.Sinks.Seq.dll</ModulePath>
+      <ModuleTime>2017-01-06T01:39:50Z</ModuleTime>
+      <ModuleName>Serilog.Sinks.Seq</ModuleName>
+      <Classes />
+    </Module>
+    <Module skippedDueTo="Filter" hash="10-57-A7-EF-79-9A-41-A9-99-64-D8-4D-FD-F3-F2-D8-DF-89-08-EC">
+      <ModulePath>C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Net.Http\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Net.Http.dll</ModulePath>
+      <ModuleTime>2016-07-16T11:43:55.5773993Z</ModuleTime>
+      <ModuleName>System.Net.Http</ModuleName>
+      <Classes />
+    </Module>
+    <Module skippedDueTo="Filter" hash="B7-73-D9-C7-FC-01-07-62-F4-B7-C5-2C-10-C3-07-87-0B-51-F0-8B">
+      <ModulePath>C:\Projects\Experiments\VSI\VaraniumSharp.Initiator.Tests\bin\Release\Serilog.Sinks.PeriodicBatching.dll</ModulePath>
+      <ModuleTime>2016-10-24T22:58:02Z</ModuleTime>
+      <ModuleName>Serilog.Sinks.PeriodicBatching</ModuleName>
+      <Classes />
+    </Module>
+    <Module skippedDueTo="Filter" hash="09-84-F4-82-88-E7-24-B4-5F-45-9B-E4-7D-12-76-10-4F-0D-87-42">
+      <ModulePath>C:\Projects\Experiments\VSI\VaraniumSharp.Initiator.Tests\bin\Release\Serilog.Sinks.Splunk.dll</ModulePath>
+      <ModuleTime>2017-01-28T00:18:16Z</ModuleTime>
+      <ModuleName>Serilog.Sinks.Splunk</ModuleName>
+      <Classes />
+    </Module>
+    <Module skippedDueTo="Filter" hash="0A-27-D3-40-21-5D-0D-B5-44-5F-1C-F7-2D-54-64-22-ED-4D-D6-FF">
+      <ModulePath>C:\Projects\Experiments\VSI\VaraniumSharp.Initiator.Tests\bin\Release\DryIoc.dll</ModulePath>
+      <ModuleTime>2017-01-12T15:04:30Z</ModuleTime>
+      <ModuleName>DryIoc</ModuleName>
+      <Classes />
+    </Module>
+    <Module skippedDueTo="Filter" hash="BE-7E-B2-32-28-DF-3D-50-30-8E-DB-9B-29-B2-D7-C2-F9-96-C0-72">
+      <ModulePath>C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Security\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Security.dll</ModulePath>
+      <ModuleTime>2016-07-16T11:43:57.3117708Z</ModuleTime>
+      <ModuleName>System.Security</ModuleName>
+      <Classes />
+    </Module>
+    <Module skippedDueTo="Filter" hash="1A-EC-08-AC-02-B5-77-73-9D-18-F0-AC-74-5B-7C-7F-41-37-93-53">
+      <ModulePath>C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Drawing\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Drawing.dll</ModulePath>
+      <ModuleTime>2016-07-16T11:43:59.3586429Z</ModuleTime>
+      <ModuleName>System.Drawing</ModuleName>
+      <Classes />
+    </Module>
+    <Module skippedDueTo="Filter" hash="97-E7-08-8B-07-71-64-0B-07-3F-D8-DD-84-14-BF-95-00-12-CD-89">
+      <ModulePath>C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Web.ApplicationServices\v4.0_4.0.0.0__31bf3856ad364e35\System.Web.ApplicationServices.dll</ModulePath>
+      <ModuleTime>2016-07-16T11:43:57.2805211Z</ModuleTime>
+      <ModuleName>System.Web.ApplicationServices</ModuleName>
+      <Classes />
+    </Module>
+    <Module skippedDueTo="Filter" hash="5C-3E-BF-20-25-C2-BE-00-73-7A-01-AB-8B-B5-84-96-4F-E2-36-2F">
+      <ModulePath>C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.ComponentModel.DataAnnotations\v4.0_4.0.0.0__31bf3856ad364e35\System.ComponentModel.DataAnnotations.dll</ModulePath>
+      <ModuleTime>2016-07-16T11:43:57.2961462Z</ModuleTime>
+      <ModuleName>System.ComponentModel.DataAnnotations</ModuleName>
+      <Classes />
+    </Module>
+    <Module skippedDueTo="Filter" hash="94-27-4C-58-9E-7D-AC-4E-96-77-3A-CB-F1-02-46-BD-E3-2C-C4-42">
+      <ModulePath>C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.DirectoryServices.Protocols\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.DirectoryServices.Protocols.dll</ModulePath>
+      <ModuleTime>2016-07-16T11:43:55.5148995Z</ModuleTime>
+      <ModuleName>System.DirectoryServices.Protocols</ModuleName>
+      <Classes />
+    </Module>
+    <Module skippedDueTo="Filter" hash="79-B8-68-01-A0-21-23-71-40-9A-03-4E-F6-8D-4B-3D-31-17-4F-AC">
+      <ModulePath>C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.DirectoryServices\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.DirectoryServices.dll</ModulePath>
+      <ModuleTime>2016-07-16T11:43:53.9836535Z</ModuleTime>
+      <ModuleName>System.DirectoryServices</ModuleName>
+      <Classes />
+    </Module>
+    <Module skippedDueTo="Filter" hash="B5-23-07-8B-46-5C-D1-BF-D9-2B-82-A8-55-44-69-F1-5E-F4-A8-8B">
+      <ModulePath>C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Runtime.Caching\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Runtime.Caching.dll</ModulePath>
+      <ModuleTime>2016-07-16T11:43:59.421142Z</ModuleTime>
+      <ModuleName>System.Runtime.Caching</ModuleName>
+      <Classes />
+    </Module>
+    <Module skippedDueTo="Filter" hash="59-67-A5-C5-71-67-88-BA-5F-30-E6-00-C3-C7-97-55-3D-3A-12-D3">
+      <ModulePath>C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\Microsoft.Build.Framework\v4.0_4.0.0.0__b03f5f7f11d50a3a\Microsoft.Build.Framework.dll</ModulePath>
+      <ModuleTime>2016-07-16T11:43:55.6711494Z</ModuleTime>
+      <ModuleName>Microsoft.Build.Framework</ModuleName>
+      <Classes />
+    </Module>
+    <Module skippedDueTo="Filter" hash="CD-DB-4A-CB-AD-5E-F6-BD-E8-92-28-A4-DC-94-B8-B8-00-E2-FF-44">
+      <ModulePath>C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Data.SqlXml\v4.0_4.0.0.0__b77a5c561934e089\System.Data.SqlXml.dll</ModulePath>
+      <ModuleTime>2016-07-16T11:43:57.0773968Z</ModuleTime>
+      <ModuleName>System.Data.SqlXml</ModuleName>
+      <Classes />
+    </Module>
+    <Module skippedDueTo="Filter" hash="83-29-FE-C7-E7-7A-90-21-8F-92-A4-B2-93-EC-A9-9B-7E-10-7C-E5">
+      <ModulePath>C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Xml.Linq\v4.0_4.0.0.0__b77a5c561934e089\System.Xml.Linq.dll</ModulePath>
+      <ModuleTime>2016-07-16T11:43:57.0930219Z</ModuleTime>
+      <ModuleName>System.Xml.Linq</ModuleName>
+      <Classes />
+    </Module>
+    <Module skippedDueTo="Filter" hash="8D-E5-44-A6-7A-53-FF-DE-1A-F8-23-4E-5F-E6-C0-7F-99-E7-E1-13">
+      <ModulePath>C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Xaml\v4.0_4.0.0.0__b77a5c561934e089\System.Xaml.dll</ModulePath>
+      <ModuleTime>2016-07-16T11:43:57.1711464Z</ModuleTime>
+      <ModuleName>System.Xaml</ModuleName>
+      <Classes />
+    </Module>
+    <Module skippedDueTo="Filter" hash="">
+      <ModulePath>RefEmit_InMemoryManifestModule</ModulePath>
+      <ModuleTime>0001-01-01T00:00:00</ModuleTime>
+      <ModuleName>Anonymously Hosted DynamicMethods Assembly</ModuleName>
+      <Classes />
+    </Module>
+    <Module skippedDueTo="Filter" hash="F8-90-24-28-FA-E8-D6-3A-E4-F6-C0-41-CB-CD-BD-C4-69-92-8C-30">
+      <ModulePath>C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Runtime.Serialization\v4.0_4.0.0.0__b77a5c561934e089\System.Runtime.Serialization.dll</ModulePath>
+      <ModuleTime>2016-07-16T11:43:57.3742711Z</ModuleTime>
+      <ModuleName>System.Runtime.Serialization</ModuleName>
+      <Classes />
+    </Module>
+    <Module skippedDueTo="Filter" hash="10-0C-17-C7-35-73-12-64-20-2B-3D-00-7D-6E-9F-F1-58-18-00-B7">
+      <ModulePath>C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.ServiceModel.Internals\v4.0_4.0.0.0__31bf3856ad364e35\System.ServiceModel.Internals.dll</ModulePath>
+      <ModuleTime>2016-07-16T11:43:59.4836419Z</ModuleTime>
+      <ModuleName>System.ServiceModel.Internals</ModuleName>
+      <Classes />
+    </Module>
+  </Modules>
+</CoverageSession>
