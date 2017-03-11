@@ -1,6 +1,60 @@
 ### YamlMime:XRefMap
 sorted: true
 references:
+- uid: VaraniumSharp.Initiator.Caching
+  name: VaraniumSharp.Initiator.Caching
+  href: api/VaraniumSharp.Initiator.Caching.html
+  commentId: N:VaraniumSharp.Initiator.Caching
+  fullName: VaraniumSharp.Initiator.Caching
+  nameWithType: VaraniumSharp.Initiator.Caching
+- uid: VaraniumSharp.Initiator.Caching.MemoryCacheWrapperFactory
+  name: MemoryCacheWrapperFactory
+  href: api/VaraniumSharp.Initiator.Caching.MemoryCacheWrapperFactory.html
+  commentId: T:VaraniumSharp.Initiator.Caching.MemoryCacheWrapperFactory
+  fullName: VaraniumSharp.Initiator.Caching.MemoryCacheWrapperFactory
+  nameWithType: MemoryCacheWrapperFactory
+- uid: VaraniumSharp.Initiator.Caching.MemoryCacheWrapperFactory.#ctor(DryIoc.IContainer)
+  name: MemoryCacheWrapperFactory(IContainer)
+  href: api/VaraniumSharp.Initiator.Caching.MemoryCacheWrapperFactory.html#VaraniumSharp_Initiator_Caching_MemoryCacheWrapperFactory__ctor_DryIoc_IContainer_
+  commentId: M:VaraniumSharp.Initiator.Caching.MemoryCacheWrapperFactory.#ctor(DryIoc.IContainer)
+  fullName: VaraniumSharp.Initiator.Caching.MemoryCacheWrapperFactory.MemoryCacheWrapperFactory(DryIoc.IContainer)
+  nameWithType: MemoryCacheWrapperFactory.MemoryCacheWrapperFactory(IContainer)
+- uid: VaraniumSharp.Initiator.Caching.MemoryCacheWrapperFactory.#ctor*
+  name: MemoryCacheWrapperFactory
+  href: api/VaraniumSharp.Initiator.Caching.MemoryCacheWrapperFactory.html#VaraniumSharp_Initiator_Caching_MemoryCacheWrapperFactory__ctor_
+  commentId: Overload:VaraniumSharp.Initiator.Caching.MemoryCacheWrapperFactory.#ctor
+  fullName: VaraniumSharp.Initiator.Caching.MemoryCacheWrapperFactory.MemoryCacheWrapperFactory
+  nameWithType: MemoryCacheWrapperFactory.MemoryCacheWrapperFactory
+- uid: VaraniumSharp.Initiator.Caching.MemoryCacheWrapperFactory.Create*
+  name: Create
+  href: api/VaraniumSharp.Initiator.Caching.MemoryCacheWrapperFactory.html#VaraniumSharp_Initiator_Caching_MemoryCacheWrapperFactory_Create_
+  commentId: Overload:VaraniumSharp.Initiator.Caching.MemoryCacheWrapperFactory.Create
+  fullName: VaraniumSharp.Initiator.Caching.MemoryCacheWrapperFactory.Create
+  nameWithType: MemoryCacheWrapperFactory.Create
+- uid: VaraniumSharp.Initiator.Caching.MemoryCacheWrapperFactory.Create``1(System.Runtime.Caching.CacheItemPolicy,System.Func{System.String,System.Threading.Tasks.Task{``0}})
+  name: Create<T>(CacheItemPolicy, Func<String, Task<T>>)
+  href: api/VaraniumSharp.Initiator.Caching.MemoryCacheWrapperFactory.html#VaraniumSharp_Initiator_Caching_MemoryCacheWrapperFactory_Create__1_System_Runtime_Caching_CacheItemPolicy_System_Func_System_String_System_Threading_Tasks_Task___0___
+  commentId: M:VaraniumSharp.Initiator.Caching.MemoryCacheWrapperFactory.Create``1(System.Runtime.Caching.CacheItemPolicy,System.Func{System.String,System.Threading.Tasks.Task{``0}})
+  name.vb: Create(Of T)(CacheItemPolicy, Func(Of String, Task(Of T)))
+  fullName: VaraniumSharp.Initiator.Caching.MemoryCacheWrapperFactory.Create<T>(System.Runtime.Caching.CacheItemPolicy, System.Func<System.String, System.Threading.Tasks.Task<T>>)
+  fullName.vb: VaraniumSharp.Initiator.Caching.MemoryCacheWrapperFactory.Create(Of T)(System.Runtime.Caching.CacheItemPolicy, System.Func(Of System.String, System.Threading.Tasks.Task(Of T)))
+  nameWithType: MemoryCacheWrapperFactory.Create<T>(CacheItemPolicy, Func<String, Task<T>>)
+  nameWithType.vb: MemoryCacheWrapperFactory.Create(Of T)(CacheItemPolicy, Func(Of String, Task(Of T)))
+- uid: VaraniumSharp.Initiator.Caching.MemoryCacheWrapperFactory.CreateWithDefaultSlidingPolicy*
+  name: CreateWithDefaultSlidingPolicy
+  href: api/VaraniumSharp.Initiator.Caching.MemoryCacheWrapperFactory.html#VaraniumSharp_Initiator_Caching_MemoryCacheWrapperFactory_CreateWithDefaultSlidingPolicy_
+  commentId: Overload:VaraniumSharp.Initiator.Caching.MemoryCacheWrapperFactory.CreateWithDefaultSlidingPolicy
+  fullName: VaraniumSharp.Initiator.Caching.MemoryCacheWrapperFactory.CreateWithDefaultSlidingPolicy
+  nameWithType: MemoryCacheWrapperFactory.CreateWithDefaultSlidingPolicy
+- uid: VaraniumSharp.Initiator.Caching.MemoryCacheWrapperFactory.CreateWithDefaultSlidingPolicy``1(System.Func{System.String,System.Threading.Tasks.Task{``0}})
+  name: CreateWithDefaultSlidingPolicy<T>(Func<String, Task<T>>)
+  href: api/VaraniumSharp.Initiator.Caching.MemoryCacheWrapperFactory.html#VaraniumSharp_Initiator_Caching_MemoryCacheWrapperFactory_CreateWithDefaultSlidingPolicy__1_System_Func_System_String_System_Threading_Tasks_Task___0___
+  commentId: M:VaraniumSharp.Initiator.Caching.MemoryCacheWrapperFactory.CreateWithDefaultSlidingPolicy``1(System.Func{System.String,System.Threading.Tasks.Task{``0}})
+  name.vb: CreateWithDefaultSlidingPolicy(Of T)(Func(Of String, Task(Of T)))
+  fullName: VaraniumSharp.Initiator.Caching.MemoryCacheWrapperFactory.CreateWithDefaultSlidingPolicy<T>(System.Func<System.String, System.Threading.Tasks.Task<T>>)
+  fullName.vb: VaraniumSharp.Initiator.Caching.MemoryCacheWrapperFactory.CreateWithDefaultSlidingPolicy(Of T)(System.Func(Of System.String, System.Threading.Tasks.Task(Of T)))
+  nameWithType: MemoryCacheWrapperFactory.CreateWithDefaultSlidingPolicy<T>(Func<String, Task<T>>)
+  nameWithType.vb: MemoryCacheWrapperFactory.CreateWithDefaultSlidingPolicy(Of T)(Func(Of String, Task(Of T)))
 - uid: VaraniumSharp.Initiator.Configuration
   name: VaraniumSharp.Initiator.Configuration
   href: api/VaraniumSharp.Initiator.Configuration.html
