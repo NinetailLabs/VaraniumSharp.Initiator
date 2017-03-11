@@ -147,28 +147,28 @@ namespace VaraniumSharp.Initiator.Tests.DependencyInjection
 
         [AutomaticContainerRegistration(typeof(AutoRegistrationDummy))]
         private class AutoRegistrationDummy
-        {}
+        { }
 
         [AutomaticContainerRegistration(typeof(SingletonDummy), ServiceReuse.Singleton)]
         private class SingletonDummy
-        {}
+        { }
 
         [AutomaticConcretionContainerRegistration]
         private abstract class BaseClassDummy
-        {}
+        { }
 
         private class InheritorClassDummy : BaseClassDummy
-        {}
+        { }
 
         [AutomaticConcretionContainerRegistration(ServiceReuse.Singleton)]
         private interface ITestInterfaceDummy
-        {}
+        { }
 
         private class ImplementationClassDummy : ITestInterfaceDummy
-        {}
+        { }
 
         private class ImplmentationClassTooDummy : ITestInterfaceDummy
-        {}
+        { }
 
         [AutomaticContainerRegistration(typeof(MultiConstructorClass), ServiceReuse.Default, true)]
         // ReSharper disable once UnusedMember.Local - Used via DI
@@ -199,7 +199,7 @@ namespace VaraniumSharp.Initiator.Tests.DependencyInjection
         [AutomaticConcretionContainerRegistration(ServiceReuse.Default, true)]
         // ReSharper disable once UnusedMember.Local - Used via DI
         private abstract class MultiConstructorConcretionClassDummy
-        {}
+        { }
 
         // ReSharper disable once UnusedMember.Local - Used via DI
         private class MultiConstructorConcretionInheritor : MultiConstructorConcretionClassDummy

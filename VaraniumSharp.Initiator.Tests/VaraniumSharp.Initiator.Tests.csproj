@@ -34,6 +34,7 @@
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Caching" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -42,12 +43,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Caching\MemoryCacheWrapperFactoryTests.cs" />
     <Compile Include="Configuration\ConsoleLoggingConfigurationTest.cs" />
     <Compile Include="Configuration\FileLoggingConfigurationTest.cs" />
     <Compile Include="Configuration\SeqLoggingConfigurationTest.cs" />
     <Compile Include="Configuration\SplunkLoggingConfigurationTest.cs" />
     <Compile Include="DependencyInjection\ContainerSetupTest.cs" />
     <Compile Include="DependencyInjection\ServiceReuseExtensions.cs" />
+    <Compile Include="Fixtures\ContainerFixture.cs" />
     <Compile Include="Helpers\ApplicationConfigurationHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -181,17 +184,6 @@
       <ItemGroup>
         <Reference Include="System.Console">
           <HintPath>..\packages\System.Console\lib\net46\System.Console.dll</HintPath>
-          <Private>True</Private>
-          <Paket>True</Paket>
-        </Reference>
-      </ItemGroup>
-    </When>
-  </Choose>
-  <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v4.6.3'">
-      <ItemGroup>
-        <Reference Include="System.Diagnostics.DiagnosticSource">
-          <HintPath>..\packages\System.Diagnostics.DiagnosticSource\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>
