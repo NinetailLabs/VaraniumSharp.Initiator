@@ -1,9 +1,11 @@
-﻿using System;
+﻿using DryIoc;
 using FluentAssertions;
 using NUnit.Framework;
+using System;
 using System.Linq;
 using VaraniumSharp.Attributes;
 using VaraniumSharp.Enumerations;
+using VaraniumSharp.Initiator.Attributes;
 using VaraniumSharp.Initiator.DependencyInjection;
 
 namespace VaraniumSharp.Initiator.Tests.DependencyInjection
@@ -93,10 +95,23 @@ namespace VaraniumSharp.Initiator.Tests.DependencyInjection
 
             // assert
             var resolvedClasses = sut.ResolveMany<ITestInterfaceDummy>().ToList();
-            var interfaceResolvedClass = resolvedClasses.FirstOrDefault(t => t.GetType() == typeof(ImplementationClassDummy));
+            var interfaceResolvedClass =
+                resolvedClasses.FirstOrDefault(t => t.GetType() == typeof(ImplementationClassDummy));
             var directlyResolvedClass = sut.Resolve<ImplementationClassDummy>();
 
             interfaceResolvedClass.Should().Be(directlyResolvedClass);
+        }
+
+        [Test]
+        public void RegisteringDisposableTransientDoesNotThrowAnException()
+        {
+            // arrange
+            var sut = new ContainerSetup();
+            var act = new Action(() => sut.RetrieveClassesRequiringRegistration(true));
+
+            // act
+            // assert
+            act.ShouldNotThrow<ContainerException>();
         }
 
         [Test]
@@ -146,29 +161,44 @@ namespace VaraniumSharp.Initiator.Tests.DependencyInjection
         #endregion
 
         [AutomaticContainerRegistration(typeof(AutoRegistrationDummy))]
-        private class AutoRegistrationDummy
-        { }
+        [DisposableTransient]
+        private class AutoRegistrationDummy : IDisposable
+        {
+            #region Public Methods
+
+            public void Dispose()
+            {
+            }
+
+            #endregion
+        }
 
         [AutomaticContainerRegistration(typeof(SingletonDummy), ServiceReuse.Singleton)]
         private class SingletonDummy
-        { }
+        {
+        }
 
         [AutomaticConcretionContainerRegistration]
         private abstract class BaseClassDummy
-        { }
+        {
+        }
 
         private class InheritorClassDummy : BaseClassDummy
-        { }
+        {
+        }
 
         [AutomaticConcretionContainerRegistration(ServiceReuse.Singleton)]
         private interface ITestInterfaceDummy
-        { }
+        {
+        }
 
         private class ImplementationClassDummy : ITestInterfaceDummy
-        { }
+        {
+        }
 
         private class ImplmentationClassTooDummy : ITestInterfaceDummy
-        { }
+        {
+        }
 
         [AutomaticContainerRegistration(typeof(MultiConstructorClass), ServiceReuse.Default, true)]
         // ReSharper disable once UnusedMember.Local - Used via DI
@@ -178,7 +208,8 @@ namespace VaraniumSharp.Initiator.Tests.DependencyInjection
 
             // ReSharper disable once MemberCanBeProtected.Local - Needed to fully test injection with multiple constructors
             public MultiConstructorClass()
-            { }
+            {
+            }
 
             // ReSharper disable once UnusedMember.Local - Needed to fully test injection with multiple constructors
             public MultiConstructorClass(AutoRegistrationDummy autoRegistrationDummy)
@@ -199,7 +230,8 @@ namespace VaraniumSharp.Initiator.Tests.DependencyInjection
         [AutomaticConcretionContainerRegistration(ServiceReuse.Default, true)]
         // ReSharper disable once UnusedMember.Local - Used via DI
         private abstract class MultiConstructorConcretionClassDummy
-        { }
+        {
+        }
 
         // ReSharper disable once UnusedMember.Local - Used via DI
         private class MultiConstructorConcretionInheritor : MultiConstructorConcretionClassDummy
@@ -208,7 +240,8 @@ namespace VaraniumSharp.Initiator.Tests.DependencyInjection
 
             // ReSharper disable once MemberCanBeProtected.Local - Needed to fully test injection with multiple constructors
             public MultiConstructorConcretionInheritor()
-            { }
+            {
+            }
 
             // ReSharper disable once UnusedMember.Local - Needed to fully test injection with multiple constructors
             public MultiConstructorConcretionInheritor(AutoRegistrationDummy autoRegistrationDummy)

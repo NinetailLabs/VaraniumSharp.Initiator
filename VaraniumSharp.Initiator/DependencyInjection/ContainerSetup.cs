@@ -1,8 +1,10 @@
 ﻿using DryIoc;
+using System;
 using System.Collections.Generic;
 using System.Reflection;
 using VaraniumSharp.Attributes;
 using VaraniumSharp.DependencyInjection;
+using VaraniumSharp.Initiator.Attributes;
 
 namespace VaraniumSharp.Initiator.DependencyInjection
 {
@@ -64,7 +66,15 @@ namespace VaraniumSharp.Initiator.DependencyInjection
                     (AutomaticContainerRegistrationAttribute)
                     @class.GetCustomAttribute(typeof(AutomaticContainerRegistrationAttribute));
 
-                if (registrationAttribute.MultipleConstructors)
+                var transientDisposalAttribute =
+                    (DisposableTransientAttribute)
+                    @class.GetCustomAttribute(typeof(DisposableTransientAttribute));
+
+                if (transientDisposalAttribute != null)
+                {
+                    RegisterDisposableTransient(@class, registrationAttribute);
+                }
+                else if (registrationAttribute.MultipleConstructors)
                 {
                     _container.Register(registrationAttribute.ServiceType, @class,
                         registrationAttribute.Reuse.ConvertFromVaraniumReuse(),
@@ -72,9 +82,23 @@ namespace VaraniumSharp.Initiator.DependencyInjection
                 }
                 else
                 {
-                    _container.Register(registrationAttribute.ServiceType, @class, registrationAttribute.Reuse.ConvertFromVaraniumReuse());
+                    _container.Register(registrationAttribute.ServiceType, @class,
+                        registrationAttribute.Reuse.ConvertFromVaraniumReuse());
                 }
             }
+        }
+
+        /// <summary>
+        /// Register disposable transient
+        /// </summary>
+        /// <param name="class">The class to register</param>
+        /// <param name="registrationAttribute">The registration attribute details for the class</param>
+        private void RegisterDisposableTransient(Type @class,
+            AutomaticContainerRegistrationAttribute registrationAttribute)
+        {
+            _container.Register(registrationAttribute.ServiceType, @class,
+                registrationAttribute.Reuse.ConvertFromVaraniumReuse(),
+                FactoryMethod.ConstructorWithResolvableArguments, Setup.With(allowDisposableTransient: true));
         }
 
         /// <inheritdoc />
@@ -89,11 +113,14 @@ namespace VaraniumSharp.Initiator.DependencyInjection
                 {
                     if (registrationAttribute.MultipleConstructors)
                     {
-                        _container.RegisterMany(new[] { @class.Key, x }, x, registrationAttribute.Reuse.ConvertFromVaraniumReuse(), FactoryMethod.ConstructorWithResolvableArguments);
+                        _container.RegisterMany(new[] { @class.Key, x }, x,
+                            registrationAttribute.Reuse.ConvertFromVaraniumReuse(),
+                            FactoryMethod.ConstructorWithResolvableArguments);
                     }
                     else
                     {
-                        _container.RegisterMany(new[] { @class.Key, x }, x, registrationAttribute.Reuse.ConvertFromVaraniumReuse());
+                        _container.RegisterMany(new[] { @class.Key, x }, x,
+                            registrationAttribute.Reuse.ConvertFromVaraniumReuse());
                     }
                 });
             }
