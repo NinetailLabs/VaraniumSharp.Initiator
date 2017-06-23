@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Reflection;
 using VaraniumSharp.Attributes;
 using VaraniumSharp.DependencyInjection;
+using VaraniumSharp.Initiator.Attributes;
 
 namespace VaraniumSharp.Initiator.DependencyInjection
 {
@@ -64,15 +65,21 @@ namespace VaraniumSharp.Initiator.DependencyInjection
                     (AutomaticContainerRegistrationAttribute)
                     @class.GetCustomAttribute(typeof(AutomaticContainerRegistrationAttribute));
 
+                var disposableTransient = (DisposableTransientAttribute)
+                                          @class.GetCustomAttribute(typeof(DisposableTransientAttribute)) != null;
+
                 if (registrationAttribute.MultipleConstructors)
                 {
                     _container.Register(registrationAttribute.ServiceType, @class,
                         registrationAttribute.Reuse.ConvertFromVaraniumReuse(),
-                        FactoryMethod.ConstructorWithResolvableArguments);
+                        FactoryMethod.ConstructorWithResolvableArguments,
+                        Setup.With(allowDisposableTransient: disposableTransient));
                 }
                 else
                 {
-                    _container.Register(registrationAttribute.ServiceType, @class, registrationAttribute.Reuse.ConvertFromVaraniumReuse());
+                    _container.Register(registrationAttribute.ServiceType, @class,
+                        registrationAttribute.Reuse.ConvertFromVaraniumReuse(),
+                        setup: Setup.With(allowDisposableTransient: disposableTransient));
                 }
             }
         }
@@ -85,15 +92,25 @@ namespace VaraniumSharp.Initiator.DependencyInjection
                 var registrationAttribute =
                     (AutomaticConcretionContainerRegistrationAttribute)
                     @class.Key.GetCustomAttribute(typeof(AutomaticConcretionContainerRegistrationAttribute));
+
+                var disposableTransient =
+                    (DisposableTransientAttribute)
+                    @class.Key.GetCustomAttribute(typeof(DisposableTransientAttribute)) == null;
+
                 @class.Value.ForEach(x =>
                 {
                     if (registrationAttribute.MultipleConstructors)
                     {
-                        _container.RegisterMany(new[] { @class.Key, x }, x, registrationAttribute.Reuse.ConvertFromVaraniumReuse(), FactoryMethod.ConstructorWithResolvableArguments);
+                        _container.RegisterMany(new[] { @class.Key, x }, x,
+                            registrationAttribute.Reuse.ConvertFromVaraniumReuse(),
+                            FactoryMethod.ConstructorWithResolvableArguments,
+                            Setup.With(allowDisposableTransient: disposableTransient));
                     }
                     else
                     {
-                        _container.RegisterMany(new[] { @class.Key, x }, x, registrationAttribute.Reuse.ConvertFromVaraniumReuse());
+                        _container.RegisterMany(new[] { @class.Key, x }, x,
+                            registrationAttribute.Reuse.ConvertFromVaraniumReuse(),
+                            setup: Setup.With(allowDisposableTransient: disposableTransient));
                     }
                 });
             }
