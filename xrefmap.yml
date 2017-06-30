@@ -1,6 +1,18 @@
 ### YamlMime:XRefMap
 sorted: true
 references:
+- uid: VaraniumSharp.Initiator.Attributes
+  name: VaraniumSharp.Initiator.Attributes
+  href: api/VaraniumSharp.Initiator.Attributes.html
+  commentId: N:VaraniumSharp.Initiator.Attributes
+  fullName: VaraniumSharp.Initiator.Attributes
+  nameWithType: VaraniumSharp.Initiator.Attributes
+- uid: VaraniumSharp.Initiator.Attributes.DisposableTransientAttribute
+  name: DisposableTransientAttribute
+  href: api/VaraniumSharp.Initiator.Attributes.DisposableTransientAttribute.html
+  commentId: T:VaraniumSharp.Initiator.Attributes.DisposableTransientAttribute
+  fullName: VaraniumSharp.Initiator.Attributes.DisposableTransientAttribute
+  nameWithType: DisposableTransientAttribute
 - uid: VaraniumSharp.Initiator.Caching
   name: VaraniumSharp.Initiator.Caching
   href: api/VaraniumSharp.Initiator.Caching.html
