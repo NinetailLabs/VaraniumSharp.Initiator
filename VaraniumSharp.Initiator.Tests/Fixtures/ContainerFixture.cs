@@ -38,7 +38,8 @@ namespace VaraniumSharp.Initiator.Tests.Fixtures
             throw new NotImplementedException();
         }
 
-        public IEnumerable<KV<object, Factory>> GetAllServiceFactories(Type serviceType, bool bothClosedAndOpenGenerics = false)
+        public IEnumerable<KV<object, Factory>> GetAllServiceFactories(Type serviceType,
+            bool bothClosedAndOpenGenerics = false)
         {
             throw new NotImplementedException();
         }
@@ -63,7 +64,8 @@ namespace VaraniumSharp.Initiator.Tests.Fixtures
             throw new NotImplementedException();
         }
 
-        public Expression GetOrAddStateItemExpression(object item, Type itemType = null, bool throwIfStateRequired = false)
+        public Expression GetOrAddStateItemExpression(object item, Type itemType = null,
+            bool throwIfStateRequired = false)
         {
             throw new NotImplementedException();
         }
@@ -93,7 +95,8 @@ namespace VaraniumSharp.Initiator.Tests.Fixtures
             throw new NotImplementedException();
         }
 
-        public bool IsRegistered(Type serviceType, object serviceKey, FactoryType factoryType, Func<Factory, bool> condition)
+        public bool IsRegistered(Type serviceType, object serviceKey, FactoryType factoryType,
+            Func<Factory, bool> condition)
         {
             throw new NotImplementedException();
         }
@@ -103,7 +106,8 @@ namespace VaraniumSharp.Initiator.Tests.Fixtures
             throw new NotImplementedException();
         }
 
-        public void Register(Factory factory, Type serviceType, object serviceKey, IfAlreadyRegistered ifAlreadyRegistered,
+        public void Register(Factory factory, Type serviceType, object serviceKey,
+            IfAlreadyRegistered ifAlreadyRegistered,
             bool isStaticallyChecked)
         {
             throw new NotImplementedException();
@@ -114,7 +118,8 @@ namespace VaraniumSharp.Initiator.Tests.Fixtures
             return _resolveItem;
         }
 
-        public object Resolve(Type serviceType, object serviceKey, bool ifUnresolvedReturnDefault, Type requiredServiceType,
+        public object Resolve(Type serviceType, object serviceKey, bool ifUnresolvedReturnDefault,
+            Type requiredServiceType,
             RequestInfo preResolveParent, IScope scope)
         {
             throw new NotImplementedException();
@@ -125,7 +130,8 @@ namespace VaraniumSharp.Initiator.Tests.Fixtures
             throw new NotImplementedException();
         }
 
-        public IEnumerable<object> ResolveMany(Type serviceType, object serviceKey, Type requiredServiceType, object compositeParentKey,
+        public IEnumerable<object> ResolveMany(Type serviceType, object serviceKey, Type requiredServiceType,
+            object compositeParentKey,
             Type compositeParentRequiredType, RequestInfo preResolveParent, IScope scope)
         {
             throw new NotImplementedException();
@@ -136,7 +142,8 @@ namespace VaraniumSharp.Initiator.Tests.Fixtures
             _resolveItem = item;
         }
 
-        public void Unregister(Type serviceType, object serviceKey, FactoryType factoryType, Func<Factory, bool> condition)
+        public void Unregister(Type serviceType, object serviceKey, FactoryType factoryType,
+            Func<Factory, bool> condition)
         {
             throw new NotImplementedException();
         }

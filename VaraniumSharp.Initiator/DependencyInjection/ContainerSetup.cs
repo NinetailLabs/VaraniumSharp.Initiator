@@ -65,8 +65,7 @@ namespace VaraniumSharp.Initiator.DependencyInjection
                     (AutomaticContainerRegistrationAttribute)
                     @class.GetCustomAttribute(typeof(AutomaticContainerRegistrationAttribute));
 
-                var disposableTransient = (DisposableTransientAttribute)
-                                          @class.GetCustomAttribute(typeof(DisposableTransientAttribute)) != null;
+                var disposableTransient = CheckIfClassIsDisposableTransient(@class);
 
                 if (registrationAttribute.MultipleConstructors)
                 {
@@ -84,6 +83,17 @@ namespace VaraniumSharp.Initiator.DependencyInjection
             }
         }
 
+        /// <summary>
+        /// Checks if a class has the <see cref="DisposableTransientAttribute"/> applied
+        /// </summary>
+        /// <param name="class">Type that should be checked</param>
+        /// <returns>True - Class has the attribute applied, otherwise false</returns>
+        private static bool CheckIfClassIsDisposableTransient(MemberInfo @class)
+        {
+            return (DisposableTransientAttribute)
+                   @class.GetCustomAttribute(typeof(DisposableTransientAttribute)) != null;
+        }
+
         /// <inheritdoc />
         protected override void RegisterConcretionClasses()
         {
@@ -93,9 +103,7 @@ namespace VaraniumSharp.Initiator.DependencyInjection
                     (AutomaticConcretionContainerRegistrationAttribute)
                     @class.Key.GetCustomAttribute(typeof(AutomaticConcretionContainerRegistrationAttribute));
 
-                var disposableTransient =
-                    (DisposableTransientAttribute)
-                    @class.Key.GetCustomAttribute(typeof(DisposableTransientAttribute)) == null;
+                var disposableTransient = CheckIfClassIsDisposableTransient(@class.Key);
 
                 @class.Value.ForEach(x =>
                 {
