@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Reflection;
 using VaraniumSharp.Attributes;
 using VaraniumSharp.DependencyInjection;
+using VaraniumSharp.Initiator.Attributes;
 
 namespace VaraniumSharp.Initiator.DependencyInjection
 {
@@ -64,17 +65,33 @@ namespace VaraniumSharp.Initiator.DependencyInjection
                     (AutomaticContainerRegistrationAttribute)
                     @class.GetCustomAttribute(typeof(AutomaticContainerRegistrationAttribute));
 
+                var disposableTransient = CheckIfClassIsDisposableTransient(@class);
+
                 if (registrationAttribute.MultipleConstructors)
                 {
                     _container.Register(registrationAttribute.ServiceType, @class,
                         registrationAttribute.Reuse.ConvertFromVaraniumReuse(),
-                        FactoryMethod.ConstructorWithResolvableArguments);
+                        FactoryMethod.ConstructorWithResolvableArguments,
+                        Setup.With(allowDisposableTransient: disposableTransient));
                 }
                 else
                 {
-                    _container.Register(registrationAttribute.ServiceType, @class, registrationAttribute.Reuse.ConvertFromVaraniumReuse());
+                    _container.Register(registrationAttribute.ServiceType, @class,
+                        registrationAttribute.Reuse.ConvertFromVaraniumReuse(),
+                        setup: Setup.With(allowDisposableTransient: disposableTransient));
                 }
             }
+        }
+
+        /// <summary>
+        /// Checks if a class has the <see cref="DisposableTransientAttribute"/> applied
+        /// </summary>
+        /// <param name="class">Type that should be checked</param>
+        /// <returns>True - Class has the attribute applied, otherwise false</returns>
+        private static bool CheckIfClassIsDisposableTransient(MemberInfo @class)
+        {
+            return (DisposableTransientAttribute)
+                   @class.GetCustomAttribute(typeof(DisposableTransientAttribute)) != null;
         }
 
         /// <inheritdoc />
@@ -85,15 +102,23 @@ namespace VaraniumSharp.Initiator.DependencyInjection
                 var registrationAttribute =
                     (AutomaticConcretionContainerRegistrationAttribute)
                     @class.Key.GetCustomAttribute(typeof(AutomaticConcretionContainerRegistrationAttribute));
+
+                var disposableTransient = CheckIfClassIsDisposableTransient(@class.Key);
+
                 @class.Value.ForEach(x =>
                 {
                     if (registrationAttribute.MultipleConstructors)
                     {
-                        _container.RegisterMany(new[] { @class.Key, x }, x, registrationAttribute.Reuse.ConvertFromVaraniumReuse(), FactoryMethod.ConstructorWithResolvableArguments);
+                        _container.RegisterMany(new[] { @class.Key, x }, x,
+                            registrationAttribute.Reuse.ConvertFromVaraniumReuse(),
+                            FactoryMethod.ConstructorWithResolvableArguments,
+                            Setup.With(allowDisposableTransient: disposableTransient));
                     }
                     else
                     {
-                        _container.RegisterMany(new[] { @class.Key, x }, x, registrationAttribute.Reuse.ConvertFromVaraniumReuse());
+                        _container.RegisterMany(new[] { @class.Key, x }, x,
+                            registrationAttribute.Reuse.ConvertFromVaraniumReuse(),
+                            setup: Setup.With(allowDisposableTransient: disposableTransient));
                     }
                 });
             }

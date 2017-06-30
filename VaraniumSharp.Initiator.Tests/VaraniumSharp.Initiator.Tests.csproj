@@ -51,6 +51,7 @@
     <Compile Include="DependencyInjection\ContainerSetupTest.cs" />
     <Compile Include="DependencyInjection\ServiceReuseExtensions.cs" />
     <Compile Include="Fixtures\ContainerFixture.cs" />
+    <Compile Include="Fixtures\RegistrationClassFixtures.cs" />
     <Compile Include="Helpers\ApplicationConfigurationHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
