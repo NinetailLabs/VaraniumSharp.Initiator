@@ -1,35 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-   <metadata xmlns="http://schemas.microsoft.com/packaging/21.0.07/nuspec.xsd">
-      <id>VaraniumSharp.Initiator</id>
-      <version>0.0.0</version>
-      <authors>NineTail Labs</authors>
-      <owners>NineTail Labs</owners>
-      <title>VaraniumSharp.Initiator</title>
-      <description>Ring 2 library based on VaraniumSharp. This library makes use of and extends VaraniumSharp to be a base for other (Ring 3) projects.</description>
-      <summary>Ring 2 library based on VaraniumSharp. This library makes use of and extends VaraniumSharp to be a base for other (Ring 3) projects.</summary>
-      <licenseUrl>https://raw.githubusercontent.com/NinetailLabs/VaraniumSharp.Initiator/master/LICENSE</licenseUrl>
-      <projectUrl>https://github.com/NinetailLabs/VaraniumSharp.Initiator</projectUrl>
-      <iconUrl>https://raw.githubusercontent.com/NinetailLabs/VaraniumSharp.Initiator/develop/icon.png</iconUrl>
-      <requireLicenseAcceptance>false</requireLicenseAcceptance>
-      <copyright>Copyright (c) NineTail Labs 2016</copyright>
-      <releaseNotes>ReleaseNotesHere</releaseNotes>
-      <tags>C# VaraniumSharp Initiator VaraniumSharp.Initiator Varanium</tags>
-      
-      <dependencies>
-        <dependency id="DryIoc.dll" version="2.7.1"/>
-        <dependency id="Serilog" version="2.2.1"/>
-        <dependency id="Serilog.Sinks.ColoredConsole" version="2.0.0"/>
-        <dependency id="Serilog.Sinks.File" version="3.0.1"/>
-        <dependency id="Serilog.Sinks.Seq" version="3.0.0"/>
-        <dependency id="Serilog.Sinks.Splunk" version="2.0.1"/>
-        <dependency id="VaraniumSharp" version="1.13.0"/>
-      </dependencies>
-      
-   </metadata>
-  
-   <files>
-      <file src="./bin/Release/VaraniumSharp.Initiator.dll" target="lib\net462" />
-      <file src="./bin/Release/VaraniumSharp.Initiator.xml" target="lib\net462" />      
-   </files>
+  <metadata xmlns="http://schemas.microsoft.com/packaging/21.0.07/nuspec.xsd">
+    <id>VaraniumSharp.Initiator</id>
+    <version>0.0.0</version>
+    <authors>NineTail Labs</authors>
+    <owners>NineTail Labs</owners>
+    <title>VaraniumSharp.Initiator</title>
+    <description>Ring 2 library based on VaraniumSharp. This library makes use of and extends VaraniumSharp to be a base for other (Ring 3) projects.</description>
+    <summary>Ring 2 library based on VaraniumSharp. This library makes use of and extends VaraniumSharp to be a base for other (Ring 3) projects.</summary>
+    <licenseUrl>https://raw.githubusercontent.com/NinetailLabs/VaraniumSharp.Initiator/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/NinetailLabs/VaraniumSharp.Initiator</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/NinetailLabs/VaraniumSharp.Initiator/develop/icon.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <copyright>Copyright (c) NineTail Labs 2016</copyright>
+    <releaseNotes>ReleaseNotesHere</releaseNotes>
+    <tags>C# VaraniumSharp Initiator VaraniumSharp.Initiator Varanium</tags>
+
+    <dependencies>
+      <dependency id="DryIoc.dll" version="2.7.1" />
+      <dependency id="Microsoft.ApplicationInsights" version="2.4.0" />
+      <dependency id="Serilog" version="2.2.1" />
+      <dependency id="Serilog.Sinks.ColoredConsole" version="2.0.0" />
+      <dependency id="Serilog.Sinks.File" version="3.0.1" />
+      <dependency id="Serilog.Sinks.Seq" version="3.0.0" />
+      <dependency id="Serilog.Sinks.Splunk" version="2.0.1" />
+      <dependency id="VaraniumSharp" version="1.13.0" />
+    </dependencies>
+  </metadata>
+
+  <files>
+    <file src="./bin/Release/VaraniumSharp.Initiator.dll" target="lib\net462" />
+    <file src="./bin/Release/VaraniumSharp.Initiator.xml" target="lib\net462" />
+  </files>
 </package>
