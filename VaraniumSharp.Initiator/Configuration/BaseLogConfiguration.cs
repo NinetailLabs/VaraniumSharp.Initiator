@@ -38,7 +38,8 @@ namespace VaraniumSharp.Initiator.Configuration
             {
                 if (WasApplied)
                 {
-                    throw new InvalidOperationException("Cannot reapply configuration again, it has already been applied");
+                    throw new InvalidOperationException(
+                        "Cannot reapply configuration again, it has already been applied");
                 }
 
                 LogSetup(serilogConfiguration);

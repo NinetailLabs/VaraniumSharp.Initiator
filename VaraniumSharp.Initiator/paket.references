@@ -1,4 +1,5 @@
 DryIoc.dll
+Microsoft.ApplicationInsights
 SemVer.Git.MSBuild
 Serilog
 Serilog.Sinks.ColoredConsole
