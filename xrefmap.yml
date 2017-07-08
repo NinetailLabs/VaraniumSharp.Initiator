@@ -451,3 +451,201 @@ references:
   commentId: F:VaraniumSharp.Initiator.Enumerations.ConfigurationKeys.SplunkToken
   fullName: VaraniumSharp.Initiator.Enumerations.ConfigurationKeys.SplunkToken
   nameWithType: ConfigurationKeys.SplunkToken
+- uid: VaraniumSharp.Initiator.Monitoring
+  name: VaraniumSharp.Initiator.Monitoring
+  href: api/VaraniumSharp.Initiator.Monitoring.html
+  commentId: N:VaraniumSharp.Initiator.Monitoring
+  fullName: VaraniumSharp.Initiator.Monitoring
+  nameWithType: VaraniumSharp.Initiator.Monitoring
+- uid: VaraniumSharp.Initiator.Monitoring.AppInsightClient
+  name: AppInsightClient
+  href: api/VaraniumSharp.Initiator.Monitoring.AppInsightClient.html
+  commentId: T:VaraniumSharp.Initiator.Monitoring.AppInsightClient
+  fullName: VaraniumSharp.Initiator.Monitoring.AppInsightClient
+  nameWithType: AppInsightClient
+- uid: VaraniumSharp.Initiator.Monitoring.AppInsightClient.DeviceDetails
+  name: DeviceDetails
+  href: api/VaraniumSharp.Initiator.Monitoring.AppInsightClient.html#VaraniumSharp_Initiator_Monitoring_AppInsightClient_DeviceDetails
+  commentId: P:VaraniumSharp.Initiator.Monitoring.AppInsightClient.DeviceDetails
+  fullName: VaraniumSharp.Initiator.Monitoring.AppInsightClient.DeviceDetails
+  nameWithType: AppInsightClient.DeviceDetails
+- uid: VaraniumSharp.Initiator.Monitoring.AppInsightClient.DeviceDetails*
+  name: DeviceDetails
+  href: api/VaraniumSharp.Initiator.Monitoring.AppInsightClient.html#VaraniumSharp_Initiator_Monitoring_AppInsightClient_DeviceDetails_
+  commentId: Overload:VaraniumSharp.Initiator.Monitoring.AppInsightClient.DeviceDetails
+  fullName: VaraniumSharp.Initiator.Monitoring.AppInsightClient.DeviceDetails
+  nameWithType: AppInsightClient.DeviceDetails
+- uid: VaraniumSharp.Initiator.Monitoring.AppInsightClient.Flush
+  name: Flush()
+  href: api/VaraniumSharp.Initiator.Monitoring.AppInsightClient.html#VaraniumSharp_Initiator_Monitoring_AppInsightClient_Flush
+  commentId: M:VaraniumSharp.Initiator.Monitoring.AppInsightClient.Flush
+  fullName: VaraniumSharp.Initiator.Monitoring.AppInsightClient.Flush()
+  nameWithType: AppInsightClient.Flush()
+- uid: VaraniumSharp.Initiator.Monitoring.AppInsightClient.Flush*
+  name: Flush
+  href: api/VaraniumSharp.Initiator.Monitoring.AppInsightClient.html#VaraniumSharp_Initiator_Monitoring_AppInsightClient_Flush_
+  commentId: Overload:VaraniumSharp.Initiator.Monitoring.AppInsightClient.Flush
+  fullName: VaraniumSharp.Initiator.Monitoring.AppInsightClient.Flush
+  nameWithType: AppInsightClient.Flush
+- uid: VaraniumSharp.Initiator.Monitoring.AppInsightClient.InitializeAsync(System.String,System.String)
+  name: InitializeAsync(String, String)
+  href: api/VaraniumSharp.Initiator.Monitoring.AppInsightClient.html#VaraniumSharp_Initiator_Monitoring_AppInsightClient_InitializeAsync_System_String_System_String_
+  commentId: M:VaraniumSharp.Initiator.Monitoring.AppInsightClient.InitializeAsync(System.String,System.String)
+  fullName: VaraniumSharp.Initiator.Monitoring.AppInsightClient.InitializeAsync(System.String, System.String)
+  nameWithType: AppInsightClient.InitializeAsync(String, String)
+- uid: VaraniumSharp.Initiator.Monitoring.AppInsightClient.InitializeAsync*
+  name: InitializeAsync
+  href: api/VaraniumSharp.Initiator.Monitoring.AppInsightClient.html#VaraniumSharp_Initiator_Monitoring_AppInsightClient_InitializeAsync_
+  commentId: Overload:VaraniumSharp.Initiator.Monitoring.AppInsightClient.InitializeAsync
+  fullName: VaraniumSharp.Initiator.Monitoring.AppInsightClient.InitializeAsync
+  nameWithType: AppInsightClient.InitializeAsync
+- uid: VaraniumSharp.Initiator.Monitoring.AppInsightClient.InstrumentationKey
+  name: InstrumentationKey
+  href: api/VaraniumSharp.Initiator.Monitoring.AppInsightClient.html#VaraniumSharp_Initiator_Monitoring_AppInsightClient_InstrumentationKey
+  commentId: P:VaraniumSharp.Initiator.Monitoring.AppInsightClient.InstrumentationKey
+  fullName: VaraniumSharp.Initiator.Monitoring.AppInsightClient.InstrumentationKey
+  nameWithType: AppInsightClient.InstrumentationKey
+- uid: VaraniumSharp.Initiator.Monitoring.AppInsightClient.InstrumentationKey*
+  name: InstrumentationKey
+  href: api/VaraniumSharp.Initiator.Monitoring.AppInsightClient.html#VaraniumSharp_Initiator_Monitoring_AppInsightClient_InstrumentationKey_
+  commentId: Overload:VaraniumSharp.Initiator.Monitoring.AppInsightClient.InstrumentationKey
+  fullName: VaraniumSharp.Initiator.Monitoring.AppInsightClient.InstrumentationKey
+  nameWithType: AppInsightClient.InstrumentationKey
+- uid: VaraniumSharp.Initiator.Monitoring.AppInsightClient.IsInitialized
+  name: IsInitialized
+  href: api/VaraniumSharp.Initiator.Monitoring.AppInsightClient.html#VaraniumSharp_Initiator_Monitoring_AppInsightClient_IsInitialized
+  commentId: P:VaraniumSharp.Initiator.Monitoring.AppInsightClient.IsInitialized
+  fullName: VaraniumSharp.Initiator.Monitoring.AppInsightClient.IsInitialized
+  nameWithType: AppInsightClient.IsInitialized
+- uid: VaraniumSharp.Initiator.Monitoring.AppInsightClient.IsInitialized*
+  name: IsInitialized
+  href: api/VaraniumSharp.Initiator.Monitoring.AppInsightClient.html#VaraniumSharp_Initiator_Monitoring_AppInsightClient_IsInitialized_
+  commentId: Overload:VaraniumSharp.Initiator.Monitoring.AppInsightClient.IsInitialized
+  fullName: VaraniumSharp.Initiator.Monitoring.AppInsightClient.IsInitialized
+  nameWithType: AppInsightClient.IsInitialized
+- uid: VaraniumSharp.Initiator.Monitoring.AppInsightClient.OperatingSystem
+  name: OperatingSystem
+  href: api/VaraniumSharp.Initiator.Monitoring.AppInsightClient.html#VaraniumSharp_Initiator_Monitoring_AppInsightClient_OperatingSystem
+  commentId: P:VaraniumSharp.Initiator.Monitoring.AppInsightClient.OperatingSystem
+  fullName: VaraniumSharp.Initiator.Monitoring.AppInsightClient.OperatingSystem
+  nameWithType: AppInsightClient.OperatingSystem
+- uid: VaraniumSharp.Initiator.Monitoring.AppInsightClient.OperatingSystem*
+  name: OperatingSystem
+  href: api/VaraniumSharp.Initiator.Monitoring.AppInsightClient.html#VaraniumSharp_Initiator_Monitoring_AppInsightClient_OperatingSystem_
+  commentId: Overload:VaraniumSharp.Initiator.Monitoring.AppInsightClient.OperatingSystem
+  fullName: VaraniumSharp.Initiator.Monitoring.AppInsightClient.OperatingSystem
+  nameWithType: AppInsightClient.OperatingSystem
+- uid: VaraniumSharp.Initiator.Monitoring.AppInsightClient.SessionKey
+  name: SessionKey
+  href: api/VaraniumSharp.Initiator.Monitoring.AppInsightClient.html#VaraniumSharp_Initiator_Monitoring_AppInsightClient_SessionKey
+  commentId: P:VaraniumSharp.Initiator.Monitoring.AppInsightClient.SessionKey
+  fullName: VaraniumSharp.Initiator.Monitoring.AppInsightClient.SessionKey
+  nameWithType: AppInsightClient.SessionKey
+- uid: VaraniumSharp.Initiator.Monitoring.AppInsightClient.SessionKey*
+  name: SessionKey
+  href: api/VaraniumSharp.Initiator.Monitoring.AppInsightClient.html#VaraniumSharp_Initiator_Monitoring_AppInsightClient_SessionKey_
+  commentId: Overload:VaraniumSharp.Initiator.Monitoring.AppInsightClient.SessionKey
+  fullName: VaraniumSharp.Initiator.Monitoring.AppInsightClient.SessionKey
+  nameWithType: AppInsightClient.SessionKey
+- uid: VaraniumSharp.Initiator.Monitoring.AppInsightClient.TrackDependency(System.String,System.String,System.DateTimeOffset,System.TimeSpan,System.Boolean)
+  name: TrackDependency(String, String, DateTimeOffset, TimeSpan, Boolean)
+  href: api/VaraniumSharp.Initiator.Monitoring.AppInsightClient.html#VaraniumSharp_Initiator_Monitoring_AppInsightClient_TrackDependency_System_String_System_String_System_DateTimeOffset_System_TimeSpan_System_Boolean_
+  commentId: M:VaraniumSharp.Initiator.Monitoring.AppInsightClient.TrackDependency(System.String,System.String,System.DateTimeOffset,System.TimeSpan,System.Boolean)
+  fullName: VaraniumSharp.Initiator.Monitoring.AppInsightClient.TrackDependency(System.String, System.String, System.DateTimeOffset, System.TimeSpan, System.Boolean)
+  nameWithType: AppInsightClient.TrackDependency(String, String, DateTimeOffset, TimeSpan, Boolean)
+- uid: VaraniumSharp.Initiator.Monitoring.AppInsightClient.TrackDependency*
+  name: TrackDependency
+  href: api/VaraniumSharp.Initiator.Monitoring.AppInsightClient.html#VaraniumSharp_Initiator_Monitoring_AppInsightClient_TrackDependency_
+  commentId: Overload:VaraniumSharp.Initiator.Monitoring.AppInsightClient.TrackDependency
+  fullName: VaraniumSharp.Initiator.Monitoring.AppInsightClient.TrackDependency
+  nameWithType: AppInsightClient.TrackDependency
+- uid: VaraniumSharp.Initiator.Monitoring.AppInsightClient.TrackEvent(System.String,System.Collections.Generic.IDictionary{System.String,System.String},System.Collections.Generic.IDictionary{System.String,System.Double})
+  name: TrackEvent(String, IDictionary<String, String>, IDictionary<String, Double>)
+  href: api/VaraniumSharp.Initiator.Monitoring.AppInsightClient.html#VaraniumSharp_Initiator_Monitoring_AppInsightClient_TrackEvent_System_String_System_Collections_Generic_IDictionary_System_String_System_String__System_Collections_Generic_IDictionary_System_String_System_Double__
+  commentId: M:VaraniumSharp.Initiator.Monitoring.AppInsightClient.TrackEvent(System.String,System.Collections.Generic.IDictionary{System.String,System.String},System.Collections.Generic.IDictionary{System.String,System.Double})
+  name.vb: TrackEvent(String, IDictionary(Of String, String), IDictionary(Of String, Double))
+  fullName: VaraniumSharp.Initiator.Monitoring.AppInsightClient.TrackEvent(System.String, System.Collections.Generic.IDictionary<System.String, System.String>, System.Collections.Generic.IDictionary<System.String, System.Double>)
+  fullName.vb: VaraniumSharp.Initiator.Monitoring.AppInsightClient.TrackEvent(System.String, System.Collections.Generic.IDictionary(Of System.String, System.String), System.Collections.Generic.IDictionary(Of System.String, System.Double))
+  nameWithType: AppInsightClient.TrackEvent(String, IDictionary<String, String>, IDictionary<String, Double>)
+  nameWithType.vb: AppInsightClient.TrackEvent(String, IDictionary(Of String, String), IDictionary(Of String, Double))
+- uid: VaraniumSharp.Initiator.Monitoring.AppInsightClient.TrackEvent*
+  name: TrackEvent
+  href: api/VaraniumSharp.Initiator.Monitoring.AppInsightClient.html#VaraniumSharp_Initiator_Monitoring_AppInsightClient_TrackEvent_
+  commentId: Overload:VaraniumSharp.Initiator.Monitoring.AppInsightClient.TrackEvent
+  fullName: VaraniumSharp.Initiator.Monitoring.AppInsightClient.TrackEvent
+  nameWithType: AppInsightClient.TrackEvent
+- uid: VaraniumSharp.Initiator.Monitoring.AppInsightClient.TrackException(System.Exception,System.Collections.Generic.IDictionary{System.String,System.String},System.Collections.Generic.IDictionary{System.String,System.Double})
+  name: TrackException(Exception, IDictionary<String, String>, IDictionary<String, Double>)
+  href: api/VaraniumSharp.Initiator.Monitoring.AppInsightClient.html#VaraniumSharp_Initiator_Monitoring_AppInsightClient_TrackException_System_Exception_System_Collections_Generic_IDictionary_System_String_System_String__System_Collections_Generic_IDictionary_System_String_System_Double__
+  commentId: M:VaraniumSharp.Initiator.Monitoring.AppInsightClient.TrackException(System.Exception,System.Collections.Generic.IDictionary{System.String,System.String},System.Collections.Generic.IDictionary{System.String,System.Double})
+  name.vb: TrackException(Exception, IDictionary(Of String, String), IDictionary(Of String, Double))
+  fullName: VaraniumSharp.Initiator.Monitoring.AppInsightClient.TrackException(System.Exception, System.Collections.Generic.IDictionary<System.String, System.String>, System.Collections.Generic.IDictionary<System.String, System.Double>)
+  fullName.vb: VaraniumSharp.Initiator.Monitoring.AppInsightClient.TrackException(System.Exception, System.Collections.Generic.IDictionary(Of System.String, System.String), System.Collections.Generic.IDictionary(Of System.String, System.Double))
+  nameWithType: AppInsightClient.TrackException(Exception, IDictionary<String, String>, IDictionary<String, Double>)
+  nameWithType.vb: AppInsightClient.TrackException(Exception, IDictionary(Of String, String), IDictionary(Of String, Double))
+- uid: VaraniumSharp.Initiator.Monitoring.AppInsightClient.TrackException*
+  name: TrackException
+  href: api/VaraniumSharp.Initiator.Monitoring.AppInsightClient.html#VaraniumSharp_Initiator_Monitoring_AppInsightClient_TrackException_
+  commentId: Overload:VaraniumSharp.Initiator.Monitoring.AppInsightClient.TrackException
+  fullName: VaraniumSharp.Initiator.Monitoring.AppInsightClient.TrackException
+  nameWithType: AppInsightClient.TrackException
+- uid: VaraniumSharp.Initiator.Monitoring.AppInsightClient.TrackMetric(System.String,System.Double)
+  name: TrackMetric(String, Double)
+  href: api/VaraniumSharp.Initiator.Monitoring.AppInsightClient.html#VaraniumSharp_Initiator_Monitoring_AppInsightClient_TrackMetric_System_String_System_Double_
+  commentId: M:VaraniumSharp.Initiator.Monitoring.AppInsightClient.TrackMetric(System.String,System.Double)
+  fullName: VaraniumSharp.Initiator.Monitoring.AppInsightClient.TrackMetric(System.String, System.Double)
+  nameWithType: AppInsightClient.TrackMetric(String, Double)
+- uid: VaraniumSharp.Initiator.Monitoring.AppInsightClient.TrackMetric*
+  name: TrackMetric
+  href: api/VaraniumSharp.Initiator.Monitoring.AppInsightClient.html#VaraniumSharp_Initiator_Monitoring_AppInsightClient_TrackMetric_
+  commentId: Overload:VaraniumSharp.Initiator.Monitoring.AppInsightClient.TrackMetric
+  fullName: VaraniumSharp.Initiator.Monitoring.AppInsightClient.TrackMetric
+  nameWithType: AppInsightClient.TrackMetric
+- uid: VaraniumSharp.Initiator.Monitoring.AppInsightClient.TrackPageView(System.String)
+  name: TrackPageView(String)
+  href: api/VaraniumSharp.Initiator.Monitoring.AppInsightClient.html#VaraniumSharp_Initiator_Monitoring_AppInsightClient_TrackPageView_System_String_
+  commentId: M:VaraniumSharp.Initiator.Monitoring.AppInsightClient.TrackPageView(System.String)
+  fullName: VaraniumSharp.Initiator.Monitoring.AppInsightClient.TrackPageView(System.String)
+  nameWithType: AppInsightClient.TrackPageView(String)
+- uid: VaraniumSharp.Initiator.Monitoring.AppInsightClient.TrackPageView*
+  name: TrackPageView
+  href: api/VaraniumSharp.Initiator.Monitoring.AppInsightClient.html#VaraniumSharp_Initiator_Monitoring_AppInsightClient_TrackPageView_
+  commentId: Overload:VaraniumSharp.Initiator.Monitoring.AppInsightClient.TrackPageView
+  fullName: VaraniumSharp.Initiator.Monitoring.AppInsightClient.TrackPageView
+  nameWithType: AppInsightClient.TrackPageView
+- uid: VaraniumSharp.Initiator.Monitoring.AppInsightClient.TrackRequest(System.String,System.DateTimeOffset,System.TimeSpan,System.String,System.Boolean)
+  name: TrackRequest(String, DateTimeOffset, TimeSpan, String, Boolean)
+  href: api/VaraniumSharp.Initiator.Monitoring.AppInsightClient.html#VaraniumSharp_Initiator_Monitoring_AppInsightClient_TrackRequest_System_String_System_DateTimeOffset_System_TimeSpan_System_String_System_Boolean_
+  commentId: M:VaraniumSharp.Initiator.Monitoring.AppInsightClient.TrackRequest(System.String,System.DateTimeOffset,System.TimeSpan,System.String,System.Boolean)
+  fullName: VaraniumSharp.Initiator.Monitoring.AppInsightClient.TrackRequest(System.String, System.DateTimeOffset, System.TimeSpan, System.String, System.Boolean)
+  nameWithType: AppInsightClient.TrackRequest(String, DateTimeOffset, TimeSpan, String, Boolean)
+- uid: VaraniumSharp.Initiator.Monitoring.AppInsightClient.TrackRequest*
+  name: TrackRequest
+  href: api/VaraniumSharp.Initiator.Monitoring.AppInsightClient.html#VaraniumSharp_Initiator_Monitoring_AppInsightClient_TrackRequest_
+  commentId: Overload:VaraniumSharp.Initiator.Monitoring.AppInsightClient.TrackRequest
+  fullName: VaraniumSharp.Initiator.Monitoring.AppInsightClient.TrackRequest
+  nameWithType: AppInsightClient.TrackRequest
+- uid: VaraniumSharp.Initiator.Monitoring.AppInsightClient.TrackTelemetry
+  name: TrackTelemetry
+  href: api/VaraniumSharp.Initiator.Monitoring.AppInsightClient.html#VaraniumSharp_Initiator_Monitoring_AppInsightClient_TrackTelemetry
+  commentId: P:VaraniumSharp.Initiator.Monitoring.AppInsightClient.TrackTelemetry
+  fullName: VaraniumSharp.Initiator.Monitoring.AppInsightClient.TrackTelemetry
+  nameWithType: AppInsightClient.TrackTelemetry
+- uid: VaraniumSharp.Initiator.Monitoring.AppInsightClient.TrackTelemetry*
+  name: TrackTelemetry
+  href: api/VaraniumSharp.Initiator.Monitoring.AppInsightClient.html#VaraniumSharp_Initiator_Monitoring_AppInsightClient_TrackTelemetry_
+  commentId: Overload:VaraniumSharp.Initiator.Monitoring.AppInsightClient.TrackTelemetry
+  fullName: VaraniumSharp.Initiator.Monitoring.AppInsightClient.TrackTelemetry
+  nameWithType: AppInsightClient.TrackTelemetry
+- uid: VaraniumSharp.Initiator.Monitoring.AppInsightClient.UserKey
+  name: UserKey
+  href: api/VaraniumSharp.Initiator.Monitoring.AppInsightClient.html#VaraniumSharp_Initiator_Monitoring_AppInsightClient_UserKey
+  commentId: P:VaraniumSharp.Initiator.Monitoring.AppInsightClient.UserKey
+  fullName: VaraniumSharp.Initiator.Monitoring.AppInsightClient.UserKey
+  nameWithType: AppInsightClient.UserKey
+- uid: VaraniumSharp.Initiator.Monitoring.AppInsightClient.UserKey*
+  name: UserKey
+  href: api/VaraniumSharp.Initiator.Monitoring.AppInsightClient.html#VaraniumSharp_Initiator_Monitoring_AppInsightClient_UserKey_
+  commentId: Overload:VaraniumSharp.Initiator.Monitoring.AppInsightClient.UserKey
+  fullName: VaraniumSharp.Initiator.Monitoring.AppInsightClient.UserKey
+  nameWithType: AppInsightClient.UserKey
