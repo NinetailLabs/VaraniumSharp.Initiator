@@ -54,7 +54,7 @@ namespace VaraniumSharp.Initiator.Monitoring
         /// <summary>
         /// Session key value that has been created for this session
         /// </summary>
-        public static string SessionKey => _telemetryClient.Context.Session.Id;
+        public static string SessionKey => _telemetryClient?.Context.Session.Id;
 
         /// <summary>
         /// Enable telemetry tracking
@@ -65,6 +65,11 @@ namespace VaraniumSharp.Initiator.Monitoring
         /// User key value assigned to the TelemetryClient
         /// </summary>
         public static string UserKey => _telemetryClient?.Context.User.AuthenticatedUserId;
+
+        /// <summary>
+        /// Version number that the Telemerty client will report
+        /// </summary>
+        public static string VersionNumber => _telemetryClient?.Context.Component.Version;
 
         #endregion
 
