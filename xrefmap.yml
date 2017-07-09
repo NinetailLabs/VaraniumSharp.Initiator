@@ -649,3 +649,15 @@ references:
   commentId: Overload:VaraniumSharp.Initiator.Monitoring.AppInsightClient.UserKey
   fullName: VaraniumSharp.Initiator.Monitoring.AppInsightClient.UserKey
   nameWithType: AppInsightClient.UserKey
+- uid: VaraniumSharp.Initiator.Monitoring.AppInsightClient.VersionNumber
+  name: VersionNumber
+  href: api/VaraniumSharp.Initiator.Monitoring.AppInsightClient.html#VaraniumSharp_Initiator_Monitoring_AppInsightClient_VersionNumber
+  commentId: P:VaraniumSharp.Initiator.Monitoring.AppInsightClient.VersionNumber
+  fullName: VaraniumSharp.Initiator.Monitoring.AppInsightClient.VersionNumber
+  nameWithType: AppInsightClient.VersionNumber
+- uid: VaraniumSharp.Initiator.Monitoring.AppInsightClient.VersionNumber*
+  name: VersionNumber
+  href: api/VaraniumSharp.Initiator.Monitoring.AppInsightClient.html#VaraniumSharp_Initiator_Monitoring_AppInsightClient_VersionNumber_
+  commentId: Overload:VaraniumSharp.Initiator.Monitoring.AppInsightClient.VersionNumber
+  fullName: VaraniumSharp.Initiator.Monitoring.AppInsightClient.VersionNumber
+  nameWithType: AppInsightClient.VersionNumber
