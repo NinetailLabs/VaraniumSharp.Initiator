@@ -54,7 +54,7 @@ namespace VaraniumSharp.Initiator.Monitoring
         /// <summary>
         /// Session key value that has been created for this session
         /// </summary>
-        public static string SessionKey => _telemetryClient.Context.Session.Id;
+        public static string SessionKey => _telemetryClient?.Context.Session.Id;
 
         /// <summary>
         /// Enable telemetry tracking
