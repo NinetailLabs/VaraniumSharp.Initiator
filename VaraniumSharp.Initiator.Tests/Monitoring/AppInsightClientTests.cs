@@ -6,6 +6,7 @@ using Serilog;
 using System;
 using System.Linq;
 using System.Management;
+using System.Reflection;
 using System.Threading.Tasks;
 using VaraniumSharp.Initiator.Monitoring;
 using VaraniumSharp.Initiator.Tests.Fixtures;
@@ -203,6 +204,22 @@ namespace VaraniumSharp.Initiator.Tests.Monitoring
 
             // assert
             httpMock.AssertWasCalled(t => t.Post(UrlPath));
+        }
+
+        [Test]
+        public void VersionNumberIsRetrievedCorrectly()
+        {
+            // arrange
+            var expectedVersion = Assembly
+                                      .GetEntryAssembly()
+                                      ?.GetName()
+                                      .Version
+                                      .ToString()
+                                  ?? "0.0.0.0";
+
+            // act
+            // assert
+            AppInsightClient.VersionNumber.Should().Be(expectedVersion);
         }
 
         #endregion

@@ -66,6 +66,11 @@ namespace VaraniumSharp.Initiator.Monitoring
         /// </summary>
         public static string UserKey => _telemetryClient?.Context.User.AuthenticatedUserId;
 
+        /// <summary>
+        /// Version number that the Telemerty client will report
+        /// </summary>
+        public static string VersionNumber => _telemetryClient?.Context.Component.Version;
+
         #endregion
 
         #region Public Methods
