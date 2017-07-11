@@ -637,6 +637,24 @@ references:
   commentId: Overload:VaraniumSharp.Initiator.Monitoring.AppInsightClient.TrackTelemetry
   fullName: VaraniumSharp.Initiator.Monitoring.AppInsightClient.TrackTelemetry
   nameWithType: AppInsightClient.TrackTelemetry
+- uid: VaraniumSharp.Initiator.Monitoring.AppInsightClient.TrackTrace(System.String)
+  name: TrackTrace(String)
+  href: api/VaraniumSharp.Initiator.Monitoring.AppInsightClient.html#VaraniumSharp_Initiator_Monitoring_AppInsightClient_TrackTrace_System_String_
+  commentId: M:VaraniumSharp.Initiator.Monitoring.AppInsightClient.TrackTrace(System.String)
+  fullName: VaraniumSharp.Initiator.Monitoring.AppInsightClient.TrackTrace(System.String)
+  nameWithType: AppInsightClient.TrackTrace(String)
+- uid: VaraniumSharp.Initiator.Monitoring.AppInsightClient.TrackTrace(System.String,Microsoft.ApplicationInsights.DataContracts.SeverityLevel)
+  name: TrackTrace(String, SeverityLevel)
+  href: api/VaraniumSharp.Initiator.Monitoring.AppInsightClient.html#VaraniumSharp_Initiator_Monitoring_AppInsightClient_TrackTrace_System_String_Microsoft_ApplicationInsights_DataContracts_SeverityLevel_
+  commentId: M:VaraniumSharp.Initiator.Monitoring.AppInsightClient.TrackTrace(System.String,Microsoft.ApplicationInsights.DataContracts.SeverityLevel)
+  fullName: VaraniumSharp.Initiator.Monitoring.AppInsightClient.TrackTrace(System.String, Microsoft.ApplicationInsights.DataContracts.SeverityLevel)
+  nameWithType: AppInsightClient.TrackTrace(String, SeverityLevel)
+- uid: VaraniumSharp.Initiator.Monitoring.AppInsightClient.TrackTrace*
+  name: TrackTrace
+  href: api/VaraniumSharp.Initiator.Monitoring.AppInsightClient.html#VaraniumSharp_Initiator_Monitoring_AppInsightClient_TrackTrace_
+  commentId: Overload:VaraniumSharp.Initiator.Monitoring.AppInsightClient.TrackTrace
+  fullName: VaraniumSharp.Initiator.Monitoring.AppInsightClient.TrackTrace
+  nameWithType: AppInsightClient.TrackTrace
 - uid: VaraniumSharp.Initiator.Monitoring.AppInsightClient.UserKey
   name: UserKey
   href: api/VaraniumSharp.Initiator.Monitoring.AppInsightClient.html#VaraniumSharp_Initiator_Monitoring_AppInsightClient_UserKey
