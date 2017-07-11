@@ -7,6 +7,7 @@ using System.Management;
 using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
+using Microsoft.ApplicationInsights.DataContracts;
 
 namespace VaraniumSharp.Initiator.Monitoring
 {
@@ -203,6 +204,31 @@ namespace VaraniumSharp.Initiator.Monitoring
             if (TelemetryCanBePosted())
             {
                 _telemetryClient.TrackRequest(name, startTime, duration, responseCode, success);
+            }
+        }
+
+        /// <summary>
+        /// Diagnostic log messages. You can also capture third-party logs.
+        /// </summary>
+        /// <param name="message">Trace message to capture</param>
+        public static void TrackTrace(string message)
+        {
+            if (TelemetryCanBePosted())
+            {
+                _telemetryClient.TrackTrace(message);
+            }
+        }
+
+        /// <summary>
+        /// Diagnostic log messages. You can also capture third-party logs.
+        /// </summary>
+        /// <param name="message">Trace message to capture</param>
+        /// <param name="severityLevel">Severity of the trace message</param>
+        public static void TrackTrace(string message, SeverityLevel severityLevel)
+        {
+            if (TelemetryCanBePosted())
+            {
+                _telemetryClient.TrackTrace(message, severityLevel);
             }
         }
 
