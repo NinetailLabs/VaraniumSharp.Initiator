@@ -8,6 +8,7 @@ using System.Linq;
 using System.Management;
 using System.Reflection;
 using System.Threading.Tasks;
+using Microsoft.ApplicationInsights.DataContracts;
 using VaraniumSharp.Initiator.Monitoring;
 using VaraniumSharp.Initiator.Tests.Fixtures;
 
@@ -135,6 +136,20 @@ namespace VaraniumSharp.Initiator.Tests.Monitoring
         }
 
         [Test]
+        public void TackingATaceWithSeverityLevelWorksCorrectly()
+        {
+            // arrange
+            var httpMock = SetupServer();
+
+            // act
+            AppInsightClient.TrackTrace("Test", SeverityLevel.Critical);
+            AppInsightClient.Flush();
+
+            // assert
+            httpMock.AssertWasCalled(t => t.Post(UrlPath));
+        }
+
+        [Test]
         public void TelemetryClientCorrectlyRetrievesOperatingSystem()
         {
             // arrange
@@ -162,6 +177,20 @@ namespace VaraniumSharp.Initiator.Tests.Monitoring
             // assert
             AppInsightClient.InstrumentationKey.Should().Be(TestKey);
             AppInsightClient.UserKey.Should().Be(TestUserKey);
+        }
+
+        [Test]
+        public void TrackingATraceWorksCorrectly()
+        {
+            // arrange
+            var httpMock = SetupServer();
+
+            // act
+            AppInsightClient.TrackTrace("Test");
+            AppInsightClient.Flush();
+
+            // assert
+            httpMock.AssertWasCalled(t => t.Post(UrlPath));
         }
 
         [Test]
