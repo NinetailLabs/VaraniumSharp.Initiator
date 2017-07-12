@@ -65,7 +65,7 @@ namespace VaraniumSharp.Initiator.Monitoring
         /// <summary>
         /// User key value assigned to the TelemetryClient
         /// </summary>
-        public static string UserKey => _telemetryClient?.Context.User.AuthenticatedUserId;
+        public static string UserKey => _telemetryClient?.Context.User.Id;
 
         /// <summary>
         /// Version number that the Telemerty client will report
@@ -104,7 +104,7 @@ namespace VaraniumSharp.Initiator.Monitoring
                     InstrumentationKey = instrumentationKey
                 };
 
-                _telemetryClient.Context.User.AuthenticatedUserId = userKey;
+                _telemetryClient.Context.User.Id = userKey;
                 _telemetryClient.Context.Session.Id = Guid.NewGuid().ToString();
                 _telemetryClient.Context.Device.OperatingSystem = GetWindowsFriendlyName();
                 _telemetryClient.Context.Device.Model = GetDeviceModel();
