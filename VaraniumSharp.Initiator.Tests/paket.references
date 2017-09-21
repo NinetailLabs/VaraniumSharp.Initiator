@@ -1,6 +1,7 @@
 DryIoc.dll
 FluentAssertions
 HttpMock
+IdentityModel.OidcClient
 Moq
 NUnit
 Serilog

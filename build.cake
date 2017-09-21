@@ -90,7 +90,6 @@ Task ("UnitTests")
                 ErrorOutputFile = errorResultFile,
                 OutputFile = testResultFile,
                 TeamCity = runningOnTeamCity,
-                Full = true,
                 WorkingDirectory = ".",
                 Work = MakeAbsolute(Directory("."))
             });
@@ -220,7 +219,7 @@ Task ("Documentation")
 Task ("Default")
 	.IsDependentOn ("OutputVariables")
 	.IsDependentOn ("DiscoverBuildDetails")
-	.IsDependentOn ("PaketRestore")
+	//.IsDependentOn ("PaketRestore")
 	.IsDependentOn ("Build")
 	.IsDependentOn ("UnitTests")
 	.IsDependentOn ("GenerateReleaseNotes")

@@ -1,11 +1,13 @@
 source https://api.nuget.org/v3/index.json
 
-framework: >= net462
+framework: >= netstandard2.0,net462
 
 nuget DryIoc.dll >= 2.7.1
 nuget FluentAssertions ~>  4.14
 nuget HttpMock 1.3.3
+nuget IdentityModel.OidcClient >= 2.2.0
 nuget Microsoft.ApplicationInsights ~> 2.4
+nuget Microsoft.Extensions.Logging 1.1.2
 nuget Moq >= 4.5.9
 nuget msdn.4.5.2 0.1.0-alpha-1611021200
 nuget NUnit ~> 3.4
@@ -15,4 +17,5 @@ nuget Serilog.Sinks.ColoredConsole >= 2.0.0
 nuget Serilog.Sinks.File >= 3.0.1
 nuget Serilog.Sinks.Seq >= 3.0.0
 nuget Serilog.Sinks.Splunk >= 2.0.1
+nuget System.IdentityModel.Tokens.Jwt >= 5.1.4
 nuget VaraniumSharp >= 1.7.0

@@ -1,13 +1,16 @@
 ﻿using FluentAssertions;
-using HttpMock;
 using Moq;
 using NUnit.Framework;
 using Serilog;
 using System;
 using System.Linq;
 using System.Management;
+using System.Net;
+using System.Net.Http;
 using System.Reflection;
 using System.Threading.Tasks;
+using HttpMockSlim;
+using HttpMockSlim.HttpListener;
 using Microsoft.ApplicationInsights.DataContracts;
 using VaraniumSharp.Initiator.Monitoring;
 using VaraniumSharp.Initiator.Tests.Fixtures;
@@ -39,14 +42,17 @@ namespace VaraniumSharp.Initiator.Tests.Monitoring
         public void ExternalDependencyCallEventIsPublishedCorrectly()
         {
             // arrange
-            var httpMock = SetupServer();
+            using (var httpDummy = new HttpMockFixture())
+            {
+                httpDummy.SetupServer();
 
-            // act
-            AppInsightClient.TrackDependency("Test", "testCommand", DateTimeOffset.Now, TimeSpan.Zero, true);
-            AppInsightClient.Flush();
+                // act
+                AppInsightClient.TrackDependency("Test", "testCommand", DateTimeOffset.Now, TimeSpan.Zero, true);
+                AppInsightClient.Flush();
 
-            // assert
-            httpMock.AssertWasCalled(t => t.Post(UrlPath));
+                // assert
+                httpDummy.PathWasCalled.Should().BeTrue();
+            }
         }
 
         [Test]
@@ -74,44 +80,53 @@ namespace VaraniumSharp.Initiator.Tests.Monitoring
         public void MetricIsNotPublishedIfPublishingIsDisabled()
         {
             // arrange
-            var httpMock = SetupServer();
-            AppInsightClient.TrackTelemetry = false;
+            using (var httpDummy = new HttpMockFixture())
+            {
+                httpDummy.SetupServer();
+                AppInsightClient.TrackTelemetry = false;
 
-            // act
-            AppInsightClient.TrackMetric("Test", 10.5);
-            AppInsightClient.Flush();
+                // act
+                AppInsightClient.TrackMetric("Test", 10.5);
+                AppInsightClient.Flush();
 
-            // assert
-            httpMock.AssertWasNotCalled(t => t.Post(UrlPath));
-            AppInsightClient.TrackTelemetry = true;
+                // assert
+                httpDummy.PathWasCalled.Should().BeFalse();
+                AppInsightClient.TrackTelemetry = true;
+            }
         }
 
         [Test]
         public void PublishingAnEventWorksCorrectly()
         {
             // arrange
-            var httpMock = SetupServer();
+            using (var httpDummy = new HttpMockFixture())
+            {
+                httpDummy.SetupServer();
 
-            // act
-            AppInsightClient.TrackEvent("Test");
-            AppInsightClient.Flush();
+                // act
+                AppInsightClient.TrackEvent("Test");
+                AppInsightClient.Flush();
 
-            // assert
-            httpMock.AssertWasCalled(t => t.Post(UrlPath));
+                // assert
+                httpDummy.PathWasCalled.Should().BeTrue();
+            }
         }
 
         [Test]
         public void PublishingMetricWorksCorrectly()
         {
             // arrange
-            var httpMock = SetupServer();
+            using (var httpDummy = new HttpMockFixture())
+            {
+                httpDummy.SetupServer();
 
-            // act
-            AppInsightClient.TrackMetric("Test", 12.2);
-            AppInsightClient.Flush();
+                // act
+                AppInsightClient.TrackMetric("Test", 12.2);
+                AppInsightClient.Flush();
 
-            // assert
-            httpMock.AssertWasCalled(t => t.Post(UrlPath)).RequestCount().Should().Be(1);
+                // assert
+                httpDummy.CallCount.Should().Be(1);
+            }
         }
 
         /*
@@ -139,14 +154,17 @@ namespace VaraniumSharp.Initiator.Tests.Monitoring
         public void TackingATaceWithSeverityLevelWorksCorrectly()
         {
             // arrange
-            var httpMock = SetupServer();
+            using (var httpDummy = new HttpMockFixture())
+            {
+                httpDummy.SetupServer();
 
-            // act
-            AppInsightClient.TrackTrace("Test", SeverityLevel.Critical);
-            AppInsightClient.Flush();
+                // act
+                AppInsightClient.TrackTrace("Test", SeverityLevel.Critical);
+                AppInsightClient.Flush();
 
-            // assert
-            httpMock.AssertWasCalled(t => t.Post(UrlPath));
+                // assert
+                httpDummy.PathWasCalled.Should().BeTrue();
+            }
         }
 
         [Test]
@@ -183,56 +201,68 @@ namespace VaraniumSharp.Initiator.Tests.Monitoring
         public void TrackingATraceWorksCorrectly()
         {
             // arrange
-            var httpMock = SetupServer();
+            using (var httpDummy = new HttpMockFixture())
+            {
+                httpDummy.SetupServer();
 
-            // act
-            AppInsightClient.TrackTrace("Test");
-            AppInsightClient.Flush();
+                // act
+                AppInsightClient.TrackTrace("Test");
+                AppInsightClient.Flush();
 
-            // assert
-            httpMock.AssertWasCalled(t => t.Post(UrlPath));
+                // assert
+                httpDummy.PathWasCalled.Should().BeTrue();
+            }
         }
 
         [Test]
         public void TrackingExceptionWorksCorrectly()
         {
             // arrange
-            var httpMock = SetupServer();
+            using (var httpDummy = new HttpMockFixture())
+            {
+                httpDummy.SetupServer();
 
-            // act
-            AppInsightClient.TrackException(new Exception("Oh no!"));
-            AppInsightClient.Flush();
+                // act
+                AppInsightClient.TrackException(new Exception("Oh no!"));
+                AppInsightClient.Flush();
 
-            // assert
-            httpMock.AssertWasCalled(t => t.Post(UrlPath));
+                // assert
+                httpDummy.PathWasCalled.Should().BeTrue();
+            }
         }
 
         [Test]
         public void TrackingPageViewWorksCorrectly()
         {
             // arrange
-            var httpMock = SetupServer();
+            using (var httpDummy = new HttpMockFixture())
+            {
+                httpDummy.SetupServer();
 
-            // act
-            AppInsightClient.TrackPageView("Test Page");
-            AppInsightClient.Flush();
+                // act
+                AppInsightClient.TrackPageView("Test Page");
+                AppInsightClient.Flush();
 
-            // assert
-            httpMock.AssertWasCalled(t => t.Post(UrlPath));
+                // assert
+                httpDummy.PathWasCalled.Should().BeTrue();
+            }
         }
 
         [Test]
         public void TrackingRequestWorksCorrectly()
         {
             // arrange
-            var httpMock = SetupServer();
+            using (var httpDummy = new HttpMockFixture())
+            {
+                httpDummy.SetupServer();
 
-            // act
-            AppInsightClient.TrackRequest("Test", DateTimeOffset.Now, TimeSpan.Zero, "202", true);
-            AppInsightClient.Flush();
+                // act
+                AppInsightClient.TrackRequest("Test", DateTimeOffset.Now, TimeSpan.Zero, "202", true);
+                AppInsightClient.Flush();
 
-            // assert
-            httpMock.AssertWasCalled(t => t.Post(UrlPath));
+                // assert
+                httpDummy.PathWasCalled.Should().BeTrue();
+            }
         }
 
         [Test]
@@ -267,17 +297,6 @@ namespace VaraniumSharp.Initiator.Tests.Monitoring
                    ?? fallbackValue;
         }
 
-        private static IHttpServer SetupServer()
-        {
-            const string url = "http://localhost:8888";
-
-            var httpMock = HttpMockRepository.At(url);
-            httpMock.Start();
-            httpMock.Stub(t => t.Post(UrlPath))
-                .OK();
-            return httpMock;
-        }
-
         #endregion
 
         #region Variables
@@ -291,5 +310,46 @@ namespace VaraniumSharp.Initiator.Tests.Monitoring
         private Mock<ILogger> _logMock;
 
         #endregion
+
+        private class HttpMockFixture : IDisposable
+        {
+            #region Properties
+
+            public int CallCount { get; private set; }
+
+            public bool PathWasCalled { get; private set; }
+
+            #endregion
+
+            #region Public Methods
+
+            public void Dispose()
+            {
+                _httpMock.Stop();
+            }
+
+            public void SetupServer()
+            {
+                const string url = "http://localhost:8888/";
+
+                _httpMock = new HttpMock();
+                _httpMock.Start(url);
+                _httpMock.Add("POST", UrlPath,
+                    (request, response) =>
+                    {
+                        PathWasCalled = true;
+                        CallCount++;
+                        response.StatusCode = (int)HttpStatusCode.OK;
+                    });
+            }
+
+            #endregion
+
+            #region Variables
+
+            private HttpMock _httpMock;
+
+            #endregion
+        }
     }
 }
