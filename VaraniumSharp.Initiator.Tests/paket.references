@@ -1,9 +1,11 @@
 DryIoc.dll
 FluentAssertions
-HttpMock
+Viki.HttpMockSlim
 IdentityModel.OidcClient
 Moq
+Newtonsoft.Json
 NUnit
 Serilog
 Serilog.Sinks.ColoredConsole
+Serilog.Sinks.Seq
 VaraniumSharp

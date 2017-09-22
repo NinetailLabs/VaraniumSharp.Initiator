@@ -1,6 +1,7 @@
 DryIoc.dll
 IdentityModel.OidcClient
 Microsoft.ApplicationInsights
+Newtonsoft.Json
 SemVer.Git.MSBuild
 Serilog
 Serilog.Sinks.ColoredConsole

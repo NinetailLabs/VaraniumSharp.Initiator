@@ -125,6 +125,7 @@ namespace VaraniumSharp.Initiator.Tests.Security
             {
                 fixture.WellKnownSetup();
                 fixture.SetupCertificates();
+                fixture.AuthRefreshSetup();
                 var sut = fixture.Instance;
 
                 // act
@@ -183,6 +184,13 @@ namespace VaraniumSharp.Initiator.Tests.Security
 
             #region Public Methods
 
+            public void AuthRefreshSetup()
+            {
+                StartServer();
+                HttpMock.HttpMock.Add("GET", AuthPath,
+                    (request, response) => { response.StatusCode = (int)HttpStatusCode.OK; });
+            }
+
             public void SetupCertificates()
             {
                 StartServer();
@@ -237,6 +245,7 @@ namespace VaraniumSharp.Initiator.Tests.Security
 
             public const string WellKnownPath = "/.well-known/openid-configuration";
             public const string ServerCertificatePath = "/protocol/openid-connect/certs";
+            public const string AuthPath = "/protocol/openid-connect/auth";
             public const string Authority = "http://localhost:8888/";
 
             #endregion
