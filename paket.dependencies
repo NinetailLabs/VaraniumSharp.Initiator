@@ -14,7 +14,7 @@ nuget Newtonsoft.Json >= 10.0.1 redirects:on
 nuget NUnit ~> 3.4
 nuget SemVer.Git.MSBuild >= 1.1.0 content:once
 nuget Serilog.Sinks.ColoredConsole
-nuget Serilog.Sinks.Seq
+nuget Serilog.Sinks.Seq 3.3.3
 nuget Serilog.Sinks.Splunk
 nuget System.IdentityModel.Tokens.Jwt >= 5.1.4
 nuget VaraniumSharp >= 1.7.0
