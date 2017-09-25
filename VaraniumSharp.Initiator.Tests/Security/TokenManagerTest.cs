@@ -1,13 +1,14 @@
-﻿using System;
+﻿using FluentAssertions;
+using HttpMockSlim;
+using IdentityModel.OidcClient;
+using Moq;
+using Newtonsoft.Json;
+using NUnit.Framework;
+using System;
 using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Net;
 using System.Threading.Tasks;
-using FluentAssertions;
-using HttpMockSlim;
-using IdentityModel.OidcClient;
-using Moq;
-using NUnit.Framework;
 using VaraniumSharp.Initiator.Interfaces.Security;
 using VaraniumSharp.Initiator.Security;
 using VaraniumSharp.Initiator.Tests.Fixtures;
@@ -101,7 +102,41 @@ namespace VaraniumSharp.Initiator.Tests.Security
             fixture.TokenStorageMock.Verify(t => t.RetrieveAccessTokenAsync(tokenName), Times.Once);
         }
 
-        //TODO - This does not work yet, not quite sure why
+        [Test]
+        public async Task IfTokenExpiredAndRefreshTokenIsReplacedOnRefreshItIsCorrectlyUpdatedInStorage()
+        {
+            // arrange
+            const string tokenName = "Test Token";
+            var refreshToken = Guid.NewGuid().ToString();
+            var fixture = new TokenManagerFixture();
+            await fixture.SetupServerDataAsync(tokenName, true);
+            var token = fixture.TokenGenerator.GenerateToken(DateTime.UtcNow.AddMinutes(-15),
+                DateTime.UtcNow.AddMinutes(-10), DateTime.UtcNow.AddMinutes(-17));
+            var tokenDataDummy = new TokenData(token);
+            var newAccessToken = fixture.TokenGenerator.GenerateToken();
+            var newRefreshToken = Guid.NewGuid().ToString();
+
+            fixture.TokenStorageMock
+                .Setup(t => t.RetrieveAccessTokenAsync(tokenName))
+                .ReturnsAsync(tokenDataDummy);
+            fixture.TokenStorageMock
+                .Setup(t => t.RetrieveRefreshTokenAsync(tokenName))
+                .ReturnsAsync(refreshToken);
+
+            fixture.WellKnownSetup();
+            fixture.SetupCertificates();
+            fixture.AuthRefreshSetup(newAccessToken, newRefreshToken);
+            fixture.AuthSetup();
+            var sut = fixture.Instance;
+
+            // act
+            await sut.CheckSigninAsync(tokenName);
+
+            // assert
+            fixture.TokenStorageMock.Verify(t => t.StoreRefreshTokenAsync(tokenName, newRefreshToken), Times.Once);
+            fixture.HttpMock.Dispose();
+        }
+
         [Test]
         public async Task IfTokenExpiredRefreshTokenIsRetrievedAndUsedToRefreshTheAccessToken()
         {
@@ -113,6 +148,8 @@ namespace VaraniumSharp.Initiator.Tests.Security
             var token = fixture.TokenGenerator.GenerateToken(DateTime.UtcNow.AddMinutes(-15),
                 DateTime.UtcNow.AddMinutes(-10), DateTime.UtcNow.AddMinutes(-17));
             var tokenDataDummy = new TokenData(token);
+            var newAccessToken = fixture.TokenGenerator.GenerateToken();
+            var newRefreshToken = Guid.NewGuid().ToString();
 
             fixture.TokenStorageMock
                 .Setup(t => t.RetrieveAccessTokenAsync(tokenName))
@@ -121,18 +158,20 @@ namespace VaraniumSharp.Initiator.Tests.Security
                 .Setup(t => t.RetrieveRefreshTokenAsync(tokenName))
                 .ReturnsAsync(refreshToken);
 
-            using (var httpMock = fixture.HttpMock)
-            {
-                fixture.WellKnownSetup();
-                fixture.SetupCertificates();
-                fixture.AuthRefreshSetup();
-                var sut = fixture.Instance;
+            fixture.WellKnownSetup();
+            fixture.SetupCertificates();
+            fixture.AuthRefreshSetup(newAccessToken, newRefreshToken);
+            fixture.AuthSetup();
+            var sut = fixture.Instance;
 
-                // act
-                var result = await sut.CheckSigninAsync(tokenName);
+            // act
+            var result = await sut.CheckSigninAsync(tokenName);
 
-                // assert
-            }
+            // assert
+            result.Token.Should().Be(newAccessToken);
+            fixture.TokenStorageMock.Verify(t => t.StoreAccessTokenAsync(tokenName, newAccessToken), Times.Once);
+            fixture.TokenStorageMock.Verify(t => t.StoreRefreshTokenAsync(tokenName, newRefreshToken), Times.Never);
+            fixture.HttpMock.Dispose();
         }
 
         [Test]
@@ -184,7 +223,13 @@ namespace VaraniumSharp.Initiator.Tests.Security
 
             #region Public Methods
 
-            public void AuthRefreshSetup()
+            public void AuthRefreshSetup(string newAccessToken, string newRefreshToken)
+            {
+                StartServer();
+                HttpMock.HttpMock.Add(new RefreshTokenHandler(newAccessToken, newRefreshToken));
+            }
+
+            public void AuthSetup()
             {
                 StartServer();
                 HttpMock.HttpMock.Add("GET", AuthPath,
@@ -201,7 +246,7 @@ namespace VaraniumSharp.Initiator.Tests.Security
                 });
             }
 
-            public async Task SetupServerDataAsync(string tokenName)
+            public async Task SetupServerDataAsync(string tokenName, bool replaceRefresh = false)
             {
                 var oidcOptions = new OidcClientOptions
                 {
@@ -210,7 +255,7 @@ namespace VaraniumSharp.Initiator.Tests.Security
                     ClientSecret = Guid.NewGuid().ToString(),
                     RedirectUri = "http://localhost:9999/"
                 };
-                var serverDetails = new IdentityServerConnectionDetails(Authority, false, oidcOptions);
+                var serverDetails = new IdentityServerConnectionDetails(Authority, replaceRefresh, oidcOptions);
                 await Instance.AddServerDetails(tokenName, serverDetails);
             }
 
@@ -281,5 +326,82 @@ namespace VaraniumSharp.Initiator.Tests.Security
 
             #endregion
         }
+
+        private class RefreshTokenHandler : IHttpHandlerMock
+        {
+            #region Constructor
+
+            public RefreshTokenHandler(string accessToken, string refreshToken)
+            {
+                _accessToken = accessToken;
+                _refreshToken = refreshToken;
+            }
+
+            #endregion
+
+            #region Public Methods
+
+            public bool Handle(HttpListenerContext context)
+            {
+                if (context.Request.HttpMethod == "POST"
+                    && context.Request.Url.AbsolutePath.EndsWith(TokenPath))
+                {
+                    var tokenResponse =
+                        JsonConvert.SerializeObject(new TokenResponseWrapper(_accessToken, _refreshToken));
+
+                    var memStream = new MemoryStream();
+                    var streamWrite = new StreamWriter(memStream);
+                    streamWrite.Write(tokenResponse);
+                    streamWrite.Flush();
+                    memStream.Position = 0;
+                    memStream.CopyTo(context.Response.OutputStream);
+
+                    context.Response.ContentType = "application/json";
+                    context.Response.StatusCode = (int)HttpStatusCode.OK;
+
+                    context.Response.Close();
+
+                    return true;
+                }
+                return false;
+            }
+
+            #endregion
+
+            #region Variables
+
+            private const string TokenPath = "/protocol/openid-connect/token";
+
+            private readonly string _accessToken;
+
+            private readonly string _refreshToken;
+
+            #endregion
+        }
+
+        private class TokenResponseWrapper
+        {
+            #region Constructor
+
+            public TokenResponseWrapper(string accessToken, string refreshToken)
+            {
+                RefreshToken = refreshToken;
+                AccessToken = accessToken;
+            }
+
+            #endregion
+
+            #region Properties
+
+            [JsonProperty("access_token")]
+            public string AccessToken { get; }
+
+            [JsonProperty("refresh_token")]
+            public string RefreshToken { get; }
+
+            #endregion
+        }
     }
 }
+
+// TODO - Add test that ensure new Signin is required if the provided access token isn't valid

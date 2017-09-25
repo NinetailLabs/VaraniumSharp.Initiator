@@ -1,4 +1,6 @@
 ﻿using FluentAssertions;
+using HttpMockSlim;
+using Microsoft.ApplicationInsights.DataContracts;
 using Moq;
 using NUnit.Framework;
 using Serilog;
@@ -6,12 +8,8 @@ using System;
 using System.Linq;
 using System.Management;
 using System.Net;
-using System.Net.Http;
 using System.Reflection;
 using System.Threading.Tasks;
-using HttpMockSlim;
-using HttpMockSlim.HttpListener;
-using Microsoft.ApplicationInsights.DataContracts;
 using VaraniumSharp.Initiator.Monitoring;
 using VaraniumSharp.Initiator.Tests.Fixtures;
 
