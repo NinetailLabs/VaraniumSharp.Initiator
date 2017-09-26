@@ -2,7 +2,6 @@
 using HttpMockSlim;
 using IdentityModel.OidcClient;
 using Moq;
-using Newtonsoft.Json;
 using NUnit.Framework;
 using System;
 using System.Diagnostics.CodeAnalysis;
@@ -79,6 +78,33 @@ namespace VaraniumSharp.Initiator.Tests.Security
         }
 
         [Test]
+        public async Task IfThereAreNoTokensSigninIsExecutedToAcquireTokens()
+        {
+            // arrange
+            const string tokenName = "Test Token";
+            var refreshToken = Guid.NewGuid().ToString();
+            var fixture = new TokenManagerFixture();
+            await fixture.SetupServerDataAsync(tokenName, true);
+            var token = fixture.TokenGenerator.GenerateToken();
+
+            fixture.WellKnownSetup();
+            fixture.SetupCertificates();
+            fixture.AuthSetup(token, refreshToken);
+            fixture.UserInfoSetup();
+            var sut = fixture.Instance;
+
+            // act
+            var result = await sut.CheckSigninAsync(tokenName);
+
+            // assert
+            result.Token.Should().Be(token);
+            fixture.TokenStorageMock.Verify(t => t.StoreAccessTokenAsync(tokenName, token), Times.Once);
+            fixture.TokenStorageMock.Verify(t => t.StoreRefreshTokenAsync(tokenName, refreshToken), Times.Once);
+
+            fixture.HttpMock.Dispose();
+        }
+
+        [Test]
         public async Task IfTheSameTokenIsRetrievedAgainAndItIsStillValidItWillNotBeRetrievedFromStorageAgain()
         {
             // arrange
@@ -126,7 +152,6 @@ namespace VaraniumSharp.Initiator.Tests.Security
             fixture.WellKnownSetup();
             fixture.SetupCertificates();
             fixture.AuthRefreshSetup(newAccessToken, newRefreshToken);
-            fixture.AuthSetup();
             var sut = fixture.Instance;
 
             // act
@@ -161,7 +186,6 @@ namespace VaraniumSharp.Initiator.Tests.Security
             fixture.WellKnownSetup();
             fixture.SetupCertificates();
             fixture.AuthRefreshSetup(newAccessToken, newRefreshToken);
-            fixture.AuthSetup();
             var sut = fixture.Instance;
 
             // act
@@ -204,7 +228,7 @@ namespace VaraniumSharp.Initiator.Tests.Security
             public TokenManagerFixture()
             {
                 Instance = new TokenManager(TokenStorage);
-                TokenGenerator = new TokenGenerator(Authority, "Tests");
+                TokenGenerator = new TokenGenerator(Authority.TrimEnd('/'), "Tests");
             }
 
             #endregion
@@ -229,11 +253,10 @@ namespace VaraniumSharp.Initiator.Tests.Security
                 HttpMock.HttpMock.Add(new RefreshTokenHandler(newAccessToken, newRefreshToken));
             }
 
-            public void AuthSetup()
+            public void AuthSetup(string accessToken, string refreshToken)
             {
                 StartServer();
-                HttpMock.HttpMock.Add("GET", AuthPath,
-                    (request, response) => { response.StatusCode = (int)HttpStatusCode.OK; });
+                HttpMock.HttpMock.Add(new UserSigninHandler(RedirectUrl, accessToken, refreshToken, TokenGenerator));
             }
 
             public void SetupCertificates()
@@ -251,12 +274,23 @@ namespace VaraniumSharp.Initiator.Tests.Security
                 var oidcOptions = new OidcClientOptions
                 {
                     Authority = Authority,
-                    ClientId = "TestClient",
+                    ClientId = "Tests",
                     ClientSecret = Guid.NewGuid().ToString(),
-                    RedirectUri = "http://localhost:9999/"
+                    RedirectUri = RedirectUrl,
+                    Policy = new Policy
+                    {
+                        RequireAuthorizationCodeHash = false,
+                        RequireAccessTokenHash = false
+                    }
                 };
                 var serverDetails = new IdentityServerConnectionDetails(Authority, replaceRefresh, oidcOptions);
                 await Instance.AddServerDetails(tokenName, serverDetails);
+            }
+
+            public void UserInfoSetup()
+            {
+                StartServer();
+                HttpMock.HttpMock.Add(new UserInfoFixture());
             }
 
             public void WellKnownSetup()
@@ -290,8 +324,8 @@ namespace VaraniumSharp.Initiator.Tests.Security
 
             public const string WellKnownPath = "/.well-known/openid-configuration";
             public const string ServerCertificatePath = "/protocol/openid-connect/certs";
-            public const string AuthPath = "/protocol/openid-connect/auth";
             public const string Authority = "http://localhost:8888/";
+            public const string RedirectUrl = "http://localhost:9999/";
 
             #endregion
         }
@@ -323,81 +357,6 @@ namespace VaraniumSharp.Initiator.Tests.Security
                     HttpMock.Start(baseUrl);
                 }
             }
-
-            #endregion
-        }
-
-        private class RefreshTokenHandler : IHttpHandlerMock
-        {
-            #region Constructor
-
-            public RefreshTokenHandler(string accessToken, string refreshToken)
-            {
-                _accessToken = accessToken;
-                _refreshToken = refreshToken;
-            }
-
-            #endregion
-
-            #region Public Methods
-
-            public bool Handle(HttpListenerContext context)
-            {
-                if (context.Request.HttpMethod == "POST"
-                    && context.Request.Url.AbsolutePath.EndsWith(TokenPath))
-                {
-                    var tokenResponse =
-                        JsonConvert.SerializeObject(new TokenResponseWrapper(_accessToken, _refreshToken));
-
-                    var memStream = new MemoryStream();
-                    var streamWrite = new StreamWriter(memStream);
-                    streamWrite.Write(tokenResponse);
-                    streamWrite.Flush();
-                    memStream.Position = 0;
-                    memStream.CopyTo(context.Response.OutputStream);
-
-                    context.Response.ContentType = "application/json";
-                    context.Response.StatusCode = (int)HttpStatusCode.OK;
-
-                    context.Response.Close();
-
-                    return true;
-                }
-                return false;
-            }
-
-            #endregion
-
-            #region Variables
-
-            private const string TokenPath = "/protocol/openid-connect/token";
-
-            private readonly string _accessToken;
-
-            private readonly string _refreshToken;
-
-            #endregion
-        }
-
-        private class TokenResponseWrapper
-        {
-            #region Constructor
-
-            public TokenResponseWrapper(string accessToken, string refreshToken)
-            {
-                RefreshToken = refreshToken;
-                AccessToken = accessToken;
-            }
-
-            #endregion
-
-            #region Properties
-
-            [JsonProperty("access_token")]
-            public string AccessToken { get; }
-
-            [JsonProperty("refresh_token")]
-            public string RefreshToken { get; }
 
             #endregion
         }

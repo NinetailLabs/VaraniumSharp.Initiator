@@ -125,38 +125,42 @@ namespace VaraniumSharp.Initiator.Security
             var options = _serverDetails[tokenName];
             // create an HttpListener to listen for requests on that redirect URI.
             var http = new HttpListener();
-            http.Prefixes.Add(options.OidcOptions.RedirectUri);
-            http.Start();
-
-            var client = new OidcClient(options.OidcOptions);
-            var state = await client.PrepareLoginAsync();
-            Process.Start(state.StartUrl);
-
-            var context = await http.GetContextAsync();
-
-            var formData = GetRequestPostData(context.Request);
-            var response = context.Response;
-            var responseString = "<html><body>Please return to the app.</body></html>";
-            var buffer = Encoding.UTF8.GetBytes(responseString);
-            response.ContentLength64 = buffer.Length;
-            var responseOutput = response.OutputStream;
-            await responseOutput.WriteAsync(buffer, 0, buffer.Length);
-            responseOutput.Close();
-
-            var result = await client.ProcessResponseAsync(formData, state);
-
-            if (result.IsError)
+            try
             {
-                _log.Error("Error occured during user authentication. {Error}", result.Error);
-                return null;
-            }
-            else
-            {
-                await UpdateRefreshTokenStorage(tokenName, result.RefreshToken);
-                token = await UpdateAccessTokenStorage(tokenName, result.AccessToken);
-            }
+                http.Prefixes.Add(options.OidcOptions.RedirectUri);
+                http.Start();
 
-            http.Stop();
+                var client = new OidcClient(options.OidcOptions);
+                var state = await client.PrepareLoginAsync();
+                Process.Start(state.StartUrl);
+
+                var context = await http.GetContextAsync();
+
+                var formData = GetRequestPostData(context.Request);
+                var response = context.Response;
+                const string responseString = "<html><body>Please return to the app.</body></html>";
+                var buffer = Encoding.UTF8.GetBytes(responseString);
+                response.ContentLength64 = buffer.Length;
+                var responseOutput = response.OutputStream;
+                await responseOutput.WriteAsync(buffer, 0, buffer.Length);
+                responseOutput.Close();
+
+                var result = await client.ProcessResponseAsync(formData, state);
+                if (result.IsError)
+                {
+                    _log.Error("Error occured during user authentication. {Error}", result.Error);
+                    return null;
+                }
+                else
+                {
+                    await UpdateRefreshTokenStorage(tokenName, result.RefreshToken);
+                    token = await UpdateAccessTokenStorage(tokenName, result.AccessToken);
+                }
+            }
+            finally
+            {
+                http.Stop();
+            }
 
             return token;
         }
@@ -251,7 +255,9 @@ namespace VaraniumSharp.Initiator.Security
             }
 
             _tokenDictionary[tokenName] = dToken;
-            return dToken.TokenExpired ? null : dToken;
+            return dToken?.TokenExpired ?? true
+                ? null
+                : dToken;
         }
 
         /// <summary>

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
@@ -82,7 +83,7 @@ namespace VaraniumSharp.Initiator.Tests.Fixtures
                 E = Convert.ToBase64String(_rsa.ExportParameters(false).Exponent)
             };
 
-            JsonWebKeyString = JsonConvert.SerializeObject(webkey);
+            JsonWebKeyString = JsonConvert.SerializeObject(new KeyWrapper { Keys = new List<WebKey> { webkey } });
 
             JsonWebKey = new JsonWebKey(JsonWebKeyString);
         }
@@ -115,6 +116,15 @@ namespace VaraniumSharp.Initiator.Tests.Fixtures
             public string Kty { get; set; }
             public string N { get; set; }
             public string Use { get; set; }
+
+            #endregion
+        }
+
+        private class KeyWrapper
+        {
+            #region Properties
+
+            public List<WebKey> Keys { get; set; }
 
             #endregion
         }

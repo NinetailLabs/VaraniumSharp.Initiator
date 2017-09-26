@@ -59,8 +59,12 @@
     <Compile Include="DependencyInjection\ServiceReuseExtensions.cs" />
     <Compile Include="Fixtures\ContainerFixture.cs" />
     <Compile Include="Fixtures\LoggerFixture.cs" />
+    <Compile Include="Fixtures\RefreshTokenHandler.cs" />
     <Compile Include="Fixtures\RegistrationClassFixtures.cs" />
     <Compile Include="Fixtures\TokenGenerator.cs" />
+    <Compile Include="Fixtures\TokenResponseWrapper.cs" />
+    <Compile Include="Fixtures\UserInfoFixture.cs" />
+    <Compile Include="Fixtures\UserSigninHandler.cs" />
     <Compile Include="Helpers\ApplicationConfigurationHelper.cs" />
     <Compile Include="Monitoring\AppInsightClientTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
