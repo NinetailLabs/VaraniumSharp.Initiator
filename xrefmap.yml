@@ -451,6 +451,108 @@ references:
   commentId: F:VaraniumSharp.Initiator.Enumerations.ConfigurationKeys.SplunkToken
   fullName: VaraniumSharp.Initiator.Enumerations.ConfigurationKeys.SplunkToken
   nameWithType: ConfigurationKeys.SplunkToken
+- uid: VaraniumSharp.Initiator.Interfaces.Security
+  name: VaraniumSharp.Initiator.Interfaces.Security
+  href: api/VaraniumSharp.Initiator.Interfaces.Security.html
+  commentId: N:VaraniumSharp.Initiator.Interfaces.Security
+  fullName: VaraniumSharp.Initiator.Interfaces.Security
+  nameWithType: VaraniumSharp.Initiator.Interfaces.Security
+- uid: VaraniumSharp.Initiator.Interfaces.Security.ITokenManager
+  name: ITokenManager
+  href: api/VaraniumSharp.Initiator.Interfaces.Security.ITokenManager.html
+  commentId: T:VaraniumSharp.Initiator.Interfaces.Security.ITokenManager
+  fullName: VaraniumSharp.Initiator.Interfaces.Security.ITokenManager
+  nameWithType: ITokenManager
+- uid: VaraniumSharp.Initiator.Interfaces.Security.ITokenManager.AddServerDetails(System.String,VaraniumSharp.Initiator.Security.IdentityServerConnectionDetails)
+  name: AddServerDetails(String, IdentityServerConnectionDetails)
+  href: api/VaraniumSharp.Initiator.Interfaces.Security.ITokenManager.html#VaraniumSharp_Initiator_Interfaces_Security_ITokenManager_AddServerDetails_System_String_VaraniumSharp_Initiator_Security_IdentityServerConnectionDetails_
+  commentId: M:VaraniumSharp.Initiator.Interfaces.Security.ITokenManager.AddServerDetails(System.String,VaraniumSharp.Initiator.Security.IdentityServerConnectionDetails)
+  fullName: VaraniumSharp.Initiator.Interfaces.Security.ITokenManager.AddServerDetails(System.String, VaraniumSharp.Initiator.Security.IdentityServerConnectionDetails)
+  nameWithType: ITokenManager.AddServerDetails(String, IdentityServerConnectionDetails)
+- uid: VaraniumSharp.Initiator.Interfaces.Security.ITokenManager.AddServerDetails*
+  name: AddServerDetails
+  href: api/VaraniumSharp.Initiator.Interfaces.Security.ITokenManager.html#VaraniumSharp_Initiator_Interfaces_Security_ITokenManager_AddServerDetails_
+  commentId: Overload:VaraniumSharp.Initiator.Interfaces.Security.ITokenManager.AddServerDetails
+  fullName: VaraniumSharp.Initiator.Interfaces.Security.ITokenManager.AddServerDetails
+  nameWithType: ITokenManager.AddServerDetails
+- uid: VaraniumSharp.Initiator.Interfaces.Security.ITokenManager.CheckSigninAsync(System.String)
+  name: CheckSigninAsync(String)
+  href: api/VaraniumSharp.Initiator.Interfaces.Security.ITokenManager.html#VaraniumSharp_Initiator_Interfaces_Security_ITokenManager_CheckSigninAsync_System_String_
+  commentId: M:VaraniumSharp.Initiator.Interfaces.Security.ITokenManager.CheckSigninAsync(System.String)
+  fullName: VaraniumSharp.Initiator.Interfaces.Security.ITokenManager.CheckSigninAsync(System.String)
+  nameWithType: ITokenManager.CheckSigninAsync(String)
+- uid: VaraniumSharp.Initiator.Interfaces.Security.ITokenManager.CheckSigninAsync*
+  name: CheckSigninAsync
+  href: api/VaraniumSharp.Initiator.Interfaces.Security.ITokenManager.html#VaraniumSharp_Initiator_Interfaces_Security_ITokenManager_CheckSigninAsync_
+  commentId: Overload:VaraniumSharp.Initiator.Interfaces.Security.ITokenManager.CheckSigninAsync
+  fullName: VaraniumSharp.Initiator.Interfaces.Security.ITokenManager.CheckSigninAsync
+  nameWithType: ITokenManager.CheckSigninAsync
+- uid: VaraniumSharp.Initiator.Interfaces.Security.ITokenManager.ServerDetailKeys
+  name: ServerDetailKeys
+  href: api/VaraniumSharp.Initiator.Interfaces.Security.ITokenManager.html#VaraniumSharp_Initiator_Interfaces_Security_ITokenManager_ServerDetailKeys
+  commentId: P:VaraniumSharp.Initiator.Interfaces.Security.ITokenManager.ServerDetailKeys
+  fullName: VaraniumSharp.Initiator.Interfaces.Security.ITokenManager.ServerDetailKeys
+  nameWithType: ITokenManager.ServerDetailKeys
+- uid: VaraniumSharp.Initiator.Interfaces.Security.ITokenManager.ServerDetailKeys*
+  name: ServerDetailKeys
+  href: api/VaraniumSharp.Initiator.Interfaces.Security.ITokenManager.html#VaraniumSharp_Initiator_Interfaces_Security_ITokenManager_ServerDetailKeys_
+  commentId: Overload:VaraniumSharp.Initiator.Interfaces.Security.ITokenManager.ServerDetailKeys
+  fullName: VaraniumSharp.Initiator.Interfaces.Security.ITokenManager.ServerDetailKeys
+  nameWithType: ITokenManager.ServerDetailKeys
+- uid: VaraniumSharp.Initiator.Interfaces.Security.ITokenStorage
+  name: ITokenStorage
+  href: api/VaraniumSharp.Initiator.Interfaces.Security.ITokenStorage.html
+  commentId: T:VaraniumSharp.Initiator.Interfaces.Security.ITokenStorage
+  fullName: VaraniumSharp.Initiator.Interfaces.Security.ITokenStorage
+  nameWithType: ITokenStorage
+- uid: VaraniumSharp.Initiator.Interfaces.Security.ITokenStorage.RetrieveAccessTokenAsync(System.String)
+  name: RetrieveAccessTokenAsync(String)
+  href: api/VaraniumSharp.Initiator.Interfaces.Security.ITokenStorage.html#VaraniumSharp_Initiator_Interfaces_Security_ITokenStorage_RetrieveAccessTokenAsync_System_String_
+  commentId: M:VaraniumSharp.Initiator.Interfaces.Security.ITokenStorage.RetrieveAccessTokenAsync(System.String)
+  fullName: VaraniumSharp.Initiator.Interfaces.Security.ITokenStorage.RetrieveAccessTokenAsync(System.String)
+  nameWithType: ITokenStorage.RetrieveAccessTokenAsync(String)
+- uid: VaraniumSharp.Initiator.Interfaces.Security.ITokenStorage.RetrieveAccessTokenAsync*
+  name: RetrieveAccessTokenAsync
+  href: api/VaraniumSharp.Initiator.Interfaces.Security.ITokenStorage.html#VaraniumSharp_Initiator_Interfaces_Security_ITokenStorage_RetrieveAccessTokenAsync_
+  commentId: Overload:VaraniumSharp.Initiator.Interfaces.Security.ITokenStorage.RetrieveAccessTokenAsync
+  fullName: VaraniumSharp.Initiator.Interfaces.Security.ITokenStorage.RetrieveAccessTokenAsync
+  nameWithType: ITokenStorage.RetrieveAccessTokenAsync
+- uid: VaraniumSharp.Initiator.Interfaces.Security.ITokenStorage.RetrieveRefreshTokenAsync(System.String)
+  name: RetrieveRefreshTokenAsync(String)
+  href: api/VaraniumSharp.Initiator.Interfaces.Security.ITokenStorage.html#VaraniumSharp_Initiator_Interfaces_Security_ITokenStorage_RetrieveRefreshTokenAsync_System_String_
+  commentId: M:VaraniumSharp.Initiator.Interfaces.Security.ITokenStorage.RetrieveRefreshTokenAsync(System.String)
+  fullName: VaraniumSharp.Initiator.Interfaces.Security.ITokenStorage.RetrieveRefreshTokenAsync(System.String)
+  nameWithType: ITokenStorage.RetrieveRefreshTokenAsync(String)
+- uid: VaraniumSharp.Initiator.Interfaces.Security.ITokenStorage.RetrieveRefreshTokenAsync*
+  name: RetrieveRefreshTokenAsync
+  href: api/VaraniumSharp.Initiator.Interfaces.Security.ITokenStorage.html#VaraniumSharp_Initiator_Interfaces_Security_ITokenStorage_RetrieveRefreshTokenAsync_
+  commentId: Overload:VaraniumSharp.Initiator.Interfaces.Security.ITokenStorage.RetrieveRefreshTokenAsync
+  fullName: VaraniumSharp.Initiator.Interfaces.Security.ITokenStorage.RetrieveRefreshTokenAsync
+  nameWithType: ITokenStorage.RetrieveRefreshTokenAsync
+- uid: VaraniumSharp.Initiator.Interfaces.Security.ITokenStorage.StoreAccessTokenAsync(System.String,System.String)
+  name: StoreAccessTokenAsync(String, String)
+  href: api/VaraniumSharp.Initiator.Interfaces.Security.ITokenStorage.html#VaraniumSharp_Initiator_Interfaces_Security_ITokenStorage_StoreAccessTokenAsync_System_String_System_String_
+  commentId: M:VaraniumSharp.Initiator.Interfaces.Security.ITokenStorage.StoreAccessTokenAsync(System.String,System.String)
+  fullName: VaraniumSharp.Initiator.Interfaces.Security.ITokenStorage.StoreAccessTokenAsync(System.String, System.String)
+  nameWithType: ITokenStorage.StoreAccessTokenAsync(String, String)
+- uid: VaraniumSharp.Initiator.Interfaces.Security.ITokenStorage.StoreAccessTokenAsync*
+  name: StoreAccessTokenAsync
+  href: api/VaraniumSharp.Initiator.Interfaces.Security.ITokenStorage.html#VaraniumSharp_Initiator_Interfaces_Security_ITokenStorage_StoreAccessTokenAsync_
+  commentId: Overload:VaraniumSharp.Initiator.Interfaces.Security.ITokenStorage.StoreAccessTokenAsync
+  fullName: VaraniumSharp.Initiator.Interfaces.Security.ITokenStorage.StoreAccessTokenAsync
+  nameWithType: ITokenStorage.StoreAccessTokenAsync
+- uid: VaraniumSharp.Initiator.Interfaces.Security.ITokenStorage.StoreRefreshTokenAsync(System.String,System.String)
+  name: StoreRefreshTokenAsync(String, String)
+  href: api/VaraniumSharp.Initiator.Interfaces.Security.ITokenStorage.html#VaraniumSharp_Initiator_Interfaces_Security_ITokenStorage_StoreRefreshTokenAsync_System_String_System_String_
+  commentId: M:VaraniumSharp.Initiator.Interfaces.Security.ITokenStorage.StoreRefreshTokenAsync(System.String,System.String)
+  fullName: VaraniumSharp.Initiator.Interfaces.Security.ITokenStorage.StoreRefreshTokenAsync(System.String, System.String)
+  nameWithType: ITokenStorage.StoreRefreshTokenAsync(String, String)
+- uid: VaraniumSharp.Initiator.Interfaces.Security.ITokenStorage.StoreRefreshTokenAsync*
+  name: StoreRefreshTokenAsync
+  href: api/VaraniumSharp.Initiator.Interfaces.Security.ITokenStorage.html#VaraniumSharp_Initiator_Interfaces_Security_ITokenStorage_StoreRefreshTokenAsync_
+  commentId: Overload:VaraniumSharp.Initiator.Interfaces.Security.ITokenStorage.StoreRefreshTokenAsync
+  fullName: VaraniumSharp.Initiator.Interfaces.Security.ITokenStorage.StoreRefreshTokenAsync
+  nameWithType: ITokenStorage.StoreRefreshTokenAsync
 - uid: VaraniumSharp.Initiator.Monitoring
   name: VaraniumSharp.Initiator.Monitoring
   href: api/VaraniumSharp.Initiator.Monitoring.html
@@ -679,3 +781,171 @@ references:
   commentId: Overload:VaraniumSharp.Initiator.Monitoring.AppInsightClient.VersionNumber
   fullName: VaraniumSharp.Initiator.Monitoring.AppInsightClient.VersionNumber
   nameWithType: AppInsightClient.VersionNumber
+- uid: VaraniumSharp.Initiator.Security
+  name: VaraniumSharp.Initiator.Security
+  href: api/VaraniumSharp.Initiator.Security.html
+  commentId: N:VaraniumSharp.Initiator.Security
+  fullName: VaraniumSharp.Initiator.Security
+  nameWithType: VaraniumSharp.Initiator.Security
+- uid: VaraniumSharp.Initiator.Security.IdentityServerConnectionDetails
+  name: IdentityServerConnectionDetails
+  href: api/VaraniumSharp.Initiator.Security.IdentityServerConnectionDetails.html
+  commentId: T:VaraniumSharp.Initiator.Security.IdentityServerConnectionDetails
+  fullName: VaraniumSharp.Initiator.Security.IdentityServerConnectionDetails
+  nameWithType: IdentityServerConnectionDetails
+- uid: VaraniumSharp.Initiator.Security.IdentityServerConnectionDetails.#ctor(System.Boolean,IdentityModel.OidcClient.OidcClientOptions)
+  name: IdentityServerConnectionDetails(Boolean, OidcClientOptions)
+  href: api/VaraniumSharp.Initiator.Security.IdentityServerConnectionDetails.html#VaraniumSharp_Initiator_Security_IdentityServerConnectionDetails__ctor_System_Boolean_IdentityModel_OidcClient_OidcClientOptions_
+  commentId: M:VaraniumSharp.Initiator.Security.IdentityServerConnectionDetails.#ctor(System.Boolean,IdentityModel.OidcClient.OidcClientOptions)
+  fullName: VaraniumSharp.Initiator.Security.IdentityServerConnectionDetails.IdentityServerConnectionDetails(System.Boolean, IdentityModel.OidcClient.OidcClientOptions)
+  nameWithType: IdentityServerConnectionDetails.IdentityServerConnectionDetails(Boolean, OidcClientOptions)
+- uid: VaraniumSharp.Initiator.Security.IdentityServerConnectionDetails.#ctor*
+  name: IdentityServerConnectionDetails
+  href: api/VaraniumSharp.Initiator.Security.IdentityServerConnectionDetails.html#VaraniumSharp_Initiator_Security_IdentityServerConnectionDetails__ctor_
+  commentId: Overload:VaraniumSharp.Initiator.Security.IdentityServerConnectionDetails.#ctor
+  fullName: VaraniumSharp.Initiator.Security.IdentityServerConnectionDetails.IdentityServerConnectionDetails
+  nameWithType: IdentityServerConnectionDetails.IdentityServerConnectionDetails
+- uid: VaraniumSharp.Initiator.Security.IdentityServerConnectionDetails.OidcOptions
+  name: OidcOptions
+  href: api/VaraniumSharp.Initiator.Security.IdentityServerConnectionDetails.html#VaraniumSharp_Initiator_Security_IdentityServerConnectionDetails_OidcOptions
+  commentId: P:VaraniumSharp.Initiator.Security.IdentityServerConnectionDetails.OidcOptions
+  fullName: VaraniumSharp.Initiator.Security.IdentityServerConnectionDetails.OidcOptions
+  nameWithType: IdentityServerConnectionDetails.OidcOptions
+- uid: VaraniumSharp.Initiator.Security.IdentityServerConnectionDetails.OidcOptions*
+  name: OidcOptions
+  href: api/VaraniumSharp.Initiator.Security.IdentityServerConnectionDetails.html#VaraniumSharp_Initiator_Security_IdentityServerConnectionDetails_OidcOptions_
+  commentId: Overload:VaraniumSharp.Initiator.Security.IdentityServerConnectionDetails.OidcOptions
+  fullName: VaraniumSharp.Initiator.Security.IdentityServerConnectionDetails.OidcOptions
+  nameWithType: IdentityServerConnectionDetails.OidcOptions
+- uid: VaraniumSharp.Initiator.Security.IdentityServerConnectionDetails.ReplaceRefreshToken
+  name: ReplaceRefreshToken
+  href: api/VaraniumSharp.Initiator.Security.IdentityServerConnectionDetails.html#VaraniumSharp_Initiator_Security_IdentityServerConnectionDetails_ReplaceRefreshToken
+  commentId: P:VaraniumSharp.Initiator.Security.IdentityServerConnectionDetails.ReplaceRefreshToken
+  fullName: VaraniumSharp.Initiator.Security.IdentityServerConnectionDetails.ReplaceRefreshToken
+  nameWithType: IdentityServerConnectionDetails.ReplaceRefreshToken
+- uid: VaraniumSharp.Initiator.Security.IdentityServerConnectionDetails.ReplaceRefreshToken*
+  name: ReplaceRefreshToken
+  href: api/VaraniumSharp.Initiator.Security.IdentityServerConnectionDetails.html#VaraniumSharp_Initiator_Security_IdentityServerConnectionDetails_ReplaceRefreshToken_
+  commentId: Overload:VaraniumSharp.Initiator.Security.IdentityServerConnectionDetails.ReplaceRefreshToken
+  fullName: VaraniumSharp.Initiator.Security.IdentityServerConnectionDetails.ReplaceRefreshToken
+  nameWithType: IdentityServerConnectionDetails.ReplaceRefreshToken
+- uid: VaraniumSharp.Initiator.Security.TokenData
+  name: TokenData
+  href: api/VaraniumSharp.Initiator.Security.TokenData.html
+  commentId: T:VaraniumSharp.Initiator.Security.TokenData
+  fullName: VaraniumSharp.Initiator.Security.TokenData
+  nameWithType: TokenData
+- uid: VaraniumSharp.Initiator.Security.TokenData.#ctor(System.String)
+  name: TokenData(String)
+  href: api/VaraniumSharp.Initiator.Security.TokenData.html#VaraniumSharp_Initiator_Security_TokenData__ctor_System_String_
+  commentId: M:VaraniumSharp.Initiator.Security.TokenData.#ctor(System.String)
+  fullName: VaraniumSharp.Initiator.Security.TokenData.TokenData(System.String)
+  nameWithType: TokenData.TokenData(String)
+- uid: VaraniumSharp.Initiator.Security.TokenData.#ctor*
+  name: TokenData
+  href: api/VaraniumSharp.Initiator.Security.TokenData.html#VaraniumSharp_Initiator_Security_TokenData__ctor_
+  commentId: Overload:VaraniumSharp.Initiator.Security.TokenData.#ctor
+  fullName: VaraniumSharp.Initiator.Security.TokenData.TokenData
+  nameWithType: TokenData.TokenData
+- uid: VaraniumSharp.Initiator.Security.TokenData.DecodedToken
+  name: DecodedToken
+  href: api/VaraniumSharp.Initiator.Security.TokenData.html#VaraniumSharp_Initiator_Security_TokenData_DecodedToken
+  commentId: P:VaraniumSharp.Initiator.Security.TokenData.DecodedToken
+  fullName: VaraniumSharp.Initiator.Security.TokenData.DecodedToken
+  nameWithType: TokenData.DecodedToken
+- uid: VaraniumSharp.Initiator.Security.TokenData.DecodedToken*
+  name: DecodedToken
+  href: api/VaraniumSharp.Initiator.Security.TokenData.html#VaraniumSharp_Initiator_Security_TokenData_DecodedToken_
+  commentId: Overload:VaraniumSharp.Initiator.Security.TokenData.DecodedToken
+  fullName: VaraniumSharp.Initiator.Security.TokenData.DecodedToken
+  nameWithType: TokenData.DecodedToken
+- uid: VaraniumSharp.Initiator.Security.TokenData.ExpirationDate
+  name: ExpirationDate
+  href: api/VaraniumSharp.Initiator.Security.TokenData.html#VaraniumSharp_Initiator_Security_TokenData_ExpirationDate
+  commentId: P:VaraniumSharp.Initiator.Security.TokenData.ExpirationDate
+  fullName: VaraniumSharp.Initiator.Security.TokenData.ExpirationDate
+  nameWithType: TokenData.ExpirationDate
+- uid: VaraniumSharp.Initiator.Security.TokenData.ExpirationDate*
+  name: ExpirationDate
+  href: api/VaraniumSharp.Initiator.Security.TokenData.html#VaraniumSharp_Initiator_Security_TokenData_ExpirationDate_
+  commentId: Overload:VaraniumSharp.Initiator.Security.TokenData.ExpirationDate
+  fullName: VaraniumSharp.Initiator.Security.TokenData.ExpirationDate
+  nameWithType: TokenData.ExpirationDate
+- uid: VaraniumSharp.Initiator.Security.TokenData.Token
+  name: Token
+  href: api/VaraniumSharp.Initiator.Security.TokenData.html#VaraniumSharp_Initiator_Security_TokenData_Token
+  commentId: P:VaraniumSharp.Initiator.Security.TokenData.Token
+  fullName: VaraniumSharp.Initiator.Security.TokenData.Token
+  nameWithType: TokenData.Token
+- uid: VaraniumSharp.Initiator.Security.TokenData.Token*
+  name: Token
+  href: api/VaraniumSharp.Initiator.Security.TokenData.html#VaraniumSharp_Initiator_Security_TokenData_Token_
+  commentId: Overload:VaraniumSharp.Initiator.Security.TokenData.Token
+  fullName: VaraniumSharp.Initiator.Security.TokenData.Token
+  nameWithType: TokenData.Token
+- uid: VaraniumSharp.Initiator.Security.TokenData.TokenExpired
+  name: TokenExpired
+  href: api/VaraniumSharp.Initiator.Security.TokenData.html#VaraniumSharp_Initiator_Security_TokenData_TokenExpired
+  commentId: P:VaraniumSharp.Initiator.Security.TokenData.TokenExpired
+  fullName: VaraniumSharp.Initiator.Security.TokenData.TokenExpired
+  nameWithType: TokenData.TokenExpired
+- uid: VaraniumSharp.Initiator.Security.TokenData.TokenExpired*
+  name: TokenExpired
+  href: api/VaraniumSharp.Initiator.Security.TokenData.html#VaraniumSharp_Initiator_Security_TokenData_TokenExpired_
+  commentId: Overload:VaraniumSharp.Initiator.Security.TokenData.TokenExpired
+  fullName: VaraniumSharp.Initiator.Security.TokenData.TokenExpired
+  nameWithType: TokenData.TokenExpired
+- uid: VaraniumSharp.Initiator.Security.TokenManager
+  name: TokenManager
+  href: api/VaraniumSharp.Initiator.Security.TokenManager.html
+  commentId: T:VaraniumSharp.Initiator.Security.TokenManager
+  fullName: VaraniumSharp.Initiator.Security.TokenManager
+  nameWithType: TokenManager
+- uid: VaraniumSharp.Initiator.Security.TokenManager.#ctor(VaraniumSharp.Initiator.Interfaces.Security.ITokenStorage,VaraniumSharp.Interfaces.GenericHelpers.IStaticMethodWrapper)
+  name: TokenManager(ITokenStorage, IStaticMethodWrapper)
+  href: api/VaraniumSharp.Initiator.Security.TokenManager.html#VaraniumSharp_Initiator_Security_TokenManager__ctor_VaraniumSharp_Initiator_Interfaces_Security_ITokenStorage_VaraniumSharp_Interfaces_GenericHelpers_IStaticMethodWrapper_
+  commentId: M:VaraniumSharp.Initiator.Security.TokenManager.#ctor(VaraniumSharp.Initiator.Interfaces.Security.ITokenStorage,VaraniumSharp.Interfaces.GenericHelpers.IStaticMethodWrapper)
+  fullName: VaraniumSharp.Initiator.Security.TokenManager.TokenManager(VaraniumSharp.Initiator.Interfaces.Security.ITokenStorage, VaraniumSharp.Interfaces.GenericHelpers.IStaticMethodWrapper)
+  nameWithType: TokenManager.TokenManager(ITokenStorage, IStaticMethodWrapper)
+- uid: VaraniumSharp.Initiator.Security.TokenManager.#ctor*
+  name: TokenManager
+  href: api/VaraniumSharp.Initiator.Security.TokenManager.html#VaraniumSharp_Initiator_Security_TokenManager__ctor_
+  commentId: Overload:VaraniumSharp.Initiator.Security.TokenManager.#ctor
+  fullName: VaraniumSharp.Initiator.Security.TokenManager.TokenManager
+  nameWithType: TokenManager.TokenManager
+- uid: VaraniumSharp.Initiator.Security.TokenManager.AddServerDetails(System.String,VaraniumSharp.Initiator.Security.IdentityServerConnectionDetails)
+  name: AddServerDetails(String, IdentityServerConnectionDetails)
+  href: api/VaraniumSharp.Initiator.Security.TokenManager.html#VaraniumSharp_Initiator_Security_TokenManager_AddServerDetails_System_String_VaraniumSharp_Initiator_Security_IdentityServerConnectionDetails_
+  commentId: M:VaraniumSharp.Initiator.Security.TokenManager.AddServerDetails(System.String,VaraniumSharp.Initiator.Security.IdentityServerConnectionDetails)
+  fullName: VaraniumSharp.Initiator.Security.TokenManager.AddServerDetails(System.String, VaraniumSharp.Initiator.Security.IdentityServerConnectionDetails)
+  nameWithType: TokenManager.AddServerDetails(String, IdentityServerConnectionDetails)
+- uid: VaraniumSharp.Initiator.Security.TokenManager.AddServerDetails*
+  name: AddServerDetails
+  href: api/VaraniumSharp.Initiator.Security.TokenManager.html#VaraniumSharp_Initiator_Security_TokenManager_AddServerDetails_
+  commentId: Overload:VaraniumSharp.Initiator.Security.TokenManager.AddServerDetails
+  fullName: VaraniumSharp.Initiator.Security.TokenManager.AddServerDetails
+  nameWithType: TokenManager.AddServerDetails
+- uid: VaraniumSharp.Initiator.Security.TokenManager.CheckSigninAsync(System.String)
+  name: CheckSigninAsync(String)
+  href: api/VaraniumSharp.Initiator.Security.TokenManager.html#VaraniumSharp_Initiator_Security_TokenManager_CheckSigninAsync_System_String_
+  commentId: M:VaraniumSharp.Initiator.Security.TokenManager.CheckSigninAsync(System.String)
+  fullName: VaraniumSharp.Initiator.Security.TokenManager.CheckSigninAsync(System.String)
+  nameWithType: TokenManager.CheckSigninAsync(String)
+- uid: VaraniumSharp.Initiator.Security.TokenManager.CheckSigninAsync*
+  name: CheckSigninAsync
+  href: api/VaraniumSharp.Initiator.Security.TokenManager.html#VaraniumSharp_Initiator_Security_TokenManager_CheckSigninAsync_
+  commentId: Overload:VaraniumSharp.Initiator.Security.TokenManager.CheckSigninAsync
+  fullName: VaraniumSharp.Initiator.Security.TokenManager.CheckSigninAsync
+  nameWithType: TokenManager.CheckSigninAsync
+- uid: VaraniumSharp.Initiator.Security.TokenManager.ServerDetailKeys
+  name: ServerDetailKeys
+  href: api/VaraniumSharp.Initiator.Security.TokenManager.html#VaraniumSharp_Initiator_Security_TokenManager_ServerDetailKeys
+  commentId: P:VaraniumSharp.Initiator.Security.TokenManager.ServerDetailKeys
+  fullName: VaraniumSharp.Initiator.Security.TokenManager.ServerDetailKeys
+  nameWithType: TokenManager.ServerDetailKeys
+- uid: VaraniumSharp.Initiator.Security.TokenManager.ServerDetailKeys*
+  name: ServerDetailKeys
+  href: api/VaraniumSharp.Initiator.Security.TokenManager.html#VaraniumSharp_Initiator_Security_TokenManager_ServerDetailKeys_
+  commentId: Overload:VaraniumSharp.Initiator.Security.TokenManager.ServerDetailKeys
+  fullName: VaraniumSharp.Initiator.Security.TokenManager.ServerDetailKeys
+  nameWithType: TokenManager.ServerDetailKeys
