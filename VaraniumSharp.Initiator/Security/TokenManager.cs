@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using VaraniumSharp.Initiator.Interfaces.Security;
+using VaraniumSharp.Interfaces.GenericHelpers;
 
 namespace VaraniumSharp.Initiator.Security
 {
@@ -24,9 +25,11 @@ namespace VaraniumSharp.Initiator.Security
         /// DI Constructor
         /// </summary>
         /// <param name="tokenStorage">TokenStorage implementation</param>
-        public TokenManager(ITokenStorage tokenStorage)
+        public TokenManager(ITokenStorage tokenStorage, IStaticMethodWrapper staticMethodWrapper)
         {
             _tokenStorage = tokenStorage;
+            _staticMethodWrapper = staticMethodWrapper;
+
             _tokenDictionary = new Dictionary<string, TokenData>();
             _refreshDictionary = new Dictionary<string, string>();
             _tokenLocks = new ConcurrentDictionary<string, SemaphoreSlim>();
@@ -132,7 +135,8 @@ namespace VaraniumSharp.Initiator.Security
 
                 var client = new OidcClient(options.OidcOptions);
                 var state = await client.PrepareLoginAsync();
-                Process.Start(state.StartUrl);
+
+                _staticMethodWrapper.StartProcess(state.StartUrl);
 
                 var context = await http.GetContextAsync();
 
@@ -317,6 +321,11 @@ namespace VaraniumSharp.Initiator.Security
         /// Dictionary to store server connection details
         /// </summary>
         private readonly Dictionary<string, IdentityServerConnectionDetails> _serverDetails;
+
+        /// <summary>
+        /// StaticMethodWrapper instance
+        /// </summary>
+        private readonly IStaticMethodWrapper _staticMethodWrapper;
 
         /// <summary>
         /// Dictionary to store token data

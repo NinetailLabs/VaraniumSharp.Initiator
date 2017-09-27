@@ -7,10 +7,12 @@ using System;
 using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Net;
+using System.Net.Http;
 using System.Threading.Tasks;
 using VaraniumSharp.Initiator.Interfaces.Security;
 using VaraniumSharp.Initiator.Security;
 using VaraniumSharp.Initiator.Tests.Fixtures;
+using VaraniumSharp.Interfaces.GenericHelpers;
 
 namespace VaraniumSharp.Initiator.Tests.Security
 {
@@ -227,7 +229,7 @@ namespace VaraniumSharp.Initiator.Tests.Security
 
             public TokenManagerFixture()
             {
-                Instance = new TokenManager(TokenStorage);
+                Instance = new TokenManager(TokenStorage, StaticMethodWrapper);
                 TokenGenerator = new TokenGenerator(Authority.TrimEnd('/'), "Tests");
             }
 
@@ -238,6 +240,9 @@ namespace VaraniumSharp.Initiator.Tests.Security
             public HttpMockFixture HttpMock { get; private set; }
 
             public TokenManager Instance { get; }
+            public IStaticMethodWrapper StaticMethodWrapper => StaticMethodWrapperMock.Object;
+
+            public Mock<IStaticMethodWrapper> StaticMethodWrapperMock { get; } = new Mock<IStaticMethodWrapper>();
             public TokenGenerator TokenGenerator { get; }
 
             public ITokenStorage TokenStorage => TokenStorageMock.Object;
@@ -256,6 +261,17 @@ namespace VaraniumSharp.Initiator.Tests.Security
             public void AuthSetup(string accessToken, string refreshToken)
             {
                 StartServer();
+                StaticMethodWrapperMock
+                    .Setup(t => t.StartProcess(It.IsAny<string>()))
+                    .Callback((string url) =>
+                    {
+                        //We need to invoke the appropriate method on the signin handler - Easiest way is to just make the call the browser would
+                        using (var client = new HttpClient())
+                        {
+                            client.GetAsync(url);
+                        }
+                    });
+
                 HttpMock.HttpMock.Add(new UserSigninHandler(RedirectUrl, accessToken, refreshToken, TokenGenerator));
             }
 

@@ -17,7 +17,7 @@ nuget Serilog.Sinks.ColoredConsole
 nuget Serilog.Sinks.Seq 3.3.3
 nuget Serilog.Sinks.Splunk
 nuget System.IdentityModel.Tokens.Jwt >= 5.1.4
-nuget VaraniumSharp >= 1.7.0
+nuget VaraniumSharp >= 1.20.0
 
 nuget NETStandard.Library 1.6.1
 nuget Microsoft.Extensions.DependencyInjection.Abstractions 1.1.1

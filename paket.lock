@@ -160,5 +160,6 @@ NUGET
     System.ValueTuple (4.4)
     System.Xml.ReaderWriter (4.3)
     System.Xml.XDocument (4.3)
-    VaraniumSharp (1.18)
+    VaraniumSharp (1.20)
+      Microsoft.Extensions.Logging (>= 1.1.2)
     Viki.HttpMockSlim (1.0.3)
