@@ -8,6 +8,8 @@ using System.Net;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using VaraniumSharp.Attributes;
+using VaraniumSharp.Enumerations;
 using VaraniumSharp.Initiator.Interfaces.Security;
 using VaraniumSharp.Interfaces.GenericHelpers;
 
@@ -16,7 +18,8 @@ namespace VaraniumSharp.Initiator.Security
     /// <summary>
     /// Manage Access Tokens
     /// </summary>
-    public class TokenManager
+    [AutomaticContainerRegistration(typeof(ITokenManager), ServiceReuse.Singleton)]
+    public class TokenManager : ITokenManager
     {
         #region Constructor
 

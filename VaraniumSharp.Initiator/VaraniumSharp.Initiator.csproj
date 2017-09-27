@@ -57,6 +57,7 @@
     <Compile Include="Configuration\BaseLogConfiguration.cs" />
     <Compile Include="Interfaces\Security\ITokenStorage.cs" />
     <Compile Include="Security\IdentityServerConnectionDetails.cs" />
+    <Compile Include="Interfaces\Security\ITokenManager.cs" />
     <Compile Include="Security\TokenData.cs" />
     <Compile Include="Security\TokenManager.cs" />
     <Content Include="SemVer.MSBuild.props" />
