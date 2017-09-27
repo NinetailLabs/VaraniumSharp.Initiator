@@ -1,13 +1,11 @@
-﻿using System;
+﻿using HttpMockSlim;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
-using System.IdentityModel.Tokens.Jwt;
 using System.IO;
 using System.Net;
 using System.Net.Http;
 using System.Security.Claims;
-using HttpMockSlim;
-using Microsoft.IdentityModel.Tokens;
-using Newtonsoft.Json;
 
 namespace VaraniumSharp.Initiator.Tests.Fixtures
 {
@@ -53,6 +51,7 @@ namespace VaraniumSharp.Initiator.Tests.Fixtures
                         new KeyValuePair<string, string>("nonce", _nonce)
                     })).Wait();
                 }
+                return true;
             }
 
             if (context.Request.HttpMethod == "POST")

@@ -3,7 +3,6 @@ using Serilog;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Net;
 using System.Text;
@@ -25,6 +24,7 @@ namespace VaraniumSharp.Initiator.Security
         /// DI Constructor
         /// </summary>
         /// <param name="tokenStorage">TokenStorage implementation</param>
+        /// <param name="staticMethodWrapper">StaticMethodWrapper instance</param>
         public TokenManager(ITokenStorage tokenStorage, IStaticMethodWrapper staticMethodWrapper)
         {
             _tokenStorage = tokenStorage;
@@ -237,6 +237,8 @@ namespace VaraniumSharp.Initiator.Security
                 return null;
             }
 
+            _refreshDictionary.Add(tokenName, rToken);
+
             // We need to call out to have our Access Token refreshed
             var connectionDetails = _serverDetails[tokenName];
             return await ExecuteTokenRefreshAsync(tokenName, rToken, connectionDetails.ReplaceRefreshToken,
@@ -258,7 +260,11 @@ namespace VaraniumSharp.Initiator.Security
                 dToken = await _tokenStorage.RetrieveAccessTokenAsync(tokenName);
             }
 
-            _tokenDictionary[tokenName] = dToken;
+            if (dToken != null && !_tokenDictionary.ContainsKey(tokenName))
+            {
+                _tokenDictionary.Add(tokenName, dToken);
+            }
+
             return dToken?.TokenExpired ?? true
                 ? null
                 : dToken;

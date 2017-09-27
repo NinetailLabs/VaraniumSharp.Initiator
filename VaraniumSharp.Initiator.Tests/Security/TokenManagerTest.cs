@@ -8,6 +8,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Net;
 using System.Net.Http;
+using System.Threading;
 using System.Threading.Tasks;
 using VaraniumSharp.Initiator.Interfaces.Security;
 using VaraniumSharp.Initiator.Security;
@@ -25,11 +26,10 @@ namespace VaraniumSharp.Initiator.Tests.Security
         {
             // arrange
             const string tokenName = "Test Token";
-            const string authority = "Authority";
-            const string authority2 = "Authority";
+
             var oidcOptions = new OidcClientOptions();
-            var serverDetails = new IdentityServerConnectionDetails(authority, false, oidcOptions);
-            var serverDetails2 = new IdentityServerConnectionDetails(authority2, false, oidcOptions);
+            var serverDetails = new IdentityServerConnectionDetails(false, oidcOptions);
+            var serverDetails2 = new IdentityServerConnectionDetails(false, oidcOptions);
             var fixture = new TokenManagerFixture();
 
             var sut = fixture.Instance;
@@ -54,6 +54,47 @@ namespace VaraniumSharp.Initiator.Tests.Security
             // act
             // assert
             act.ShouldThrow<ArgumentException>();
+        }
+
+        [Test]
+        public async Task FailureDuringRefreshTokenRetrievalWillResultInFullTokenRetrieval()
+        {
+            // arrange
+            var loggerMock = LoggerFixture.SetupLogCatcher();
+            const string tokenName = "Test Token";
+            var refreshToken = Guid.NewGuid().ToString();
+            var fixture = new TokenManagerFixture();
+            await fixture.SetupServerDataAsync(tokenName);
+            var token = fixture.TokenGenerator.GenerateToken(DateTime.UtcNow.AddMinutes(-15),
+                DateTime.UtcNow.AddMinutes(-10), DateTime.UtcNow.AddMinutes(-17));
+            var tokenDataDummy = new TokenData(token);
+            var newAccessToken = fixture.TokenGenerator.GenerateToken();
+
+            fixture.TokenStorageMock
+                .Setup(t => t.RetrieveAccessTokenAsync(tokenName))
+                .ReturnsAsync(tokenDataDummy);
+            fixture.TokenStorageMock
+                .Setup(t => t.RetrieveRefreshTokenAsync(tokenName))
+                .ReturnsAsync(refreshToken);
+
+            fixture.WellKnownSetup();
+            fixture.SetupCertificates();
+            fixture.AuthRefreshSetup(newAccessToken, refreshToken, true);
+            fixture.AuthSetup(newAccessToken, refreshToken);
+            fixture.UserInfoSetup();
+            var sut = fixture.Instance;
+
+            // act
+            await sut.CheckSigninAsync(tokenName);
+
+            // assert
+            loggerMock.Verify(t =>
+                t.Error("Error occured while trying to refresh Access Token. {Error}", It.IsAny<string>()));
+            //result.Should().NotBeNull();
+            loggerMock.Verify(t => t.Error("Error occured during user authentication. {Error}", It.IsAny<string>()),
+                Times.Once);
+
+            fixture.HttpMock.HttpMock.Dispose();
         }
 
         [Test]
@@ -205,9 +246,8 @@ namespace VaraniumSharp.Initiator.Tests.Security
         {
             // arrange
             const string tokenName = "Test Token";
-            const string authority = "Authority";
             var oidcOptions = new OidcClientOptions();
-            var serverDetails = new IdentityServerConnectionDetails(authority, false, oidcOptions);
+            var serverDetails = new IdentityServerConnectionDetails(false, oidcOptions);
             var fixture = new TokenManagerFixture();
 
             var sut = fixture.Instance;
@@ -217,6 +257,33 @@ namespace VaraniumSharp.Initiator.Tests.Security
 
             // assert
             sut.ServerDetailKeys.Should().Contain(tokenName);
+        }
+
+        [Test]
+        public async Task SigninFailureReturnsNullAndLogsTheIssue()
+        {
+            // arrange
+            var loggerMock = LoggerFixture.SetupLogCatcher();
+            const string tokenName = "Test Token";
+            var refreshToken = Guid.NewGuid().ToString();
+            var fixture = new TokenManagerFixture();
+            await fixture.SetupServerDataAsync(tokenName, true);
+            var token = fixture.TokenGenerator.GenerateToken();
+
+            fixture.WellKnownSetup();
+            fixture.SetupCertificates();
+            fixture.AuthSetup(token, refreshToken);
+            var sut = fixture.Instance;
+
+            // act
+            var result = await sut.CheckSigninAsync(tokenName);
+
+            // assert
+            result.Should().BeNull();
+            loggerMock.Verify(t => t.Error("Error occured during user authentication. {Error}", It.IsAny<string>()),
+                Times.Once);
+
+            fixture.HttpMock.HttpMock.Dispose();
         }
 
         #endregion
@@ -252,10 +319,10 @@ namespace VaraniumSharp.Initiator.Tests.Security
 
             #region Public Methods
 
-            public void AuthRefreshSetup(string newAccessToken, string newRefreshToken)
+            public void AuthRefreshSetup(string newAccessToken, string newRefreshToken, bool returnError = false)
             {
                 StartServer();
-                HttpMock.HttpMock.Add(new RefreshTokenHandler(newAccessToken, newRefreshToken));
+                HttpMock.HttpMock.Add(new RefreshTokenHandler(newAccessToken, newRefreshToken, returnError));
             }
 
             public void AuthSetup(string accessToken, string refreshToken)
@@ -266,10 +333,14 @@ namespace VaraniumSharp.Initiator.Tests.Security
                     .Callback((string url) =>
                     {
                         //We need to invoke the appropriate method on the signin handler - Easiest way is to just make the call the browser would
-                        using (var client = new HttpClient())
+                        Task.Run(() =>
                         {
-                            client.GetAsync(url);
-                        }
+                            using (var client = new HttpClient())
+                            {
+                                client.GetAsync(url);
+                                Thread.Sleep(100);
+                            }
+                        });
                     });
 
                 HttpMock.HttpMock.Add(new UserSigninHandler(RedirectUrl, accessToken, refreshToken, TokenGenerator));
@@ -299,7 +370,7 @@ namespace VaraniumSharp.Initiator.Tests.Security
                         RequireAccessTokenHash = false
                     }
                 };
-                var serverDetails = new IdentityServerConnectionDetails(Authority, replaceRefresh, oidcOptions);
+                var serverDetails = new IdentityServerConnectionDetails(replaceRefresh, oidcOptions);
                 await Instance.AddServerDetails(tokenName, serverDetails);
             }
 
@@ -346,6 +417,8 @@ namespace VaraniumSharp.Initiator.Tests.Security
             #endregion
         }
 
+        [SuppressMessage("ReSharper", "UnusedMember.Local", Justification =
+            "Test Fixture - Unit tests require access to values")]
         private class HttpMockFixture : IDisposable
         {
             #region Properties

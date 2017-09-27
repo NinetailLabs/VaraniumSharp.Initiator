@@ -120,6 +120,8 @@ namespace VaraniumSharp.Initiator.Tests.Fixtures
             #endregion
         }
 
+        [SuppressMessage("ReSharper", "UnusedAutoPropertyAccessor.Local", Justification =
+            "Test Fixture - Unit test require access to values")]
         private class KeyWrapper
         {
             #region Properties

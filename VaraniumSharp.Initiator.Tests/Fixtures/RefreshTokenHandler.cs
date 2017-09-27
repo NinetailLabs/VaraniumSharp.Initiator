@@ -9,10 +9,11 @@ namespace VaraniumSharp.Initiator.Tests.Fixtures
     {
         #region Constructor
 
-        public RefreshTokenHandler(string accessToken, string refreshToken)
+        public RefreshTokenHandler(string accessToken, string refreshToken, bool returnError = false)
         {
             _accessToken = accessToken;
             _refreshToken = refreshToken;
+            _returnError = returnError;
         }
 
         #endregion
@@ -24,6 +25,14 @@ namespace VaraniumSharp.Initiator.Tests.Fixtures
             if (context.Request.HttpMethod == "POST"
                 && context.Request.Url.AbsolutePath.EndsWith(TokenPath))
             {
+                if (_returnError)
+                {
+                    context.Response.StatusCode = (int)HttpStatusCode.BadRequest;
+                    context.Response.Close();
+                    _returnError = false;
+                    return true;
+                }
+
                 var tokenResponse =
                     JsonConvert.SerializeObject(new TokenResponseWrapper(_accessToken, _refreshToken));
 
@@ -38,8 +47,6 @@ namespace VaraniumSharp.Initiator.Tests.Fixtures
                 context.Response.StatusCode = (int)HttpStatusCode.OK;
 
                 context.Response.Close();
-
-                return true;
             }
             return false;
         }
@@ -53,6 +60,8 @@ namespace VaraniumSharp.Initiator.Tests.Fixtures
         private readonly string _accessToken;
 
         private readonly string _refreshToken;
+
+        private bool _returnError;
 
         #endregion
     }

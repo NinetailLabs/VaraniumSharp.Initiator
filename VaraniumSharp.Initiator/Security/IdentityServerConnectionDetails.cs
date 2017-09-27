@@ -12,13 +12,11 @@ namespace VaraniumSharp.Initiator.Security
         /// <summary>
         /// Construct with details
         /// </summary>
-        /// <param name="authority">Url where the Identity Server can be reached</param>
         /// <param name="replaceRefreshToken">Does the server replace the Refresh Token when the refresh endpoint is called</param>
         /// <param name="clientOptions">Options used to authenticate the client to the Identity Server</param>
-        public IdentityServerConnectionDetails(string authority, bool replaceRefreshToken,
+        public IdentityServerConnectionDetails(bool replaceRefreshToken,
             OidcClientOptions clientOptions)
         {
-            Authority = authority;
             ReplaceRefreshToken = replaceRefreshToken;
             OidcOptions = clientOptions;
         }
@@ -26,11 +24,6 @@ namespace VaraniumSharp.Initiator.Security
         #endregion
 
         #region Properties
-
-        /// <summary>
-        /// Url where the Identity Server can be reached
-        /// </summary>
-        public string Authority { get; }
 
         /// <summary>
         /// Options used to authenticate the client to the Identity Server
