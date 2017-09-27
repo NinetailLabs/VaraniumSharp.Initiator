@@ -11,7 +11,7 @@
 #tool nuget:?package=GitReleaseNotes
 #tool nuget:?package=NUnit.ConsoleRunner
 #tool nuget:?package=OpenCover
-#tool nuget:?package=coveralls.io
+//#tool nuget:?package=coveralls.io
 
 //Project Variables
 var projectName = "VaraniumSharp.Initiator";
@@ -90,7 +90,6 @@ Task ("UnitTests")
                 ErrorOutputFile = errorResultFile,
                 OutputFile = testResultFile,
                 TeamCity = runningOnTeamCity,
-                Full = true,
                 WorkingDirectory = ".",
                 Work = MakeAbsolute(Directory("."))
             });
@@ -188,7 +187,7 @@ Task ("Push")
 
 Task ("Documentation")
 	.Does (() => {
-		var tool = "./tools/docfx.console/tools/docfx.exe";
+		var tool = "./tools/docfx.console/docfx.console/tools/docfx.exe";
 		StartProcess(tool, new ProcessSettings{Arguments = "docfx_project/docfx.json"});
 
 		if(buildType != "master")
