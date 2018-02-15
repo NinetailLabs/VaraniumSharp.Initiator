@@ -291,6 +291,7 @@ namespace VaraniumSharp.Initiator.Security
             {
                 _tokenDictionary.Add(tokenName, tokenData);
             }
+
             return tokenData;
         }
 
