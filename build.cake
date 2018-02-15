@@ -3,7 +3,7 @@
 #addin nuget:?package=Cake.DocFx
 #addin nuget:?package=Cake.FileHelpers
 #addin nuget:?package=Cake.Git
-#addin nuget:?package=Cake.PaketRestore
+#addin nuget:?package=Cake.Paket
 #addin nuget:?package=Cake.VersionReader
 
 //Tools
@@ -157,14 +157,12 @@ Task ("Nuget")
 //Restore Paket
 Task ("PaketRestore")
 	.Does (() => {
-		StartBlock("Restoring Paket");
+		var blockText = "Restoring Paket";
+		StartBlock(blockText);
 		
-		PaketRestore(MakeAbsolute(Directory(paketDirectory)), new PaketRestoreSettings{
-			RetrieveBootstrapper = true,
-			RetrievePaketExecutable = true
-		});
-
-		EndBlock("Restoring Paket");
+		PaketRestore();
+		
+		EndBlock(blockText);
 	});
 
 //Push to Nuget
