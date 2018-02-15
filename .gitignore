@@ -259,7 +259,7 @@ _Pvt_Extensions
 
 # Paket dependency manager
 .paket/paket.exe
-paket-files/
+paket-files/paket.restore.cached
 
 # FAKE - F# Make
 .fake/
@@ -277,3 +277,4 @@ __pycache__/
 
 # Cake - Uncomment if you are using it
 # tools/
+/log.txt
