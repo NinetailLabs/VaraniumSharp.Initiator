@@ -259,6 +259,7 @@ _Pvt_Extensions
 
 # Paket dependency manager
 .paket/paket.exe
+.paket/Paket.Restore.targets
 paket-files/paket.restore.cached
 
 # FAKE - F# Make
@@ -278,3 +279,7 @@ __pycache__/
 # Cake - Uncomment if you are using it
 # tools/
 /log.txt
+
+# NineTail Labs Cake build specific files
+/coverageResults.xml
+/ErrorResult.xml
