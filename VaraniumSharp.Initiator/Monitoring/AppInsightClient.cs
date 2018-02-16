@@ -99,6 +99,7 @@ namespace VaraniumSharp.Initiator.Monitoring
                     LogInstance.Warning("Client can only be initialized once");
                     return;
                 }
+
                 _telemetryClient = new TelemetryClient
                 {
                     InstrumentationKey = instrumentationKey
@@ -315,11 +316,13 @@ namespace VaraniumSharp.Initiator.Monitoring
                 LogInstance.Warning("Cannot track telemetry - Client has not been initialized");
                 canPost = false;
             }
+
             if (!TrackTelemetry)
             {
                 LogInstance.Verbose("Telemetry data posting is disabled");
                 canPost = false;
             }
+
             return canPost;
         }
 

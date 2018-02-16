@@ -20,7 +20,7 @@ var repoOwner = "NinetailLabs";
 
 // Project Variables
 var sln = string.Format("./{0}.sln", projectName);
-var releaseFolder = string.Format("./{0}/bin/Release", projectName);
+var releaseFolder = string.Format("./{0}/bin/Release/netstandard2.0", projectName);
 var releaseDll = string.Format("/{0}.dll", projectName);
 var nuspecFile = string.Format("./{0}/{0}.nuspec", projectName);
 var gitRepo = string.Format("https://github.com/{0}/{1}.git", repoOwner, projectName);
@@ -176,6 +176,17 @@ Task ("PaketRestore")
 		EndBlock(blockText);
 	});
 
+// Restore Nuget packages
+Task ("NugetRestore")
+	.Does (() => {
+		var blockText = "Nuget Restore";
+		StartBlock(blockText);
+
+		NuGetRestore(sln);
+
+		EndBlock(blockText);
+	});
+
 //Push to Nuget
 Task ("Push")
 	.WithCriteria (buildType == "master")
@@ -230,6 +241,7 @@ Task ("Default")
 	.IsDependentOn ("OutputVariables")
 	.IsDependentOn ("DiscoverBuildDetails")
 	.IsDependentOn ("PaketRestore")
+	.IsDependentOn ("NugetRestore")
 	.IsDependentOn ("Build")
 	.IsDependentOn ("UnitTests")
 	.IsDependentOn ("GenerateReleaseNotes")
@@ -240,6 +252,7 @@ Task ("Release")
 	.IsDependentOn ("OutputVariables")
 	.IsDependentOn ("DiscoverBuildDetails")
 	.IsDependentOn ("PaketRestore")
+	.IsDependentOn ("NugetRestore")
 	.IsDependentOn ("Build")
 	.IsDependentOn ("UnitTests")
 	.IsDependentOn ("CoverageUpload")

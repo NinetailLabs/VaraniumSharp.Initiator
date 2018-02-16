@@ -1,16 +1,16 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2026
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".paket", ".paket", "{2CDB4875-7B97-4413-BAA3-11C4E2A29B37}"
 	ProjectSection(SolutionItems) = preProject
 		paket.dependencies = paket.dependencies
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VaraniumSharp.Initiator", "VaraniumSharp.Initiator\VaraniumSharp.Initiator.csproj", "{44B79FAE-9CE6-4AFF-A374-A0891331C97E}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VaraniumSharp.Initiator.Tests", "VaraniumSharp.Initiator.Tests\VaraniumSharp.Initiator.Tests.csproj", "{AE4CAE53-5B84-43D4-A964-16FC57D25A28}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VaraniumSharp.Initiator", "VaraniumSharp.Initiator\VaraniumSharp.Initiator.csproj", "{0024A7A8-95E8-4052-AE82-B51BA8CE5903}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,16 +18,19 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{44B79FAE-9CE6-4AFF-A374-A0891331C97E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{44B79FAE-9CE6-4AFF-A374-A0891331C97E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{44B79FAE-9CE6-4AFF-A374-A0891331C97E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{44B79FAE-9CE6-4AFF-A374-A0891331C97E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{AE4CAE53-5B84-43D4-A964-16FC57D25A28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{AE4CAE53-5B84-43D4-A964-16FC57D25A28}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AE4CAE53-5B84-43D4-A964-16FC57D25A28}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AE4CAE53-5B84-43D4-A964-16FC57D25A28}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0024A7A8-95E8-4052-AE82-B51BA8CE5903}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0024A7A8-95E8-4052-AE82-B51BA8CE5903}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0024A7A8-95E8-4052-AE82-B51BA8CE5903}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0024A7A8-95E8-4052-AE82-B51BA8CE5903}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2BAB195B-1E7E-47A2-853F-3F048194DB81}
 	EndGlobalSection
 EndGlobal
