@@ -69,7 +69,11 @@ Task ("OutputVariables")
 // Builds the code
 Task ("Build")
 	.Does (() => {
-		MSBuild (sln, c => c.Configuration = "Release");
+		MSBuild (sln, new MSBuildSettings 
+						{
+							Verbosity = Verbosity.Quiet,
+							Configuration = "Release"
+						});
 		var file = MakeAbsolute(Directory(releaseFolder)) + releaseDll;
 		version = GetVersionNumber(file);
 		ciVersion = GetVersionNumberWithContinuesIntegrationNumberAppended(file, buildCounter);
@@ -193,6 +197,7 @@ Task ("Push")
 // Generates DocFX documentation and if the build is master pushes it to the repo
 Task ("Documentation")
 	.Does (() => {
+		GitReset(".", GitResetMode.Hard);
 		var tool = Context.Tools.Resolve("docfx.exe");
 		StartProcess(tool, new ProcessSettings{Arguments = "docfx_project/docfx.json"});
 
