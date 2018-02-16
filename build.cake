@@ -1,4 +1,4 @@
-//Addins
+// Addins
 #addin nuget:?package=Cake.Coveralls
 #addin nuget:?package=Cake.DocFx
 #addin nuget:?package=Cake.FileHelpers
@@ -6,46 +6,47 @@
 #addin nuget:?package=Cake.Paket
 #addin nuget:?package=Cake.VersionReader
 
-//Tools
+// Tools
 #tool nuget:?package=docfx.console
+#tool nuget:?package=coveralls.io
 #tool nuget:?package=GitReleaseNotes
 #tool nuget:?package=NUnit.ConsoleRunner
 #tool nuget:?package=OpenCover
 #tool nuget:?package=Paket
-//#tool nuget:?package=coveralls.io
 
-//Project Variables
+// Adjustable Variables
 var projectName = "VaraniumSharp.Initiator";
+var repoOwner = "NinetailLabs";
+
+// Project Variables
 var sln = string.Format("./{0}.sln", projectName);
 var releaseFolder = string.Format("./{0}/bin/Release", projectName);
 var releaseDll = string.Format("/{0}.dll", projectName);
 var nuspecFile = string.Format("./{0}/{0}.nuspec", projectName);
-var paketDirectory = "./.paket";
+var gitRepo = string.Format("https://github.com/{0}/{1}.git", repoOwner, projectName);
 
-//Unit Tests
+// Unit Tests Variables
 var unitTestFilter = "./*Tests/bin/Release/*.Tests.dll";
 var testResultFile = "./TestResult.xml";
 var errorResultFile = "./ErrorResult.xml";
 var releaseNotes = "./ReleaseNotes.md";
 var testsSucceeded = true;
 
-//Coverage Settings
+// Code Coverage Variables
 var coverallRepoToken = "";
+var coverPath = "./coverageResults.xml";
 
-//Arguments
+// Arguments
 var target = Argument ("target", "Build");
 var buildType = Argument<string>("buildType", "develop");
 var buildCounter = Argument<int>("buildCounter", 0);
 
-//Execution Variables
+// Execution Variables
 var version = "0.0.0";
 var ciVersion = "0.0.0-CI00000";
 var runningOnTeamCity = false;
 var runningOnAppVeyor = false;
 var releaseNotesText = "";
-
-//Code Coverage
-var coverPath = "./coverageResults.xml";
 
 // Find out if we are running on a Build Server
 Task ("DiscoverBuildDetails")
@@ -57,6 +58,7 @@ Task ("DiscoverBuildDetails")
 		Information("Running on AppVeyor: " + runningOnAppVeyor);
 	});
 
+// Outputs Argument values so they are visible in the build log
 Task ("OutputVariables")
 	.Does (() =>
 	{
@@ -64,9 +66,10 @@ Task ("OutputVariables")
 		Information("BuildCounter: " + buildCounter);
 	});
 
+// Builds the code
 Task ("Build")
 	.Does (() => {
-		DotNetBuild (sln, c => c.Configuration = "Release");
+		MSBuild (sln, c => c.Configuration = "Release");
 		var file = MakeAbsolute(Directory(releaseFolder)) + releaseDll;
 		version = GetVersionNumber(file);
 		ciVersion = GetVersionNumberWithContinuesIntegrationNumberAppended(file, buildCounter);
@@ -75,7 +78,7 @@ Task ("Build")
 		PushVersion(ciVersion);
 	});
 
-// Unit Tests
+// Executes Unit Tests
 Task ("UnitTests")
     .Does (() =>
     {
@@ -113,6 +116,7 @@ Task ("UnitTests")
         EndBlock(blockText);
     });
 
+// Uploads Code Coverage results
 Task ("CoverageUpload")
 	.Does (() => {
 
@@ -123,7 +127,8 @@ Task ("CoverageUpload")
 			RepoToken = coverallRepoToken
 		});
 	});
-	
+
+// Generates Release notes
 Task ("GenerateReleaseNotes")
 	.Does (() => {
 		var releasePath = MakeAbsolute(File(releaseNotes));
@@ -137,6 +142,7 @@ Task ("GenerateReleaseNotes")
 		Information(releaseNotesText);
 	});
 
+// Create Nuget Package
 Task ("Nuget")
 	.Does (() => {
 		if(!testsSucceeded)
@@ -184,9 +190,10 @@ Task ("Push")
 		});
 	});
 
+// Generates DocFX documentation and if the build is master pushes it to the repo
 Task ("Documentation")
 	.Does (() => {
-		var tool = "./tools/docfx.console/docfx.console/tools/docfx.exe";
+		var tool = Context.Tools.Resolve("docfx.exe");
 		StartProcess(tool, new ProcessSettings{Arguments = "docfx_project/docfx.json"});
 
 		if(buildType != "master")
@@ -196,7 +203,6 @@ Task ("Documentation")
 		}
 
 		var newDocumentationPath = MakeAbsolute(Directory("docfx_project/_site"));
-		var gitRepo = string.Format("https://github.com/NinetailLabs/{0}.git", projectName);
 		var botToken = EnvironmentVariable("BotToken");
 		var branch = "gh-pages";
 
@@ -239,6 +245,7 @@ Task ("Release")
 
 RunTarget (target);
 
+// Code to start a TeamCity log block
 public void StartBlock(string blockName)
 {
 		if(runningOnTeamCity)
@@ -247,6 +254,7 @@ public void StartBlock(string blockName)
 		}
 }
 
+// Code to start a TeamCity build block
 public void StartBuildBlock(string blockName)
 {
 	if(runningOnTeamCity)
@@ -255,6 +263,7 @@ public void StartBuildBlock(string blockName)
 	}
 }
 
+// Code to end a TeamCity log block
 public void EndBlock(string blockName)
 {
 	if(runningOnTeamCity)
@@ -263,6 +272,7 @@ public void EndBlock(string blockName)
 	}
 }
 
+// Code to end a TeamCity build block
 public void EndBuildBlock(string blockName)
 {
 	if(runningOnTeamCity)
@@ -271,6 +281,7 @@ public void EndBuildBlock(string blockName)
 	}
 }
 
+// Code to push the Version number to the build system
 public void PushVersion(string version)
 {
 	if(runningOnTeamCity)
@@ -284,6 +295,7 @@ public void PushVersion(string version)
 	}
 }
 
+// Code to push the Test Results to AppVeyor for display purposess
 public void PushTestResults(string filePath)
 {
 	var file = MakeAbsolute(File(filePath));
