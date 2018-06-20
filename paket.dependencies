@@ -8,8 +8,12 @@ nuget Viki.HttpMockSlim >= 1.0.3
 nuget IdentityModel.OidcClient >= 2.2.0
 nuget Microsoft.ApplicationInsights ~> 2.4
 nuget Microsoft.Extensions.Logging 1.1.2
+nuget Microsoft.Extensions.DependencyInjection.Abstractions
+nuget Microsoft.Extensions.Logging.Abstractions
+nuget Microsoft.NETCore.Platforms
 nuget Moq >= 4.5.9
 nuget msdn.4.5.2 0.1.0-alpha-1611021200
+nuget NETStandard.Library
 nuget Newtonsoft.Json >= 10.0.1 redirects:on
 nuget NUnit ~> 3.4
 nuget SemVer.Git.MSBuild >= 1.1.0 content:once
@@ -17,9 +21,5 @@ nuget Serilog.Sinks.ColoredConsole
 nuget Serilog.Sinks.Seq
 nuget Serilog.Sinks.Splunk
 nuget System.IdentityModel.Tokens.Jwt >= 5.1.4
+nuget System.ValueTuple
 nuget VaraniumSharp >= 1.20.0
-
-nuget NETStandard.Library
-nuget Microsoft.Extensions.DependencyInjection.Abstractions
-nuget Microsoft.Extensions.Logging.Abstractions
-nuget Microsoft.NETCore.Platforms
