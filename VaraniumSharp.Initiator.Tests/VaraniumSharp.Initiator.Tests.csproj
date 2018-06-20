@@ -93,13 +93,6 @@
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.7.1' Or $(TargetFrameworkVersion) == 'v4.7.2')">
-      <PropertyGroup>
-        <__paket__NETStandard_Library_targets>netstandard2.0\NETStandard.Library</__paket__NETStandard_Library_targets>
-      </PropertyGroup>
-    </When>
-  </Choose>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
@@ -173,6 +166,39 @@
   <Choose>
     <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.7.1' Or $(TargetFrameworkVersion) == 'v4.7.2')">
       <ItemGroup>
+        <Reference Include="Microsoft.Extensions.Configuration">
+          <HintPath>..\packages\Microsoft.Extensions.Configuration\lib\netstandard2.0\Microsoft.Extensions.Configuration.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.7.1' Or $(TargetFrameworkVersion) == 'v4.7.2')">
+      <ItemGroup>
+        <Reference Include="Microsoft.Extensions.Configuration.Abstractions">
+          <HintPath>..\packages\Microsoft.Extensions.Configuration.Abstractions\lib\netstandard2.0\Microsoft.Extensions.Configuration.Abstractions.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.7.1' Or $(TargetFrameworkVersion) == 'v4.7.2')">
+      <ItemGroup>
+        <Reference Include="Microsoft.Extensions.Configuration.Binder">
+          <HintPath>..\packages\Microsoft.Extensions.Configuration.Binder\lib\netstandard2.0\Microsoft.Extensions.Configuration.Binder.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.7.1' Or $(TargetFrameworkVersion) == 'v4.7.2')">
+      <ItemGroup>
         <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions">
           <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
           <Private>True</Private>
@@ -185,7 +211,7 @@
     <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.7.1' Or $(TargetFrameworkVersion) == 'v4.7.2')">
       <ItemGroup>
         <Reference Include="Microsoft.Extensions.Logging">
-          <HintPath>..\packages\Microsoft.Extensions.Logging\lib\netstandard1.1\Microsoft.Extensions.Logging.dll</HintPath>
+          <HintPath>..\packages\Microsoft.Extensions.Logging\lib\netstandard2.0\Microsoft.Extensions.Logging.dll</HintPath>
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>
@@ -197,6 +223,28 @@
       <ItemGroup>
         <Reference Include="Microsoft.Extensions.Logging.Abstractions">
           <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions\lib\netstandard2.0\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.7.1' Or $(TargetFrameworkVersion) == 'v4.7.2')">
+      <ItemGroup>
+        <Reference Include="Microsoft.Extensions.Options">
+          <HintPath>..\packages\Microsoft.Extensions.Options\lib\netstandard2.0\Microsoft.Extensions.Options.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.7.1' Or $(TargetFrameworkVersion) == 'v4.7.2')">
+      <ItemGroup>
+        <Reference Include="Microsoft.Extensions.Primitives">
+          <HintPath>..\packages\Microsoft.Extensions.Primitives\lib\netstandard2.0\Microsoft.Extensions.Primitives.dll</HintPath>
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>
@@ -363,6 +411,34 @@
   <Choose>
     <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.7.1' Or $(TargetFrameworkVersion) == 'v4.7.2')">
       <ItemGroup>
+        <Reference Include="System.Buffers">
+          <HintPath>..\packages\System.Buffers\lib\netstandard2.0\System.Buffers.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.7.1' Or $(TargetFrameworkVersion) == 'v4.7.2')">
+      <ItemGroup>
+        <Reference Include="System.Drawing">
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="mscorlib">
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="System.Configuration.ConfigurationManager">
+          <HintPath>..\packages\System.Configuration.ConfigurationManager\lib\net461\System.Configuration.ConfigurationManager.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.7.1' Or $(TargetFrameworkVersion) == 'v4.7.2')">
+      <ItemGroup>
         <Reference Include="System.IdentityModel.Tokens.Jwt">
           <HintPath>..\packages\System.IdentityModel.Tokens.Jwt\lib\net451\System.IdentityModel.Tokens.Jwt.dll</HintPath>
           <Private>True</Private>
@@ -374,8 +450,75 @@
   <Choose>
     <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.7.1' Or $(TargetFrameworkVersion) == 'v4.7.2')">
       <ItemGroup>
+        <Reference Include="System.Memory">
+          <HintPath>..\packages\System.Memory\lib\netstandard2.0\System.Memory.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.7.1' Or $(TargetFrameworkVersion) == 'v4.7.2')">
+      <ItemGroup>
+        <Reference Include="System.Numerics.Vectors">
+          <HintPath>..\packages\System.Numerics.Vectors\lib\net46\System.Numerics.Vectors.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.7.1' Or $(TargetFrameworkVersion) == 'v4.7.2')">
+      <ItemGroup>
         <Reference Include="System.Runtime.CompilerServices.Unsafe">
           <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.7.1' Or $(TargetFrameworkVersion) == 'v4.7.2')">
+      <ItemGroup>
+        <Reference Include="System.Security.AccessControl">
+          <HintPath>..\packages\System.Security.AccessControl\lib\net461\System.Security.AccessControl.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.7.1' Or $(TargetFrameworkVersion) == 'v4.7.2')">
+      <ItemGroup>
+        <Reference Include="System.Data.OracleClient">
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="System.Net">
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="System.ServiceProcess">
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="System.Transactions">
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="System.Security.Permissions">
+          <HintPath>..\packages\System.Security.Permissions\lib\net461\System.Security.Permissions.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.7.1' Or $(TargetFrameworkVersion) == 'v4.7.2')">
+      <ItemGroup>
+        <Reference Include="System.Security.Principal.Windows">
+          <HintPath>..\packages\System.Security.Principal.Windows\lib\net461\System.Security.Principal.Windows.dll</HintPath>
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>
@@ -407,9 +550,6 @@
   <Choose>
     <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.7.1' Or $(TargetFrameworkVersion) == 'v4.7.2')">
       <ItemGroup>
-        <Reference Include="mscorlib">
-          <Paket>True</Paket>
-        </Reference>
         <Reference Include="System.ValueTuple">
           <HintPath>..\packages\System.ValueTuple\lib\net47\System.ValueTuple.dll</HintPath>
           <Private>True</Private>
@@ -422,7 +562,7 @@
     <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.7.1' Or $(TargetFrameworkVersion) == 'v4.7.2')">
       <ItemGroup>
         <Reference Include="VaraniumSharp">
-          <HintPath>..\packages\VaraniumSharp\lib\net462\VaraniumSharp.dll</HintPath>
+          <HintPath>..\packages\VaraniumSharp\lib\netstandard2.0\VaraniumSharp.dll</HintPath>
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>
@@ -440,5 +580,4 @@
       </ItemGroup>
     </When>
   </Choose>
-  <Import Project="..\packages\NETStandard.Library\build\$(__paket__NETStandard_Library_targets).targets" Condition="Exists('..\packages\NETStandard.Library\build\$(__paket__NETStandard_Library_targets).targets')" Label="Paket" />
 </Project>
