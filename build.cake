@@ -21,7 +21,7 @@
 // Set up variables specific for the project
 Task ("VariableSetup")
 	.Does(() => {
-		projectName = "";
+		projectName = "VaraniumSharp.Initiator";
 		releaseFolderString = "./{0}/bin/{1}/netstandard2.0";
 		releaseBinaryType = "dll";
 		repoOwner = "NinetailLabs";
