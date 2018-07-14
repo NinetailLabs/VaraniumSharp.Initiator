@@ -254,6 +254,17 @@
   <Choose>
     <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.7.1' Or $(TargetFrameworkVersion) == 'v4.7.2')">
       <ItemGroup>
+        <Reference Include="Microsoft.IdentityModel.JsonWebTokens">
+          <HintPath>..\packages\Microsoft.IdentityModel.JsonWebTokens\lib\net451\Microsoft.IdentityModel.JsonWebTokens.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.7.1' Or $(TargetFrameworkVersion) == 'v4.7.2')">
+      <ItemGroup>
         <Reference Include="Microsoft.IdentityModel.Logging">
           <HintPath>..\packages\Microsoft.IdentityModel.Logging\lib\net451\Microsoft.IdentityModel.Logging.dll</HintPath>
           <Private>True</Private>

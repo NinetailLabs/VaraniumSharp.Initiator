@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using DryIoc;
+using FastExpressionCompiler;
 using ImTools;
 
 // ReSharper disable InconsistentNaming - Implementation of an Interface
@@ -13,17 +14,31 @@ namespace VaraniumSharp.Initiator.Tests.Fixtures
     {
         #region Properties
 
-        public ContainerWeakRef ContainerWeakRef { get; }
+        public IScope CurrentScope { get; }
+
         public Request EmptyRequest { get; }
+
+        public bool IsDisposed { get; }
+        public IScope OwnCurrentScope { get; }
+        public IResolverContext Parent { get; }
         public object[] ResolutionStateCache { get; }
+        public IResolverContext Root { get; }
+
         public Rules Rules { get; }
+
         public IScopeContext ScopeContext { get; }
+        public IScope SingletonScope { get; }
 
         #endregion
 
         #region Public Methods
 
         public void CacheFactoryExpression(int factoryID, Expression factoryExpression)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool ClearCache(Type serviceType, FactoryType? factoryType, object serviceKey)
         {
             throw new NotImplementedException();
         }
@@ -49,7 +64,13 @@ namespace VaraniumSharp.Initiator.Tests.Fixtures
             throw new NotImplementedException();
         }
 
-        public Expression GetDecoratorExpressionOrDefault(Request request)
+        public ExpressionInfo GetConstantExpression(object item, Type itemType = null,
+            bool throwIfStateRequired = false)
+        {
+            throw new NotImplementedException();
+        }
+
+        public ExpressionInfo GetDecoratorExpressionOrDefault(Request request)
         {
             throw new NotImplementedException();
         }
@@ -90,6 +111,11 @@ namespace VaraniumSharp.Initiator.Tests.Fixtures
             throw new NotImplementedException();
         }
 
+        public void InjectPropertiesAndFields(object instance, string[] propertyAndFieldNames)
+        {
+            throw new NotImplementedException();
+        }
+
         public object InjectPropertiesAndFields(object instance, PropertiesAndFieldsSelector propertiesAndFields)
         {
             throw new NotImplementedException();
@@ -107,20 +133,26 @@ namespace VaraniumSharp.Initiator.Tests.Fixtures
         }
 
         public void Register(Factory factory, Type serviceType, object serviceKey,
+            IfAlreadyRegistered? ifAlreadyRegistered,
+            bool isStaticallyChecked)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Register(Factory factory, Type serviceType, object serviceKey,
             IfAlreadyRegistered ifAlreadyRegistered,
             bool isStaticallyChecked)
         {
             throw new NotImplementedException();
         }
 
-        public object Resolve(Type serviceType, bool ifUnresolvedReturnDefault)
+        public object Resolve(Type serviceType, IfUnresolved ifUnresolved)
         {
             return _resolveItem;
         }
 
-        public object Resolve(Type serviceType, object serviceKey, bool ifUnresolvedReturnDefault,
-            Type requiredServiceType,
-            RequestInfo preResolveParent, IScope scope)
+        public object Resolve(Type serviceType, object serviceKey, IfUnresolved ifUnresolved, Type requiredServiceType,
+            Request preResolveParent, object[] args)
         {
             throw new NotImplementedException();
         }
@@ -131,8 +163,8 @@ namespace VaraniumSharp.Initiator.Tests.Fixtures
         }
 
         public IEnumerable<object> ResolveMany(Type serviceType, object serviceKey, Type requiredServiceType,
-            object compositeParentKey,
-            Type compositeParentRequiredType, RequestInfo preResolveParent, IScope scope)
+            Request preResolveParent,
+            object[] args)
         {
             throw new NotImplementedException();
         }
@@ -148,7 +180,25 @@ namespace VaraniumSharp.Initiator.Tests.Fixtures
             throw new NotImplementedException();
         }
 
+        public void UseInstance(Type serviceType, object instance, IfAlreadyRegistered IfAlreadyRegistered,
+            bool preventDisposal,
+            bool weaklyReferenced, object serviceKey)
+        {
+            throw new NotImplementedException();
+        }
+
         public IContainer With(Func<Rules, Rules> configure = null, IScopeContext scopeContext = null)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IContainer With(Rules rules, IScopeContext scopeContext, RegistrySharing registrySharing,
+            IScope singletonScope)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IResolverContext WithCurrentScope(IScope scope)
         {
             throw new NotImplementedException();
         }

@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -17,8 +17,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="DryIoc.dll" Version="2.12.10" />
-    <PackageReference Include="IdentityModel.OidcClient" Version="2.7.0" />
+    <PackageReference Include="DryIoc.dll" Version="3.0.2" />
+    <PackageReference Include="IdentityModel.OidcClient" Version="2.8.1" />
     <PackageReference Include="Microsoft.ApplicationInsights" Version="2.6.4" />
     <PackageReference Include="SemVer.Git.MSBuild" Version="1.3.0">
       <PrivateAssets>none</PrivateAssets>
@@ -28,9 +28,9 @@
     <PackageReference Include="Serilog.Sinks.File" Version="4.0.0" />
     <PackageReference Include="Serilog.Sinks.Seq" Version="4.0.0" />
     <PackageReference Include="Serilog.Sinks.Splunk" Version="2.5.0" />
-    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="5.2.2" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="5.2.4" />
     <PackageReference Include="System.Management" Version="4.5.0" />
-    <PackageReference Include="VaraniumSharp" Version="3.1.1" />
+    <PackageReference Include="VaraniumSharp" Version="3.1.2" />
   </ItemGroup>
 
 </Project>

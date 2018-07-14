@@ -2,7 +2,7 @@ source https://api.nuget.org/v3/index.json
 
 framework: >= net471
 
-nuget DryIoc.dll >= 2.7.1
+nuget DryIoc.dll >= 3.0.2
 nuget FluentAssertions ~>  4.14
 nuget Viki.HttpMockSlim >= 1.0.3
 nuget IdentityModel.OidcClient >= 2.2.0
@@ -22,4 +22,4 @@ nuget Serilog.Sinks.Seq
 nuget Serilog.Sinks.Splunk
 nuget System.IdentityModel.Tokens.Jwt >= 5.1.4
 nuget System.ValueTuple
-nuget VaraniumSharp >= 3.1.1
+nuget VaraniumSharp >= 3.1.2
