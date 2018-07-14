@@ -14,4 +14,5 @@ Serilog.Sinks.Seq
 Serilog.Sinks.Splunk redirects:on
 System.IdentityModel.Tokens.Jwt redirects:on
 System.Threading.Tasks.Extensions redirects:on
+System.ValueTuple redirects:on
 VaraniumSharp
