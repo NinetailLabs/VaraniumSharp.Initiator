@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class ServiceReuseExtensions
+    <title>Class HttpClientInjectableWrapper
    </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class ServiceReuseExtensions
+    <meta name="title" content="Class HttpClientInjectableWrapper
    ">
     <meta name="generator" content="docfx 2.36.2.0">
     
@@ -68,21 +68,55 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="VaraniumSharp.Initiator.DependencyInjection.ServiceReuseExtensions">
+            <article class="content wrap" id="_content" data-uid="VaraniumSharp.Initiator.Wrappers.HttpClientInjectableWrapper">
   
   
-  <h1 id="VaraniumSharp_Initiator_DependencyInjection_ServiceReuseExtensions" data-uid="VaraniumSharp.Initiator.DependencyInjection.ServiceReuseExtensions" class="text-break">Class ServiceReuseExtensions
+  <h1 id="VaraniumSharp_Initiator_Wrappers_HttpClientInjectableWrapper" data-uid="VaraniumSharp.Initiator.Wrappers.HttpClientInjectableWrapper" class="text-break">Class HttpClientInjectableWrapper
   </h1>
-  <div class="markdown level0 summary"><p>Extension method on top of ServiceReuse enumeration</p>
+  <div class="markdown level0 summary"><p>Inherits from <a class="xref" href="https://ninetaillabs.github.io/VaraniumSharp/api/VaraniumSharp.Wrappers.HttpClientWrapper.html">HttpClientWrapper</a> to provide a proper disposable transient for DryIoc,
+otherwise an error is thrown when the user tries to build the container</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><a class="xref" href="https://msdn.microsoft.com/en-us/library/system.object(v=vs.110).aspx">Object</a></div>
-    <div class="level1"><span class="xref">ServiceReuseExtensions</span></div>
+    <div class="level1"><a class="xref" href="https://ninetaillabs.github.io/VaraniumSharp/api/VaraniumSharp.Wrappers.HttpClientWrapper.html">HttpClientWrapper</a></div>
+    <div class="level2"><span class="xref">HttpClientInjectableWrapper</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="https://ninetaillabs.github.io/VaraniumSharp/api/VaraniumSharp.Interfaces.Wrappers.IHttpClient.html">IHttpClient</a></div>
+    <div><a class="xref" href="https://msdn.microsoft.com/en-us/library/system.idisposable(v=vs.110).aspx">IDisposable</a></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="https://ninetaillabs.github.io/VaraniumSharp/api/VaraniumSharp.Wrappers.HttpClientWrapper.html#VaraniumSharp_Wrappers_HttpClientWrapper_CancelPendingRequests">HttpClientWrapper.CancelPendingRequests()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://ninetaillabs.github.io/VaraniumSharp/api/VaraniumSharp.Wrappers.HttpClientWrapper.html#VaraniumSharp_Wrappers_HttpClientWrapper_Dispose">HttpClientWrapper.Dispose()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://ninetaillabs.github.io/VaraniumSharp/api/VaraniumSharp.Wrappers.HttpClientWrapper.html#VaraniumSharp_Wrappers_HttpClientWrapper_GetAsync_System_Uri_">HttpClientWrapper.GetAsync(Uri)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://ninetaillabs.github.io/VaraniumSharp/api/VaraniumSharp.Wrappers.HttpClientWrapper.html#VaraniumSharp_Wrappers_HttpClientWrapper_GetAsync_System_Uri_System_Threading_CancellationToken_">HttpClientWrapper.GetAsync(Uri, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://ninetaillabs.github.io/VaraniumSharp/api/VaraniumSharp.Wrappers.HttpClientWrapper.html#VaraniumSharp_Wrappers_HttpClientWrapper_GetStreamAsync_System_Uri_">HttpClientWrapper.GetStreamAsync(Uri)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://ninetaillabs.github.io/VaraniumSharp/api/VaraniumSharp.Wrappers.HttpClientWrapper.html#VaraniumSharp_Wrappers_HttpClientWrapper_BaseAddress">HttpClientWrapper.BaseAddress</a>
+    </div>
+    <div>
+      <a class="xref" href="https://ninetaillabs.github.io/VaraniumSharp/api/VaraniumSharp.Wrappers.HttpClientWrapper.html#VaraniumSharp_Wrappers_HttpClientWrapper_DefaultRequestHeaders">HttpClientWrapper.DefaultRequestHeaders</a>
+    </div>
+    <div>
+      <a class="xref" href="https://ninetaillabs.github.io/VaraniumSharp/api/VaraniumSharp.Wrappers.HttpClientWrapper.html#VaraniumSharp_Wrappers_HttpClientWrapper_MaxResponseContentBufferSize">HttpClientWrapper.MaxResponseContentBufferSize</a>
+    </div>
+    <div>
+      <a class="xref" href="https://ninetaillabs.github.io/VaraniumSharp/api/VaraniumSharp.Wrappers.HttpClientWrapper.html#VaraniumSharp_Wrappers_HttpClientWrapper_Timeout">HttpClientWrapper.Timeout</a>
+    </div>
     <div>
       <a class="xref" href="https://msdn.microsoft.com/en-us/library/bsc2ak47(v=vs.110).aspx">Object.Equals(Object)</a>
     </div>
@@ -105,62 +139,20 @@
       <a class="xref" href="https://msdn.microsoft.com/en-us/library/7bxwbwt2(v=vs.110).aspx">Object.ToString()</a>
     </div>
   </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="VaraniumSharp.Initiator.DependencyInjection.html">VaraniumSharp.Initiator.DependencyInjection</a></h6>
+  <h6><strong>Namespace</strong>: <a class="xref" href="VaraniumSharp.Initiator.Wrappers.html">VaraniumSharp.Initiator.Wrappers</a></h6>
   <h6><strong>Assembly</strong>: VaraniumSharp.Initiator.dll</h6>
-  <h5 id="VaraniumSharp_Initiator_DependencyInjection_ServiceReuseExtensions_syntax">Syntax</h5>
+  <h5 id="VaraniumSharp_Initiator_Wrappers_HttpClientInjectableWrapper_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static class ServiceReuseExtensions</code></pre>
+    <pre><code class="lang-csharp hljs">[AutomaticContainerRegistration(typeof(IHttpClient), Priority = 1)]
+public class HttpClientInjectableWrapper : HttpClientWrapper, IHttpClient, IDisposable</code></pre>
   </div>
-  <h3 id="methods">Methods
-  </h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NinetailLabs/VaraniumSharp.Initiator/new/master/apiSpec/new?filename=VaraniumSharp_Initiator_DependencyInjection_ServiceReuseExtensions_ConvertFromVaraniumReuse_VaraniumSharp_Enumerations_ServiceReuse_.md&amp;value=---%0Auid%3A%20VaraniumSharp.Initiator.DependencyInjection.ServiceReuseExtensions.ConvertFromVaraniumReuse(VaraniumSharp.Enumerations.ServiceReuse)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NinetailLabs/VaraniumSharp.Initiator/blob/master/VaraniumSharp.Initiator/DependencyInjection/ServiceReuseExtensions.cs/#L18">View Source</a>
-  </span>
-  <a id="VaraniumSharp_Initiator_DependencyInjection_ServiceReuseExtensions_ConvertFromVaraniumReuse_" data-uid="VaraniumSharp.Initiator.DependencyInjection.ServiceReuseExtensions.ConvertFromVaraniumReuse*"></a>
-  <h4 id="VaraniumSharp_Initiator_DependencyInjection_ServiceReuseExtensions_ConvertFromVaraniumReuse_VaraniumSharp_Enumerations_ServiceReuse_" data-uid="VaraniumSharp.Initiator.DependencyInjection.ServiceReuseExtensions.ConvertFromVaraniumReuse(VaraniumSharp.Enumerations.ServiceReuse)">ConvertFromVaraniumReuse(ServiceReuse)</h4>
-  <div class="markdown level1 summary"><p>Convert a VaraniumSharp ServiceReuse enum value into a IReuse value used by DryIoc</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static IReuse ConvertFromVaraniumReuse(this ServiceReuse self)</code></pre>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="https://ninetaillabs.github.io/VaraniumSharp/api/VaraniumSharp.Interfaces.Wrappers.IHttpClient.html">IHttpClient</a>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://ninetaillabs.github.io/VaraniumSharp/api/VaraniumSharp.Enumerations.ServiceReuse.html">ServiceReuse</a></td>
-        <td><span class="parametername">self</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">DryIoc.IReuse</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+  <div>
+      <a class="xref" href="https://msdn.microsoft.com/en-us/library/system.idisposable(v=vs.110).aspx">IDisposable</a>
+  </div>
 </article>
           </div>
           
@@ -169,10 +161,10 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/NinetailLabs/VaraniumSharp.Initiator/new/master/apiSpec/new?filename=VaraniumSharp_Initiator_DependencyInjection_ServiceReuseExtensions.md&amp;value=---%0Auid%3A%20VaraniumSharp.Initiator.DependencyInjection.ServiceReuseExtensions%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/NinetailLabs/VaraniumSharp.Initiator/new/master/apiSpec/new?filename=VaraniumSharp_Initiator_Wrappers_HttpClientInjectableWrapper.md&amp;value=---%0Auid%3A%20VaraniumSharp.Initiator.Wrappers.HttpClientInjectableWrapper%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/NinetailLabs/VaraniumSharp.Initiator/blob/master/VaraniumSharp.Initiator/DependencyInjection/ServiceReuseExtensions.cs/#L9" class="contribution-link">View Source</a>
+                    <a href="https://github.com/NinetailLabs/VaraniumSharp.Initiator/blob/master/VaraniumSharp.Initiator/Wrappers/HttpClientInjectableWrapper.cs/#L13" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

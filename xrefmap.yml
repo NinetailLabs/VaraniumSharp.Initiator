@@ -35,12 +35,14 @@ references:
   name: MemoryCacheWrapperFactory
   href: api/VaraniumSharp.Initiator.Caching.MemoryCacheWrapperFactory.html#VaraniumSharp_Initiator_Caching_MemoryCacheWrapperFactory__ctor_
   commentId: Overload:VaraniumSharp.Initiator.Caching.MemoryCacheWrapperFactory.#ctor
+  isSpec: "True"
   fullName: VaraniumSharp.Initiator.Caching.MemoryCacheWrapperFactory.MemoryCacheWrapperFactory
   nameWithType: MemoryCacheWrapperFactory.MemoryCacheWrapperFactory
 - uid: VaraniumSharp.Initiator.Caching.MemoryCacheWrapperFactory.Create*
   name: Create
   href: api/VaraniumSharp.Initiator.Caching.MemoryCacheWrapperFactory.html#VaraniumSharp_Initiator_Caching_MemoryCacheWrapperFactory_Create_
   commentId: Overload:VaraniumSharp.Initiator.Caching.MemoryCacheWrapperFactory.Create
+  isSpec: "True"
   fullName: VaraniumSharp.Initiator.Caching.MemoryCacheWrapperFactory.Create
   nameWithType: MemoryCacheWrapperFactory.Create
 - uid: VaraniumSharp.Initiator.Caching.MemoryCacheWrapperFactory.Create``1(System.Runtime.Caching.CacheItemPolicy,System.Func{System.String,System.Threading.Tasks.Task{``0}})
@@ -56,6 +58,7 @@ references:
   name: CreateWithDefaultSlidingPolicy
   href: api/VaraniumSharp.Initiator.Caching.MemoryCacheWrapperFactory.html#VaraniumSharp_Initiator_Caching_MemoryCacheWrapperFactory_CreateWithDefaultSlidingPolicy_
   commentId: Overload:VaraniumSharp.Initiator.Caching.MemoryCacheWrapperFactory.CreateWithDefaultSlidingPolicy
+  isSpec: "True"
   fullName: VaraniumSharp.Initiator.Caching.MemoryCacheWrapperFactory.CreateWithDefaultSlidingPolicy
   nameWithType: MemoryCacheWrapperFactory.CreateWithDefaultSlidingPolicy
 - uid: VaraniumSharp.Initiator.Caching.MemoryCacheWrapperFactory.CreateWithDefaultSlidingPolicy``1(System.Func{System.String,System.Threading.Tasks.Task{``0}})
@@ -89,6 +92,7 @@ references:
   name: Apply
   href: api/VaraniumSharp.Initiator.Configuration.BaseLogConfiguration.html#VaraniumSharp_Initiator_Configuration_BaseLogConfiguration_Apply_
   commentId: Overload:VaraniumSharp.Initiator.Configuration.BaseLogConfiguration.Apply
+  isSpec: "True"
   fullName: VaraniumSharp.Initiator.Configuration.BaseLogConfiguration.Apply
   nameWithType: BaseLogConfiguration.Apply
 - uid: VaraniumSharp.Initiator.Configuration.BaseLogConfiguration.IsActive
@@ -101,6 +105,7 @@ references:
   name: IsActive
   href: api/VaraniumSharp.Initiator.Configuration.BaseLogConfiguration.html#VaraniumSharp_Initiator_Configuration_BaseLogConfiguration_IsActive_
   commentId: Overload:VaraniumSharp.Initiator.Configuration.BaseLogConfiguration.IsActive
+  isSpec: "True"
   fullName: VaraniumSharp.Initiator.Configuration.BaseLogConfiguration.IsActive
   nameWithType: BaseLogConfiguration.IsActive
 - uid: VaraniumSharp.Initiator.Configuration.BaseLogConfiguration.LogSetup(Serilog.LoggerConfiguration)
@@ -113,6 +118,7 @@ references:
   name: LogSetup
   href: api/VaraniumSharp.Initiator.Configuration.BaseLogConfiguration.html#VaraniumSharp_Initiator_Configuration_BaseLogConfiguration_LogSetup_
   commentId: Overload:VaraniumSharp.Initiator.Configuration.BaseLogConfiguration.LogSetup
+  isSpec: "True"
   fullName: VaraniumSharp.Initiator.Configuration.BaseLogConfiguration.LogSetup
   nameWithType: BaseLogConfiguration.LogSetup
 - uid: VaraniumSharp.Initiator.Configuration.BaseLogConfiguration.WasApplied
@@ -125,6 +131,7 @@ references:
   name: WasApplied
   href: api/VaraniumSharp.Initiator.Configuration.BaseLogConfiguration.html#VaraniumSharp_Initiator_Configuration_BaseLogConfiguration_WasApplied_
   commentId: Overload:VaraniumSharp.Initiator.Configuration.BaseLogConfiguration.WasApplied
+  isSpec: "True"
   fullName: VaraniumSharp.Initiator.Configuration.BaseLogConfiguration.WasApplied
   nameWithType: BaseLogConfiguration.WasApplied
 - uid: VaraniumSharp.Initiator.Configuration.ConsoleLoggingConfiguration
@@ -143,6 +150,7 @@ references:
   name: LogSetup
   href: api/VaraniumSharp.Initiator.Configuration.ConsoleLoggingConfiguration.html#VaraniumSharp_Initiator_Configuration_ConsoleLoggingConfiguration_LogSetup_
   commentId: Overload:VaraniumSharp.Initiator.Configuration.ConsoleLoggingConfiguration.LogSetup
+  isSpec: "True"
   fullName: VaraniumSharp.Initiator.Configuration.ConsoleLoggingConfiguration.LogSetup
   nameWithType: ConsoleLoggingConfiguration.LogSetup
 - uid: VaraniumSharp.Initiator.Configuration.ConsoleLoggingConfiguration.LogToConsole
@@ -155,6 +163,7 @@ references:
   name: LogToConsole
   href: api/VaraniumSharp.Initiator.Configuration.ConsoleLoggingConfiguration.html#VaraniumSharp_Initiator_Configuration_ConsoleLoggingConfiguration_LogToConsole_
   commentId: Overload:VaraniumSharp.Initiator.Configuration.ConsoleLoggingConfiguration.LogToConsole
+  isSpec: "True"
   fullName: VaraniumSharp.Initiator.Configuration.ConsoleLoggingConfiguration.LogToConsole
   nameWithType: ConsoleLoggingConfiguration.LogToConsole
 - uid: VaraniumSharp.Initiator.Configuration.FileLoggingConfiguration
@@ -173,6 +182,7 @@ references:
   name: LogFilePath
   href: api/VaraniumSharp.Initiator.Configuration.FileLoggingConfiguration.html#VaraniumSharp_Initiator_Configuration_FileLoggingConfiguration_LogFilePath_
   commentId: Overload:VaraniumSharp.Initiator.Configuration.FileLoggingConfiguration.LogFilePath
+  isSpec: "True"
   fullName: VaraniumSharp.Initiator.Configuration.FileLoggingConfiguration.LogFilePath
   nameWithType: FileLoggingConfiguration.LogFilePath
 - uid: VaraniumSharp.Initiator.Configuration.FileLoggingConfiguration.LogSetup(Serilog.LoggerConfiguration)
@@ -185,6 +195,7 @@ references:
   name: LogSetup
   href: api/VaraniumSharp.Initiator.Configuration.FileLoggingConfiguration.html#VaraniumSharp_Initiator_Configuration_FileLoggingConfiguration_LogSetup_
   commentId: Overload:VaraniumSharp.Initiator.Configuration.FileLoggingConfiguration.LogSetup
+  isSpec: "True"
   fullName: VaraniumSharp.Initiator.Configuration.FileLoggingConfiguration.LogSetup
   nameWithType: FileLoggingConfiguration.LogSetup
 - uid: VaraniumSharp.Initiator.Configuration.FileLoggingConfiguration.LogToFile
@@ -197,6 +208,7 @@ references:
   name: LogToFile
   href: api/VaraniumSharp.Initiator.Configuration.FileLoggingConfiguration.html#VaraniumSharp_Initiator_Configuration_FileLoggingConfiguration_LogToFile_
   commentId: Overload:VaraniumSharp.Initiator.Configuration.FileLoggingConfiguration.LogToFile
+  isSpec: "True"
   fullName: VaraniumSharp.Initiator.Configuration.FileLoggingConfiguration.LogToFile
   nameWithType: FileLoggingConfiguration.LogToFile
 - uid: VaraniumSharp.Initiator.Configuration.SeqLoggingConfiguration
@@ -215,6 +227,7 @@ references:
   name: LogSetup
   href: api/VaraniumSharp.Initiator.Configuration.SeqLoggingConfiguration.html#VaraniumSharp_Initiator_Configuration_SeqLoggingConfiguration_LogSetup_
   commentId: Overload:VaraniumSharp.Initiator.Configuration.SeqLoggingConfiguration.LogSetup
+  isSpec: "True"
   fullName: VaraniumSharp.Initiator.Configuration.SeqLoggingConfiguration.LogSetup
   nameWithType: SeqLoggingConfiguration.LogSetup
 - uid: VaraniumSharp.Initiator.Configuration.SeqLoggingConfiguration.LogToSeq
@@ -227,6 +240,7 @@ references:
   name: LogToSeq
   href: api/VaraniumSharp.Initiator.Configuration.SeqLoggingConfiguration.html#VaraniumSharp_Initiator_Configuration_SeqLoggingConfiguration_LogToSeq_
   commentId: Overload:VaraniumSharp.Initiator.Configuration.SeqLoggingConfiguration.LogToSeq
+  isSpec: "True"
   fullName: VaraniumSharp.Initiator.Configuration.SeqLoggingConfiguration.LogToSeq
   nameWithType: SeqLoggingConfiguration.LogToSeq
 - uid: VaraniumSharp.Initiator.Configuration.SeqLoggingConfiguration.SeqHost
@@ -239,6 +253,7 @@ references:
   name: SeqHost
   href: api/VaraniumSharp.Initiator.Configuration.SeqLoggingConfiguration.html#VaraniumSharp_Initiator_Configuration_SeqLoggingConfiguration_SeqHost_
   commentId: Overload:VaraniumSharp.Initiator.Configuration.SeqLoggingConfiguration.SeqHost
+  isSpec: "True"
   fullName: VaraniumSharp.Initiator.Configuration.SeqLoggingConfiguration.SeqHost
   nameWithType: SeqLoggingConfiguration.SeqHost
 - uid: VaraniumSharp.Initiator.Configuration.SplunkLoggingConfiguration
@@ -257,6 +272,7 @@ references:
   name: LogSetup
   href: api/VaraniumSharp.Initiator.Configuration.SplunkLoggingConfiguration.html#VaraniumSharp_Initiator_Configuration_SplunkLoggingConfiguration_LogSetup_
   commentId: Overload:VaraniumSharp.Initiator.Configuration.SplunkLoggingConfiguration.LogSetup
+  isSpec: "True"
   fullName: VaraniumSharp.Initiator.Configuration.SplunkLoggingConfiguration.LogSetup
   nameWithType: SplunkLoggingConfiguration.LogSetup
 - uid: VaraniumSharp.Initiator.Configuration.SplunkLoggingConfiguration.LogToSplunk
@@ -269,6 +285,7 @@ references:
   name: LogToSplunk
   href: api/VaraniumSharp.Initiator.Configuration.SplunkLoggingConfiguration.html#VaraniumSharp_Initiator_Configuration_SplunkLoggingConfiguration_LogToSplunk_
   commentId: Overload:VaraniumSharp.Initiator.Configuration.SplunkLoggingConfiguration.LogToSplunk
+  isSpec: "True"
   fullName: VaraniumSharp.Initiator.Configuration.SplunkLoggingConfiguration.LogToSplunk
   nameWithType: SplunkLoggingConfiguration.LogToSplunk
 - uid: VaraniumSharp.Initiator.Configuration.SplunkLoggingConfiguration.SplunkHost
@@ -281,6 +298,7 @@ references:
   name: SplunkHost
   href: api/VaraniumSharp.Initiator.Configuration.SplunkLoggingConfiguration.html#VaraniumSharp_Initiator_Configuration_SplunkLoggingConfiguration_SplunkHost_
   commentId: Overload:VaraniumSharp.Initiator.Configuration.SplunkLoggingConfiguration.SplunkHost
+  isSpec: "True"
   fullName: VaraniumSharp.Initiator.Configuration.SplunkLoggingConfiguration.SplunkHost
   nameWithType: SplunkLoggingConfiguration.SplunkHost
 - uid: VaraniumSharp.Initiator.Configuration.SplunkLoggingConfiguration.SplunkToken
@@ -293,6 +311,7 @@ references:
   name: SplunkToken
   href: api/VaraniumSharp.Initiator.Configuration.SplunkLoggingConfiguration.html#VaraniumSharp_Initiator_Configuration_SplunkLoggingConfiguration_SplunkToken_
   commentId: Overload:VaraniumSharp.Initiator.Configuration.SplunkLoggingConfiguration.SplunkToken
+  isSpec: "True"
   fullName: VaraniumSharp.Initiator.Configuration.SplunkLoggingConfiguration.SplunkToken
   nameWithType: SplunkLoggingConfiguration.SplunkToken
 - uid: VaraniumSharp.Initiator.DependencyInjection
@@ -317,6 +336,7 @@ references:
   name: ContainerSetup
   href: api/VaraniumSharp.Initiator.DependencyInjection.ContainerSetup.html#VaraniumSharp_Initiator_DependencyInjection_ContainerSetup__ctor_
   commentId: Overload:VaraniumSharp.Initiator.DependencyInjection.ContainerSetup.#ctor
+  isSpec: "True"
   fullName: VaraniumSharp.Initiator.DependencyInjection.ContainerSetup.ContainerSetup
   nameWithType: ContainerSetup.ContainerSetup
 - uid: VaraniumSharp.Initiator.DependencyInjection.ContainerSetup.RegisterClasses
@@ -329,6 +349,7 @@ references:
   name: RegisterClasses
   href: api/VaraniumSharp.Initiator.DependencyInjection.ContainerSetup.html#VaraniumSharp_Initiator_DependencyInjection_ContainerSetup_RegisterClasses_
   commentId: Overload:VaraniumSharp.Initiator.DependencyInjection.ContainerSetup.RegisterClasses
+  isSpec: "True"
   fullName: VaraniumSharp.Initiator.DependencyInjection.ContainerSetup.RegisterClasses
   nameWithType: ContainerSetup.RegisterClasses
 - uid: VaraniumSharp.Initiator.DependencyInjection.ContainerSetup.RegisterConcretionClasses
@@ -341,12 +362,14 @@ references:
   name: RegisterConcretionClasses
   href: api/VaraniumSharp.Initiator.DependencyInjection.ContainerSetup.html#VaraniumSharp_Initiator_DependencyInjection_ContainerSetup_RegisterConcretionClasses_
   commentId: Overload:VaraniumSharp.Initiator.DependencyInjection.ContainerSetup.RegisterConcretionClasses
+  isSpec: "True"
   fullName: VaraniumSharp.Initiator.DependencyInjection.ContainerSetup.RegisterConcretionClasses
   nameWithType: ContainerSetup.RegisterConcretionClasses
 - uid: VaraniumSharp.Initiator.DependencyInjection.ContainerSetup.Resolve*
   name: Resolve
   href: api/VaraniumSharp.Initiator.DependencyInjection.ContainerSetup.html#VaraniumSharp_Initiator_DependencyInjection_ContainerSetup_Resolve_
   commentId: Overload:VaraniumSharp.Initiator.DependencyInjection.ContainerSetup.Resolve
+  isSpec: "True"
   fullName: VaraniumSharp.Initiator.DependencyInjection.ContainerSetup.Resolve
   nameWithType: ContainerSetup.Resolve
 - uid: VaraniumSharp.Initiator.DependencyInjection.ContainerSetup.Resolve``1
@@ -362,6 +385,7 @@ references:
   name: ResolveMany
   href: api/VaraniumSharp.Initiator.DependencyInjection.ContainerSetup.html#VaraniumSharp_Initiator_DependencyInjection_ContainerSetup_ResolveMany_
   commentId: Overload:VaraniumSharp.Initiator.DependencyInjection.ContainerSetup.ResolveMany
+  isSpec: "True"
   fullName: VaraniumSharp.Initiator.DependencyInjection.ContainerSetup.ResolveMany
   nameWithType: ContainerSetup.ResolveMany
 - uid: VaraniumSharp.Initiator.DependencyInjection.ContainerSetup.ResolveMany``1
@@ -389,6 +413,7 @@ references:
   name: ConvertFromVaraniumReuse
   href: api/VaraniumSharp.Initiator.DependencyInjection.ServiceReuseExtensions.html#VaraniumSharp_Initiator_DependencyInjection_ServiceReuseExtensions_ConvertFromVaraniumReuse_
   commentId: Overload:VaraniumSharp.Initiator.DependencyInjection.ServiceReuseExtensions.ConvertFromVaraniumReuse
+  isSpec: "True"
   fullName: VaraniumSharp.Initiator.DependencyInjection.ServiceReuseExtensions.ConvertFromVaraniumReuse
   nameWithType: ServiceReuseExtensions.ConvertFromVaraniumReuse
 - uid: VaraniumSharp.Initiator.Enumerations
@@ -473,6 +498,7 @@ references:
   name: AddServerDetails
   href: api/VaraniumSharp.Initiator.Interfaces.Security.ITokenManager.html#VaraniumSharp_Initiator_Interfaces_Security_ITokenManager_AddServerDetails_
   commentId: Overload:VaraniumSharp.Initiator.Interfaces.Security.ITokenManager.AddServerDetails
+  isSpec: "True"
   fullName: VaraniumSharp.Initiator.Interfaces.Security.ITokenManager.AddServerDetails
   nameWithType: ITokenManager.AddServerDetails
 - uid: VaraniumSharp.Initiator.Interfaces.Security.ITokenManager.CheckSigninAsync(System.String)
@@ -485,6 +511,7 @@ references:
   name: CheckSigninAsync
   href: api/VaraniumSharp.Initiator.Interfaces.Security.ITokenManager.html#VaraniumSharp_Initiator_Interfaces_Security_ITokenManager_CheckSigninAsync_
   commentId: Overload:VaraniumSharp.Initiator.Interfaces.Security.ITokenManager.CheckSigninAsync
+  isSpec: "True"
   fullName: VaraniumSharp.Initiator.Interfaces.Security.ITokenManager.CheckSigninAsync
   nameWithType: ITokenManager.CheckSigninAsync
 - uid: VaraniumSharp.Initiator.Interfaces.Security.ITokenManager.ServerDetailKeys
@@ -497,6 +524,7 @@ references:
   name: ServerDetailKeys
   href: api/VaraniumSharp.Initiator.Interfaces.Security.ITokenManager.html#VaraniumSharp_Initiator_Interfaces_Security_ITokenManager_ServerDetailKeys_
   commentId: Overload:VaraniumSharp.Initiator.Interfaces.Security.ITokenManager.ServerDetailKeys
+  isSpec: "True"
   fullName: VaraniumSharp.Initiator.Interfaces.Security.ITokenManager.ServerDetailKeys
   nameWithType: ITokenManager.ServerDetailKeys
 - uid: VaraniumSharp.Initiator.Interfaces.Security.ITokenStorage
@@ -515,6 +543,7 @@ references:
   name: RetrieveAccessTokenAsync
   href: api/VaraniumSharp.Initiator.Interfaces.Security.ITokenStorage.html#VaraniumSharp_Initiator_Interfaces_Security_ITokenStorage_RetrieveAccessTokenAsync_
   commentId: Overload:VaraniumSharp.Initiator.Interfaces.Security.ITokenStorage.RetrieveAccessTokenAsync
+  isSpec: "True"
   fullName: VaraniumSharp.Initiator.Interfaces.Security.ITokenStorage.RetrieveAccessTokenAsync
   nameWithType: ITokenStorage.RetrieveAccessTokenAsync
 - uid: VaraniumSharp.Initiator.Interfaces.Security.ITokenStorage.RetrieveRefreshTokenAsync(System.String)
@@ -527,6 +556,7 @@ references:
   name: RetrieveRefreshTokenAsync
   href: api/VaraniumSharp.Initiator.Interfaces.Security.ITokenStorage.html#VaraniumSharp_Initiator_Interfaces_Security_ITokenStorage_RetrieveRefreshTokenAsync_
   commentId: Overload:VaraniumSharp.Initiator.Interfaces.Security.ITokenStorage.RetrieveRefreshTokenAsync
+  isSpec: "True"
   fullName: VaraniumSharp.Initiator.Interfaces.Security.ITokenStorage.RetrieveRefreshTokenAsync
   nameWithType: ITokenStorage.RetrieveRefreshTokenAsync
 - uid: VaraniumSharp.Initiator.Interfaces.Security.ITokenStorage.StoreAccessTokenAsync(System.String,System.String)
@@ -539,6 +569,7 @@ references:
   name: StoreAccessTokenAsync
   href: api/VaraniumSharp.Initiator.Interfaces.Security.ITokenStorage.html#VaraniumSharp_Initiator_Interfaces_Security_ITokenStorage_StoreAccessTokenAsync_
   commentId: Overload:VaraniumSharp.Initiator.Interfaces.Security.ITokenStorage.StoreAccessTokenAsync
+  isSpec: "True"
   fullName: VaraniumSharp.Initiator.Interfaces.Security.ITokenStorage.StoreAccessTokenAsync
   nameWithType: ITokenStorage.StoreAccessTokenAsync
 - uid: VaraniumSharp.Initiator.Interfaces.Security.ITokenStorage.StoreRefreshTokenAsync(System.String,System.String)
@@ -551,6 +582,7 @@ references:
   name: StoreRefreshTokenAsync
   href: api/VaraniumSharp.Initiator.Interfaces.Security.ITokenStorage.html#VaraniumSharp_Initiator_Interfaces_Security_ITokenStorage_StoreRefreshTokenAsync_
   commentId: Overload:VaraniumSharp.Initiator.Interfaces.Security.ITokenStorage.StoreRefreshTokenAsync
+  isSpec: "True"
   fullName: VaraniumSharp.Initiator.Interfaces.Security.ITokenStorage.StoreRefreshTokenAsync
   nameWithType: ITokenStorage.StoreRefreshTokenAsync
 - uid: VaraniumSharp.Initiator.Monitoring
@@ -575,6 +607,7 @@ references:
   name: DeviceDetails
   href: api/VaraniumSharp.Initiator.Monitoring.AppInsightClient.html#VaraniumSharp_Initiator_Monitoring_AppInsightClient_DeviceDetails_
   commentId: Overload:VaraniumSharp.Initiator.Monitoring.AppInsightClient.DeviceDetails
+  isSpec: "True"
   fullName: VaraniumSharp.Initiator.Monitoring.AppInsightClient.DeviceDetails
   nameWithType: AppInsightClient.DeviceDetails
 - uid: VaraniumSharp.Initiator.Monitoring.AppInsightClient.Flush
@@ -587,6 +620,7 @@ references:
   name: Flush
   href: api/VaraniumSharp.Initiator.Monitoring.AppInsightClient.html#VaraniumSharp_Initiator_Monitoring_AppInsightClient_Flush_
   commentId: Overload:VaraniumSharp.Initiator.Monitoring.AppInsightClient.Flush
+  isSpec: "True"
   fullName: VaraniumSharp.Initiator.Monitoring.AppInsightClient.Flush
   nameWithType: AppInsightClient.Flush
 - uid: VaraniumSharp.Initiator.Monitoring.AppInsightClient.InitializeAsync(System.String,System.String)
@@ -599,6 +633,7 @@ references:
   name: InitializeAsync
   href: api/VaraniumSharp.Initiator.Monitoring.AppInsightClient.html#VaraniumSharp_Initiator_Monitoring_AppInsightClient_InitializeAsync_
   commentId: Overload:VaraniumSharp.Initiator.Monitoring.AppInsightClient.InitializeAsync
+  isSpec: "True"
   fullName: VaraniumSharp.Initiator.Monitoring.AppInsightClient.InitializeAsync
   nameWithType: AppInsightClient.InitializeAsync
 - uid: VaraniumSharp.Initiator.Monitoring.AppInsightClient.InstrumentationKey
@@ -611,6 +646,7 @@ references:
   name: InstrumentationKey
   href: api/VaraniumSharp.Initiator.Monitoring.AppInsightClient.html#VaraniumSharp_Initiator_Monitoring_AppInsightClient_InstrumentationKey_
   commentId: Overload:VaraniumSharp.Initiator.Monitoring.AppInsightClient.InstrumentationKey
+  isSpec: "True"
   fullName: VaraniumSharp.Initiator.Monitoring.AppInsightClient.InstrumentationKey
   nameWithType: AppInsightClient.InstrumentationKey
 - uid: VaraniumSharp.Initiator.Monitoring.AppInsightClient.IsInitialized
@@ -623,6 +659,7 @@ references:
   name: IsInitialized
   href: api/VaraniumSharp.Initiator.Monitoring.AppInsightClient.html#VaraniumSharp_Initiator_Monitoring_AppInsightClient_IsInitialized_
   commentId: Overload:VaraniumSharp.Initiator.Monitoring.AppInsightClient.IsInitialized
+  isSpec: "True"
   fullName: VaraniumSharp.Initiator.Monitoring.AppInsightClient.IsInitialized
   nameWithType: AppInsightClient.IsInitialized
 - uid: VaraniumSharp.Initiator.Monitoring.AppInsightClient.OperatingSystem
@@ -635,6 +672,7 @@ references:
   name: OperatingSystem
   href: api/VaraniumSharp.Initiator.Monitoring.AppInsightClient.html#VaraniumSharp_Initiator_Monitoring_AppInsightClient_OperatingSystem_
   commentId: Overload:VaraniumSharp.Initiator.Monitoring.AppInsightClient.OperatingSystem
+  isSpec: "True"
   fullName: VaraniumSharp.Initiator.Monitoring.AppInsightClient.OperatingSystem
   nameWithType: AppInsightClient.OperatingSystem
 - uid: VaraniumSharp.Initiator.Monitoring.AppInsightClient.SessionKey
@@ -647,6 +685,7 @@ references:
   name: SessionKey
   href: api/VaraniumSharp.Initiator.Monitoring.AppInsightClient.html#VaraniumSharp_Initiator_Monitoring_AppInsightClient_SessionKey_
   commentId: Overload:VaraniumSharp.Initiator.Monitoring.AppInsightClient.SessionKey
+  isSpec: "True"
   fullName: VaraniumSharp.Initiator.Monitoring.AppInsightClient.SessionKey
   nameWithType: AppInsightClient.SessionKey
 - uid: VaraniumSharp.Initiator.Monitoring.AppInsightClient.TrackDependency(System.String,System.String,System.DateTimeOffset,System.TimeSpan,System.Boolean)
@@ -659,6 +698,7 @@ references:
   name: TrackDependency
   href: api/VaraniumSharp.Initiator.Monitoring.AppInsightClient.html#VaraniumSharp_Initiator_Monitoring_AppInsightClient_TrackDependency_
   commentId: Overload:VaraniumSharp.Initiator.Monitoring.AppInsightClient.TrackDependency
+  isSpec: "True"
   fullName: VaraniumSharp.Initiator.Monitoring.AppInsightClient.TrackDependency
   nameWithType: AppInsightClient.TrackDependency
 - uid: VaraniumSharp.Initiator.Monitoring.AppInsightClient.TrackEvent(System.String,System.Collections.Generic.IDictionary{System.String,System.String},System.Collections.Generic.IDictionary{System.String,System.Double})
@@ -674,6 +714,7 @@ references:
   name: TrackEvent
   href: api/VaraniumSharp.Initiator.Monitoring.AppInsightClient.html#VaraniumSharp_Initiator_Monitoring_AppInsightClient_TrackEvent_
   commentId: Overload:VaraniumSharp.Initiator.Monitoring.AppInsightClient.TrackEvent
+  isSpec: "True"
   fullName: VaraniumSharp.Initiator.Monitoring.AppInsightClient.TrackEvent
   nameWithType: AppInsightClient.TrackEvent
 - uid: VaraniumSharp.Initiator.Monitoring.AppInsightClient.TrackException(System.Exception,System.Collections.Generic.IDictionary{System.String,System.String},System.Collections.Generic.IDictionary{System.String,System.Double})
@@ -689,6 +730,7 @@ references:
   name: TrackException
   href: api/VaraniumSharp.Initiator.Monitoring.AppInsightClient.html#VaraniumSharp_Initiator_Monitoring_AppInsightClient_TrackException_
   commentId: Overload:VaraniumSharp.Initiator.Monitoring.AppInsightClient.TrackException
+  isSpec: "True"
   fullName: VaraniumSharp.Initiator.Monitoring.AppInsightClient.TrackException
   nameWithType: AppInsightClient.TrackException
 - uid: VaraniumSharp.Initiator.Monitoring.AppInsightClient.TrackMetric(System.String,System.Double)
@@ -701,6 +743,7 @@ references:
   name: TrackMetric
   href: api/VaraniumSharp.Initiator.Monitoring.AppInsightClient.html#VaraniumSharp_Initiator_Monitoring_AppInsightClient_TrackMetric_
   commentId: Overload:VaraniumSharp.Initiator.Monitoring.AppInsightClient.TrackMetric
+  isSpec: "True"
   fullName: VaraniumSharp.Initiator.Monitoring.AppInsightClient.TrackMetric
   nameWithType: AppInsightClient.TrackMetric
 - uid: VaraniumSharp.Initiator.Monitoring.AppInsightClient.TrackPageView(System.String)
@@ -713,6 +756,7 @@ references:
   name: TrackPageView
   href: api/VaraniumSharp.Initiator.Monitoring.AppInsightClient.html#VaraniumSharp_Initiator_Monitoring_AppInsightClient_TrackPageView_
   commentId: Overload:VaraniumSharp.Initiator.Monitoring.AppInsightClient.TrackPageView
+  isSpec: "True"
   fullName: VaraniumSharp.Initiator.Monitoring.AppInsightClient.TrackPageView
   nameWithType: AppInsightClient.TrackPageView
 - uid: VaraniumSharp.Initiator.Monitoring.AppInsightClient.TrackRequest(System.String,System.DateTimeOffset,System.TimeSpan,System.String,System.Boolean)
@@ -725,6 +769,7 @@ references:
   name: TrackRequest
   href: api/VaraniumSharp.Initiator.Monitoring.AppInsightClient.html#VaraniumSharp_Initiator_Monitoring_AppInsightClient_TrackRequest_
   commentId: Overload:VaraniumSharp.Initiator.Monitoring.AppInsightClient.TrackRequest
+  isSpec: "True"
   fullName: VaraniumSharp.Initiator.Monitoring.AppInsightClient.TrackRequest
   nameWithType: AppInsightClient.TrackRequest
 - uid: VaraniumSharp.Initiator.Monitoring.AppInsightClient.TrackTelemetry
@@ -737,6 +782,7 @@ references:
   name: TrackTelemetry
   href: api/VaraniumSharp.Initiator.Monitoring.AppInsightClient.html#VaraniumSharp_Initiator_Monitoring_AppInsightClient_TrackTelemetry_
   commentId: Overload:VaraniumSharp.Initiator.Monitoring.AppInsightClient.TrackTelemetry
+  isSpec: "True"
   fullName: VaraniumSharp.Initiator.Monitoring.AppInsightClient.TrackTelemetry
   nameWithType: AppInsightClient.TrackTelemetry
 - uid: VaraniumSharp.Initiator.Monitoring.AppInsightClient.TrackTrace(System.String)
@@ -755,6 +801,7 @@ references:
   name: TrackTrace
   href: api/VaraniumSharp.Initiator.Monitoring.AppInsightClient.html#VaraniumSharp_Initiator_Monitoring_AppInsightClient_TrackTrace_
   commentId: Overload:VaraniumSharp.Initiator.Monitoring.AppInsightClient.TrackTrace
+  isSpec: "True"
   fullName: VaraniumSharp.Initiator.Monitoring.AppInsightClient.TrackTrace
   nameWithType: AppInsightClient.TrackTrace
 - uid: VaraniumSharp.Initiator.Monitoring.AppInsightClient.UserKey
@@ -767,6 +814,7 @@ references:
   name: UserKey
   href: api/VaraniumSharp.Initiator.Monitoring.AppInsightClient.html#VaraniumSharp_Initiator_Monitoring_AppInsightClient_UserKey_
   commentId: Overload:VaraniumSharp.Initiator.Monitoring.AppInsightClient.UserKey
+  isSpec: "True"
   fullName: VaraniumSharp.Initiator.Monitoring.AppInsightClient.UserKey
   nameWithType: AppInsightClient.UserKey
 - uid: VaraniumSharp.Initiator.Monitoring.AppInsightClient.VersionNumber
@@ -779,6 +827,7 @@ references:
   name: VersionNumber
   href: api/VaraniumSharp.Initiator.Monitoring.AppInsightClient.html#VaraniumSharp_Initiator_Monitoring_AppInsightClient_VersionNumber_
   commentId: Overload:VaraniumSharp.Initiator.Monitoring.AppInsightClient.VersionNumber
+  isSpec: "True"
   fullName: VaraniumSharp.Initiator.Monitoring.AppInsightClient.VersionNumber
   nameWithType: AppInsightClient.VersionNumber
 - uid: VaraniumSharp.Initiator.Security
@@ -803,6 +852,7 @@ references:
   name: IdentityServerConnectionDetails
   href: api/VaraniumSharp.Initiator.Security.IdentityServerConnectionDetails.html#VaraniumSharp_Initiator_Security_IdentityServerConnectionDetails__ctor_
   commentId: Overload:VaraniumSharp.Initiator.Security.IdentityServerConnectionDetails.#ctor
+  isSpec: "True"
   fullName: VaraniumSharp.Initiator.Security.IdentityServerConnectionDetails.IdentityServerConnectionDetails
   nameWithType: IdentityServerConnectionDetails.IdentityServerConnectionDetails
 - uid: VaraniumSharp.Initiator.Security.IdentityServerConnectionDetails.OidcOptions
@@ -815,6 +865,7 @@ references:
   name: OidcOptions
   href: api/VaraniumSharp.Initiator.Security.IdentityServerConnectionDetails.html#VaraniumSharp_Initiator_Security_IdentityServerConnectionDetails_OidcOptions_
   commentId: Overload:VaraniumSharp.Initiator.Security.IdentityServerConnectionDetails.OidcOptions
+  isSpec: "True"
   fullName: VaraniumSharp.Initiator.Security.IdentityServerConnectionDetails.OidcOptions
   nameWithType: IdentityServerConnectionDetails.OidcOptions
 - uid: VaraniumSharp.Initiator.Security.IdentityServerConnectionDetails.ReplaceRefreshToken
@@ -827,6 +878,7 @@ references:
   name: ReplaceRefreshToken
   href: api/VaraniumSharp.Initiator.Security.IdentityServerConnectionDetails.html#VaraniumSharp_Initiator_Security_IdentityServerConnectionDetails_ReplaceRefreshToken_
   commentId: Overload:VaraniumSharp.Initiator.Security.IdentityServerConnectionDetails.ReplaceRefreshToken
+  isSpec: "True"
   fullName: VaraniumSharp.Initiator.Security.IdentityServerConnectionDetails.ReplaceRefreshToken
   nameWithType: IdentityServerConnectionDetails.ReplaceRefreshToken
 - uid: VaraniumSharp.Initiator.Security.TokenData
@@ -845,6 +897,7 @@ references:
   name: TokenData
   href: api/VaraniumSharp.Initiator.Security.TokenData.html#VaraniumSharp_Initiator_Security_TokenData__ctor_
   commentId: Overload:VaraniumSharp.Initiator.Security.TokenData.#ctor
+  isSpec: "True"
   fullName: VaraniumSharp.Initiator.Security.TokenData.TokenData
   nameWithType: TokenData.TokenData
 - uid: VaraniumSharp.Initiator.Security.TokenData.DecodedToken
@@ -857,6 +910,7 @@ references:
   name: DecodedToken
   href: api/VaraniumSharp.Initiator.Security.TokenData.html#VaraniumSharp_Initiator_Security_TokenData_DecodedToken_
   commentId: Overload:VaraniumSharp.Initiator.Security.TokenData.DecodedToken
+  isSpec: "True"
   fullName: VaraniumSharp.Initiator.Security.TokenData.DecodedToken
   nameWithType: TokenData.DecodedToken
 - uid: VaraniumSharp.Initiator.Security.TokenData.ExpirationDate
@@ -869,6 +923,7 @@ references:
   name: ExpirationDate
   href: api/VaraniumSharp.Initiator.Security.TokenData.html#VaraniumSharp_Initiator_Security_TokenData_ExpirationDate_
   commentId: Overload:VaraniumSharp.Initiator.Security.TokenData.ExpirationDate
+  isSpec: "True"
   fullName: VaraniumSharp.Initiator.Security.TokenData.ExpirationDate
   nameWithType: TokenData.ExpirationDate
 - uid: VaraniumSharp.Initiator.Security.TokenData.Token
@@ -881,6 +936,7 @@ references:
   name: Token
   href: api/VaraniumSharp.Initiator.Security.TokenData.html#VaraniumSharp_Initiator_Security_TokenData_Token_
   commentId: Overload:VaraniumSharp.Initiator.Security.TokenData.Token
+  isSpec: "True"
   fullName: VaraniumSharp.Initiator.Security.TokenData.Token
   nameWithType: TokenData.Token
 - uid: VaraniumSharp.Initiator.Security.TokenData.TokenExpired
@@ -893,6 +949,7 @@ references:
   name: TokenExpired
   href: api/VaraniumSharp.Initiator.Security.TokenData.html#VaraniumSharp_Initiator_Security_TokenData_TokenExpired_
   commentId: Overload:VaraniumSharp.Initiator.Security.TokenData.TokenExpired
+  isSpec: "True"
   fullName: VaraniumSharp.Initiator.Security.TokenData.TokenExpired
   nameWithType: TokenData.TokenExpired
 - uid: VaraniumSharp.Initiator.Security.TokenManager
@@ -911,6 +968,7 @@ references:
   name: TokenManager
   href: api/VaraniumSharp.Initiator.Security.TokenManager.html#VaraniumSharp_Initiator_Security_TokenManager__ctor_
   commentId: Overload:VaraniumSharp.Initiator.Security.TokenManager.#ctor
+  isSpec: "True"
   fullName: VaraniumSharp.Initiator.Security.TokenManager.TokenManager
   nameWithType: TokenManager.TokenManager
 - uid: VaraniumSharp.Initiator.Security.TokenManager.AddServerDetails(System.String,VaraniumSharp.Initiator.Security.IdentityServerConnectionDetails)
@@ -923,6 +981,7 @@ references:
   name: AddServerDetails
   href: api/VaraniumSharp.Initiator.Security.TokenManager.html#VaraniumSharp_Initiator_Security_TokenManager_AddServerDetails_
   commentId: Overload:VaraniumSharp.Initiator.Security.TokenManager.AddServerDetails
+  isSpec: "True"
   fullName: VaraniumSharp.Initiator.Security.TokenManager.AddServerDetails
   nameWithType: TokenManager.AddServerDetails
 - uid: VaraniumSharp.Initiator.Security.TokenManager.CheckSigninAsync(System.String)
@@ -935,6 +994,7 @@ references:
   name: CheckSigninAsync
   href: api/VaraniumSharp.Initiator.Security.TokenManager.html#VaraniumSharp_Initiator_Security_TokenManager_CheckSigninAsync_
   commentId: Overload:VaraniumSharp.Initiator.Security.TokenManager.CheckSigninAsync
+  isSpec: "True"
   fullName: VaraniumSharp.Initiator.Security.TokenManager.CheckSigninAsync
   nameWithType: TokenManager.CheckSigninAsync
 - uid: VaraniumSharp.Initiator.Security.TokenManager.ServerDetailKeys
@@ -947,5 +1007,18 @@ references:
   name: ServerDetailKeys
   href: api/VaraniumSharp.Initiator.Security.TokenManager.html#VaraniumSharp_Initiator_Security_TokenManager_ServerDetailKeys_
   commentId: Overload:VaraniumSharp.Initiator.Security.TokenManager.ServerDetailKeys
+  isSpec: "True"
   fullName: VaraniumSharp.Initiator.Security.TokenManager.ServerDetailKeys
   nameWithType: TokenManager.ServerDetailKeys
+- uid: VaraniumSharp.Initiator.Wrappers
+  name: VaraniumSharp.Initiator.Wrappers
+  href: api/VaraniumSharp.Initiator.Wrappers.html
+  commentId: N:VaraniumSharp.Initiator.Wrappers
+  fullName: VaraniumSharp.Initiator.Wrappers
+  nameWithType: VaraniumSharp.Initiator.Wrappers
+- uid: VaraniumSharp.Initiator.Wrappers.HttpClientInjectableWrapper
+  name: HttpClientInjectableWrapper
+  href: api/VaraniumSharp.Initiator.Wrappers.HttpClientInjectableWrapper.html
+  commentId: T:VaraniumSharp.Initiator.Wrappers.HttpClientInjectableWrapper
+  fullName: VaraniumSharp.Initiator.Wrappers.HttpClientInjectableWrapper
+  nameWithType: HttpClientInjectableWrapper
