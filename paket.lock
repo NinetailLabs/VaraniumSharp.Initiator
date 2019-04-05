@@ -2,7 +2,7 @@ RESTRICTION: >= net471
 NUGET
   remote: https://api.nuget.org/v3/index.json
     Castle.Core (4.3.1)
-    DryIoc.dll (3.0.2)
+    DryIoc.dll (4.0.2)
     FluentAssertions (4.19.4)
     IdentityModel (3.8)
       Newtonsoft.Json (>= 11.0.1)

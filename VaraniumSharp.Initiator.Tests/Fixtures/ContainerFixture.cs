@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using DryIoc;
-using FastExpressionCompiler;
 using ImTools;
 
 // ReSharper disable InconsistentNaming - Implementation of an Interface
@@ -24,6 +23,11 @@ namespace VaraniumSharp.Initiator.Tests.Fixtures
         public object[] ResolutionStateCache { get; }
         public IResolverContext Root { get; }
 
+        void IContainer.Use(Type serviceType, FactoryDelegate factory)
+        {
+            throw new NotImplementedException();
+        }
+
         public Rules Rules { get; }
 
         public IScopeContext ScopeContext { get; }
@@ -34,6 +38,11 @@ namespace VaraniumSharp.Initiator.Tests.Fixtures
         #region Public Methods
 
         public void CacheFactoryExpression(int factoryID, Expression factoryExpression)
+        {
+            throw new NotImplementedException();
+        }
+
+        public FastExpressionCompiler.LightExpression.Expression GetConstantExpression(object item, Type itemType = null, bool throwIfStateRequired = false)
         {
             throw new NotImplementedException();
         }
@@ -64,18 +73,12 @@ namespace VaraniumSharp.Initiator.Tests.Fixtures
             throw new NotImplementedException();
         }
 
-        public ExpressionInfo GetConstantExpression(object item, Type itemType = null,
-            bool throwIfStateRequired = false)
-        {
-            throw new NotImplementedException();
-        }
-
-        public ExpressionInfo GetDecoratorExpressionOrDefault(Request request)
-        {
-            throw new NotImplementedException();
-        }
-
         public Factory[] GetDecoratorFactoriesOrDefault(Type serviceType)
+        {
+            throw new NotImplementedException();
+        }
+
+        public FastExpressionCompiler.LightExpression.Expression GetDecoratorExpressionOrDefault(Request request)
         {
             throw new NotImplementedException();
         }
@@ -101,12 +104,22 @@ namespace VaraniumSharp.Initiator.Tests.Fixtures
             throw new NotImplementedException();
         }
 
+        public Factory[] GetRegisteredFactories(Type serviceType, object serviceKey, FactoryType factoryType)
+        {
+            throw new NotImplementedException();
+        }
+
         public Type GetWrappedType(Type serviceType, Type requiredServiceType)
         {
             throw new NotImplementedException();
         }
 
         public Factory GetWrapperFactoryOrDefault(Type serviceType)
+        {
+            throw new NotImplementedException();
+        }
+
+        void IResolverContext.Use(Type serviceType, FactoryDelegate factory)
         {
             throw new NotImplementedException();
         }
@@ -187,6 +200,11 @@ namespace VaraniumSharp.Initiator.Tests.Fixtures
             throw new NotImplementedException();
         }
 
+        void IRegistrator.Use(Type serviceType, FactoryDelegate factory)
+        {
+            throw new NotImplementedException();
+        }
+
         public IContainer With(Func<Rules, Rules> configure = null, IScopeContext scopeContext = null)
         {
             throw new NotImplementedException();
@@ -194,6 +212,12 @@ namespace VaraniumSharp.Initiator.Tests.Fixtures
 
         public IContainer With(Rules rules, IScopeContext scopeContext, RegistrySharing registrySharing,
             IScope singletonScope)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IContainer With(IResolverContext parent, Rules rules, IScopeContext scopeContext, RegistrySharing registrySharing,
+            IScope singletonScope, IScope currentScope)
         {
             throw new NotImplementedException();
         }
@@ -230,5 +254,10 @@ namespace VaraniumSharp.Initiator.Tests.Fixtures
         private object _resolveItem;
 
         #endregion
+
+        public object GetService(Type serviceType)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
