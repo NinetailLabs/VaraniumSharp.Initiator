@@ -17,7 +17,7 @@
     <tags>C# VaraniumSharp Initiator VaraniumSharp.Initiator Varanium</tags>
 
     <dependencies>
-      <dependency id="DryIoc.dll" version="3.0.2" />
+      <dependency id="DryIoc.dll" version="[4.0.2,5.0.0)" />
       <dependency id="IdentityModel.OidcClient" version="2.8.1" />
       <dependency id="Microsoft.ApplicationInsights" version="2.6.4" />
       <dependency id="Serilog" version="2.7.1" />
