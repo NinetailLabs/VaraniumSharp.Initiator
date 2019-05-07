@@ -501,12 +501,15 @@ references:
   isSpec: "True"
   fullName: VaraniumSharp.Initiator.Interfaces.Security.ITokenManager.AddServerDetails
   nameWithType: ITokenManager.AddServerDetails
-- uid: VaraniumSharp.Initiator.Interfaces.Security.ITokenManager.CheckSigninAsync(System.String)
-  name: CheckSigninAsync(String)
-  href: api/VaraniumSharp.Initiator.Interfaces.Security.ITokenManager.html#VaraniumSharp_Initiator_Interfaces_Security_ITokenManager_CheckSigninAsync_System_String_
-  commentId: M:VaraniumSharp.Initiator.Interfaces.Security.ITokenManager.CheckSigninAsync(System.String)
-  fullName: VaraniumSharp.Initiator.Interfaces.Security.ITokenManager.CheckSigninAsync(System.String)
-  nameWithType: ITokenManager.CheckSigninAsync(String)
+- uid: VaraniumSharp.Initiator.Interfaces.Security.ITokenManager.CheckSigninAsync(System.String,System.Collections.Generic.Dictionary{System.String,System.String})
+  name: CheckSigninAsync(String, Dictionary<String, String>)
+  href: api/VaraniumSharp.Initiator.Interfaces.Security.ITokenManager.html#VaraniumSharp_Initiator_Interfaces_Security_ITokenManager_CheckSigninAsync_System_String_System_Collections_Generic_Dictionary_System_String_System_String__
+  commentId: M:VaraniumSharp.Initiator.Interfaces.Security.ITokenManager.CheckSigninAsync(System.String,System.Collections.Generic.Dictionary{System.String,System.String})
+  name.vb: CheckSigninAsync(String, Dictionary(Of String, String))
+  fullName: VaraniumSharp.Initiator.Interfaces.Security.ITokenManager.CheckSigninAsync(System.String, System.Collections.Generic.Dictionary<System.String, System.String>)
+  fullName.vb: VaraniumSharp.Initiator.Interfaces.Security.ITokenManager.CheckSigninAsync(System.String, System.Collections.Generic.Dictionary(Of System.String, System.String))
+  nameWithType: ITokenManager.CheckSigninAsync(String, Dictionary<String, String>)
+  nameWithType.vb: ITokenManager.CheckSigninAsync(String, Dictionary(Of String, String))
 - uid: VaraniumSharp.Initiator.Interfaces.Security.ITokenManager.CheckSigninAsync*
   name: CheckSigninAsync
   href: api/VaraniumSharp.Initiator.Interfaces.Security.ITokenManager.html#VaraniumSharp_Initiator_Interfaces_Security_ITokenManager_CheckSigninAsync_
@@ -984,12 +987,15 @@ references:
   isSpec: "True"
   fullName: VaraniumSharp.Initiator.Security.TokenManager.AddServerDetails
   nameWithType: TokenManager.AddServerDetails
-- uid: VaraniumSharp.Initiator.Security.TokenManager.CheckSigninAsync(System.String)
-  name: CheckSigninAsync(String)
-  href: api/VaraniumSharp.Initiator.Security.TokenManager.html#VaraniumSharp_Initiator_Security_TokenManager_CheckSigninAsync_System_String_
-  commentId: M:VaraniumSharp.Initiator.Security.TokenManager.CheckSigninAsync(System.String)
-  fullName: VaraniumSharp.Initiator.Security.TokenManager.CheckSigninAsync(System.String)
-  nameWithType: TokenManager.CheckSigninAsync(String)
+- uid: VaraniumSharp.Initiator.Security.TokenManager.CheckSigninAsync(System.String,System.Collections.Generic.Dictionary{System.String,System.String})
+  name: CheckSigninAsync(String, Dictionary<String, String>)
+  href: api/VaraniumSharp.Initiator.Security.TokenManager.html#VaraniumSharp_Initiator_Security_TokenManager_CheckSigninAsync_System_String_System_Collections_Generic_Dictionary_System_String_System_String__
+  commentId: M:VaraniumSharp.Initiator.Security.TokenManager.CheckSigninAsync(System.String,System.Collections.Generic.Dictionary{System.String,System.String})
+  name.vb: CheckSigninAsync(String, Dictionary(Of String, String))
+  fullName: VaraniumSharp.Initiator.Security.TokenManager.CheckSigninAsync(System.String, System.Collections.Generic.Dictionary<System.String, System.String>)
+  fullName.vb: VaraniumSharp.Initiator.Security.TokenManager.CheckSigninAsync(System.String, System.Collections.Generic.Dictionary(Of System.String, System.String))
+  nameWithType: TokenManager.CheckSigninAsync(String, Dictionary<String, String>)
+  nameWithType.vb: TokenManager.CheckSigninAsync(String, Dictionary(Of String, String))
 - uid: VaraniumSharp.Initiator.Security.TokenManager.CheckSigninAsync*
   name: CheckSigninAsync
   href: api/VaraniumSharp.Initiator.Security.TokenManager.html#VaraniumSharp_Initiator_Security_TokenManager_CheckSigninAsync_
