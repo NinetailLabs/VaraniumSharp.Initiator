@@ -89,9 +89,10 @@ namespace VaraniumSharp.Initiator.Security
         /// This method executes all the neccessary steps to retrieve the Access Token, validate it's expiry, handle refresh (if required) or all else failing guiding the user through login
         /// </summary>
         /// <param name="tokenName">Name of the token</param>
+        /// <param name="extraParameters">Additional parameters to pass to the OidcClient</param>
         /// <exception cref="ArgumentException">Thrown if the ServerDetails for the specific tokenName has not been populated</exception>
         /// <returns>TokenData if the user has an Access Token, otherwise null</returns>
-        public async Task<TokenData> CheckSigninAsync(string tokenName)
+        public async Task<TokenData> CheckSigninAsync(string tokenName, Dictionary<string, string> extraParameters = null)
         {
             var semaphore = _tokenLocks.GetOrAdd(tokenName, new SemaphoreSlim(1));
             try
@@ -105,7 +106,7 @@ namespace VaraniumSharp.Initiator.Security
 
                 var tokenData = (await RetrieveAccessToken(tokenName)
                                  ?? await RefreshToken(tokenName))
-                                ?? await AuthenticateClient(tokenName);
+                                ?? await AuthenticateClient(tokenName, extraParameters);
 
                 return tokenData;
             }
@@ -123,8 +124,9 @@ namespace VaraniumSharp.Initiator.Security
         /// Guide the user through the sign-in process in order to acquire an Access Token
         /// </summary>
         /// <param name="tokenName">Name of the token</param>
+        /// <param name="extraParameters">Additional parameters to pass to the OidcClient</param>
         /// <returns>Access Token if successful, otherwise null</returns>
-        private async Task<TokenData> AuthenticateClient(string tokenName)
+        private async Task<TokenData> AuthenticateClient(string tokenName, Dictionary<string, string> extraParameters)
         {
             TokenData token;
 
@@ -137,7 +139,9 @@ namespace VaraniumSharp.Initiator.Security
                 http.Start();
 
                 var client = new OidcClient(options.OidcOptions);
-                var state = await client.PrepareLoginAsync();
+                var state = extraParameters == null 
+                    ? await client.PrepareLoginAsync()
+                    : await client.PrepareLoginAsync(extraParameters);
 
                 _staticMethodWrapper.StartProcess(state.StartUrl);
 

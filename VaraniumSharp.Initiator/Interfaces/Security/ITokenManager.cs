@@ -34,12 +34,13 @@ namespace VaraniumSharp.Initiator.Interfaces.Security
 
         /// <summary>
         /// Retrieve the user's Access Token.
-        /// This method executes all the neccessary steps to retrieve the Access Token, validate it's expiry, handle refresh (if required) or all else failing guiding the user through login
+        /// This method executes all the necessary steps to retrieve the Access Token, validate it's expiry, handle refresh (if required) or all else failing guiding the user through login
         /// </summary>
         /// <param name="tokenName">Name of the token</param>
+        /// <param name="extraParameters">Additional parameters to pass to the OidcClient</param>
         /// <exception cref="ArgumentException">Thrown if the ServerDetails for the specific tokenName has not been populated</exception>
         /// <returns>TokenData if the user has an Access Token, otherwise null</returns>
-        Task<TokenData> CheckSigninAsync(string tokenName);
+        Task<TokenData> CheckSigninAsync(string tokenName, Dictionary<string, string> extraParameters = null);
 
         #endregion
     }
