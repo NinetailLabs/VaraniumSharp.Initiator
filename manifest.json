@@ -249,7 +249,7 @@
       "output": {
         ".html": {
           "relative_path": "api/VaraniumSharp.Initiator.Security.IdentityServerConnectionDetails.html",
-          "hash": "X04nxKf8kSzqK+afj36cVw=="
+          "hash": "r0Clj4caPxC+q8pro3Rqhg=="
         }
       },
       "is_incremental": false,
@@ -417,16 +417,16 @@
           "total_file_count": 0,
           "skipped_file_count": 0
         },
-        "ManagedReferenceDocumentProcessor": {
-          "can_incremental": false,
-          "incrementalPhase": "build",
-          "total_file_count": 26,
-          "skipped_file_count": 0
-        },
         "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
           "total_file_count": 3,
+          "skipped_file_count": 0
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 26,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {

@@ -884,6 +884,19 @@ references:
   isSpec: "True"
   fullName: VaraniumSharp.Initiator.Security.IdentityServerConnectionDetails.ReplaceRefreshToken
   nameWithType: IdentityServerConnectionDetails.ReplaceRefreshToken
+- uid: VaraniumSharp.Initiator.Security.IdentityServerConnectionDetails.ReturnToClientHtml
+  name: ReturnToClientHtml
+  href: api/VaraniumSharp.Initiator.Security.IdentityServerConnectionDetails.html#VaraniumSharp_Initiator_Security_IdentityServerConnectionDetails_ReturnToClientHtml
+  commentId: P:VaraniumSharp.Initiator.Security.IdentityServerConnectionDetails.ReturnToClientHtml
+  fullName: VaraniumSharp.Initiator.Security.IdentityServerConnectionDetails.ReturnToClientHtml
+  nameWithType: IdentityServerConnectionDetails.ReturnToClientHtml
+- uid: VaraniumSharp.Initiator.Security.IdentityServerConnectionDetails.ReturnToClientHtml*
+  name: ReturnToClientHtml
+  href: api/VaraniumSharp.Initiator.Security.IdentityServerConnectionDetails.html#VaraniumSharp_Initiator_Security_IdentityServerConnectionDetails_ReturnToClientHtml_
+  commentId: Overload:VaraniumSharp.Initiator.Security.IdentityServerConnectionDetails.ReturnToClientHtml
+  isSpec: "True"
+  fullName: VaraniumSharp.Initiator.Security.IdentityServerConnectionDetails.ReturnToClientHtml
+  nameWithType: IdentityServerConnectionDetails.ReturnToClientHtml
 - uid: VaraniumSharp.Initiator.Security.TokenData
   name: TokenData
   href: api/VaraniumSharp.Initiator.Security.TokenData.html
