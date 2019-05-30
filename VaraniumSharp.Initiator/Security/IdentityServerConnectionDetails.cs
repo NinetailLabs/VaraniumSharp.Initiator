@@ -35,6 +35,12 @@ namespace VaraniumSharp.Initiator.Security
         /// </summary>
         public bool ReplaceRefreshToken { get; }
 
+        /// <summary>
+        /// HTML that should be displayed in the browser after the authentication is completed to let the user know that they can return to the application.
+        /// If this is not provided a basic "Please return to the app" page will be displayed
+        /// </summary>
+        public string ReturnToClientHtml { get; set; }
+
         #endregion
     }
 }
