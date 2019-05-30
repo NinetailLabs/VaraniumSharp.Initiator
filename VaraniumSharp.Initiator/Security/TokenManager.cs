@@ -149,7 +149,9 @@ namespace VaraniumSharp.Initiator.Security
 
                 var formData = GetRequestPostData(context.Request);
                 var response = context.Response;
-                const string responseString = "<html><body>Please return to the app.</body></html>";
+                var responseString = string.IsNullOrEmpty(options.ReturnToClientHtml) 
+                    ? "<html><body>Please return to the app.</body></html>"
+                    : options.ReturnToClientHtml;
                 var buffer = Encoding.UTF8.GetBytes(responseString);
                 response.ContentLength64 = buffer.Length;
                 var responseOutput = response.OutputStream;
