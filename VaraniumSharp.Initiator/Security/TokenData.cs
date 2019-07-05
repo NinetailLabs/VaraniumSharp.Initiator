@@ -28,17 +28,17 @@ namespace VaraniumSharp.Initiator.Security
         /// <summary>
         /// The decoded token
         /// </summary>
-        public JwtSecurityToken DecodedToken { get; private set; }
+        public JwtSecurityToken DecodedToken { get; }
 
         /// <summary>
         /// UTC date when the token expires
         /// </summary>
-        public DateTime ExpirationDate { get; private set; }
+        public DateTime ExpirationDate { get; }
 
         /// <summary>
         /// Jwt token string
         /// </summary>
-        public string Token { get; private set; }
+        public string Token { get; }
 
         /// <summary>
         /// Indicate if the token has expired
