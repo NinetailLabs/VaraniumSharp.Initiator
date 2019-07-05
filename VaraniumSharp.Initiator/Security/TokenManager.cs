@@ -86,7 +86,7 @@ namespace VaraniumSharp.Initiator.Security
 
         /// <summary>
         /// Retrieve the user's Access Token.
-        /// This method executes all the neccessary steps to retrieve the Access Token, validate it's expiry, handle refresh (if required) or all else failing guiding the user through login
+        /// This method executes all the necessary steps to retrieve the Access Token, validate it's expiry, handle refresh (if required) or all else failing guiding the user through login
         /// </summary>
         /// <param name="tokenName">Name of the token</param>
         /// <param name="extraParameters">Additional parameters to pass to the OidcClient</param>
@@ -232,8 +232,7 @@ namespace VaraniumSharp.Initiator.Security
         /// <returns>Fresh Access Token unless refresh failed in which case null</returns>
         private async Task<TokenData> RefreshToken(string tokenName)
         {
-            string rToken;
-            _refreshDictionary.TryGetValue(tokenName, out rToken);
+            _refreshDictionary.TryGetValue(tokenName, out var rToken);
 
             if (string.IsNullOrEmpty(rToken))
             {
@@ -261,8 +260,7 @@ namespace VaraniumSharp.Initiator.Security
         /// <returns>TokenData unless the token does not exist or has expired in which case null is returned</returns>
         private async Task<TokenData> RetrieveAccessToken(string tokenName)
         {
-            TokenData dToken;
-            _tokenDictionary.TryGetValue(tokenName, out dToken);
+            _tokenDictionary.TryGetValue(tokenName, out var dToken);
 
             if (dToken == null)
             {
@@ -274,7 +272,14 @@ namespace VaraniumSharp.Initiator.Security
                 _tokenDictionary.Add(tokenName, dToken);
             }
 
-            return dToken?.TokenExpired ?? true
+            if (dToken == null 
+                || dToken.TokenExpired)
+            {
+                return null;
+            }
+
+            var timeTillExpiration = dToken.ExpirationDate - DateTime.UtcNow;
+            return timeTillExpiration.TotalHours <= 1
                 ? null
                 : dToken;
         }

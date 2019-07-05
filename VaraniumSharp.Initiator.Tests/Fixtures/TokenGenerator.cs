@@ -32,9 +32,9 @@ namespace VaraniumSharp.Initiator.Tests.Fixtures
 
         #region Public Methods
 
-        public string GenerateToken()
+        public string GenerateToken(int expiresInMinutes)
         {
-            return GenerateToken(DateTime.UtcNow.AddMinutes(-1), DateTime.UtcNow.AddMinutes(10), DateTime.UtcNow,
+            return GenerateToken(DateTime.UtcNow.AddMinutes(-1), DateTime.UtcNow.AddMinutes(expiresInMinutes), DateTime.UtcNow,
                 new ClaimsIdentity());
         }
 
