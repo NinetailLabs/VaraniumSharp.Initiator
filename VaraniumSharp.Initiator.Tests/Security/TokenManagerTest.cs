@@ -27,7 +27,6 @@ namespace VaraniumSharp.Initiator.Tests.Security
             // arrange
             var refreshTimeSpan = TimeSpan.FromHours(3);
             var fixture = new TokenManagerFixture();
-
             var sut = fixture.Instance;
 
             // act
