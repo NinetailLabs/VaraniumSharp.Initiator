@@ -132,12 +132,25 @@ namespace VaraniumSharp.Initiator.Security
         /// <inheritdoc />
         public void SetupRefreshTimeSpan(TimeSpan refreshTimeSpan)
         {
-            RefreshTimeSpan = refreshTimeSpan;
-            var keys = _tokenRefreshTimers.Keys;
-            foreach (var key in keys)
+            lock (_refreshLock)
             {
-                var accessToken = _tokenDictionary[key];
-                SetupRefreshTokenTimer(key, accessToken);
+                RefreshTimeSpan = refreshTimeSpan;
+                var keys = _tokenRefreshTimers.Keys.ToList();
+                foreach (var key in keys)
+                {
+                    var accessToken = _tokenDictionary[key];
+                    var timeTillExpiration = accessToken.ExpirationDate - DateTime.UtcNow;
+                    if (timeTillExpiration > refreshTimeSpan)
+                    {
+                        SetupRefreshTokenTimer(key, accessToken);
+                    }
+                    else
+                    {
+                        _tokenRefreshTimers[key].Dispose();
+                        _tokenRefreshTimers.Remove(key);
+                        TokenExpirationCallback(key);
+                    }
+                }
             }
         }
 
@@ -324,15 +337,18 @@ namespace VaraniumSharp.Initiator.Security
                 return;
             }
 
-            if (_tokenRefreshTimers.ContainsKey(tokenName))
+            lock (_refreshLock)
             {
-                _tokenRefreshTimers[tokenName].Dispose();
-                _tokenRefreshTimers.Remove(tokenName);
-            }
+                if (_tokenRefreshTimers.ContainsKey(tokenName))
+                {
+                    _tokenRefreshTimers[tokenName].Dispose();
+                    _tokenRefreshTimers.Remove(tokenName);
+                }
 
-            _tokenRefreshTimers.Add(tokenName,
-                new Timer(TokenExpirationCallback, tokenName, timeTillExpiration.Subtract(RefreshTimeSpan),
-                    TimeSpan.FromMilliseconds(-1)));
+                _tokenRefreshTimers.Add(tokenName,
+                    new Timer(TokenExpirationCallback, tokenName, timeTillExpiration.Subtract(RefreshTimeSpan),
+                        TimeSpan.FromMilliseconds(-1)));
+            }
         }
 
         /// <summary>
@@ -433,6 +449,11 @@ namespace VaraniumSharp.Initiator.Security
         /// Token storage instance
         /// </summary>
         private readonly ITokenStorage _tokenStorage;
+
+        /// <summary>
+        /// Object used to lock access to the <see cref="_tokenRefreshTimers"/> dictionary
+        /// </summary>
+        private readonly object _refreshLock = new object();
 
         #endregion
     }
