@@ -86,10 +86,42 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/NinetailLabs/VaraniumSharp.Initiator/new/master/apiSpec/new?filename=VaraniumSharp_Initiator_Interfaces_Security_ITokenManager_RefreshTimeSpan.md&amp;value=---%0Auid%3A%20VaraniumSharp.Initiator.Interfaces.Security.ITokenManager.RefreshTimeSpan%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NinetailLabs/VaraniumSharp.Initiator/blob/master/VaraniumSharp.Initiator/Interfaces/Security/ITokenManager.cs/#L29">View Source</a>
+  </span>
+  <a id="VaraniumSharp_Initiator_Interfaces_Security_ITokenManager_RefreshTimeSpan_" data-uid="VaraniumSharp.Initiator.Interfaces.Security.ITokenManager.RefreshTimeSpan*"></a>
+  <h4 id="VaraniumSharp_Initiator_Interfaces_Security_ITokenManager_RefreshTimeSpan" data-uid="VaraniumSharp.Initiator.Interfaces.Security.ITokenManager.RefreshTimeSpan">RefreshTimeSpan</h4>
+  <div class="markdown level1 summary"><p>Gets the TimeSpan before a token expires when it should be refresh.
+Default to 1 hour</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">TimeSpan RefreshTimeSpan { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://msdn.microsoft.com/en-us/library/system.timespan(v=vs.110).aspx">TimeSpan</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/NinetailLabs/VaraniumSharp.Initiator/new/master/apiSpec/new?filename=VaraniumSharp_Initiator_Interfaces_Security_ITokenManager_ServerDetailKeys.md&amp;value=---%0Auid%3A%20VaraniumSharp.Initiator.Interfaces.Security.ITokenManager.ServerDetailKeys%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NinetailLabs/VaraniumSharp.Initiator/blob/master/VaraniumSharp.Initiator/Interfaces/Security/ITokenManager.cs/#L18">View Source</a>
+    <a href="https://github.com/NinetailLabs/VaraniumSharp.Initiator/blob/master/VaraniumSharp.Initiator/Interfaces/Security/ITokenManager.cs/#L34">View Source</a>
   </span>
   <a id="VaraniumSharp_Initiator_Interfaces_Security_ITokenManager_ServerDetailKeys_" data-uid="VaraniumSharp.Initiator.Interfaces.Security.ITokenManager.ServerDetailKeys*"></a>
   <h4 id="VaraniumSharp_Initiator_Interfaces_Security_ITokenManager_ServerDetailKeys" data-uid="VaraniumSharp.Initiator.Interfaces.Security.ITokenManager.ServerDetailKeys">ServerDetailKeys</h4>
@@ -122,7 +154,7 @@
     <a href="https://github.com/NinetailLabs/VaraniumSharp.Initiator/new/master/apiSpec/new?filename=VaraniumSharp_Initiator_Interfaces_Security_ITokenManager_AddServerDetails_System_String_VaraniumSharp_Initiator_Security_IdentityServerConnectionDetails_.md&amp;value=---%0Auid%3A%20VaraniumSharp.Initiator.Interfaces.Security.ITokenManager.AddServerDetails(System.String%2CVaraniumSharp.Initiator.Security.IdentityServerConnectionDetails)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NinetailLabs/VaraniumSharp.Initiator/blob/master/VaraniumSharp.Initiator/Interfaces/Security/ITokenManager.cs/#L33">View Source</a>
+    <a href="https://github.com/NinetailLabs/VaraniumSharp.Initiator/blob/master/VaraniumSharp.Initiator/Interfaces/Security/ITokenManager.cs/#L49">View Source</a>
   </span>
   <a id="VaraniumSharp_Initiator_Interfaces_Security_ITokenManager_AddServerDetails_" data-uid="VaraniumSharp.Initiator.Interfaces.Security.ITokenManager.AddServerDetails*"></a>
   <h4 id="VaraniumSharp_Initiator_Interfaces_Security_ITokenManager_AddServerDetails_System_String_VaraniumSharp_Initiator_Security_IdentityServerConnectionDetails_" data-uid="VaraniumSharp.Initiator.Interfaces.Security.ITokenManager.AddServerDetails(System.String,VaraniumSharp.Initiator.Security.IdentityServerConnectionDetails)">AddServerDetails(String, IdentityServerConnectionDetails)</h4>
@@ -181,7 +213,7 @@ This method must be called before attempting to validate tokens
     <a href="https://github.com/NinetailLabs/VaraniumSharp.Initiator/new/master/apiSpec/new?filename=VaraniumSharp_Initiator_Interfaces_Security_ITokenManager_CheckSigninAsync_System_String_System_Collections_Generic_Dictionary_System_String_System_String__.md&amp;value=---%0Auid%3A%20VaraniumSharp.Initiator.Interfaces.Security.ITokenManager.CheckSigninAsync(System.String%2CSystem.Collections.Generic.Dictionary%7BSystem.String%2CSystem.String%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NinetailLabs/VaraniumSharp.Initiator/blob/master/VaraniumSharp.Initiator/Interfaces/Security/ITokenManager.cs/#L43">View Source</a>
+    <a href="https://github.com/NinetailLabs/VaraniumSharp.Initiator/blob/master/VaraniumSharp.Initiator/Interfaces/Security/ITokenManager.cs/#L59">View Source</a>
   </span>
   <a id="VaraniumSharp_Initiator_Interfaces_Security_ITokenManager_CheckSigninAsync_" data-uid="VaraniumSharp.Initiator.Interfaces.Security.ITokenManager.CheckSigninAsync*"></a>
   <h4 id="VaraniumSharp_Initiator_Interfaces_Security_ITokenManager_CheckSigninAsync_System_String_System_Collections_Generic_Dictionary_System_String_System_String__" data-uid="VaraniumSharp.Initiator.Interfaces.Security.ITokenManager.CheckSigninAsync(System.String,System.Collections.Generic.Dictionary{System.String,System.String})">CheckSigninAsync(String, Dictionary&lt;String, String&gt;)</h4>
@@ -246,6 +278,74 @@ This method executes all the necessary steps to retrieve the Access Token, valid
         <td><a class="xref" href="https://msdn.microsoft.com/en-us/library/system.argumentexception(v=vs.110).aspx">ArgumentException</a></td>
         <td><p>Thrown if the ServerDetails for the specific tokenName has not been populated</p>
 </td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NinetailLabs/VaraniumSharp.Initiator/new/master/apiSpec/new?filename=VaraniumSharp_Initiator_Interfaces_Security_ITokenManager_SetupRefreshTimeSpan_System_TimeSpan_.md&amp;value=---%0Auid%3A%20VaraniumSharp.Initiator.Interfaces.Security.ITokenManager.SetupRefreshTimeSpan(System.TimeSpan)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NinetailLabs/VaraniumSharp.Initiator/blob/master/VaraniumSharp.Initiator/Interfaces/Security/ITokenManager.cs/#L66">View Source</a>
+  </span>
+  <a id="VaraniumSharp_Initiator_Interfaces_Security_ITokenManager_SetupRefreshTimeSpan_" data-uid="VaraniumSharp.Initiator.Interfaces.Security.ITokenManager.SetupRefreshTimeSpan*"></a>
+  <h4 id="VaraniumSharp_Initiator_Interfaces_Security_ITokenManager_SetupRefreshTimeSpan_System_TimeSpan_" data-uid="VaraniumSharp.Initiator.Interfaces.Security.ITokenManager.SetupRefreshTimeSpan(System.TimeSpan)">SetupRefreshTimeSpan(TimeSpan)</h4>
+  <div class="markdown level1 summary"><p>Sets the TimeSpan used to determine if a valid token should be refreshed.
+If TimeSpan of 1 hour is provided, an Access Token will be refreshed 1 hour before it is set to expire</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void SetupRefreshTimeSpan(TimeSpan refreshTimeSpan)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://msdn.microsoft.com/en-us/library/system.timespan(v=vs.110).aspx">TimeSpan</a></td>
+        <td><span class="parametername">refreshTimeSpan</span></td>
+        <td><p>TimeSpan for the refresh</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="events">Events
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NinetailLabs/VaraniumSharp.Initiator/new/master/apiSpec/new?filename=VaraniumSharp_Initiator_Interfaces_Security_ITokenManager_TokenRefreshed.md&amp;value=---%0Auid%3A%20VaraniumSharp.Initiator.Interfaces.Security.ITokenManager.TokenRefreshed%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NinetailLabs/VaraniumSharp.Initiator/blob/master/VaraniumSharp.Initiator/Interfaces/Security/ITokenManager.cs/#L19">View Source</a>
+  </span>
+  <h4 id="VaraniumSharp_Initiator_Interfaces_Security_ITokenManager_TokenRefreshed" data-uid="VaraniumSharp.Initiator.Interfaces.Security.ITokenManager.TokenRefreshed">TokenRefreshed</h4>
+  <div class="markdown level1 summary"><p>Fired when the Access token has been refreshed.
+Provides the name of the token as well as the new Access Token</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">event EventHandler&lt;KeyValuePair&lt;string, TokenData&gt;&gt; TokenRefreshed</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://msdn.microsoft.com/en-us/library/db0etb8x(v=vs.110).aspx">EventHandler</a>&lt;<a class="xref" href="https://msdn.microsoft.com/en-us/library/5tbh8a42(v=vs.110).aspx">KeyValuePair</a>&lt;<a class="xref" href="https://msdn.microsoft.com/en-us/library/system.string(v=vs.110).aspx">String</a>, <a class="xref" href="VaraniumSharp.Initiator.Security.TokenData.html">TokenData</a>&gt;&gt;</td>
+        <td></td>
       </tr>
     </tbody>
   </table>

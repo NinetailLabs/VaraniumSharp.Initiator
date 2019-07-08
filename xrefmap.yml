@@ -517,6 +517,19 @@ references:
   isSpec: "True"
   fullName: VaraniumSharp.Initiator.Interfaces.Security.ITokenManager.CheckSigninAsync
   nameWithType: ITokenManager.CheckSigninAsync
+- uid: VaraniumSharp.Initiator.Interfaces.Security.ITokenManager.RefreshTimeSpan
+  name: RefreshTimeSpan
+  href: api/VaraniumSharp.Initiator.Interfaces.Security.ITokenManager.html#VaraniumSharp_Initiator_Interfaces_Security_ITokenManager_RefreshTimeSpan
+  commentId: P:VaraniumSharp.Initiator.Interfaces.Security.ITokenManager.RefreshTimeSpan
+  fullName: VaraniumSharp.Initiator.Interfaces.Security.ITokenManager.RefreshTimeSpan
+  nameWithType: ITokenManager.RefreshTimeSpan
+- uid: VaraniumSharp.Initiator.Interfaces.Security.ITokenManager.RefreshTimeSpan*
+  name: RefreshTimeSpan
+  href: api/VaraniumSharp.Initiator.Interfaces.Security.ITokenManager.html#VaraniumSharp_Initiator_Interfaces_Security_ITokenManager_RefreshTimeSpan_
+  commentId: Overload:VaraniumSharp.Initiator.Interfaces.Security.ITokenManager.RefreshTimeSpan
+  isSpec: "True"
+  fullName: VaraniumSharp.Initiator.Interfaces.Security.ITokenManager.RefreshTimeSpan
+  nameWithType: ITokenManager.RefreshTimeSpan
 - uid: VaraniumSharp.Initiator.Interfaces.Security.ITokenManager.ServerDetailKeys
   name: ServerDetailKeys
   href: api/VaraniumSharp.Initiator.Interfaces.Security.ITokenManager.html#VaraniumSharp_Initiator_Interfaces_Security_ITokenManager_ServerDetailKeys
@@ -530,6 +543,25 @@ references:
   isSpec: "True"
   fullName: VaraniumSharp.Initiator.Interfaces.Security.ITokenManager.ServerDetailKeys
   nameWithType: ITokenManager.ServerDetailKeys
+- uid: VaraniumSharp.Initiator.Interfaces.Security.ITokenManager.SetupRefreshTimeSpan(System.TimeSpan)
+  name: SetupRefreshTimeSpan(TimeSpan)
+  href: api/VaraniumSharp.Initiator.Interfaces.Security.ITokenManager.html#VaraniumSharp_Initiator_Interfaces_Security_ITokenManager_SetupRefreshTimeSpan_System_TimeSpan_
+  commentId: M:VaraniumSharp.Initiator.Interfaces.Security.ITokenManager.SetupRefreshTimeSpan(System.TimeSpan)
+  fullName: VaraniumSharp.Initiator.Interfaces.Security.ITokenManager.SetupRefreshTimeSpan(System.TimeSpan)
+  nameWithType: ITokenManager.SetupRefreshTimeSpan(TimeSpan)
+- uid: VaraniumSharp.Initiator.Interfaces.Security.ITokenManager.SetupRefreshTimeSpan*
+  name: SetupRefreshTimeSpan
+  href: api/VaraniumSharp.Initiator.Interfaces.Security.ITokenManager.html#VaraniumSharp_Initiator_Interfaces_Security_ITokenManager_SetupRefreshTimeSpan_
+  commentId: Overload:VaraniumSharp.Initiator.Interfaces.Security.ITokenManager.SetupRefreshTimeSpan
+  isSpec: "True"
+  fullName: VaraniumSharp.Initiator.Interfaces.Security.ITokenManager.SetupRefreshTimeSpan
+  nameWithType: ITokenManager.SetupRefreshTimeSpan
+- uid: VaraniumSharp.Initiator.Interfaces.Security.ITokenManager.TokenRefreshed
+  name: TokenRefreshed
+  href: api/VaraniumSharp.Initiator.Interfaces.Security.ITokenManager.html#VaraniumSharp_Initiator_Interfaces_Security_ITokenManager_TokenRefreshed
+  commentId: E:VaraniumSharp.Initiator.Interfaces.Security.ITokenManager.TokenRefreshed
+  fullName: VaraniumSharp.Initiator.Interfaces.Security.ITokenManager.TokenRefreshed
+  nameWithType: ITokenManager.TokenRefreshed
 - uid: VaraniumSharp.Initiator.Interfaces.Security.ITokenStorage
   name: ITokenStorage
   href: api/VaraniumSharp.Initiator.Interfaces.Security.ITokenStorage.html
@@ -1016,6 +1048,19 @@ references:
   isSpec: "True"
   fullName: VaraniumSharp.Initiator.Security.TokenManager.CheckSigninAsync
   nameWithType: TokenManager.CheckSigninAsync
+- uid: VaraniumSharp.Initiator.Security.TokenManager.RefreshTimeSpan
+  name: RefreshTimeSpan
+  href: api/VaraniumSharp.Initiator.Security.TokenManager.html#VaraniumSharp_Initiator_Security_TokenManager_RefreshTimeSpan
+  commentId: P:VaraniumSharp.Initiator.Security.TokenManager.RefreshTimeSpan
+  fullName: VaraniumSharp.Initiator.Security.TokenManager.RefreshTimeSpan
+  nameWithType: TokenManager.RefreshTimeSpan
+- uid: VaraniumSharp.Initiator.Security.TokenManager.RefreshTimeSpan*
+  name: RefreshTimeSpan
+  href: api/VaraniumSharp.Initiator.Security.TokenManager.html#VaraniumSharp_Initiator_Security_TokenManager_RefreshTimeSpan_
+  commentId: Overload:VaraniumSharp.Initiator.Security.TokenManager.RefreshTimeSpan
+  isSpec: "True"
+  fullName: VaraniumSharp.Initiator.Security.TokenManager.RefreshTimeSpan
+  nameWithType: TokenManager.RefreshTimeSpan
 - uid: VaraniumSharp.Initiator.Security.TokenManager.ServerDetailKeys
   name: ServerDetailKeys
   href: api/VaraniumSharp.Initiator.Security.TokenManager.html#VaraniumSharp_Initiator_Security_TokenManager_ServerDetailKeys
@@ -1029,6 +1074,25 @@ references:
   isSpec: "True"
   fullName: VaraniumSharp.Initiator.Security.TokenManager.ServerDetailKeys
   nameWithType: TokenManager.ServerDetailKeys
+- uid: VaraniumSharp.Initiator.Security.TokenManager.SetupRefreshTimeSpan(System.TimeSpan)
+  name: SetupRefreshTimeSpan(TimeSpan)
+  href: api/VaraniumSharp.Initiator.Security.TokenManager.html#VaraniumSharp_Initiator_Security_TokenManager_SetupRefreshTimeSpan_System_TimeSpan_
+  commentId: M:VaraniumSharp.Initiator.Security.TokenManager.SetupRefreshTimeSpan(System.TimeSpan)
+  fullName: VaraniumSharp.Initiator.Security.TokenManager.SetupRefreshTimeSpan(System.TimeSpan)
+  nameWithType: TokenManager.SetupRefreshTimeSpan(TimeSpan)
+- uid: VaraniumSharp.Initiator.Security.TokenManager.SetupRefreshTimeSpan*
+  name: SetupRefreshTimeSpan
+  href: api/VaraniumSharp.Initiator.Security.TokenManager.html#VaraniumSharp_Initiator_Security_TokenManager_SetupRefreshTimeSpan_
+  commentId: Overload:VaraniumSharp.Initiator.Security.TokenManager.SetupRefreshTimeSpan
+  isSpec: "True"
+  fullName: VaraniumSharp.Initiator.Security.TokenManager.SetupRefreshTimeSpan
+  nameWithType: TokenManager.SetupRefreshTimeSpan
+- uid: VaraniumSharp.Initiator.Security.TokenManager.TokenRefreshed
+  name: TokenRefreshed
+  href: api/VaraniumSharp.Initiator.Security.TokenManager.html#VaraniumSharp_Initiator_Security_TokenManager_TokenRefreshed
+  commentId: E:VaraniumSharp.Initiator.Security.TokenManager.TokenRefreshed
+  fullName: VaraniumSharp.Initiator.Security.TokenManager.TokenRefreshed
+  nameWithType: TokenManager.TokenRefreshed
 - uid: VaraniumSharp.Initiator.Wrappers
   name: VaraniumSharp.Initiator.Wrappers
   href: api/VaraniumSharp.Initiator.Wrappers.html
