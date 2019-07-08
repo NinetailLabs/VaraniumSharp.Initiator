@@ -22,6 +22,21 @@ namespace VaraniumSharp.Initiator.Tests.Security
         #region Public Methods
 
         [Test]
+        public void SettingRefreshTimeSpanUpdatesTheRefreshTimeSpan()
+        {
+            // arrange
+            var refreshTimeSpan = TimeSpan.FromHours(3);
+            var fixture = new TokenManagerFixture();
+            var sut = fixture.Instance;
+
+            // act
+            sut.SetupRefreshTimeSpan(refreshTimeSpan);
+
+            // assert
+            sut.RefreshTimeSpan.Should().Be(refreshTimeSpan);
+        }
+
+        [Test]
         public async Task AddingDifferentServerDetailsForTheSameTokenNameUpdatesTheValues()
         {
             // arrange
@@ -68,7 +83,7 @@ namespace VaraniumSharp.Initiator.Tests.Security
             var token = fixture.TokenGenerator.GenerateToken(DateTime.UtcNow.AddMinutes(-15),
                 DateTime.UtcNow.AddMinutes(-10), DateTime.UtcNow.AddMinutes(-17));
             var tokenDataDummy = new TokenData(token);
-            var newAccessToken = fixture.TokenGenerator.GenerateToken();
+            var newAccessToken = fixture.TokenGenerator.GenerateToken(75);
 
             fixture.TokenStorageMock
                 .Setup(t => t.RetrieveAccessTokenAsync(tokenName))
@@ -98,13 +113,13 @@ namespace VaraniumSharp.Initiator.Tests.Security
         }
 
         [Test]
-        public async Task IfAccecssTokenExistsAndHasNotExpiredYetItWillBeReturned()
+        public async Task IfAccessTokenExistsAndHasNotExpiredYetItWillBeReturned()
         {
             // arrange
             const string tokenName = "Test Token";
             var fixture = new TokenManagerFixture();
             await fixture.SetupServerDataAsync(tokenName);
-            var token = fixture.TokenGenerator.GenerateToken();
+            var token = fixture.TokenGenerator.GenerateToken(75);
             var tokenDataDummy = new TokenData(token);
 
             fixture.TokenStorageMock
@@ -128,7 +143,7 @@ namespace VaraniumSharp.Initiator.Tests.Security
             var refreshToken = Guid.NewGuid().ToString();
             var fixture = new TokenManagerFixture();
             await fixture.SetupServerDataAsync(tokenName, true);
-            var token = fixture.TokenGenerator.GenerateToken();
+            var token = fixture.TokenGenerator.GenerateToken(75);
 
             fixture.WellKnownSetup();
             fixture.SetupCertificates();
@@ -154,7 +169,7 @@ namespace VaraniumSharp.Initiator.Tests.Security
             const string tokenName = "Test Token";
             var fixture = new TokenManagerFixture();
             await fixture.SetupServerDataAsync(tokenName);
-            var token = fixture.TokenGenerator.GenerateToken();
+            var token = fixture.TokenGenerator.GenerateToken(75);
             var tokenDataDummy = new TokenData(token);
 
             fixture.TokenStorageMock
@@ -172,6 +187,213 @@ namespace VaraniumSharp.Initiator.Tests.Security
         }
 
         [Test]
+        public async Task IfTokenExpiresAfterRefreshIntervalItIsAutomaticallyRefreshed()
+        {
+            // arrange
+            var refreshTimeout = TimeSpan.FromSeconds(10);
+            const string tokenName = "Test Token";
+            var refreshToken = Guid.NewGuid().ToString();
+            var fixture = new TokenManagerFixture();
+            await fixture.SetupServerDataAsync(tokenName, true);
+            var token = fixture.TokenGenerator.GenerateToken(DateTime.UtcNow.AddMinutes(-15),
+                DateTime.UtcNow.AddSeconds(15), DateTime.UtcNow.AddMinutes(-17));
+            var tokenDataDummy = new TokenData(token);
+            var newAccessToken = fixture.TokenGenerator.GenerateToken(75);
+            var newRefreshToken = Guid.NewGuid().ToString();
+
+            fixture.TokenStorageMock
+                .Setup(t => t.RetrieveAccessTokenAsync(tokenName))
+                .ReturnsAsync(tokenDataDummy);
+            fixture.TokenStorageMock
+                .Setup(t => t.RetrieveRefreshTokenAsync(tokenName))
+                .ReturnsAsync(refreshToken);
+
+            fixture.WellKnownSetup();
+            fixture.SetupCertificates();
+            fixture.AuthRefreshSetup(newAccessToken, newRefreshToken);
+            var sut = fixture.Instance;
+            sut.SetupRefreshTimeSpan(refreshTimeout);
+
+            // act
+            await sut.CheckSigninAsync(tokenName);
+            await Task.Delay(TimeSpan.FromSeconds(10));
+
+            // assert
+            fixture.TokenStorageMock.Verify(t => t.StoreRefreshTokenAsync(tokenName, newRefreshToken), Times.Once);
+            fixture.HttpMock.Dispose();
+        }
+
+        [Test]
+        public async Task OnTokenRefreshTheTokenRefreshedEventIsRaised()
+        {
+            // arrange
+            var refreshTimeout = TimeSpan.FromSeconds(10);
+            const string tokenName = "Test Token";
+            var refreshToken = Guid.NewGuid().ToString();
+            var fixture = new TokenManagerFixture();
+            await fixture.SetupServerDataAsync(tokenName, true);
+            var token = fixture.TokenGenerator.GenerateToken(DateTime.UtcNow.AddMinutes(-15),
+                DateTime.UtcNow.AddSeconds(15), DateTime.UtcNow.AddMinutes(-17));
+            var tokenDataDummy = new TokenData(token);
+            var newAccessToken = fixture.TokenGenerator.GenerateToken(75);
+            var newRefreshToken = Guid.NewGuid().ToString();
+            var raisingToken = string.Empty;
+            TokenData refreshedToken = null;
+
+            fixture.TokenStorageMock
+                .Setup(t => t.RetrieveAccessTokenAsync(tokenName))
+                .ReturnsAsync(tokenDataDummy);
+            fixture.TokenStorageMock
+                .Setup(t => t.RetrieveRefreshTokenAsync(tokenName))
+                .ReturnsAsync(refreshToken);
+
+            fixture.WellKnownSetup();
+            fixture.SetupCertificates();
+            fixture.AuthRefreshSetup(newAccessToken, newRefreshToken);
+            var sut = fixture.Instance;
+            sut.SetupRefreshTimeSpan(refreshTimeout);
+            sut.TokenRefreshed += (sender, pair) =>
+            {
+                raisingToken = pair.Key;
+                refreshedToken = pair.Value;
+            };
+
+            // act
+            await sut.CheckSigninAsync(tokenName);
+            await Task.Delay(TimeSpan.FromSeconds(10));
+
+            // assert
+            raisingToken.Should().Be(tokenName);
+            refreshedToken.Token.Should().Be(newAccessToken);
+            fixture.HttpMock.Dispose();
+        }
+
+        [Test]
+        public async Task IfRefreshIntervalIsChangedExistingTokenRefreshesAreAdjusted()
+        {
+            // arrange
+            var refreshTimeout = TimeSpan.FromSeconds(100);
+            const string tokenName = "Test Token";
+            var refreshToken = Guid.NewGuid().ToString();
+            var fixture = new TokenManagerFixture();
+            await fixture.SetupServerDataAsync(tokenName, true);
+            var token = fixture.TokenGenerator.GenerateToken(DateTime.UtcNow.AddMinutes(-15),
+                DateTime.UtcNow.AddSeconds(110), DateTime.UtcNow.AddMinutes(-17));
+            var tokenDataDummy = new TokenData(token);
+            var newAccessToken = fixture.TokenGenerator.GenerateToken(75);
+            var newRefreshToken = Guid.NewGuid().ToString();
+            var raisingToken = string.Empty;
+            TokenData refreshedToken = null;
+
+            fixture.TokenStorageMock
+                .Setup(t => t.RetrieveAccessTokenAsync(tokenName))
+                .ReturnsAsync(tokenDataDummy);
+            fixture.TokenStorageMock
+                .Setup(t => t.RetrieveRefreshTokenAsync(tokenName))
+                .ReturnsAsync(refreshToken);
+
+            fixture.WellKnownSetup();
+            fixture.SetupCertificates();
+            fixture.AuthRefreshSetup(newAccessToken, newRefreshToken);
+            var sut = fixture.Instance;
+            sut.SetupRefreshTimeSpan(refreshTimeout);
+            sut.TokenRefreshed += (sender, pair) =>
+            {
+                raisingToken = pair.Key;
+                refreshedToken = pair.Value;
+            };
+
+            // act
+            await sut.CheckSigninAsync(tokenName);
+            sut.SetupRefreshTimeSpan(TimeSpan.FromSeconds(50));
+            await Task.Delay(TimeSpan.FromSeconds(10));
+
+            // assert
+            raisingToken.Should().BeNullOrEmpty();
+            refreshedToken.Should().BeNull();
+            fixture.HttpMock.Dispose();
+        }
+
+        [Test]
+        public async Task IfRefreshIntervalIsMadeLongerThanTokensRemainingTimeTheTokenIsRefreshed()
+        {
+            // arrange
+            var refreshTimeout = TimeSpan.FromSeconds(100);
+            const string tokenName = "Test Token";
+            var refreshToken = Guid.NewGuid().ToString();
+            var fixture = new TokenManagerFixture();
+            await fixture.SetupServerDataAsync(tokenName, true);
+            var token = fixture.TokenGenerator.GenerateToken(DateTime.UtcNow.AddMinutes(-15),
+                DateTime.UtcNow.AddSeconds(150), DateTime.UtcNow.AddMinutes(-17));
+            var tokenDataDummy = new TokenData(token);
+            var newAccessToken = fixture.TokenGenerator.GenerateToken(75);
+            var newRefreshToken = Guid.NewGuid().ToString();
+            var raisingToken = string.Empty;
+            TokenData refreshedToken = null;
+
+            fixture.TokenStorageMock
+                .Setup(t => t.RetrieveAccessTokenAsync(tokenName))
+                .ReturnsAsync(tokenDataDummy);
+            fixture.TokenStorageMock
+                .Setup(t => t.RetrieveRefreshTokenAsync(tokenName))
+                .ReturnsAsync(refreshToken);
+
+            fixture.WellKnownSetup();
+            fixture.SetupCertificates();
+            fixture.AuthRefreshSetup(newAccessToken, newRefreshToken);
+            var sut = fixture.Instance;
+            sut.SetupRefreshTimeSpan(refreshTimeout);
+            sut.TokenRefreshed += (sender, pair) =>
+            {
+                raisingToken = pair.Key;
+                refreshedToken = pair.Value;
+            };
+
+            // act
+            await sut.CheckSigninAsync(tokenName);
+            sut.SetupRefreshTimeSpan(TimeSpan.FromSeconds(200));
+            await Task.Delay(TimeSpan.FromSeconds(10));
+
+            // assert
+            raisingToken.Should().Be(tokenName);
+            refreshedToken.Token.Should().Be(newAccessToken);
+            fixture.HttpMock.Dispose();
+        }
+
+        [Test]
+        public async Task IfTokenExpiresWithinTheRefreshIntervalItIsRefreshed()
+        {
+            // arrange
+            const string tokenName = "Test Token";
+            var refreshToken = Guid.NewGuid().ToString();
+            var fixture = new TokenManagerFixture();
+            await fixture.SetupServerDataAsync(tokenName, true);
+            var token = fixture.TokenGenerator.GenerateToken(30);
+            var tokenDataDummy = new TokenData(token);
+            var newAccessToken = fixture.TokenGenerator.GenerateToken(75);
+            var newRefreshToken = Guid.NewGuid().ToString();
+
+            fixture.TokenStorageMock
+                .Setup(t => t.RetrieveAccessTokenAsync(tokenName))
+                .ReturnsAsync(tokenDataDummy);
+            fixture.TokenStorageMock
+                .Setup(t => t.RetrieveRefreshTokenAsync(tokenName))
+                .ReturnsAsync(refreshToken);
+
+            fixture.WellKnownSetup();
+            fixture.SetupCertificates();
+            fixture.AuthRefreshSetup(newAccessToken, newRefreshToken);
+            var sut = fixture.Instance;
+
+            // act
+            await sut.CheckSigninAsync(tokenName);
+
+            // assert
+            fixture.TokenStorageMock.Verify(t => t.StoreRefreshTokenAsync(tokenName, newRefreshToken), Times.Once);
+            fixture.HttpMock.Dispose();
+        }
+
+        [Test]
         public async Task IfTokenExpiredAndRefreshTokenIsReplacedOnRefreshItIsCorrectlyUpdatedInStorage()
         {
             // arrange
@@ -182,7 +404,7 @@ namespace VaraniumSharp.Initiator.Tests.Security
             var token = fixture.TokenGenerator.GenerateToken(DateTime.UtcNow.AddMinutes(-15),
                 DateTime.UtcNow.AddMinutes(-10), DateTime.UtcNow.AddMinutes(-17));
             var tokenDataDummy = new TokenData(token);
-            var newAccessToken = fixture.TokenGenerator.GenerateToken();
+            var newAccessToken = fixture.TokenGenerator.GenerateToken(75);
             var newRefreshToken = Guid.NewGuid().ToString();
 
             fixture.TokenStorageMock
@@ -216,7 +438,7 @@ namespace VaraniumSharp.Initiator.Tests.Security
             var token = fixture.TokenGenerator.GenerateToken(DateTime.UtcNow.AddMinutes(-15),
                 DateTime.UtcNow.AddMinutes(-10), DateTime.UtcNow.AddMinutes(-17));
             var tokenDataDummy = new TokenData(token);
-            var newAccessToken = fixture.TokenGenerator.GenerateToken();
+            var newAccessToken = fixture.TokenGenerator.GenerateToken(75);
             var newRefreshToken = Guid.NewGuid().ToString();
 
             fixture.TokenStorageMock
@@ -268,7 +490,7 @@ namespace VaraniumSharp.Initiator.Tests.Security
             var refreshToken = Guid.NewGuid().ToString();
             var fixture = new TokenManagerFixture();
             await fixture.SetupServerDataAsync(tokenName, true);
-            var token = fixture.TokenGenerator.GenerateToken();
+            var token = fixture.TokenGenerator.GenerateToken(75);
 
             fixture.WellKnownSetup();
             fixture.SetupCertificates();
