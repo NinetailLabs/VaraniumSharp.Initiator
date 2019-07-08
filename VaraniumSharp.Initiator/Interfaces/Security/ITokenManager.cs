@@ -10,7 +10,23 @@ namespace VaraniumSharp.Initiator.Interfaces.Security
     /// </summary>
     public interface ITokenManager
     {
+        #region Events
+
+        /// <summary>
+        /// Fired when the Access token has been refreshed.
+        /// Provides the name of the token as well as the new Access Token
+        /// </summary>
+        event EventHandler<KeyValuePair<string, TokenData>> TokenRefreshed;
+
+        #endregion
+
         #region Properties
+
+        /// <summary>
+        /// Gets the TimeSpan before a token expires when it should be refresh.
+        /// Default to 1 hour
+        /// </summary>
+        TimeSpan RefreshTimeSpan { get; }
 
         /// <summary>
         /// Get list of TokenNames that have Populated server details
@@ -41,6 +57,13 @@ namespace VaraniumSharp.Initiator.Interfaces.Security
         /// <exception cref="ArgumentException">Thrown if the ServerDetails for the specific tokenName has not been populated</exception>
         /// <returns>TokenData if the user has an Access Token, otherwise null</returns>
         Task<TokenData> CheckSigninAsync(string tokenName, Dictionary<string, string> extraParameters = null);
+
+        /// <summary>
+        /// Sets the TimeSpan used to determine if a valid token should be refreshed.
+        /// If TimeSpan of 1 hour is provided, an Access Token will be refreshed 1 hour before it is set to expire
+        /// </summary>
+        /// <param name="refreshTimeSpan">TimeSpan for the refresh</param>
+        void SetupRefreshTimeSpan(TimeSpan refreshTimeSpan);
 
         #endregion
     }

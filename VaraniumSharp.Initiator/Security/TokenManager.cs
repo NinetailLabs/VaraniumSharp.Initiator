@@ -37,12 +37,24 @@ namespace VaraniumSharp.Initiator.Security
             _refreshDictionary = new Dictionary<string, string>();
             _tokenLocks = new ConcurrentDictionary<string, SemaphoreSlim>();
             _serverDetails = new Dictionary<string, IdentityServerConnectionDetails>();
+            _tokenRefreshTimers = new Dictionary<string, Timer>();
+            RefreshTimeSpan = TimeSpan.FromHours(1);
             _log = Log.Logger.ForContext("Module", nameof(TokenManager));
         }
 
         #endregion
 
+        #region Events
+
+        /// <inheritdoc />
+        public event EventHandler<KeyValuePair<string, TokenData>> TokenRefreshed;
+
+        #endregion
+
         #region Properties
+
+        /// <inheritdoc />
+        public TimeSpan RefreshTimeSpan { get; private set; }
 
         /// <summary>
         /// Get list of TokenNames that have Populated server details
@@ -92,7 +104,8 @@ namespace VaraniumSharp.Initiator.Security
         /// <param name="extraParameters">Additional parameters to pass to the OidcClient</param>
         /// <exception cref="ArgumentException">Thrown if the ServerDetails for the specific tokenName has not been populated</exception>
         /// <returns>TokenData if the user has an Access Token, otherwise null</returns>
-        public async Task<TokenData> CheckSigninAsync(string tokenName, Dictionary<string, string> extraParameters = null)
+        public async Task<TokenData> CheckSigninAsync(string tokenName,
+            Dictionary<string, string> extraParameters = null)
         {
             var semaphore = _tokenLocks.GetOrAdd(tokenName, new SemaphoreSlim(1));
             try
@@ -105,7 +118,7 @@ namespace VaraniumSharp.Initiator.Security
                 }
 
                 var tokenData = (await RetrieveAccessToken(tokenName)
-                                 ?? await RefreshToken(tokenName))
+                                 ?? await RefreshTokenAsync(tokenName))
                                 ?? await AuthenticateClient(tokenName, extraParameters);
 
                 return tokenData;
@@ -113,6 +126,18 @@ namespace VaraniumSharp.Initiator.Security
             finally
             {
                 semaphore.Release();
+            }
+        }
+
+        /// <inheritdoc />
+        public void SetupRefreshTimeSpan(TimeSpan refreshTimeSpan)
+        {
+            RefreshTimeSpan = refreshTimeSpan;
+            var keys = _tokenRefreshTimers.Keys;
+            foreach (var key in keys)
+            {
+                var accessToken = _tokenDictionary[key];
+                SetupRefreshTokenTimer(key, accessToken);
             }
         }
 
@@ -139,7 +164,7 @@ namespace VaraniumSharp.Initiator.Security
                 http.Start();
 
                 var client = new OidcClient(options.OidcOptions);
-                var state = extraParameters == null 
+                var state = extraParameters == null
                     ? await client.PrepareLoginAsync()
                     : await client.PrepareLoginAsync(extraParameters);
 
@@ -149,7 +174,7 @@ namespace VaraniumSharp.Initiator.Security
 
                 var formData = GetRequestPostData(context.Request);
                 var response = context.Response;
-                var responseString = string.IsNullOrEmpty(options.ReturnToClientHtml) 
+                var responseString = string.IsNullOrEmpty(options.ReturnToClientHtml)
                     ? "<html><body>Please return to the app.</body></html>"
                     : options.ReturnToClientHtml;
                 var buffer = Encoding.UTF8.GetBytes(responseString);
@@ -230,7 +255,7 @@ namespace VaraniumSharp.Initiator.Security
         /// </summary>
         /// <param name="tokenName">Name of the token</param>
         /// <returns>Fresh Access Token unless refresh failed in which case null</returns>
-        private async Task<TokenData> RefreshToken(string tokenName)
+        private async Task<TokenData> RefreshTokenAsync(string tokenName)
         {
             _refreshDictionary.TryGetValue(tokenName, out var rToken);
 
@@ -272,16 +297,57 @@ namespace VaraniumSharp.Initiator.Security
                 _tokenDictionary.Add(tokenName, dToken);
             }
 
-            if (dToken == null 
+            if (dToken == null
                 || dToken.TokenExpired)
             {
                 return null;
             }
 
             var timeTillExpiration = dToken.ExpirationDate - DateTime.UtcNow;
-            return timeTillExpiration.TotalHours <= 1
+            SetupRefreshTokenTimer(tokenName, dToken);
+
+            return timeTillExpiration <= RefreshTimeSpan
                 ? null
                 : dToken;
+        }
+
+        /// <summary>
+        /// Set up a timer that will refresh an access token an hour before it expires. 
+        /// </summary>
+        /// <param name="tokenName">Name of the token</param>
+        /// <param name="accessTokenData">The current access token</param>
+        private void SetupRefreshTokenTimer(string tokenName, TokenData accessTokenData)
+        {
+            var timeTillExpiration = accessTokenData.ExpirationDate - DateTime.UtcNow;
+            if (timeTillExpiration <= RefreshTimeSpan)
+            {
+                return;
+            }
+
+            if (_tokenRefreshTimers.ContainsKey(tokenName))
+            {
+                _tokenRefreshTimers[tokenName].Dispose();
+                _tokenRefreshTimers.Remove(tokenName);
+            }
+
+            _tokenRefreshTimers.Add(tokenName,
+                new Timer(TokenExpirationCallback, tokenName, timeTillExpiration.Subtract(RefreshTimeSpan),
+                    TimeSpan.FromMilliseconds(-1)));
+        }
+
+        /// <summary>
+        /// Fired when an access token is an hour from expiration.
+        /// Will refresh the token, reset the timer and notify listeners of the token update
+        /// </summary>
+        /// <param name="state">Name of the token that expired</param>
+        private async void TokenExpirationCallback(object state)
+        {
+            var tokenName = state.ToString();
+            _log.Debug("Refreshing token {TokenName} as it will expire in {ExpirationTimeout}", tokenName,
+                RefreshTimeSpan);
+            var token = await RefreshTokenAsync(tokenName);
+            SetupRefreshTokenTimer(tokenName, token);
+            TokenRefreshed?.Invoke(this, new KeyValuePair<string, TokenData>(tokenName, token));
         }
 
         /// <summary>
@@ -357,6 +423,11 @@ namespace VaraniumSharp.Initiator.Security
         /// Semaphores used to lock token access
         /// </summary>
         private readonly ConcurrentDictionary<string, SemaphoreSlim> _tokenLocks;
+
+        /// <summary>
+        /// Timers used to request new Access tokens before they expire
+        /// </summary>
+        private readonly Dictionary<string, Timer> _tokenRefreshTimers;
 
         /// <summary>
         /// Token storage instance
