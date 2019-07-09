@@ -224,6 +224,46 @@ namespace VaraniumSharp.Initiator.Tests.Security
         }
 
         [Test]
+        public async Task FailureToGetATokenWithTimerRefreshDoesNotBroadcastARefreshEvent()
+        {
+            // arrange
+            var loggerDummy = LoggerFixture.SetupLogCatcher();
+            var refreshTimeout = TimeSpan.FromSeconds(10);
+            const string tokenName = "Test Token";
+            var refreshToken = Guid.NewGuid().ToString();
+            var fixture = new TokenManagerFixture();
+            await fixture.SetupServerDataAsync(tokenName, true);
+            var token = fixture.TokenGenerator.GenerateToken(DateTime.UtcNow.AddMinutes(-15),
+                DateTime.UtcNow.AddSeconds(15), DateTime.UtcNow.AddMinutes(-17));
+            var tokenDataDummy = new TokenData(token);
+            var wasRefreshed = false;
+
+            fixture.TokenStorageMock
+                .Setup(t => t.RetrieveAccessTokenAsync(tokenName))
+                .ReturnsAsync(tokenDataDummy);
+            fixture.TokenStorageMock
+                .Setup(t => t.RetrieveRefreshTokenAsync(tokenName))
+                .ReturnsAsync(refreshToken);
+
+            fixture.WellKnownSetup();
+            fixture.SetupCertificates();
+            fixture.AuthRefreshSetup(null, null);
+            var sut = fixture.Instance;
+            sut.SetupRefreshTimeSpan(refreshTimeout);
+            sut.TokenRefreshed += (sender, pair) => { wasRefreshed = true; };
+
+            // act
+            await sut.CheckSigninAsync(tokenName);
+            await Task.Delay(TimeSpan.FromSeconds(10));
+
+            // assert
+            wasRefreshed.Should().BeFalse();
+            loggerDummy.Verify(t => t.Warning("Attempting to refresh access token failed. No further auto-refreshes will occur for {TokenName}", tokenName), Times.Once);
+
+            fixture.HttpMock.Dispose();
+        }
+
+        [Test]
         public async Task OnTokenRefreshTheTokenRefreshedEventIsRaised()
         {
             // arrange

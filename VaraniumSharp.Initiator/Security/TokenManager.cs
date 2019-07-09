@@ -362,8 +362,15 @@ namespace VaraniumSharp.Initiator.Security
             _log.Debug("Refreshing token {TokenName} as it will expire in {ExpirationTimeout}", tokenName,
                 RefreshTimeSpan);
             var token = await RefreshTokenAsync(tokenName);
-            SetupRefreshTokenTimer(tokenName, token);
-            TokenRefreshed?.Invoke(this, new KeyValuePair<string, TokenData>(tokenName, token));
+            if (token != null)
+            {
+                SetupRefreshTokenTimer(tokenName, token);
+                TokenRefreshed?.Invoke(this, new KeyValuePair<string, TokenData>(tokenName, token));
+            }
+            else
+            {
+                _log.Warning("Attempting to refresh access token failed. No further auto-refreshes will occur for {TokenName}", tokenName);
+            }
         }
 
         /// <summary>
