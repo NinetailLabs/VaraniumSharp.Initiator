@@ -20,7 +20,7 @@ namespace VaraniumSharp.Initiator.Tests.DependencyInjection
 
             // act
             // assert
-            act.Should().NotThrow<Exception>();
+            act.ShouldNotThrow<Exception>();
         }
 
         [Test]
@@ -50,7 +50,7 @@ namespace VaraniumSharp.Initiator.Tests.DependencyInjection
             // assert
             var resolvedClasses = sut.ResolveMany<ITestInterfaceDummy>();
             var secondResolve = sut.ResolveMany<ITestInterfaceDummy>();
-            resolvedClasses.Should().AllBeEquivalentTo(secondResolve);
+            resolvedClasses.ShouldAllBeEquivalentTo(secondResolve);
         }
 
         [Test]
@@ -78,7 +78,7 @@ namespace VaraniumSharp.Initiator.Tests.DependencyInjection
 
             // act
             // assert
-            act.Should().NotThrow<Exception>();
+            act.ShouldNotThrow<Exception>();
         }
 
         [Test]
@@ -108,7 +108,7 @@ namespace VaraniumSharp.Initiator.Tests.DependencyInjection
 
             // act
             // assert
-            act.Should().NotThrow<Exception>();
+            act.ShouldNotThrow<Exception>();
         }
 
         [Test]
@@ -120,7 +120,7 @@ namespace VaraniumSharp.Initiator.Tests.DependencyInjection
 
             // act
             // assert
-            act.Should().NotThrow<Exception>();
+            act.ShouldNotThrow<Exception>();
         }
 
         [Test]

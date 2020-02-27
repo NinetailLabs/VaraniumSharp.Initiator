@@ -41,7 +41,7 @@ namespace VaraniumSharp.Initiator.Tests.Configuration
 
             // act
             // assert
-            action.Should().Throw<InvalidOperationException>();
+            action.ShouldThrow<InvalidOperationException>();
         }
 
         #endregion

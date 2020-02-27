@@ -2,13 +2,12 @@
 using Moq;
 using NUnit.Framework;
 using Serilog;
-using System;
 using VaraniumSharp.Initiator.Configuration;
 using VaraniumSharp.Initiator.Tests.Helpers;
 
 namespace VaraniumSharp.Initiator.Tests.Configuration
 {
-    public class ConsoleLoggingConfigurationTest
+    public class SplunkLoggingConfigurationTest
     {
         #region Public Methods
 
@@ -17,32 +16,27 @@ namespace VaraniumSharp.Initiator.Tests.Configuration
         public void ApplyLoggingConfiguration(bool isUsed, bool isActive, bool wasApplied)
         {
             // arrange
-            ApplicationConfigurationHelper.AdjustKeys("log.console", isUsed.ToString());
+            ApplicationConfigurationHelper.AdjustKeys("log.splunk", isUsed.ToString());
             var serilogConfigurationDummy = new Mock<LoggerConfiguration>();
-            var sut = new ConsoleLoggingConfiguration();
+            var sut = new SplunkLoggingConfiguration();
 
             // act
             sut.Apply(serilogConfigurationDummy.Object);
 
             // assert
-            sut.LogToConsole.Should().Be(isUsed);
+            sut.SplunkHost.Should().Be(SplunkHost);
+            sut.SplunkToken.Should().Be(SplunkToken);
+            sut.LogToSplunk.Should().Be(isUsed);
             sut.IsActive.Should().Be(isActive);
             sut.WasApplied.Should().Be(wasApplied);
         }
 
-        [Test]
-        public void ConfigurationCannotBeAppliedTwice()
-        {
-            // arrange
-            var serilogConfigurationDummy = new Mock<LoggerConfiguration>();
-            var sut = new ConsoleLoggingConfiguration();
-            var action = new Action(() => sut.Apply(serilogConfigurationDummy.Object));
-            sut.Apply(serilogConfigurationDummy.Object);
+        #endregion
 
-            // act
-            // assert
-            action.Should().Throw<InvalidOperationException>();
-        }
+        #region Variables
+
+        private const string SplunkHost = "https://mysplunk:8088/services/collector";
+        private const string SplunkToken = "ReplaceWithToken";
 
         #endregion
     }

@@ -68,7 +68,7 @@ namespace VaraniumSharp.Initiator.Tests.Security
 
             // act
             // assert
-            act.Should().Throw<ArgumentException>();
+            act.ShouldThrow<ArgumentException>();
         }
 
         [Test]
