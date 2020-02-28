@@ -1,7 +1,9 @@
-﻿using FluentAssertions;
+﻿using System.Reflection;
+using FluentAssertions;
 using Moq;
 using NUnit.Framework;
 using Serilog;
+using VaraniumSharp.Extensions;
 using VaraniumSharp.Initiator.Configuration;
 using VaraniumSharp.Initiator.Tests.Helpers;
 
@@ -16,6 +18,7 @@ namespace VaraniumSharp.Initiator.Tests.Configuration
         public void ApplyLoggingConfiguration(bool isUsed, bool isActive, bool wasApplied)
         {
             // arrange
+            StringExtensions.ConfigurationLocation = Assembly.GetExecutingAssembly().Location;
             ApplicationConfigurationHelper.AdjustKeys("log.file", isUsed.ToString());
             var serilogConfigurationDummy = new Mock<LoggerConfiguration>();
             var sut = new FileLoggingConfiguration();

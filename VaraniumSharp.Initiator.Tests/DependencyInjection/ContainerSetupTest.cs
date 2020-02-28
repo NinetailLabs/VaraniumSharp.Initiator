@@ -48,9 +48,9 @@ namespace VaraniumSharp.Initiator.Tests.DependencyInjection
             sut.RetrieveConcretionClassesRequiringRegistration(true);
 
             // assert
-            var resolvedClasses = sut.ResolveMany<ITestInterfaceDummy>();
-            var secondResolve = sut.ResolveMany<ITestInterfaceDummy>();
-            resolvedClasses.Should().AllBeEquivalentTo(secondResolve);
+            var resolvedClasses = sut.ResolveMany<ITestInterfaceDummy>().ToList();
+            var secondResolve = sut.ResolveMany<ITestInterfaceDummy>().ToList();
+            resolvedClasses.Should().BeEquivalentTo(secondResolve);
         }
 
         [Test]
