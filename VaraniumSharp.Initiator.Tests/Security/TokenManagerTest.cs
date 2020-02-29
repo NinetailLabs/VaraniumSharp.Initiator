@@ -1,15 +1,14 @@
 ﻿using FluentAssertions;
-using HttpMockSlim;
 using IdentityModel.OidcClient;
 using Moq;
 using NUnit.Framework;
 using System;
 using System.Diagnostics.CodeAnalysis;
 using System.IO;
-using System.Net;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
+using HttpMock.Net;
 using VaraniumSharp.Initiator.Interfaces.Security;
 using VaraniumSharp.Initiator.Security;
 using VaraniumSharp.Initiator.Tests.Fixtures;
@@ -584,7 +583,10 @@ namespace VaraniumSharp.Initiator.Tests.Security
             public void AuthRefreshSetup(string newAccessToken, string newRefreshToken, bool returnError = false)
             {
                 StartServer();
-                HttpMock.HttpMock.Add(new RefreshTokenHandler(newAccessToken, newRefreshToken, returnError));
+                var handler = new RefreshTokenHandler(newAccessToken, newRefreshToken, returnError);
+                HttpMock.HttpMock
+                    .WhenPost(handler.TokenPath, context => true)
+                    .Do(context => { handler.Handle(context); });
             }
 
             public void AuthSetup(string accessToken, string refreshToken)
@@ -600,22 +602,26 @@ namespace VaraniumSharp.Initiator.Tests.Security
                             using (var client = new HttpClient())
                             {
                                 client.GetAsync(url);
-                                Thread.Sleep(100);
+                                Thread.Sleep(TimeSpan.FromSeconds(10));
                             }
                         });
                     });
 
-                HttpMock.HttpMock.Add(new UserSigninHandler(RedirectUrl, accessToken, refreshToken, TokenGenerator));
+                var handler = new UserSigninHandler(RedirectUrl, accessToken, refreshToken, TokenGenerator);
+                HttpMock.HttpMock
+                    .WhenGet(handler.AuthPath)
+                    .Do(context => { handler.Handle(context); });
+                HttpMock.HttpMock
+                    .WhenPost(handler.AuthPath, context => true)
+                    .Do(context => { handler.Handle(context); });
             }
 
             public void SetupCertificates()
             {
                 StartServer();
-                HttpMock.HttpMock.Add("GET", ServerCertificatePath, (request, response) =>
-                {
-                    response.SetBody(TokenGenerator.JsonWebKeyString);
-                    response.StatusCode = (int)HttpStatusCode.OK;
-                });
+                HttpMock.HttpMock
+                    .WhenGet(ServerCertificatePath)
+                    .Respond(TokenGenerator.JsonWebKeyString);
             }
 
             public async Task SetupServerDataAsync(string tokenName, bool replaceRefresh = false)
@@ -639,19 +645,20 @@ namespace VaraniumSharp.Initiator.Tests.Security
             public void UserInfoSetup()
             {
                 StartServer();
-                HttpMock.HttpMock.Add(new UserInfoFixture());
+                var handler = new UserInfoFixture();
+                HttpMock.HttpMock
+                    .WhenGet(handler.UserInfoPath)
+                    .Do(context => { handler.Handle(context); });
             }
 
             public void WellKnownSetup()
             {
+                var appPath = AppDomain.CurrentDomain.BaseDirectory;
+                var data = File.ReadAllText(Path.Combine(appPath, "Resources", "OpenIdConfig.json"));
                 StartServer();
-                HttpMock.HttpMock.Add("GET", WellKnownPath, (request, response) =>
-                {
-                    var appPath = AppDomain.CurrentDomain.BaseDirectory;
-                    var data = File.ReadAllText(Path.Combine(appPath, "Resources", "OpenIdConfig.json"));
-                    response.SetBody(data);
-                    response.StatusCode = (int)HttpStatusCode.OK;
-                });
+                HttpMock.HttpMock
+                    .WhenGet(WellKnownPath)
+                    .Respond(data);
             }
 
             #endregion
@@ -687,7 +694,7 @@ namespace VaraniumSharp.Initiator.Tests.Security
 
             public int CallCount { get; private set; }
 
-            public HttpMock HttpMock { get; private set; }
+            public HttpHandlerBuilder HttpMock { get; private set; }
 
             public bool PathWasCalled { get; private set; }
 
@@ -697,15 +704,14 @@ namespace VaraniumSharp.Initiator.Tests.Security
 
             public void Dispose()
             {
-                HttpMock.Stop();
+                HttpMock.Dispose();
             }
 
             public void SetupServer(string baseUrl)
             {
                 if (HttpMock == null)
                 {
-                    HttpMock = new HttpMock();
-                    HttpMock.Start(baseUrl);
+                    HttpMock = Server.Start(8888);
                 }
             }
 

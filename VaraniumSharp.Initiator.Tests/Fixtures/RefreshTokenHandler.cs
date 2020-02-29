@@ -1,11 +1,12 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Net;
-using HttpMockSlim;
+using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
 
 namespace VaraniumSharp.Initiator.Tests.Fixtures
 {
-    public class RefreshTokenHandler : IHttpHandlerMock
+    public class RefreshTokenHandler
     {
         #region Constructor
 
@@ -18,44 +19,42 @@ namespace VaraniumSharp.Initiator.Tests.Fixtures
 
         #endregion
 
+        #region Properties
+
+        public string TokenPath => "/protocol/openid-connect/token";
+
+        #endregion
+
         #region Public Methods
 
-        public bool Handle(HttpListenerContext context)
+        public void Handle(HttpContext context)
         {
-            if (context.Request.HttpMethod == "POST"
-                && context.Request.Url.AbsolutePath.EndsWith(TokenPath))
+            if (context.Request.Method == "POST")
             {
                 if (_returnError)
                 {
-                    context.Response.StatusCode = (int)HttpStatusCode.BadRequest;
-                    context.Response.Close();
+                    context.Response.StatusCode = (int) HttpStatusCode.BadRequest;
                     _returnError = false;
-                    return true;
+                    return;
                 }
 
                 var tokenResponse =
                     JsonConvert.SerializeObject(new TokenResponseWrapper(_accessToken, _refreshToken));
 
+                context.Response.ContentType = "application/json";
+                context.Response.StatusCode = (int) HttpStatusCode.OK;
                 var memStream = new MemoryStream();
                 var streamWrite = new StreamWriter(memStream);
                 streamWrite.Write(tokenResponse);
                 streamWrite.Flush();
                 memStream.Position = 0;
-                memStream.CopyTo(context.Response.OutputStream);
-
-                context.Response.ContentType = "application/json";
-                context.Response.StatusCode = (int)HttpStatusCode.OK;
-
-                context.Response.Close();
+                memStream.CopyTo(context.Response.Body);
             }
-            return false;
         }
 
         #endregion
 
         #region Variables
-
-        private const string TokenPath = "/protocol/openid-connect/token";
 
         private readonly string _accessToken;
 

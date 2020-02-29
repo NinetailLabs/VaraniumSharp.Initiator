@@ -8,6 +8,7 @@
   <ItemGroup>
     <PackageReference Include="DryIoc.dll" Version="4.1.0" />
     <PackageReference Include="FluentAssertions" Version="5.10.2" />
+    <PackageReference Include="HttpMock.Net" Version="1.0.1" />
     <PackageReference Include="IdentityModel.OidcClient" Version="2.8.1" />
     <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="5.6.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.5.0" />
@@ -29,6 +30,12 @@
 
   <ItemGroup>
     <ProjectReference Include="..\VaraniumSharp.Initiator\VaraniumSharp.Initiator.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Resources\OpenIdConfig.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>
