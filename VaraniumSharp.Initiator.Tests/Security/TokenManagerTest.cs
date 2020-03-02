@@ -9,6 +9,7 @@ using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
 using HttpMock.Net;
+using IdentityModel.Client;
 using VaraniumSharp.Initiator.Interfaces.Security;
 using VaraniumSharp.Initiator.Security;
 using VaraniumSharp.Initiator.Tests.Fixtures;
@@ -148,6 +149,7 @@ namespace VaraniumSharp.Initiator.Tests.Security
             fixture.SetupCertificates();
             fixture.AuthSetup(token, refreshToken);
             fixture.UserInfoSetup();
+            fixture.TokenEndpointSetup();
             var sut = fixture.Instance;
 
             // act
@@ -661,6 +663,21 @@ namespace VaraniumSharp.Initiator.Tests.Security
                     .Respond(data);
             }
 
+            public void TokenEndpointSetup()
+            {
+                StartServer();
+                HttpMock.HttpMock
+                    .WhenPost(TokenEndpoint, context => true)
+                    .Do(context =>
+                    {
+                        var response = new TokenResponse();
+                        // TODO - This probably has to match what is sent back to the user in the UserSignInHandler
+                        // Suspect the content is JSON, but not 100% sure yet. Check https://github.com/IdentityModel/IdentityModel.OidcClient/blob/d4120a509976df7562cf26e675e02f38270c14e8/src/ResponseProcessor.cs
+                        // See the RedeemCodeAsync() method
+                        // After that craft the response and it should work
+                    });
+            }
+
             #endregion
 
             #region Private Methods
@@ -680,6 +697,7 @@ namespace VaraniumSharp.Initiator.Tests.Security
 
             public const string WellKnownPath = "/.well-known/openid-configuration";
             public const string ServerCertificatePath = "/protocol/openid-connect/certs";
+            public const string TokenEndpoint = "/protocol/openid-connect/token";
             public const string Authority = "http://localhost:8888/";
             public const string RedirectUrl = "http://localhost:9999/";
 

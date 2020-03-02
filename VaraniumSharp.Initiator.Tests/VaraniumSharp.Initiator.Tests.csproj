@@ -9,7 +9,7 @@
     <PackageReference Include="DryIoc.dll" Version="4.1.0" />
     <PackageReference Include="FluentAssertions" Version="5.10.2" />
     <PackageReference Include="HttpMock.Net" Version="1.0.1" />
-    <PackageReference Include="IdentityModel.OidcClient" Version="2.8.1" />
+    <PackageReference Include="IdentityModel.OidcClient" Version="3.1.2" />
     <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="5.6.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.5.0" />
     <PackageReference Include="Moq" Version="4.13.1" />
