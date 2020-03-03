@@ -4,6 +4,7 @@ using System.IO;
 using System.Net;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
+using Newtonsoft.Json.Linq;
 
 namespace VaraniumSharp.Initiator.Tests.Fixtures
 {
@@ -26,12 +27,12 @@ namespace VaraniumSharp.Initiator.Tests.Fixtures
                 {
                     Sub = "blah"
                 };
-                var userinfoJson = JsonConvert.SerializeObject(claimCollection);
+                var userInfoJson = JsonConvert.SerializeObject(claimCollection);
                 var userInfo = new UserInfoResponseFixture();
-                userInfo.InitAsync(userinfoJson).Wait();
+                userInfo.InitAsync(userInfoJson).Wait();
 
                 context.Response.ContentType = "application/json";
-                context.Response.StatusCode = (int)HttpStatusCode.OK;
+                context.Response.StatusCode = (int) HttpStatusCode.OK;
                 var memStream = new MemoryStream();
                 var streamWrite = new StreamWriter(memStream);
                 streamWrite.Write(userInfo.Json);
@@ -45,10 +46,15 @@ namespace VaraniumSharp.Initiator.Tests.Fixtures
 
         private class UserInfoResponseFixture : UserInfoResponse
         {
+            #region Public Methods
+
             public async Task InitAsync(string json)
             {
+                Json = JsonConvert.DeserializeObject<JObject>(json);
                 await InitializeAsync(json);
             }
+
+            #endregion
         }
 
         private class UserInfoData
