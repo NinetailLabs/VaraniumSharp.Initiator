@@ -3,11 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29806.167
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".paket", ".paket", "{2CDB4875-7B97-4413-BAA3-11C4E2A29B37}"
-	ProjectSection(SolutionItems) = preProject
-		paket.dependencies = paket.dependencies
-	EndProjectSection
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VaraniumSharp.Initiator", "VaraniumSharp.Initiator\VaraniumSharp.Initiator.csproj", "{0024A7A8-95E8-4052-AE82-B51BA8CE5903}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VaraniumSharp.Initiator.Tests", "VaraniumSharp.Initiator.Tests\VaraniumSharp.Initiator.Tests.csproj", "{843BFE68-B99E-4008-9186-B6A84A89C32F}"

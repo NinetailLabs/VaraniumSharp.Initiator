@@ -6,6 +6,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="altcover" Version="6.7.750" />
+    <PackageReference Include="Appveyor.TestLogger" Version="2.0.0" />
     <PackageReference Include="DryIoc.dll" Version="4.1.0" />
     <PackageReference Include="FluentAssertions" Version="5.10.2" />
     <PackageReference Include="HttpMock.Net" Version="1.0.1" />
