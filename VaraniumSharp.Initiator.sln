@@ -8,11 +8,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".paket", ".paket", "{2CDB48
 		paket.dependencies = paket.dependencies
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VaraniumSharp.Initiator.Tests_old", "VaraniumSharp.Initiator.Tests_old\VaraniumSharp.Initiator.Tests_old.csproj", "{AE4CAE53-5B84-43D4-A964-16FC57D25A28}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VaraniumSharp.Initiator", "VaraniumSharp.Initiator\VaraniumSharp.Initiator.csproj", "{0024A7A8-95E8-4052-AE82-B51BA8CE5903}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VaraniumSharp.Initiator.Tests", "VaraniumSharp.Initiator.Tests\VaraniumSharp.Initiator.Tests.csproj", "{843BFE68-B99E-4008-9186-B6A84A89C32F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VaraniumSharp.Initiator.Tests", "VaraniumSharp.Initiator.Tests\VaraniumSharp.Initiator.Tests.csproj", "{843BFE68-B99E-4008-9186-B6A84A89C32F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,10 +18,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{AE4CAE53-5B84-43D4-A964-16FC57D25A28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AE4CAE53-5B84-43D4-A964-16FC57D25A28}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AE4CAE53-5B84-43D4-A964-16FC57D25A28}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AE4CAE53-5B84-43D4-A964-16FC57D25A28}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0024A7A8-95E8-4052-AE82-B51BA8CE5903}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0024A7A8-95E8-4052-AE82-B51BA8CE5903}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0024A7A8-95E8-4052-AE82-B51BA8CE5903}.Release|Any CPU.ActiveCfg = Release|Any CPU
