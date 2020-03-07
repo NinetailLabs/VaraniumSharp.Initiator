@@ -28,6 +28,8 @@ Task ("VariableSetup")
 		botEmail = "gitbot@ninetaillabs.com";
 		botToken = EnvironmentVariable("BotToken");
 		gitRepo = string.Format("https://github.com/{0}/{1}.git", repoOwner, projectName);
+
+		AddNamespaceExclusion("DryIoc");
 	});
 
 Task ("Default")
