@@ -8,31 +8,37 @@
     <title>VaraniumSharp.Initiator</title>
     <description>Ring 2 library based on VaraniumSharp. This library makes use of and extends VaraniumSharp to be a base for other (Ring 3) projects.</description>
     <summary>Ring 2 library based on VaraniumSharp. This library makes use of and extends VaraniumSharp to be a base for other (Ring 3) projects.</summary>
-    <licenseUrl>https://raw.githubusercontent.com/NinetailLabs/VaraniumSharp.Initiator/master/LICENSE</licenseUrl>
+    <license type="expression">MIT</license>
     <projectUrl>https://github.com/NinetailLabs/VaraniumSharp.Initiator</projectUrl>
-    <iconUrl>https://raw.githubusercontent.com/NinetailLabs/VaraniumSharp.Initiator/develop/icon.png</iconUrl>
+    <icon>images\nugetIcon.png</icon>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <copyright>Copyright (c) NineTail Labs 2018</copyright>
     <releaseNotes>ReleaseNotesHere</releaseNotes>
     <tags>C# VaraniumSharp Initiator VaraniumSharp.Initiator Varanium</tags>
 
+    <repository type="git" url="https://github.com/NinetailLabs/VaraniumSharp.Initiator.git" commit="GitHashHere" />
+
     <dependencies>
-      <dependency id="DryIoc.dll" version="[4.0.2,5.0.0)" />
-      <dependency id="IdentityModel.OidcClient" version="2.8.1" />
-      <dependency id="Microsoft.ApplicationInsights" version="2.6.4" />
-      <dependency id="Serilog" version="2.7.1" />
-      <dependency id="Serilog.Sinks.ColoredConsole" version="3.0.1" />
-      <dependency id="Serilog.Sinks.File" version="4.0.0" />
-      <dependency id="Serilog.Sinks.Seq" version="4.0.0" />
-      <dependency id="Serilog.Sinks.Splunk" version="2.5.0" />
-      <dependency id="System.IdentityModel.Tokens.Jwt" version="5.2.4" />
-      <dependency id="System.Management" version="4.5.0" />
-      <dependency id="VaraniumSharp" version="3.1.2" />
+      <group targetFramework="netstandard2.0">
+        <dependency id="DryIoc.dll" version="[4.1.0,5.0.0)" />
+        <dependency id="IdentityModel.OidcClient" version="3.1.2" />
+        <dependency id="Microsoft.ApplicationInsights" version="2.6.4" />
+        <dependency id="Serilog" version="2.9.0" />
+        <dependency id="Serilog.Sinks.ColoredConsole" version="3.0.1" />
+        <dependency id="Serilog.Sinks.File" version="4.1.0" />
+        <dependency id="Serilog.Sinks.Seq" version="4.0.0" />
+        <dependency id="Serilog.Sinks.Splunk" version="3.3.0" />
+        <dependency id="System.IdentityModel.Tokens.Jwt" version="5.6.0" />
+        <dependency id="System.Management" version="4.7.0" />
+        <dependency id="VaraniumSharp" version="3.6.1" />
+      </group>
     </dependencies>
   </metadata>
 
   <files>
+    <file src="../nugetIcon.png" target="\images" />
     <file src="./bin/Release/netstandard2.0/VaraniumSharp.Initiator.dll" target="lib\netstandard2.0" />
+    <file src="./bin/Release/netstandard2.0/VaraniumSharp.Initiator.pdb" target="lib\netstandard2.0" />
     <file src="./bin/Release/netstandard2.0/VaraniumSharp.Initiator.xml" target="lib\netstandard2.0" />
     <file src="./bin/Release/netstandard2.0/VaraniumSharp.Initiator.deps.json" target="lib\netstandard2.0" />
   </files>

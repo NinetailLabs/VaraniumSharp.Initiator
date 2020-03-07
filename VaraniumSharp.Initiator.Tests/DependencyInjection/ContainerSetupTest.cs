@@ -20,7 +20,7 @@ namespace VaraniumSharp.Initiator.Tests.DependencyInjection
 
             // act
             // assert
-            act.ShouldNotThrow<Exception>();
+            act.Should().NotThrow<Exception>();
         }
 
         [Test]
@@ -48,9 +48,9 @@ namespace VaraniumSharp.Initiator.Tests.DependencyInjection
             sut.RetrieveConcretionClassesRequiringRegistration(true);
 
             // assert
-            var resolvedClasses = sut.ResolveMany<ITestInterfaceDummy>();
-            var secondResolve = sut.ResolveMany<ITestInterfaceDummy>();
-            resolvedClasses.ShouldAllBeEquivalentTo(secondResolve);
+            var resolvedClasses = sut.ResolveMany<ITestInterfaceDummy>().ToList();
+            var secondResolve = sut.ResolveMany<ITestInterfaceDummy>().ToList();
+            resolvedClasses.Should().BeEquivalentTo(secondResolve);
         }
 
         [Test]
@@ -78,7 +78,7 @@ namespace VaraniumSharp.Initiator.Tests.DependencyInjection
 
             // act
             // assert
-            act.ShouldNotThrow<Exception>();
+            act.Should().NotThrow<Exception>();
         }
 
         [Test]
@@ -108,7 +108,7 @@ namespace VaraniumSharp.Initiator.Tests.DependencyInjection
 
             // act
             // assert
-            act.ShouldNotThrow<Exception>();
+            act.Should().NotThrow<Exception>();
         }
 
         [Test]
@@ -120,7 +120,7 @@ namespace VaraniumSharp.Initiator.Tests.DependencyInjection
 
             // act
             // assert
-            act.ShouldNotThrow<Exception>();
+            act.Should().NotThrow<Exception>();
         }
 
         [Test]

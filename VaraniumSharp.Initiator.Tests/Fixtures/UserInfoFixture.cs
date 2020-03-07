@@ -1,51 +1,61 @@
-﻿using HttpMockSlim;
-using IdentityModel.Client;
+﻿using IdentityModel.Client;
 using Newtonsoft.Json;
 using System.IO;
 using System.Net;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
+using Newtonsoft.Json.Linq;
 
 namespace VaraniumSharp.Initiator.Tests.Fixtures
 {
-    public class UserInfoFixture : IHttpHandlerMock
+    public class UserInfoFixture
     {
+        #region Properties
+
+        public string UserInfoPath => "/protocol/openid-connect/userinfo";
+
+        #endregion
+
         #region Public Methods
 
-        public bool Handle(HttpListenerContext context)
+        public void Handle(HttpContext context)
         {
-            if (context.Request.HttpMethod == "GET" && context.Request.Url.AbsolutePath.EndsWith(UserInfoPath))
+            if (context.Request.Method == "GET")
             {
                 //So this is a little weird, but it is apparently the way it expects the claims so that's how we do it
                 var claimCollection = new UserInfoData
                 {
                     Sub = "blah"
                 };
-                var userinfoJson = JsonConvert.SerializeObject(claimCollection);
-                var userInfo = new UserInfoResponse(userinfoJson);
+                var userInfoJson = JsonConvert.SerializeObject(claimCollection);
+                var userInfo = new UserInfoResponseFixture();
+                userInfo.InitAsync(userInfoJson).Wait();
 
+                context.Response.ContentType = "application/json";
+                context.Response.StatusCode = (int) HttpStatusCode.OK;
                 var memStream = new MemoryStream();
                 var streamWrite = new StreamWriter(memStream);
                 streamWrite.Write(userInfo.Json);
                 streamWrite.Flush();
                 memStream.Position = 0;
-                memStream.CopyTo(context.Response.OutputStream);
-
-                context.Response.ContentType = "application/json";
-                context.Response.StatusCode = (int)HttpStatusCode.OK;
-
-                context.Response.Close();
-
-                return true;
+                memStream.CopyTo(context.Response.Body);
             }
-            return false;
         }
 
         #endregion
 
-        #region Variables
+        private class UserInfoResponseFixture : UserInfoResponse
+        {
+            #region Public Methods
 
-        private const string UserInfoPath = "/protocol/openid-connect/userinfo";
+            public async Task InitAsync(string json)
+            {
+                Json = JsonConvert.DeserializeObject<JObject>(json);
+                await InitializeAsync(json);
+            }
 
-        #endregion
+            #endregion
+        }
 
         private class UserInfoData
         {
