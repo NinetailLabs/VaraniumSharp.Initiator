@@ -2,7 +2,6 @@
 using System.Runtime.Caching;
 using System.Threading.Tasks;
 using DryIoc;
-using VaraniumSharp.Attributes;
 using VaraniumSharp.Interfaces.Caching;
 
 namespace VaraniumSharp.Initiator.Caching
@@ -10,15 +9,14 @@ namespace VaraniumSharp.Initiator.Caching
     /// <summary>
     /// Factory for creating <see cref="IMemoryCacheWrapper{T}"/> instances
     /// </summary>
-    [AutomaticContainerRegistration(typeof(IMemoryCacheWrapperFactory))]
-    public class MemoryCacheWrapperFactory : IMemoryCacheWrapperFactory
+    public class MemoryCacheWrapperFactory<T> : IMemoryCacheWrapperFactory<T> where T : class
     {
         #region Constructor
 
         /// <summary>
         /// DI Constructor
         /// </summary>
-        /// <param name="container">DryIoC intance</param>
+        /// <param name="container">DryIoC instance</param>
         public MemoryCacheWrapperFactory(IContainer container)
         {
             _container = container;
@@ -35,7 +33,7 @@ namespace VaraniumSharp.Initiator.Caching
         /// <param name="policy">Cache eviction policy</param>
         /// <param name="dataRetrievalFunc">Function used to retrieve items if they are not in the cache</param>
         /// <returns>Initialized instance of MemoryCacheWrapper</returns>
-        public IMemoryCacheWrapper<T> Create<T>(CacheItemPolicy policy, Func<string, Task<T>> dataRetrievalFunc)
+        public IMemoryCacheWrapper<T> Create(CacheItemPolicy policy, Func<string, Task<T>> dataRetrievalFunc)
         {
             var instance = _container.Resolve<IMemoryCacheWrapper<T>>();
             instance.CachePolicy = policy;
@@ -50,7 +48,7 @@ namespace VaraniumSharp.Initiator.Caching
         /// <typeparam name="T">Type of items that will be stored in the cache</typeparam>
         /// <param name="dataRetrievalFunc">Function used to retrieve items if they are not in the cache</param>
         /// <returns>Initialized instance of MemoryCacheWrapper</returns>
-        public IMemoryCacheWrapper<T> CreateWithDefaultSlidingPolicy<T>(Func<string, Task<T>> dataRetrievalFunc)
+        public IMemoryCacheWrapper<T> CreateWithDefaultSlidingPolicy(Func<string, Task<T>> dataRetrievalFunc)
         {
             var defaultPolicy = new CacheItemPolicy
 

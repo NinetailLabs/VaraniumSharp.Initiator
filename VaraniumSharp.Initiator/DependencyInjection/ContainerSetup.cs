@@ -91,7 +91,7 @@ namespace VaraniumSharp.Initiator.DependencyInjection
         private static bool CheckIfClassIsDisposableTransient(MemberInfo @class)
         {
             return (DisposableTransientAttribute)
-                   @class.GetCustomAttribute(typeof(DisposableTransientAttribute)) != null;
+                @class.GetCustomAttribute(typeof(DisposableTransientAttribute)) != null;
         }
 
         /// <inheritdoc />
@@ -121,6 +121,15 @@ namespace VaraniumSharp.Initiator.DependencyInjection
                             setup: Setup.With(allowDisposableTransient: disposableTransient));
                     }
                 });
+            }
+        }
+
+        /// <inheritdoc />
+        protected override void AutoResolveStartupInstance()
+        {
+            foreach (var entry in ClassesToAutoRegister)
+            {
+                var _ = _container.Resolve(entry);
             }
         }
 

@@ -18,11 +18,11 @@ namespace VaraniumSharp.Initiator.Tests.Caching
         public void CreateInstanceWithCustomPolicy()
         {
             // arrange
-            var func = new Func<string, Task<int>>(DataRetrievalFunc);
+            var func = new Func<string, Task<ITestHelper>>(DataRetrievalFunc);
             var containerDummy = new ContainerFixture();
-            var cachedDummy = new Mock<IMemoryCacheWrapper<int>>();
+            var cachedDummy = new Mock<IMemoryCacheWrapper<ITestHelper>>();
             var policy = new CacheItemPolicy();
-            var sut = new MemoryCacheWrapperFactory(containerDummy);
+            var sut = new MemoryCacheWrapperFactory<ITestHelper>(containerDummy);
 
             cachedDummy.SetupAllProperties();
             containerDummy.SetupItemToResolve(cachedDummy.Object);
@@ -40,10 +40,10 @@ namespace VaraniumSharp.Initiator.Tests.Caching
         public void CreateInstanceWithDefaultPolicy()
         {
             // arrange
-            var func = new Func<string, Task<int>>(DataRetrievalFunc);
+            var func = new Func<string, Task<ITestHelper>>(DataRetrievalFunc);
             var containerDummy = new ContainerFixture();
-            var cachedDummy = new Mock<IMemoryCacheWrapper<int>>();
-            var sut = new MemoryCacheWrapperFactory(containerDummy);
+            var cachedDummy = new Mock<IMemoryCacheWrapper<ITestHelper>>();
+            var sut = new MemoryCacheWrapperFactory<ITestHelper>(containerDummy);
 
             containerDummy.SetupItemToResolve(cachedDummy.Object);
             cachedDummy.SetupAllProperties();
@@ -61,10 +61,10 @@ namespace VaraniumSharp.Initiator.Tests.Caching
 
         #region Private Methods
 
-        private static async Task<int> DataRetrievalFunc(string s)
+        private static async Task<ITestHelper> DataRetrievalFunc(string s)
         {
             await Task.Delay(10);
-            return 0;
+            return (new Mock<ITestHelper>()).Object;
         }
 
         #endregion

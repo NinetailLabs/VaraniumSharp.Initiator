@@ -5,6 +5,11 @@
 [![Coverage Status](https://coveralls.io/repos/github/NinetailLabs/VaraniumSharp.Initiator/badge.svg?branch=master)](https://coveralls.io/github/NinetailLabs/VaraniumSharp.Initiator?branch=master)
 [![CodeFactor](https://www.codefactor.io/repository/github/ninetaillabs/varaniumsharp.initiator/badge)](https://www.codefactor.io/repository/github/ninetaillabs/varaniumsharp.initiator)
 
+## Notice
+This library is mostly considered deprecated as I have moved away from the 3 ring concept to rather building dedicated packages based on VaraniumSharp directly to provide specific functionality as this provides more flexibility with fewer limitations.
+This library is being replaced by libraries such as [VaraniumSharp.DryIoC](https://github.com/NinetailLabs/VaraniumSharp.DryIoc/tree/master/VaraniumSharp.DryIoc) for DryIoC automatic registration.
+As additional parts of this library are moved to seperate VaraniumSharp.* libraries, I will post the links here.
+
 Ring 2 library based on VaraniumSharp. 
 This library makes use of and extends VaraniumSharp to be a base for other (Ring 3) projects.
 Initiator is designed to implement spesific technologies that will make implementing other project simpler.
