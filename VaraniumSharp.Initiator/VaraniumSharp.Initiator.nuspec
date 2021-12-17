@@ -30,7 +30,7 @@
         <dependency id="Serilog.Sinks.Splunk" version="3.3.0" />
         <dependency id="System.IdentityModel.Tokens.Jwt" version="5.6.0" />
         <dependency id="System.Management" version="4.7.0" />
-        <dependency id="VaraniumSharp" version="3.6.1" />
+        <dependency id="VaraniumSharp" version="4.2.0" />
       </group>
     </dependencies>
   </metadata>
